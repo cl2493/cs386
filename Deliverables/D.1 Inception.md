@@ -1,5 +1,6 @@
 # D.1 Inception
 INTRODUCTIONS
+-------------
       Instructions:
       describe in one paragraph what your project is about. Make it clear what problem your software is solving and the context of the solution.
       GRADING CRITERIA (5 points): Your paragraph should be well written in formal language and must contain all the required information. Be clear, concise, and check for typos and grammar errors. 
@@ -9,6 +10,7 @@ RNT-A-ROOM focuses on comfort and safety for our Travel Nurses. Housing options 
 
 
 INITIAL VALUE PROPOSITION & CUSTOMER SEGMENT
+---------------------------------------------
       Instructions: 
       report the initial guesses for the (i) value proposition and (ii) customer segment. The value proposition should make clear what your product is, the target customer, the value you provide, and why your product is unique. See examples on the lecture slides.
       GRADING CRITERIA (5 points): The value proposition should make clear the value from the point of view of the customer. It should not be a slogan or a description of functionality. The value proposition and consumer segment should be coherent with the text in the previous section---in particular, the value should address the problem reported above (problem-solution fit). The customer segment should not be too broad or too specific. 
