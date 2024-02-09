@@ -96,7 +96,9 @@ INTERVIEW 3:
       Who Participated in the Interview?
       Faith Ononye
       When?
+      Feb 9th, 2024
       Customer Segment?
+      Travel Nurse
       Key Insights from the Interview
       Quotes
       Assessment: Must Have/ Nice to Have/Don't Care (how the interviewee sees the solution)
