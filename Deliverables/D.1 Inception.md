@@ -97,7 +97,7 @@ INTERVIEW 3:
       Customer Segment?
       Key Insights from the Interview
       Quotes
-      Assessment: Must Have/ Nice to Have/Don't Care (how the interviewee sees the solution
+      Assessment: Must Have/ Nice to Have/Don't Care (how the interviewee sees the solution)
 
 
 INTERVIEW 4:
@@ -107,7 +107,7 @@ INTERVIEW 4:
       Customer Segment?
       Key Insights from the Interview
       Quotes
-      Assessment: Must Have/ Nice to Have/Don't Care (how the interviewee sees the solution
+      Assessment: Must Have/ Nice to Have/Don't Care (how the interviewee sees the solution)
 
 
 INTERVIEW 5:
@@ -117,7 +117,7 @@ INTERVIEW 5:
       Customer Segment?
       Key Insights from the Interview
       Quotes
-      Assessment: Must Have/ Nice to Have/Don't Care (how the interviewee sees the solution
+      Assessment: Must Have/ Nice to Have/Don't Care (how the interviewee sees the solution)
 
 
 INTERVIEW 6:
@@ -127,7 +127,7 @@ INTERVIEW 6:
       Customer Segment?
       Key Insights from the Interview
       Quotes
-      Assessment: Must Have/ Nice to Have/Don't Care (how the interviewee sees the solution  
+      Assessment: Must Have/ Nice to Have/Don't Care (how the interviewee sees the solution)
 
 
 
