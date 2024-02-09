@@ -94,6 +94,7 @@ INTERVIEW 3:
       Who Was Interviewed?
       Remi
       Who Participated in the Interview?
+      Faith Ononye
       When?
       Customer Segment?
       Key Insights from the Interview
