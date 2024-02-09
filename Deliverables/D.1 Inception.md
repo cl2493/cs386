@@ -70,12 +70,24 @@ INTERVIEW 1:
 
 INTERVIEW 2:
       Who Was Interviewed?
+      - Chisomnazu Iweha-Ononye
       Who Participated in the Interview?
+      - Faith Ononye
       When?
+      - Feb 9th, 2024
       Customer Segment?
+      - NP and Landlord
       Key Insights from the Interview
+      -In planning your arrangements, you need to be on time. Put in consideration that you need a good housing place, cost, convenience of commuting to work, and the safety of the environment.
+      -Flexible cancellation policy is a good thing to have as a policy, so you can have a limitation in time for cancellations and in that case you have to establish a time frame for refunds, as well as the amount.
+      -Most travel nurses commute to their assignments by using their own car, there are many other options depending on where their assignment location is, if it's a rural area with not much public transportation, the best option is to take your car.
       Quotes
-      Assessment: Must Have/ Nice to Have/Don't Care (how the interviewee sees the solution
+      -"If I was a traveling nurse, I’d like not to get involved with cutting grass and take care of outside, just take care of my room/kitchen. If all the people that rent, let's say there are other nurses, they may decide to pay someone to do their cleaning for them. For me, I’d like the landlord or housing agent to take care of outside cleaning, not my room, “I can manage my room”."
+      -"You may like things like gym, groceries,local hospitals and clinics, to be around the place without going too far. That's the convenience of housing."
+      -"Are you someone that likes to share? Share the kitchen, cost of the housing, like electricity, water and stuff like that. Some people have the desire to have a small case: just get a room, for people who like privacy; they can rent an apartment for themselves."
+      -"Depending on the agency you are working for, if they try to pay for housing for you and if it's cheaper, go for it. If you like convenience and privacy, you can consider all these factors like safety, commute time, facilities, safety yourself which is a part of planning or ask questions from your agency."
+      Assessment: Must Have/ Nice to Have/Don't Care (how the interviewee sees the solution)
+      Nice to Have
 
 
 INTERVIEW 3:
