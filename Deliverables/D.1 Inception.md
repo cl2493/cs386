@@ -51,12 +51,21 @@ INTERVIEW SUMMARY
 
 INTERVIEW 1:
       Who Was Interviewed?
+      - Michelle Nguyen
       Who Participated in the Interview?
+      - Cathy Ly
       When?
+      - Feb 9th, 2024
       Customer Segment?
+      - Landlord with 4 Rental Properties
       Key Insights from the Interview
+      - Having Short Term Tenants are a hassle because you have to clean up after each tenant so often and finding another one is the hardest part. So when your property has no tenant, you make no money.
       Quotes
-      Assessment: Must Have/ Nice to Have/Don't Care (how the interviewee sees the solution
+      -"Short-term tenants are tiring. I prefer people who can stay there for longer because for short term tenants I have to clean up after them so often"
+      -"People who live short-term you need to charge them a lot more because you have to think about your time. Because you have to find people after they leave and that's losing money. You also need to clean up more often if you are constantly having short tenants"
+      -"Finding new people to live in your rental properties is probably the only hard part."
+      Assessment: Must Have/ Nice to Have/Don't Care (how the interviewee sees the solution)
+      Nice to Have
 
 
 INTERVIEW 2:
