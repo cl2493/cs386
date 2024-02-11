@@ -106,11 +106,26 @@ INTERVIEW 3:
 
 INTERVIEW 4:
       Who Was Interviewed?
+      Toni Horrocks
       Who Participated in the Interview?
+      Aidan Hebert
       When?
+      Feb 10th, 2024
       Customer Segment?
+      Propterty owner/Rental manager
       Key Insights from the Interview
-      Quotes
+      -That owning propertiees, espicially mulitple, comes with numerous issues and challenges.
+      -There are numerous ways to mitigate these potential issues.
+            -clear pricing structure.
+            -maintaining good relations with tenants.
+            -Honest and open communication
+            -Understanding
+            -Being proactive with property maintenece. 
+      -There are mulitple benefits, negatives and just differences to long term and short term interviews.
+      -Marketing a property can be done in numerous ways depending on area.
+      -Current websites/solutions do exist, however they are NOT perfect.
+      
+      Quotes: N/A (Google fourm.)
       Assessment: Must Have/ Nice to Have/Don't Care (how the interviewee sees the solution)
 
 
