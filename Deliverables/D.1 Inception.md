@@ -106,26 +106,11 @@ INTERVIEW 3:
 
 INTERVIEW 4:
       Who Was Interviewed?
-      Toni Horrocks
       Who Participated in the Interview?
-      Aidan Hebert
       When?
-      Feb 10th, 2024
       Customer Segment?
-      Propterty owner/Rental manager
       Key Insights from the Interview
-      -That owning propertiees, espicially mulitple, comes with numerous issues and challenges.
-      -There are numerous ways to mitigate these potential issues.
-            -clear pricing structure.
-            -maintaining good relations with tenants.
-            -Honest and open communication
-            -Understanding
-            -Being proactive with property maintenece. 
-      -There are mulitple benefits, negatives and just differences to long term and short term interviews.
-      -Marketing a property can be done in numerous ways depending on area.
-      -Current websites/solutions do exist, however they are NOT perfect.
-      
-      Quotes: N/A (Google fourm.)
+      Quotes
       Assessment: Must Have/ Nice to Have/Don't Care (how the interviewee sees the solution)
 
 
@@ -156,3 +141,29 @@ FINAL VALUE PROPOSITION & CONSUMER SEGMENT
       Instructions:
       report the refined versions of these elements (the ones that you reached after the interviews). 
       GRADING CRITERIA (5 points): There must be a connection between the key insights of the interviews and the refinement of the value proposition and customer segments previously presented. See also criteria for Section 2 of this document.
+Final Value Proposition
+-------------------------
+RNT-A-ROOM is a web-based service dedicated to helping travel nurses find housing in the United States.
+Audience: Travel Nurses and property owners located in the States
+Value: Offer ease of mind and safety by providing an easy-to-use browser-based service that will check for Travel Nurse users and certified housing options. RNT-A-ROOM will reduce tenant turnover for landlords by providing a stream of new and reliable tenants.
+What makes us different: Checking for credentials and legitimacy for both renters and landlords
+
+RNT-A-ROOM is a web-based service dedicated to helping travel nurses find housing in the United States. This will offer ease of mind and safety for our travel nurses by offering an easy-to-use platform that verifies both the users and the housing options available. RNT-A-ROOM will reduce tenant turnover for landlords by providing a stream of new and reliable tenants.
+
+Customer Segment
+----------------
+Our audience is travel nurses with housing needs and property owners in the United States. Travel nurses have specific housing needs such as:
+- flexible leases (short term, long term)
+- family and pet accommodations
+- safety and security (they will be staying in unfamiliar locations)
+- proximity to healthcare facilities
+- privacy options
+- cleaning options
+- transparent parking options
+- personalized quiz filter
+Property owners have special needs for short-term leases such as:
+- built-in messaging system
+- improved search filters
+- transparent fee structure
+- easy-to-use resident portal
+By targeting this audience, RNT-A-ROOM can focus its services on meeting the unique requirements of both travel nurses and property owners, which in turn will provide value and address their specific plan.
