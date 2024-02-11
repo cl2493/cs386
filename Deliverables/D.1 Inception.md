@@ -126,6 +126,7 @@ INTERVIEW 5:
 
 INTERVIEW 6:
       Who Was Interviewed?
+      - Minet
       Who Participated in the Interview?
       When?
       Customer Segment?
