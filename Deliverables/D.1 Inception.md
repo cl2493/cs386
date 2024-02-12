@@ -218,4 +218,5 @@ Property owners have special needs for short-term leases such as:
 - improved search filters
 - transparent fee structure
 - easy-to-use resident portal
+
 By targeting this audience, RNT-A-ROOM can focus its services on meeting the unique requirements of both travel nurses and property owners, which in turn will provide value and address their specific plan.
