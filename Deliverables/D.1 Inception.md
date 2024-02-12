@@ -106,12 +106,22 @@ INTERVIEW 3:
 
 INTERVIEW 4:
       Who Was Interviewed?
+      - Ngoc Han Ly
       Who Participated in the Interview?
+      - Cathy Ly
       When?
+      - Feb 9th, 2024
       Customer Segment?
+      - Property Owner/Landlord
       Key Insights from the Interview
+      - Do long-term leases
+      -  Long-term leases is less paperwork for the landlords
+      - Advertising is the best way of marketing their location.
       Quotes
+      "Long term tenants less paperwork to deal with "
+      "How do you handle rent payments and late fees with your tenants? Alone late payment of notify 5 days in advance "
       Assessment: Must Have/ Nice to Have/Don't Care (how the interviewee sees the solution)
+      Nice to Have
 
 
 INTERVIEW 5:
