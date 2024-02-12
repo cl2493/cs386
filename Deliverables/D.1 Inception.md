@@ -78,16 +78,16 @@ INTERVIEW 2:
       Customer Segment?
       - NP and Landlord
       Key Insights from the Interview
-      -In planning your arrangements, you need to be on time. Put in consideration that you need a good housing place, cost, convenience of commuting to work, and the safety of the environment.
-      -Flexible cancellation policy is a good thing to have as a policy, so you can have a limitation in time for cancellations and in that case you have to establish a time frame for refunds, as well as the amount.
-      -Most travel nurses commute to their assignments by using their own car, there are many other options depending on where their assignment location is, if it's a rural area with not much public transportation, the best option is to take your car. 
+      - In planning your arrangements, you need to be on time. Put in consideration that you need a good housing place, cost, convenience of commuting to work, and the safety of the environment.
+      - Flexible cancellation policy is a good thing to have as a policy, so you can have a limitation in time for cancellations and in that case you have to establish a time frame for refunds, as well as the amount.
+      - Most travel nurses commute to their assignments by using their own car, there are many other options depending on where their assignment location is, if it's a rural area with not much public transportation, the best option is to take your car. 
       Quotes
-      -"If I was a traveling nurse, I’d like not to get involved with cutting grass and take care of outside, just take care of my room/kitchen. If all the people that rent, let's say there are other nurses, they may decide to pay someone to do their cleaning for them. For me, I’d like the landlord or housing agent to take care of outside cleaning, not my room, “I can manage my room”."
-      -"You may like things like gym, groceries,local hospitals and clinics, to be around the place without going too far. That's the convenience of housing."
-      -"Are you someone that likes to share? Share the kitchen, cost of the housing, like electricity, water and stuff like that. Some people have the desire to have a small case: just get a room, for people who like privacy; they can rent an apartment for themselves."
-      -"Depending on the agency you are working for, if they try to pay for housing for you and if it's cheaper, go for it. If you like convenience and privacy, you can consider all these factors like safety, commute time, facilities, safety yourself which is a part of planning or ask questions from your agency."
+      - "If I was a traveling nurse, I’d like not to get involved with cutting grass and take care of outside, just take care of my room/kitchen. If all the people that rent, let's say there are other nurses, they may decide to pay someone to do their cleaning for them. For me, I’d like the landlord or housing agent to take care of outside cleaning, not my room, “I can manage my room”."
+      - "You may like things like gym, groceries,local hospitals and clinics, to be around the place without going too far. That's the convenience of housing."
+      - "Are you someone that likes to share? Share the kitchen, cost of the housing, like electricity, water and stuff like that. Some people have the desire to have a small case: just get a room, for people who like privacy; they can rent an apartment for themselves."
+      - "Depending on the agency you are working for, if they try to pay for housing for you and if it's cheaper, go for it. If you like convenience and privacy, you can consider all these factors like safety, commute time, facilities, safety yourself which is a part of planning or ask questions from your agency."
       Assessment: Must Have/ Nice to Have/Don't Care (how the interviewee sees the solution)
-      Must to Have
+      Must Have
 
 
 INTERVIEW 3:
@@ -100,27 +100,65 @@ INTERVIEW 3:
       Customer Segment?
       Travel Nurse
       Key Insights from the Interview
+      - Travel nurses don't have a specific age range. No age limit, as long as they have the license to practice and experience. Average age is about 44 years, but age range for most of travel nurses is between 20 and 40+ years, this age they are young, expirementing and single, so they can travel and experiment for themselves without family. Percent of travel nurses female 84% and male 16%.
+      - They can find housing through agencies and ask questions, get information from hospital or healthcare facility they are going to, from friends and co travelers. They can go to websites and mention airbnb, travelnursehousing.com, they can ask for assistance from other nurses as well.
+      - It's easier to find housing in urban areas, there are so many hospitals and houses/hotels and facilities or amenities. As in rural areas, you may get an assignment and may not have the kind of housing you may want to have close to the healthcare facility that you are going. 
       Quotes
+      - "The agency can assign housing arrangements based on assignments, and most of the time it's a short assignment".
+      - "Job affects housing location, you need to have a contract for a job then you can start looking for housing."
+      - "Wanting furnished or unfurnished housing depends on the individual. Some just want a room with a bed with kitchen/bathroom access that they can share with other people. Others may like luxury housing, in that case they may decide to stay in a hotel. Some people prefer private, some people prefer shared spaces".
       Assessment: Must Have/ Nice to Have/Don't Care (how the interviewee sees the solution)
-
+      Nice to Have
 
 INTERVIEW 4:
       Who Was Interviewed?
+      - Ngoc Han Ly
       Who Participated in the Interview?
+      - Cathy Ly
       When?
+      - Feb 9th, 2024
       Customer Segment?
+      - Property Owner/Landlord
       Key Insights from the Interview
+      - Do long-term leases
+      -  Long-term leases is less paperwork for the landlords
+      - Advertising is the best way of marketing their location.
       Quotes
+      "Long term tenants less paperwork to deal with "
+      "How do you handle rent payments and late fees with your tenants? Alone late payment of notify 5 days in advance "
       Assessment: Must Have/ Nice to Have/Don't Care (how the interviewee sees the solution)
+      Nice to Have
 
 
 INTERVIEW 5:
       Who Was Interviewed?
+      Toni Horrocks
       Who Participated in the Interview?
+      Aidan hebert
       When?
+      Feb 10th, 2024
       Customer Segment?
+      Property Owner/ Rental manager
       Key Insights from the Interview
-      Quotes
+      -There are numerous issues that can arise when dealing with Tenants.
+            -varying rental times
+            -minimizing tenant turnover
+            -Market vacancies
+      -Forming good relations with tenants is advised and will be beneficial.
+            -prompt communication
+            -Flexibility
+            -Respecting privacy
+      -Long term rentals are typically prefered, but short term rentals must still exist.
+            -Often less strict criterias
+            -More desirable price point
+            -Property owners typically prefer this
+      -Short term rentals require extra effort and usually bring in a premium because of this
+            -greater risk of damage due to higher turnover rate
+            -greater cost associated with prep / maintenance
+      -Tenant satisfcation is crucial
+      -faciliating communication between tenants and property owners should be expanded on
+      -Current websites/solutions are not perfect and can be improved.
+      Quotes: N/A (Google Forum)
       Assessment: Must Have/ Nice to Have/Don't Care (how the interviewee sees the solution)
 
 
