@@ -160,17 +160,31 @@ INTERVIEW 5:
       -Current websites/solutions are not perfect and can be improved.
       Quotes: N/A (Google Forum)
       Assessment: Must Have/ Nice to Have/Don't Care (how the interviewee sees the solution)
+	  Must have
 
 
 INTERVIEW 6:
       Who Was Interviewed?
       - Minet
       Who Participated in the Interview?
+	  - Devin Jay
       When?
+	  - February 11, 2024
       Customer Segment?
+	  - Traveling Physical Therapist
       Key Insights from the Interview
+	  - Found housing mostly through friends.
+	  - Usually rents from private housing for around 3 months to a year.
+	  - Uses her own car to commute to work.
+	  - Safety is very important to her.
+	  - Plans for housing usually a week or two in advance.
+	  - Never experience flexible cancellation policies before.
+	  - Prefers it when utilities are included.
+	  - Companies usually give money for them to use for housing.
+	  - Laundry is surprisingly not available a lot of the time.
       Quotes
-      Assessment: Must Have/ Nice to Have/Don't Care (how the interviewee sees the solution)
+	  N/A (google doc)
+      Assessment: Must Have/ Nice to Have/Don't Care (how the interviewee sees the solution) Nice to have
 
 
 
