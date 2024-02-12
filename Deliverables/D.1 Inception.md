@@ -126,11 +126,33 @@ INTERVIEW 4:
 
 INTERVIEW 5:
       Who Was Interviewed?
+      Toni Horrocks
       Who Participated in the Interview?
+      Aidan hebert
       When?
+      Feb 10th, 2024
       Customer Segment?
+      Property Owner/ Rental manager
       Key Insights from the Interview
-      Quotes
+      -There are numerous issues that can arise when dealing with Tenants.
+            -varying rental times
+            -minimizing tenant turnover
+            -Market vacancies
+      -Forming good relations with tenants is advised and will be beneficial.
+            -prompt communication
+            -Flexibility
+            -Respecting privacy
+      -Long term rentals are typically prefered, but short term rentals must still exist.
+            -Often less strict criterias
+            -More desirable price point
+            -Property owners typically prefer this
+      -Short term rentals require extra effort and usually bring in a premium because of this
+            -greater risk of damage due to higher turnover rate
+            -greater cost associated with prep / maintenance
+      -Tenant satisfcation is crucial
+      -faciliating communication between tenants and property owners should be expanded on
+      -Current websites/solutions are not perfect and can be improved.
+      Quotes: N/A (Google Forum)
       Assessment: Must Have/ Nice to Have/Don't Care (how the interviewee sees the solution)
 
 
