@@ -110,23 +110,24 @@ width: 0;
   z-index: 3;
 }
 
-button.sibebar-text {
-font-size: 25px;
-color: white;
-background-color: var(--foreground);
-margin-top: 25px;
-margin-bottom: 25px;
-cursor: pointer;
-width: 250px;
-border: transparent;
+.sidebar button.sidebar-text {
+    font-size: 25px;
+    color: white;
+    background-color: var(--foreground);
+    margin-top: 25px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    width: 250px;
+    border: transparent;
 }
 
-.sidebar button.sibebar-text:hover {
-background-color: #F2BED1; /* Choose your highlight color */
-width: 250px;
-height: 60px;
-color: black; /* Adjust text color for better visibility */
+.sidebar button.sidebar-text: hover {
+    background-color: #F2BED1;
+    width: 250px;
+    height: 60px;
+    color: black;
 }
+
 
 .hamburger-menu:has(input:checked) + .sidebar {
   transform: translateX(0);
