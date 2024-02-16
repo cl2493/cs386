@@ -59,7 +59,7 @@ Actor: Tenants/Travel Nurses
 Trigger: Agency Gave Travel Nurse Assignment + Looking for Housing
 Precondition: User Profile + Filter + Verification
 Postcondition: Confirm Lease Agreement with Property Owner
-Success Scenario: User clicks booking request, Property Owner confirms booking, Payment gets processed at request time, User receives house during lease term.
+Success Scenario: User does booking request, Property Owner confirms booking, Payment gets processed at request time, User receives house during lease term.
 Alternative Scenario: User clicks booking request, Property Owner rejects booking, User looks for another home.
 
 Use Case: Account Creation
