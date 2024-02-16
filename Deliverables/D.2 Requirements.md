@@ -122,3 +122,6 @@ Instructions:
 The user stories should be registered in your GitHub issue tracker. Include here the link for your issue tracker and a screenshot of what you did. 
 
 Grading criteria (1 point): Provide the URL and screenshot of the issue tracker. The user stories should be registered there.
+
+
+![issue tracker](https://github.com/cl2493/cs386/blob/6677b4d4d73639742407d8fa329a33fa37eb1657/d2_issues.png)
