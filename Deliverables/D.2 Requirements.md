@@ -70,7 +70,7 @@ Precondition: User is a travel nurse/property owner
 Postcondtion: User creates a completed account
 Success Scenario: User open website, user registers an account, user goes through verification, user account is created.
 Alternative Scenario: User open website, user registers an account, user verification fails, user account is not created.
-![Account Creation Image]()
+![Account Creation Image](https://github.com/cl2493/cs386/blob/b45679a254452b5e41296e52ce8ab23b0720d672/use%20case.drawio%20(1).png)
 
 1. Use Case: Using Filtering System
 Actors: Travel Nurses
