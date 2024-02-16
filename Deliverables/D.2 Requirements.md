@@ -98,6 +98,11 @@ Establish a priority level for each user story and estimate how many hours each 
 Grading criteria (6 points): Use the provided format. The user stories should be in an adequate level of granularity (not too broad nor too specific). Provide the priority and estimation for each user story.
 **User Story 1**: "As a property owner, I want to see which listings users like most, so that I can use what makes the most liked popular in my listing."
 
+As a travel nurse, I want to use the filters to find a home for my family of 4 so that my family can stay together. 
+
+As a hiring manager for a hospital, I want to provide an easy housing directory for travel nurses so that they can easily find suitable accommodations near the hospital.
+
+
 ## Issue Tracker
 Instructions:
 The user stories should be registered in your GitHub issue tracker. Include here the link for your issue tracker and a screenshot of what you did. 
