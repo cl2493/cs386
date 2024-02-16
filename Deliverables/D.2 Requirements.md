@@ -43,7 +43,7 @@ We are going to validate the user experience of creating profiles and booking ho
 ## 6. Use Cases
 
 ### 6.1 Use Case Diagram
-![alt text](http://github.com/cl2493/cs386/d2.drawio.png)
+![alt text]([http://github.com/cl2493/cs386/d2.drawio.png](https://github.com/cl2493/cs386/blob/2d6d6034a04baac4c3808e5f7bac2b36431afbc0/d2.drawio.png))
 
 ### 6.2 Use Case Descriptions and Interface Sketch
 Instructions:
