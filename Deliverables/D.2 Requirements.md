@@ -3,45 +3,42 @@
 ## 1. Positioning
 
 ### 1.1 Problem Statement
-Instructions:
-provide a statement to summarize the problem solved by your project according to the following structure:
-The problem of [describe problem] affects [the stakeholders affected by the problem]; the impact of which is [what is the impact of the problem? What does it cost?].
+The problem of lack of housing dedicated to travel nurses affects travel nursing agencies, hospitals (especially those in rural areas), landlords, and patients; the impact of which is staffing issues, quality of care, and tenant turnover.
 
 ### 1.2 Product Position Statement
-Instructions:
-A product position statement communicates the intent of the application and the importance of the project to all concerned personnel. The product should mitigate the aforementioned problem. Provide a statement according to the following structure:
-For [target customer] who [statement of the need or opportunity], [product name is a product category] that [statement of key benefit; that is, the compelling reason to buy] unlike [primary competitive alternative], our product [statement of primary differentiation].
+For travel nurses who need housing, RNT-A-ROOM is a housing web application that focuses on comfort and safety for travel nurses across America; Unlike FurnishedFinder and AirBnB, our product focuses on travel nurses needs.
 
 ### 1.3 Value Proposition and Customer Segment
-Instructions:
-Report the value propositions and customer segments of your product. Make sure that your value proposition is coherent with the product position statement and contains the following elements: i) what your product is; ii) the target customer; iii) the value your product provides; and iv) why your product is unique.
-Consumer segment (example):College students who have many parallel homework assignments.
+RNT-A-ROOM is a housing web application that tailors to travel nurses in the United States and their needs. RNT-A-ROOM offers comfort and safety on an easy-to-use platform that verifies users and housing options.
 
-Grading criteria (3 points, 1 for each section): The content of the subsections should contain all the required elements, follow the provided template, and be consistent with each other. The text should not contain typos or grammar issues.
-
-## 2. stakeholders
-Instructions:
-Make a list of all stakeholders of the project with a brief description of each one of them, emphasizing any responsibilities with the project. Examples of stakeholders include users, clients, competitors, detractors, developers, etc.
-
-Grading criteria (1 point): The stakeholders can’t be too generic or specific. The list should reflect what was described in Section 1.
+## 2. Stakeholders
+### Users:
+Travel Nurses and Property Owners
+### Competitors:
+FurnishedFinder, AirBnb, travel nursing agencies that already provide housing, and Vrbo.
+### Detractors:
+Users looking for vacation homes or long-term leases and students
 
 ## 3. Functional Requirements (features)
-Instructions:
-Make a numbered list of requirements for your software. Just self-explanatory titles are enough at this point. Remember that requirements should deliver the value proposition and they must be consistent with the interviews you performed for the previous deliverable. You can talk again to your clients to help define the requirements. While writing the requirements, focus on the capabilities needed and not on how they should be implemented.
-
-Grading criteria (2 points): The list should be comprehensive (remember that you are not expected to implement all the requirements by the end of the course but you should list them). Follow the same pattern to describe all the requirements. The list of requirements should be coherent with the previous sections.
+1. Homepage
+1. Filters
+1. Booking
+1. Easy-to-use and mobile friendly
+1. User profile
+1. User verification
+1. Property-owners web portal
 
 ## 4. Non-functional Requirements
-Instructions:
-Make a numbered list of non-functional requirements that are important for your software. Explain their importance. Follow the terminology of ISO/IEC 25010:2011. For each non-functional requirement, give an objective goal/measurement in order to provide verifiability for the requirement. You can find more details at the following URL: https://ieeexplore.ieee.org/document/8559686Links to an external site.
-
-Grading criteria (2 points): Follow the ISO-IEC terminology, explain why they are important, provide verifiability criteria for each requirement.
+1. Rating/Review system - helps users decide what to book.
+1. AI chatbox - helps users navigate the web application.
+1. Map - shows users where they could potentially live and nearby amenities.
+1. User quiz filtering system - makes it easier for users to find their perfect housing.
+1. Contact/About us page - allows for clear communication between users and developers. Also makes us seem more reliable.
 
 ## 5. MVP
-Instructions:
-What will be your MVP? Which features are you going to validate? How?
-
-Grading criteria (2 points): Describe what would be considered the Minimal Viable Product and how it will be tested (e.g., via implementation, prototyping, Wizard of Woz, etc.). Make clear what you are going to validate. The MVP should be coherent with the previous sections.
+Our MVP is a website that will allow users, mobile or desktop, to create verifiable user profiles that allow them to book housing with ease using filters.
+We will test the web application by creating a prototype and performing mock bookings.
+We are going to validate the user experience of creating profiles and booking housing.
 
 ## 6. Use Cases
 
