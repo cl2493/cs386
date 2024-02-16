@@ -78,6 +78,7 @@ Precondition: User has a verified account
 Postcondtion: User finds a house
 Success Scenario: User logs in with verified account, user uses search filters to discover their options, user finds homes and books them.
 Alternative Scenario: User logs in with verified account, User uses search filters, User runs into error.
+![Search Filter UI Image](https://github.com/cl2493/cs386/blob/783daaab8a73ec697236f1c4d07e4fbab1b29d9b/SearchFiltersD2.png)
 
 1. Use Case: Giving a Review
 Actors: Travel Nurses
