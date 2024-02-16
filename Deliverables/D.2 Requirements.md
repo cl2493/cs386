@@ -96,21 +96,22 @@ Write two user stories for each member of the group. They can be related to the 
 Establish a priority level for each user story and estimate how many hours each one will demand using the planning poker approach. 
 
 Grading criteria (6 points): Use the provided format. The user stories should be in an adequate level of granularity (not too broad nor too specific). Provide the priority and estimation for each user story.
+
 **User Story 1**: "As a property owner, I want to see which listings users like most, so that I can use what makes the most liked popular in my listing."
 
-As a travel nurse, I want to use the filters to find a home for my family of 4 so that my family can stay together. 
+**User Story 2**: As a travel nurse, I want to use the filters to find a home for my family of 4 so that my family can stay together. 
 
-As a hiring manager for a hospital, I want to provide an easy housing directory for travel nurses so that they can easily find suitable accommodations near the hospital.
+**User Story 3**: As a hiring manager for a hospital, I want to provide an easy housing directory for travel nurses so that they can easily find suitable accommodations near the hospital.
 
-As a travel nurse, I want a review-driven site so that I can better understand a property and its owner before commiting.
+**User Story 4**: As a travel nurse, I want a review-driven site so that I can better understand a property and its owner before commiting.
 
-As a property owner, I want a community of verified traveling professionals so that I can have peace of mind regarding my property.
+**User Story 5**: As a property owner, I want a community of verified traveling professionals so that I can have peace of mind regarding my property.
 
-As a Property Owner, I want a flexible cancellation policy, so I can look for urgent replacement if necessary.
+**User Story 6**: As a Property Owner, I want a flexible cancellation policy, so I can look for urgent replacement if necessary.
 
-As a Travel Nurse, I want housing where there is a low crime rate, so I can feel safe when I commute to work.
+**User Story 7**: As a Travel Nurse, I want housing where there is a low crime rate, so I can feel safe when I commute to work.
 
-As a hospital in a rural area, I want an easy way for travel nurses to book housing, so that I have more support in emergency situations.
+**User Story 8**: As a hospital in a rural area, I want an easy way for travel nurses to book housing, so that I have more support in emergency situations.
 
 
 
