@@ -123,5 +123,12 @@ The user stories should be registered in your GitHub issue tracker. Include here
 
 Grading criteria (1 point): Provide the URL and screenshot of the issue tracker. The user stories should be registered there.
 
-#45 #46 #47 #48 #49 #50 #51 #52
+![#45](https://github.com/cl2493/cs386/issues/45#issue-2139573905) 
+![#46](https://github.com/cl2493/cs386/issues/46#issue-2139574163) 
+![#47](https://github.com/cl2493/cs386/issues/47#issue-2139574324) 
+![#48](https://github.com/cl2493/cs386/issues/48#issue-2139574376) 
+![#49](https://github.com/cl2493/cs386/issues/49#issue-2139574749) 
+[#50](https://github.com/cl2493/cs386/issues/50#issue-2139574802) 
+[#51](https://github.com/cl2493/cs386/issues/51#issue-2139575065) 
+[#52](https://github.com/cl2493/cs386/issues/52#issue-2139575282)
 ![issue tracker](https://github.com/cl2493/cs386/blob/6677b4d4d73639742407d8fa329a33fa37eb1657/d2_issues.png)
