@@ -123,5 +123,5 @@ The user stories should be registered in your GitHub issue tracker. Include here
 
 Grading criteria (1 point): Provide the URL and screenshot of the issue tracker. The user stories should be registered there.
 
-
+#45 #46 #47 #48 #49 #50 #51 #52
 ![issue tracker](https://github.com/cl2493/cs386/blob/6677b4d4d73639742407d8fa329a33fa37eb1657/d2_issues.png)
