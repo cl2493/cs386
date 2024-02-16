@@ -102,6 +102,10 @@ As a travel nurse, I want to use the filters to find a home for my family of 4 s
 
 As a hiring manager for a hospital, I want to provide an easy housing directory for travel nurses so that they can easily find suitable accommodations near the hospital.
 
+As a travel nurse, I want a review-driven site so that I can better understand a property and its owner before commiting.
+
+As a property owner, I want a community of verified traveling professionals so that I can have peace of mind regarding my property.
+
 
 ## Issue Tracker
 Instructions:
