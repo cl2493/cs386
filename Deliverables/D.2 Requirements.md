@@ -43,10 +43,7 @@ We are going to validate the user experience of creating profiles and booking ho
 ## 6. Use Cases
 
 ### 6.1 Use Case Diagram
-Instructions:
-Include a UML use case diagram for your project. There are many drawing tools that you can use, such as https://app.diagrams.net/Links to an external site. and https://creately.com/Links to an external site. 
-
-Grading criteria (5 points): Follow correctly the UML specification. The actors should be coherent with what was listed in sections 1 and 2. The use case diagram should be coherent with the list of requirements (section 3). The level of granularity of each use case should be adequate. The use cases should be adequately named.
+![alt text](http://github.com/cl2493/cs386/main/d2.drawio.png)
 
 ### 6.2 Use Case Descriptions and Interface Sketch
 Instructions:
