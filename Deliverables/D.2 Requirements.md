@@ -54,7 +54,7 @@ After each use case description, add a sketch of the corresponding user interfac
 
 Grading criteria (8 points): Follow the template to describe the use cases. Present an interface sketch for each use case. Describe the use case as a dialog between the user and the system. Do not use UI language in the description of the use case.
 
-**Use Case**: Booking House
+1. Use Case: Booking House
 Actor: Tenants/Travel Nurses
 Trigger: Agency Gave Travel Nurse Assignment + Looking for Housing
 Precondition: User Profile + Filter + Verification
@@ -62,7 +62,7 @@ Postcondition: Confirm Lease Agreement with Property Owner
 Success Scenario: User does booking request, Property Owner confirms booking, Payment gets processed at request time, User receives house during lease term.
 Alternative Scenario: User clicks booking request, Property Owner rejects booking, User looks for another home.
 
-Use Case: Account Creation
+1. Use Case: Account Creation
 Actors: Travel Nurses & Property Owners
 Trigger: Wanting to use our services
 Precondition: User is a travel nurse/property owner
@@ -70,7 +70,7 @@ Postcondtion: User creates a completed account
 Success Scenario: User open website, user registers an account, user goes through verification, user account is created.
 Alternative Scenario: User open website, user registers an account, user verification fails, user account is not created.
 
-Use Case: Using Filtering System
+1. Use Case: Using Filtering System
 Actors: Travel Nurses
 Trigger: Wanting a Specific Housing Environment 
 Precondition: User has a verified account
@@ -78,7 +78,7 @@ Postcondtion: User finds a house
 Success Scenario: User logs in with verified account, user uses search filters to discover their options, user finds homes and books them.
 Alternative Scenario: User logs in with verified account, User uses search filters, User runs into error.
 
-Use Case: Giving a Review
+1. Use Case: Giving a Review
 Actors: Travel Nurses
 Trigger: Users have an experience at a property
 Precondition: User lived in one of the properties. (Verified)
