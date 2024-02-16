@@ -54,6 +54,38 @@ After each use case description, add a sketch of the corresponding user interfac
 
 Grading criteria (8 points): Follow the template to describe the use cases. Present an interface sketch for each use case. Describe the use case as a dialog between the user and the system. Do not use UI language in the description of the use case.
 
+1. Use Case: Booking House
+1. Actor: Tenants/Travel Nurses
+1. Trigger: Agency Gave Travel Nurse Assignment + Looking for Housing
+1. Precondition: User Profile + Filter + Verification
+1. Postcondition: Confirm Lease Agreement with Property Owner
+1. Success Scenario: User clicks booking request, Property Owner confirms booking, Payment gets processed at request time, User receives house during lease term.
+1. Alternative Scenario: User clicks booking request, Property Owner rejects booking, User looks for another home.
+
+2. Use Case: Account Creation
+2. Actors: Travel Nurses & Property Owners
+2. Trigger: Wanting to use our services
+2. Precondition: User is a travel nurse/property owner
+2. Postcondtion: User creates a completed account
+2. Success Scenario: User open website, user registers an account, user goes through verification, user account is created.
+2. Alternative Scenario: User open website, user registers an account, user verification fails, user account is not created.
+
+3. Use Case: Using Filtering System
+3. Actors: Travel Nurses
+3. Trigger: Wanting a Specific Housing Environment 
+3. Precondition: User has a verified account
+3. Postcondtion: User finds a house
+3. Success Scenario: User logs in with verified account, user uses search filters to discover their options, user finds homes and books them.
+3. Alternative Scenario: User logs in with verified account, User uses search filters, User runs into error.
+
+4. Use Case: Giving a Review
+4. Actors: Travel Nurses
+4. Trigger: Users have an experience at a property
+4. Precondition: User lived in one of the properties. (Verified)
+4. Postcondtion: User post thier review.
+4. Success Scenario: User logs in with verified account, user goes through past home location history, User finds the home they want to review, user rates the property out of 5 stars, user writes a comment about the property and the experience, and user post the review.
+4. Alternative Scenario: User logs in with verified account, user goes through past home location history, User finds the home they want to review, review system isn't working. User forgets password to the account. 
+
 ## 7. User Stories
 Instructions:
 Write two user stories for each member of the group. They can be related to the same features described in the use cases or to different ones. Adopt the following format: "As a <ROLE>, I want <SOMETHING> so that <GOAL>." 
