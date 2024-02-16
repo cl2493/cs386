@@ -87,7 +87,7 @@ Precondition: User lived in one of the properties. (Verified)
 Postcondtion: User post thier review.
 Success Scenario: User logs in with verified account, user goes through past home location history, User finds the home they want to review, user rates the property out of 5 stars, user writes a comment about the property and the experience, and user post the review.
 Alternative Scenario: User logs in with verified account, user goes through past home location history, User finds the home they want to review, review system isn't working. User forgets password to the account. 
-
+![Review Image](https://github.com/cl2493/cs386/blob/main/Untitled%20Diagram.drawio.png)
 ## 7. User Stories
 Instructions:
 Write two user stories for each member of the group. They can be related to the same features described in the use cases or to different ones. Adopt the following format: "As a <ROLE>, I want <SOMETHING> so that <GOAL>." 
