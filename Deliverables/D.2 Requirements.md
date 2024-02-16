@@ -61,6 +61,7 @@ Precondition: User Profile + Filter + Verification
 Postcondition: Confirm Lease Agreement with Property Owner
 Success Scenario: User does booking request, Property Owner confirms booking, Payment gets processed at request time, User receives house during lease term.
 Alternative Scenario: User clicks booking request, Property Owner rejects booking, User looks for another home.
+![Booking UI Image](https://github.com/cl2493/cs386/blob/e39588949ebd99fe0d5a3197931da5a004eac618/BookingD2.png)
 
 1. Use Case: Account Creation
 Actors: Travel Nurses & Property Owners
