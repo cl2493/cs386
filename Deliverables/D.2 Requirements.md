@@ -110,6 +110,8 @@ As a Property Owner, I want a flexible cancellation policy, so I can look for ur
 
 As a Travel Nurse, I want housing where there is a low crime rate, so I can feel safe when I commute to work.
 
+As a hospital in a rural area, I want an easy way for travel nurses to book housing, so that I have more support in emergency situations.
+
 
 
 ## Issue Tracker
