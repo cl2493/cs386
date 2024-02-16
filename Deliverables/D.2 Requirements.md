@@ -96,6 +96,7 @@ Write two user stories for each member of the group. They can be related to the 
 Establish a priority level for each user story and estimate how many hours each one will demand using the planning poker approach. 
 
 Grading criteria (6 points): Use the provided format. The user stories should be in an adequate level of granularity (not too broad nor too specific). Provide the priority and estimation for each user story.
+**User Story 1**: "As a property owner, I want to see which listings users like most, so that I can use what makes the most liked popular in my listing."
 
 ## Issue Tracker
 Instructions:
