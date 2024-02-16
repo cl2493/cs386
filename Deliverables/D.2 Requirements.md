@@ -54,7 +54,7 @@ After each use case description, add a sketch of the corresponding user interfac
 
 Grading criteria (8 points): Follow the template to describe the use cases. Present an interface sketch for each use case. Describe the use case as a dialog between the user and the system. Do not use UI language in the description of the use case.
 
-Use Case: Booking House
+**Use Case**: Booking House
 Actor: Tenants/Travel Nurses
 Trigger: Agency Gave Travel Nurse Assignment + Looking for Housing
 Precondition: User Profile + Filter + Verification
