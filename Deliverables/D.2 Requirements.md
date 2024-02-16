@@ -106,6 +106,11 @@ As a travel nurse, I want a review-driven site so that I can better understand a
 
 As a property owner, I want a community of verified traveling professionals so that I can have peace of mind regarding my property.
 
+As a Property Owner, I want a flexible cancellation policy, so I can look for urgent replacement if necessary.
+
+As a Travel Nurse, I want housing where there is a low crime rate, so I can feel safe when I commute to work.
+
+
 
 ## Issue Tracker
 Instructions:
