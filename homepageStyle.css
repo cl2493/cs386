@@ -1,14 +1,13 @@
-/*----- Nothing In Here Yet! Just Setting Up Documents! -----*/
 *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 .header{
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.3 ),rgba(0,0,0,0.3 )),url(cooking-home.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.3 ),rgba(0,0,0,0.3 )),url(images/man-dog-beach.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -19,12 +18,17 @@ nav{
     padding: 20px 7%;
 }
 
-.navigation-links li{
+.logo{
+    width: 200px;
+    cursor: pointer;
+}
+
+.nav-links li{
     list-style: none;
     display: inline-block;
     margin: 10px 30px;
 }
-.navigation-links li a{
+.nav-links li a{
     text-decoration: none;
     color: #fff;
 }
@@ -41,7 +45,6 @@ nav{
 .container{
     padding: 0 7%;
 }
-
 
 .header h1{
     font-size: 4vw;
@@ -147,3 +150,4 @@ nav{
 .search-bar form label{
     font-weight: 600;
 }
+
