@@ -28,3 +28,122 @@ nav{
     text-decoration: none;
     color: #fff;
 }
+
+.register-btn{
+    background: #e7b93b;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.container{
+    padding: 0 7%;
+}
+
+
+.header h1{
+    font-size: 4vw;
+    font-weight: 500;
+    color:#fff;
+    text-align: left;
+    padding-top: 22%;
+}
+.search-bar{
+    background: #fff;
+    width: 50%;
+    margin: 30px 0 30px 2px; 
+    padding: 6px 10px 6px 20px;
+    border-radius: 35px;
+
+}
+
+.search-bar form{
+    text-align: left;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.search-bar form input{
+    text-align: left;
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    box-sizing: border-box;
+
+}
+.search-input{
+    flex: 1;
+}
+.content-dropdown{
+    flex: 1;
+}
+.drop{
+    display: block;
+    width: 90%;
+    outline: none;
+    background: transparent;
+    box-sizing: border-box;
+    text-align: left;
+    color: #777;
+    border: none;
+}
+
+.dropdown-menu{
+    line-height: 40px;
+    width: 15%;
+    position: absolute;
+    background-color: #e7b93bc6;
+    color: #fff;
+    padding: 6px 10px 6px 30px;
+    border-radius: 25px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.3 );
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+    pointer-events: none;
+}
+
+.dropdown-menu-selection{
+     display: flex;
+     flex-direction: column;
+     gap: .25rem;
+     color: #fff;
+}
+.dropdown-menu-selection a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.content-dropdown.active > .drop + .dropdown-menu{
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.content-dropdown.active > .drop,
+.drop:hover{
+    color: #000;
+}
+
+.sub-btn{
+    background: #e7b93b;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+.search-bar form button img{
+    width: 15px;
+    margin-top: 4%;
+}
+
+.search-bar form label{
+    font-weight: 600;
+}
