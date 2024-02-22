@@ -19,7 +19,7 @@
 	to add one file's changes
 	or
 	```
-	git add -a
+	git add -A
 	``` 
 	to add all changes.
 1. Now, we commit:
