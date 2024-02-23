@@ -1,5 +1,3 @@
-<?php
-echo 'please work';
 <!----- HOMEPAGE  ----->
 <! DOCTYPE html>
 <!----- Basic Starting Set Up ----->
@@ -18,6 +16,9 @@ echo 'please work';
   </head>
     <!----- Start of the Enter Webpage ----->
   <body>
+	<?PHP
+	echo 'please work';
+	?>
         <div class = "header">           
             <nav id = "navBar">
                 <img  src="images/logo.png" class = "logo" >
