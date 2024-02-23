@@ -167,7 +167,6 @@ nav{
 
 .content-type div img{
     width: 100%;
-    height: 80%;
     border-radius: 10px;
 }
 .content-type div{
@@ -180,4 +179,21 @@ nav{
     transform: translate(-50%, -50%);
     text-align: center;
     color: #fff;
+}
+/*---------TYPES OF RENTALS STYLES ----------*/
+.type-rentals{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 30px;
+    margin-bottom: 30px;
+}
+
+.type-rentals div img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.type-rentals h3{
+    font-weight: 600;
+    margin-top: 10px;
 }
