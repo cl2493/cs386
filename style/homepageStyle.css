@@ -198,3 +198,32 @@ nav{
     font-weight: 600;
     margin-top: 10px;
 }
+/*-----------POSTING LISTING LEARN MORE ----------*/
+.prop-owner-contact{
+    margin: 80px 0;
+    background-image: linear-gradient(to right, #3f2321, transparent), url(homepageImages/hospitalBuilding.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    padding: 5%;
+    color: #fff;
+}
+.prop-owner-contact h3{
+    font-size: 4vw;
+    line-height: 5.3vw;
+    font-weight: 500;
+}
+.prop-owner-contact p{
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.learn-btn{
+    background: #e7b93b;
+    color:#fff;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    margin-top: 20px;
+    display: inline-block;
+}
