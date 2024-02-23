@@ -34,7 +34,9 @@ nav{
     color: #fff;
 }
 
-.register-btn{
+.login-btn{
+	cursor: pointer;
+	list-style: none;
     background: #e7b93b;
     color: #fff;
     padding: 10px 20px;
@@ -45,6 +47,14 @@ nav{
 
 .container{
     padding: 0 7%;
+	display:flex;
+}
+
+.left{
+	flex:1;
+	display:flex;
+	flex-direction:column;
+	order:1;
 }
 
 .header h1{
@@ -60,7 +70,6 @@ nav{
     margin: 30px 0 30px 2px; 
     padding: 6px 10px 6px 20px;
     border-radius: 35px;
-
 }
 
 .search-bar form{
@@ -85,6 +94,32 @@ nav{
 .content-dropdown{
     flex: 1;
 }
+
+.myPopup{
+	visibility:hidden;
+	order:2;
+	background: #e7b93b;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+	height:500px;
+	width:500px;
+}
+
+.myPopup.show{
+	visibility:visible;
+	animation: fadeIn 1s;
+}
+
+.tenants-login{
+	font-size: 2vw;
+    font-weight: 500;
+    color:#fff;
+    text-align: center;
+}
+
 .drop{
     display: block;
     width: 90%;
@@ -228,3 +263,17 @@ nav{
     margin-top: 20px;
     display: inline-block;
 }
+
+@keyframes fadeIn {
+  from {
+	  opacity: 0;
+	  height:1px;
+	  width:1px;
+	  }
+  to {
+	  opacity:1;
+	  height:500px;
+	  width:500px;
+	  }
+}
+
