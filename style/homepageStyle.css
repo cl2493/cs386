@@ -151,3 +151,33 @@ nav{
     font-weight: 600;
 }
 
+/*---------BELOW THE LARGE PHOTO CONTENT STUFF-------*/
+.sub-title{
+    margin: 50px 0 20px;
+    font-size: 2.2vw;
+    font-weight: 500; 
+    color: #333;
+}
+
+.content-type{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 30px;
+}
+
+.content-type div img{
+    width: 100%;
+    height: 80%;
+    border-radius: 10px;
+}
+.content-type div{
+    position: relative;
+}
+.content-type div span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
