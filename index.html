@@ -24,12 +24,13 @@
                     <li><a href = "404ErrorPage.html">Benefits</a></li>
                     <li><a href = "404ErrorPage.html">Accommodation</a></li>
                 </ul>
-                <a href="404ErrorPage.html" class = "register-btn">Register Your Home</a>
+				<li class = "login-btn" onclick="popupFunction()">Sign In</li>
             </nav>
             <div class="container">
-                <h1>A Place That<br>Feels Like Home</h1>
+				<div class="left">
+				<h1>A Place That<br>Feels Like Home</h1>
                 <div class="search-bar">
-                    <form>
+					<form>
                         <div class="search-input">
                             <label>Location</label>
                             <input type="text" placeholder="New York, Phoenix, Chicago...">
@@ -50,6 +51,16 @@
                         <button class="sub-btn" type="submit"><img src = "assets/search.png" alt="serach icon"></button>
                     </form>
                 </div>
+				</div>
+				<div class ="myPopup" id="myPopup">
+					<form>
+						<h5 class="tenants-login">Sign In</h5>
+						<label>Name:</label><br>
+						<input type="text"><br>
+						<label>House:</label><br>
+						<input type="text"><br>
+					</form>
+				</div>
             </div>
         </div>
     <!------ footer ----->
@@ -63,6 +74,13 @@
       <a href = "404ErrorPage.html">About Us</a>
       <p>Copyright © 2024, RNT-A-ROOM</p>
     </div>
+	<script>
+	// When the user clicks on div, open the popup
+	function popupFunction() {
+		var popup = document.getElementById("myPopup");
+		popup.classList.toggle("show");
+	}
+	</script>
   </body>
 </html>
 
