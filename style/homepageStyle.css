@@ -15,11 +15,11 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 2%;
+    padding: 10px 6%;
 }
 
 .logo{
-    width: 200px;
+    width: 100px;
     cursor: pointer;
 }
 
@@ -34,6 +34,8 @@ nav{
     color: #fff;
 }
 
+/*--------------NURSE LOGIN BUTTON FROM DEVIN :) ---------*/
+
 .login-btn{
 	cursor: pointer;
 	list-style: none;
@@ -45,11 +47,6 @@ nav{
     font-size: 14px;
 }
 
-.container{
-    padding: 0 7%;
-	display:flex;
-}
-
 .left{
 	flex:1;
 	display:flex;
@@ -57,43 +54,10 @@ nav{
 	order:1;
 }
 
-.header h1{
-    font-size: 4vw;
-    font-weight: 500;
-    color:#fff;
-    text-align: left;
-    padding-top: 22%;
-}
-.search-bar{
-    background: #fff;
-    width: 50%;
-    margin: 30px 0 30px 2px; 
-    padding: 6px 10px 6px 20px;
-    border-radius: 35px;
+.container{
+    padding: 0 7%;
 }
 
-.search-bar form{
-    text-align: left;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.search-bar form input{
-    text-align: left;
-    display: block;
-    width: 100%;
-    border: none;
-    outline: none;
-    background: transparent;
-    box-sizing: border-box;
-
-}
-.search-input{
-    flex: 1;
-}
-.content-dropdown{
-    flex: 1;
-}
 
 .myPopup{
 	visibility:hidden;
@@ -120,6 +84,7 @@ nav{
     text-align: center;
 }
 
+
 .drop{
     display: block;
     width: 90%;
@@ -129,6 +94,47 @@ nav{
     text-align: left;
     color: #777;
     border: none;
+}
+
+/*---------------PHOTO CONTENT----------*/
+
+
+.header h1{
+    font-size: 4vw;
+    font-weight: 500;
+    color:#fff;
+    text-align: left;
+    padding-top: 22%;
+}
+.search-bar{
+    background: #fff;
+    width: 90%;
+    margin: 30px 0 30px 2px; 
+    padding: 6px 10px 6px 20px;
+    border-radius: 35px;
+}
+
+.search-bar form{
+    text-align: left;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.search-bar form input{
+    text-align: left;
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    box-sizing: border-box;
+
+}
+.search-input{
+    flex: 1;
+}
+.content-dropdown{
+    flex: 1;
 }
 
 .dropdown-menu{
@@ -264,6 +270,10 @@ nav{
     display: inline-block;
 }
 
+
+
+
+/*-------animations -------*/
 @keyframes fadeIn {
   from {
 	  opacity: 0;

@@ -24,31 +24,31 @@
                     <li><a href = "404ErrorPage.html">Benefits</a></li>
                     <li><a href = "404ErrorPage.html">Accommodation</a></li>
                 </ul>
-				<a class = "login-btn" onclick="popupFunction()">Sign In</a>
+				<li class = "login-btn" onclick="popupFunction()">Sign In</li>
             </nav>
             <div class="container">
 				<div class="left">
-                    <h1>A Place That<br>Feels Like Home</h1>
-                    <div class="search-bar">
-                        <form>
-                            <div class="search-input">
-                                <label>Location</label>
-                                <input type="text" placeholder="New York, Chicago...">
-                            </div>
-                            <div class="content-dropdown" data-dropdown>
-                                <label># of Beds</label>
-                                <button class="drop" data-dropdown-button>Beds</button>
-                                <div class="dropdown-menu">
-                                    <div class= "dropdown-menu-selection">
-                                        <a href="#" class = "link">1</a>
-                                        <a href="#" class = "link">2</a>
-                                        <a href="#" class = "link">3</a>
-                                        <a href="#" class = "link">4</a>
-                                        <a href="#" class = "link">5</a>
-                                    </div>
+				<h1>A Place That<br>Feels Like Home</h1>
+                <div class="search-bar">
+					<form>
+                        <div class="search-input">
+                            <label>Location</label>
+                            <input type="text" placeholder="New York, Chicago...">
+                        </div>
+                        <div class="content-dropdown" data-dropdown>
+                            <label># of Beds</label>
+                            <button class="drop" data-dropdown-button>Beds</button>
+                            <div class="dropdown-menu">
+                                <div class= "dropdown-menu-selection">
+                                    <a href="#" class = "link">1</a>
+                                    <a href="#" class = "link">2</a>
+                                    <a href="#" class = "link">3</a>
+                                    <a href="#" class = "link">4</a>
+                                    <a href="#" class = "link">5</a>
                                 </div>
                             </div>
-                            <div class="content-dropdown" data-dropdown>
+                        </div>
+                        <div class="content-dropdown" data-dropdown>
                                 <label>Lease Length</label>
                                 <button class="drop" data-dropdown-button># of Weeks</button>
                                 <div class="dropdown-menu">
@@ -60,12 +60,12 @@
                                         <a href="#" class = "link">15+</a>
                                     </div>
                                 </div>                            
-                            </div>
-                            <button class="sub-btn" type="submit"><img src = "assets/search.png" alt="serach icon"></button>
-                        </form>
-                    </div>
+                        </div>
+                        <button class="sub-btn" type="submit"><img src = "assets/search.png" alt="serach icon"></button>
+                    </form>
                 </div>
-                <div class ="myPopup" id="myPopup">
+				</div>
+				<div class ="myPopup" id="myPopup">
 					<form>
 						<h5 class="tenants-login">Sign In</h5>
 						<label>Name:</label><br>
@@ -76,9 +76,7 @@
 				</div>
             </div>
         </div>
-
 <!----UNDERNEATH THE HEADER PHOTO---------->
-
         <div class = "container">
             <h2 class="sub-title">Where You Going To Next?</h2>
             <div class="content-type">
@@ -162,4 +160,3 @@
 	</script>
   </body>
 </html>
-
