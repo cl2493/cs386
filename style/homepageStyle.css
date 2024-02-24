@@ -5,7 +5,7 @@
     font-family: 'Poppins', sans-serif;
 }
 .header{
-    min-height: 100vh;
+    height: 100vh;
     width: 100%;
     background-image: linear-gradient(rgba(0,0,0,0.3 ),rgba(0,0,0,0.3 )),url(../assets/cooking-home.jpg);
     background-size: cover;
@@ -34,6 +34,8 @@ nav{
     color: #fff;
 }
 
+
+
 /*--------------NURSE LOGIN BUTTON FROM DEVIN :) ---------*/
 
 .login-btn{
@@ -44,7 +46,6 @@ nav{
     padding: 10px 20px;
     border-radius: 20px;
     text-decoration: none;
-    font-size: 14px;
 }
 
 .left{
@@ -58,42 +59,23 @@ nav{
     padding: 0 7%;
 }
 
-
-.myPopup{
-	visibility:hidden;
-	order:2;
-	background: #e7b93b;
+.myPopup{ 
+    position: absolute;
+    transform: translate(55%, 20%);
+    z-index: 9999;
+    background: #e7b93b;
     color: #fff;
-    padding: 10px 20px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 14px;
-	height:500px;
-	width:500px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: none;
+    width:50%;
+    height:50%;
 }
 
 .myPopup.show{
-	visibility:visible;
-	animation: fadeIn 1s;
-}
-
-.tenants-login{
-	font-size: 2vw;
-    font-weight: 500;
-    color:#fff;
-    text-align: center;
-}
-
-
-.drop{
     display: block;
-    width: 90%;
-    outline: none;
-    background: transparent;
-    box-sizing: border-box;
-    text-align: left;
-    color: #777;
-    border: none;
+	animation: fadeIn 1s;
 }
 
 /*---------------PHOTO CONTENT----------*/
@@ -108,7 +90,7 @@ nav{
 }
 .search-bar{
     background: #fff;
-    width: 90%;
+    width: 60%;
     margin: 30px 0 30px 2px; 
     padding: 6px 10px 6px 20px;
     border-radius: 35px;
@@ -133,8 +115,31 @@ nav{
 .search-input{
     flex: 1;
 }
+
+.drop{
+    display: block;
+    width: 60%;
+    outline: none;
+    background: transparent;
+    box-sizing: border-box;
+    text-align: left;
+    color: #777;
+    border: none;
+}
+
 .content-dropdown{
     flex: 1;
+}
+
+.content-dropdown.active > .drop + .dropdown-menu{
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.content-dropdown.active > .drop,
+.drop:hover{
+    color: #000;
 }
 
 .dropdown-menu{
@@ -161,17 +166,6 @@ nav{
 .dropdown-menu-selection a{
     text-decoration: none;
     color: #fff;
-}
-
-.content-dropdown.active > .drop + .dropdown-menu{
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-}
-
-.content-dropdown.active > .drop,
-.drop:hover{
-    color: #000;
 }
 
 .sub-btn{
@@ -282,8 +276,5 @@ nav{
 	  }
   to {
 	  opacity:1;
-	  height:500px;
-	  width:500px;
 	  }
 }
-
