@@ -45,6 +45,9 @@ nav{
     padding: 10px 20px;
     border-radius: 20px;
     text-decoration: none;
+    width: 10%;
+    font-size: 20px;
+    text-align: center;
 }
 
 .left{
@@ -285,6 +288,7 @@ nav{
 
 .type-rentals div img{
     width: 100%;
+    height: 80%;
     border-radius: 10px;
 }
 
