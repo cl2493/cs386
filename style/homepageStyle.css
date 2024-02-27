@@ -40,7 +40,6 @@ nav{
 
 .login-btn{
 	cursor: pointer;
-	list-style: none;
     background: #e7b93b;
     color: #fff;
     padding: 10px 20px;
@@ -59,6 +58,17 @@ nav{
     padding: 0 7%;
 }
 
+.exit-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
 .myPopup{ 
     position: absolute;
     transform: translate(55%, 20%);
@@ -71,6 +81,11 @@ nav{
     display: none;
     width:50%;
     height:50%;
+    text-align: center;
+}
+
+.myPopup.exit {
+    animation: fadeOut 1s;
 }
 
 .myPopup.show{
@@ -78,6 +93,48 @@ nav{
 	animation: fadeIn 1s;
 }
 
+.myPopup h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.myPopup-Form{
+    margin-bottom: 20px;
+}
+
+.myPopup-Form label {
+    margin-bottom: 5px;
+    font-size: 25px;
+}
+
+.myPopup-Form input {
+    margin-bottom: 5px;
+    width: 50%;
+    height: 10%;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+}
+
+.sign-in-btn {
+    font-size: 18px;
+    border: 2px solid white;
+    cursor: pointer;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    width: 50%;
+    margin: 1% auto; 
+}
+
+.sign-in-btn:hover {
+    background-color: #fff;
+    color: #e7b93b;
+    font-weight: bold;
+}
 /*---------------PHOTO CONTENT----------*/
 
 
@@ -95,6 +152,7 @@ nav{
     padding: 6px 10px 6px 20px;
     border-radius: 35px;
 }
+
 
 .search-bar form{
     text-align: left;
@@ -278,3 +336,13 @@ nav{
 	  opacity:1;
 	  }
 }
+
+@keyframes fadeOut {
+    from {
+        opacity:1;
+        }
+    to {
+        opacity: 0;
+        visibility: hidden; 
+        }
+  }

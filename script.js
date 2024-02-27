@@ -34,3 +34,19 @@ document.addEventListener('click', e=>{
         dropdown.classList.remove('active')
     })
 })
+
+// When the user clicks on div, open the popup
+function popupFunction() {
+	var popup = document.getElementById("myPopup");
+	popup.classList.toggle("show");
+}
+
+function closePopup() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.add("exit");
+    // Remove the 'show' class after a delay to ensure the fade-out animation plays
+    setTimeout(function() {
+        popup.classList.remove("show");
+        popup.classList.remove("exit");
+    });
+}

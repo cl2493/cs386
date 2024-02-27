@@ -27,13 +27,16 @@
 				<a class = "login-btn" onclick="popupFunction()">Sign In</a>
             </nav>
             <div class ="myPopup" id="myPopup">
-                <form>
-                    <h5 class="tenants-login">Sign In</h5>
-                    <label>Name:</label><br>
+                <button class="exit-btn" onclick="closePopup()">X</button>
+                <form class="myPopup-Form">
+                    <h2 class="tenants-login">Sign In</h2>
+                    <label>Email</label><br>
                     <input type="text"><br>
-                    <label>House:</label><br>
+                    <label>Password</label><br>
                     <input type="text"><br>
                 </form>
+                <a href="404ErrorPage.html" class="sign-in-btn">Login</a>
+                <a href="404ErrorPage.html" class="sign-in-btn" id = "nurse-register">Register</a>
             </div>
             <div class="container">
 				<div class="left">
@@ -155,11 +158,7 @@
       <p>Copyright © 2024, RNT-A-ROOM</p>
     </div>
 	<script>
-	// When the user clicks on div, open the popup
-	function popupFunction() {
-		var popup = document.getElementById("myPopup");
-		popup.classList.toggle("show");
-	}
+
 	</script>
   </body>
 </html>
