@@ -6,7 +6,7 @@
 }
 
 .header{
-  height: 100vh;
+  height: 20%;
   width: 100%;
 }
 
@@ -145,6 +145,12 @@ nav{
     background-color: #fff;
     color: #e7b93b;
     font-weight: bold;
+}
+
+/*-------BELOW THE HEADER -------*/
+h2{
+  color: black;
+  font-size: 100px;
 }
 
 
