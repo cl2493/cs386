@@ -16,6 +16,7 @@
   </head>
     <!----- Start of the Enter Webpage ----->
   <body>
+	<?php?>
         <div class = "header">           
             <nav id = "navBar">
                 <img  src="images/logo.png" class = "logo" >
