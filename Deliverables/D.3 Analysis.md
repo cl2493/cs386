@@ -44,4 +44,4 @@ The model must have at least 8 classes. You can add requirements in the system d
 
 Grading criteria: You should correctly use the UML specification. Your model should have the minimum number of classes. Your domain should be adequately modeled. The model should avoid unnecessary complexity, repetition, lack of cohesion, and coupling. The classes should be at an adequate abstraction level.
 
-![classDiagram](https://github.com/Devin-Jay/cs386/blob/5cddbb5a347194a71f615ca67fbeb5146afcf02f/assets/class.png)
+![classDiagram](https://github.com/Devin-Jay/cs386/blob/bff811fbc0289a6a3e970884775d1fc94ce0a5ca/assets/classdiagram.png)
