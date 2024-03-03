@@ -3,8 +3,8 @@ $url = getenv('JAWSDB_URL');
 $dbparts = parse_url($url);
 
 $hostname = $dbparts['bqmayq5x95g1sgr9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com	'];
-$username = $dbparts['rz3g4npuxheqkm4q']
-$password = $dbparts['w16mgna61998973p']
+$username = $dbparts['rz3g4npuxheqkm4q'];
+$password = $dbparts['w16mgna61998973p'];
 $database = ltrim($dbparts['v3631j1wxf69fwg6'],'/');
 
 // Create connection
