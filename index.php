@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+	$_SESSION;
+?>
+
 <!----- HOMEPAGE  ----->
 <! DOCTYPE html>
 <!----- Basic Starting Set Up ----->
@@ -16,7 +22,6 @@
   </head>
     <!----- Start of the Enter Webpage ----->
   <body>
-	<?php echo "why? :)"?>
         <div class = "header">           
             <nav id = "navBar">
                 <img  src="images/logo.png" class = "logo" >
@@ -25,31 +30,44 @@
                     <li><a href = "404ErrorPage.html">Benefits</a></li>
                     <li><a href = "404ErrorPage.html">Accommodation</a></li>
                 </ul>
-				<li class = "login-btn" onclick="popupFunction()">Sign In</li>
+				<a class = "login-btn" onclick="popupFunction()">Sign In</a>
             </nav>
+            <div class ="myPopup" id="myPopup">
+                <button class="exit-btn" onclick="closePopup()">X</button>
+                <form class="myPopup-Form">
+                    <h2 class="tenants-login">Sign In</h2>
+                    <label>Email</label><br>
+                    <input type="text"><br>
+                    <label>Password</label><br>
+                    <input type="text"><br>
+                </form>
+                <a href="404ErrorPage.html" class="sign-in-btn">Login</a>
+                <a href="nurse-register.html" class="sign-in-btn" id = "nurse-register">Register</a>
+            </div>
             <div class="container">
 				<div class="left">
-				<h1>A Place That<br>Feels Like Home</h1>
-                <div class="search-bar">
-					<form>
-                        <div class="search-input">
-                            <label>Location</label>
-                            <input type="text" placeholder="New York, Chicago...">
-                        </div>
-                        <div class="content-dropdown" data-dropdown>
-                            <label># of Beds</label>
-                            <button class="drop" data-dropdown-button>Beds</button>
-                            <div class="dropdown-menu">
-                                <div class= "dropdown-menu-selection">
-                                    <a href="#" class = "link">1</a>
-                                    <a href="#" class = "link">2</a>
-                                    <a href="#" class = "link">3</a>
-                                    <a href="#" class = "link">4</a>
-                                    <a href="#" class = "link">5</a>
+     
+                    <h1>A Place That<br>Feels Like Home</h1>
+                    <div class="search-bar">
+                        <form>
+                            <div class="search-input">
+                                <label>Location</label>
+                                <input type="text" placeholder="New York, Chicago...">
+                            </div>
+                            <div class="content-dropdown" data-dropdown>
+                                <label># of Beds</label>
+                                <button class="drop" data-dropdown-button>Beds</button>
+                                <div class="dropdown-menu">
+                                    <div class= "dropdown-menu-selection">
+                                        <a href="#" class = "link">1</a>
+                                        <a href="#" class = "link">2</a>
+                                        <a href="#" class = "link">3</a>
+                                        <a href="#" class = "link">4</a>
+                                        <a href="#" class = "link">5</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="content-dropdown" data-dropdown>
+                            <div class="content-dropdown" data-dropdown>
                                 <label>Lease Length</label>
                                 <button class="drop" data-dropdown-button># of Weeks</button>
                                 <div class="dropdown-menu">
@@ -61,23 +79,16 @@
                                         <a href="#" class = "link">15+</a>
                                     </div>
                                 </div>                            
-                        </div>
-                        <button class="sub-btn" type="submit"><img src = "assets/search.png" alt="serach icon"></button>
-                    </form>
+                            </div>
+                            <button class="sub-btn" type="submit"><img src = "assets/search.png" alt="serach icon"></button>
+                        </form>
+                    </div>
                 </div>
-				</div>
-				<div class ="myPopup" id="myPopup">
-					<form>
-						<h5 class="tenants-login">Sign In</h5>
-						<label>Name:</label><br>
-						<input type="text"><br>
-						<label>House:</label><br>
-						<input type="text"><br>
-					</form>
-				</div>
             </div>
         </div>
+
 <!----UNDERNEATH THE HEADER PHOTO---------->
+
         <div class = "container">
             <h2 class="sub-title">Where You Going To Next?</h2>
             <div class="content-type">
@@ -152,12 +163,5 @@
       <a href = "404ErrorPage.html">About Us</a>
       <p>Copyright © 2024, RNT-A-ROOM</p>
     </div>
-	<script>
-	// When the user clicks on div, open the popup
-	function popupFunction() {
-		var popup = document.getElementById("myPopup");
-		popup.classList.toggle("show");
-	}
-	</script>
   </body>
 </html>
