@@ -1,5 +1,5 @@
 <?php
-$url = getenv('JAWSDB_URL');
+$url = getenv('mysql://rz3g4npuxheqkm4q:w16mgna61998973p@bqmayq5x95g1sgr9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/v3631j1wxf69fwg6');
 $dbparts = parse_url($url);
 
 $hostname = $dbparts['bqmayq5x95g1sgr9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com	'];
