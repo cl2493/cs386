@@ -18,8 +18,5 @@ In order to support the **travel nurse** community, giving them the ability to s
 
 RNT-A-ROOM not only benefits **travel nurses** and their agencies, but also **property owners** and hospitals. It gives both **travel nurses** and **property owner** ease of mind by having a secure user base. **property owner** can rest assure knowing that their clients will be trusted registered **travel nurses**. Meanwhile, **travel nurses** won’t have to worry about deciding whether or not the booking that they choose is reliable or not because all of our bookings are verified properties. **Travel nurses** can use the filtering system to, for example, find **listings** with low *crime rates* or enough **rooms** to house their entire families. They can also  **user** our **review** system to both decide on their next property and provide other **travel nurses** help on deciding their own next **listing**. RNT-A-ROOM also gives **travel nurses** the ability to cancel a lease, so that **property owner** are not left waiting for their new tenant to arrive. On top of all of this, RNT-A-ROOM shows its **user** all of the amenities that a **listing** will have such as *gyms*, *grocery store*, and disability accommodations. RNT-A-ROOM strives to provide a high quality service for our **user** by thinking through the  **user** ’s perspectives.
 ## 2. Model
-Provide the conceptual model of your system as a UML class diagram. Represent proper cardinalities (multiplicities) for all associations. Also include the association names. 
-
- Some points to consider:
 
 ![classDiagram](https://github.com/Devin-Jay/cs386/blob/bff811fbc0289a6a3e970884775d1fc94ce0a5ca/assets/classdiagram.png)
