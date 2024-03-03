@@ -1,0 +1,77 @@
+<!-----USER REGISTER PAGE------->
+<! DOCTYPE html>
+<!----STARTING SETUP------->
+<html lang="en">
+    <head>
+        <meta name ="viewport">
+        <title>Propertry Owner Portal</title>
+        <!----connecting different files-->
+        <link rel="stylesheet" href ="style/generalStyle.css">
+        <script src="https://kit.fontawesome.com/c011338aa2.js" crossorigin="anonymous"></script>
+        <script src="script.js" defer></script>
+    </head>
+    <!-------Start of Web Page---------->
+    <body>
+        <div class = "header">
+            <nav id = "navBar">
+                <a href = "index.html"><img src = "images/logo.png" class="logo"></a>
+                <ul class = "nav-links">
+                    <li><a href = "404ErrorPage.html">Locations</a></li>
+                    <li><a href = "404ErrorPage.html">Benefits</a></li>
+                    <li><a href = "404ErrorPage.html">Accommodation</a></li>
+                </ul>
+                <a class = "login-btn" onclick="popupFunction()">Sign In</a>
+            </nav>
+            <div class ="myPopup" id="myPopup">
+                <button class="exit-btn" onclick="closePopup()">X</button>
+                <form class="myPopup-Form">
+                    <h2 class="tenants-login">Sign In</h2>
+                    <label>Email</label><br>
+                    <input type="text"><br>
+                    <label>Password</label><br>
+                    <input type="text"><br>
+                </form>
+                <a href="404ErrorPage.html" class="sign-in-btn">Login</a>
+                <a href="nurse-register.html" class="sign-in-btn" id = "nurse-register">Register</a>
+            </div>
+        </div>
+        <div class="container">
+            <form class="register-form">
+                <h2 class ="sign-up-title">Property Owner Login</h2>
+
+                <h3>Want to support<br>our Travel Nurses?</h3>
+                <p>Look into how you can get your space posted below! Or sign in with existing login!</p>
+                <div class="name-input">
+                    <div class="first-name">
+                        <input type="text" placeholder="username / email">
+                    </div>
+                    <div class="last-name">
+                        <input type="password" placeholder="password">
+                    </div>
+                    <a href ="404ErrorPage.html" class="learn-btn">Learn More</a>
+                    <a href = "Portal.html" class="submit-btn">Submit</a>
+            </form>
+        </div>
+        
+       
+          
+   
+
+
+
+
+
+
+    <!------ footer ----->
+    <div class = "footer">
+        <p>Follow Us On Social Media</p>
+        <a href = "404ErrorPage.html"><i class="fa-brands fa-facebook"></i></a>
+        <a href = "404ErrorPage.html"><i class="fa-brands fa-google-plus"></i></a>
+        <a href = "404ErrorPage.html"><i class="fa-brands fa-instagram"></i></a>
+        <a href = "404ErrorPage.html"><i class="fa-brands fa-yelp"></i></a>
+        <a href = "404ErrorPage.html">Help Center</a>
+        <a href = "404ErrorPage.html">About Us</a>
+        <p>Copyright © 2024, RNT-A-ROOM</p>
+      </div>
+    </body>
+</html>
