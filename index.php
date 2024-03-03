@@ -1,3 +1,4 @@
+<!----- INDEX.PHP  ----->
 <?php
 session_start();
 
