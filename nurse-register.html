@@ -36,30 +36,30 @@
             </div>
         </div>
         <div class="container">
-            <form class="register-form">
+            <form class="register-form" action="nurse-register.php" method="post" id="register-form">
                 <h2 class ="sign-up-title">Sign Up</h2>
                 <div class="name-input">
                     <div class="first-name">
-                        <input type="text" placeholder="First Name">
+                        <input type="text" name="first_name" placeholder="First Name" required>
                     </div>
                     <div class="last-name">
-                        <input type="text" placeholder="Last Name">
+                        <input type="text" name="last_name" placeholder="Last Name" required>
                     </div>
                         <p>Ensure it matches your government ID.</p>
                 </div>
                 <div class="dob">
                     <h3>Birthday</h3>
-                    <input type="date">
+                    <input type="date" name="birthday" required>
                     <p>To sign up you must but atleast 18.</p>
                 </div>
                 <div class="nurse-email">
-                    <input type ="email" id = "nurse-email" placeholder="Email">
+                    <input type ="email" name="email" id = "nurse-email" placeholder="Email" required>
                 </div>
                 <div class = "password-input">
-                    <input type ="text" id = "password" placeholder="Password">
-                    <input type = "text" id = "check-password"  placeholder="Confirm Password">
+                    <input type ="password" name="password" id = "password" placeholder="Password">
+                    <input type = "password" name="password" id = "check-password"  placeholder="Confirm Password" required>
                 </div>
-            <a href = "404ErrorPage.html" class="submit-btn">Submit</a>
+            <button type= "submit" class="submit-btn">Submit</button>
             </form>
         </div>
 
