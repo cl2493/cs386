@@ -5,12 +5,13 @@
     font-family: 'Poppins', sans-serif;
 }
 .header{
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background-image: linear-gradient(rgba(0,0,0,0.3 ),rgba(0,0,0,0.3 )),url(../assets/cooking-home.jpg);
     background-size: cover;
     background-position: center;
 }
+
 nav{
     display: flex;
     align-items: center;
@@ -102,7 +103,7 @@ nav{
 }
 
 .myPopup-Form{
-    margin-bottom: 20px;
+    margin-bottom: 1%;
 }
 
 .myPopup-Form label {
@@ -111,7 +112,7 @@ nav{
 }
 
 .myPopup-Form input {
-    margin-bottom: 5px;
+    margin-bottom: 1%;
     width: 50%;
     height: 10%;
     font-size: 18px;
@@ -350,3 +351,15 @@ nav{
         visibility: hidden; 
         }
   }
+
+  @media only screen and (max-width: 600px) {
+    .header {
+        height: 20px; 
+    }
+    .content-type div img{
+        height: 50%;
+    }
+    .type-rentals div img{
+        height: 50%;
+    }
+}
