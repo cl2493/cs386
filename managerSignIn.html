@@ -4,9 +4,9 @@
 <html lang="en">
     <head>
         <meta name ="viewport">
-        <title>RNT-A-ROOM REGISTER</title>
+        <title>Propertry Owner Portal</title>
         <!----connecting different files-->
-        <link rel="stylesheet" href ="style/register-style.css">
+        <link rel="stylesheet" href ="style/generalStyle.css">
         <script src="https://kit.fontawesome.com/c011338aa2.js" crossorigin="anonymous"></script>
         <script src="script.js" defer></script>
     </head>
@@ -36,32 +36,26 @@
             </div>
         </div>
         <div class="container">
-            <form class="register-form" action="nurse-register.php" method="post" id="register-form">
-                <h2 class ="sign-up-title">Sign Up</h2>
+            <form class="register-form">
+                <h2 class ="sign-up-title">Property Owner Login</h2>
+
+                <h3>Want to support<br>our Travel Nurses?</h3>
+                <p>Look into how you can get your space posted below! Or sign in with existing login!</p>
                 <div class="name-input">
                     <div class="first-name">
-                        <input type="text" name="first_name" placeholder="First Name" required>
+                        <input type="text" placeholder="username / email">
                     </div>
                     <div class="last-name">
-                        <input type="text" name="last_name" placeholder="Last Name" required>
+                        <input type="password" placeholder="password">
                     </div>
-                        <p>Ensure it matches your government ID.</p>
-                </div>
-                <div class="dob">
-                    <h3>Birthday</h3>
-                    <input type="date" name="birthday" required>
-                    <p>To sign up you must but atleast 18.</p>
-                </div>
-                <div class="nurse-email">
-                    <input type ="email" name="email" id = "nurse-email" placeholder="Email" required>
-                </div>
-                <div class = "password-input">
-                    <input type ="password" name="password" id = "password" placeholder="Password">
-                    <input type = "password" name="password" id = "check-password"  placeholder="Confirm Password" required>
-                </div>
-            <button type= "submit" class="submit-btn">Submit</button>
+                    <a href ="404ErrorPage.html" class="learn-btn">Learn More</a>
+                    <a href = "Portal.html" class="submit-btn">Submit</a>
             </form>
         </div>
+        
+       
+          
+   
 
 
 
