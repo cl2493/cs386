@@ -354,7 +354,7 @@ nav{
 
   @media only screen and (max-width: 600px) {
     .header {
-        height: 20px; 
+        height: 20%; 
     }
     .content-type div img{
         height: 50%;
