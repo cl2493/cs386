@@ -354,8 +354,9 @@ nav{
 /* Responsive styles */
 @media only screen and (max-width: 600px) {
     .header {
-      height: auto;
+      height: 50%;
     }
+
     .nav-links li {
       font-size: 20px;
       margin: 10px 15px;
@@ -364,6 +365,15 @@ nav{
       font-size: 16px;
       padding: 8px 15px;
     }
+
+    .content-type img{
+        height: 50%;
+    }
+
+    .type-rentals img{
+        height: 20%;
+    }
+
     .left h1 {
       font-size: 24px;
     }
