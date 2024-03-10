@@ -327,7 +327,12 @@ nav{
     display: inline-block;
 }
 
+/*----------- Footer ----------*/
 
+.footer{
+    text-align: center;
+    font-size: 16px;
+}
 
 
 /*-------animations -------*/
