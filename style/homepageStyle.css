@@ -351,15 +351,25 @@ nav{
         visibility: hidden; 
         }
   }
-
-  @media only screen and (max-width: 600px) {
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
     .header {
-        height: 200px; 
+      height: auto;
     }
-    .content-type div img{
-        height: 50%;
+    .nav-links li {
+      font-size: 20px;
+      margin: 10px 15px;
     }
-    .type-rentals div img{
-        height: 50%;
+    .login-btn {
+      font-size: 16px;
+      padding: 8px 15px;
     }
-}
+    .left h1 {
+      font-size: 24px;
+    }
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+    }
+  }
+  
