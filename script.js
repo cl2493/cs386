@@ -50,3 +50,67 @@ function closePopup() {
         popup.classList.remove("exit");
     });
 }
+
+
+
+// the form 
+// Capture form submission
+document.querySelector('.register-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission behavior
+    
+    // Gather form data
+    const firstName = document.querySelector('#first-name').value;
+    const lastName = document.querySelector('#last-name').value;
+    const email = document.querySelector('#nurse-email').value;
+    const password = document.querySelector('#password').value;
+    const confirmPassword = document.querySelector('#check-password').value;
+    const birthday = document.querySelector('#birthday').value;
+
+    // Validation (you can add more checks as needed)
+    if (!firstName || !lastName || !email || !password || !confirmPassword || !birthday) {
+        alert('Please fill in all fields');
+        return;
+    }
+    if (password !== confirmPassword) {
+        alert('Passwords do not match');
+        return;
+    }
+    
+    // Create an object to hold the form data
+    const formData = {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        password: password,
+        birthday: birthday
+    };
+
+    //BACK END POINT NEEDED//
+
+    // Send data to backend (assuming using fetch API)
+    fetch('../INSERT-BACKEND-ENDPOINT HERE', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Handle successful registration
+        console.log(data);
+        alert('Registration successful!');
+        // Optionally, redirect to another page
+        window.location.href = '/success.html';
+    })
+    .catch(error => {
+        // Handle errors
+        console.error('There was a problem with the registration:', error);
+        alert('Registration failed. Please try again later.');
+    });
+});
