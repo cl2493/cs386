@@ -1,7 +1,7 @@
 <?php 
 session_start();
 include("connection.php");
-try {
+if (isset($_POST['submit'])) {
 		//something was posted
 		$email = $_POST['email'];
 		$password = $_POST['password'];
