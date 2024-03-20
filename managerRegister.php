@@ -13,10 +13,10 @@ session_start();
 		{
 
 			//save to database
-			$query = "insert into propertyownersdb (email,password) values ('$email','$password')";
+			$query = "INSERT INTO propertyownersdb (email,password) VALUES (:email, :password)";
 
-			$conn->exec($query);
-
+			$stmt = $conn->prepare($query);
+			$stmt->execute(['email' => $email, 'password' => $password]);
 			die;
 		}else
 		{
