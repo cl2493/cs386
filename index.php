@@ -10,7 +10,8 @@ session_start();
 <!----- Basic Starting Set Up ----->
 <html lang="en">
   <head>
-    <meta name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>RNT-A-ROOM</title>
     <!----- Connects to Different Files ----->
     <!-----
@@ -47,7 +48,6 @@ session_start();
             </div>
             <div class="container">
 				<div class="left">
-     
                     <h1>A Place That<br>Feels Like Home</h1>
                     <div class="search-bar">
                         <form>
@@ -87,7 +87,6 @@ session_start();
                 </div>
             </div>
         </div>
-
 <!----UNDERNEATH THE HEADER PHOTO---------->
 
         <div class = "container">
@@ -142,7 +141,7 @@ session_start();
             <div class="prop-owner-contact">
                 <h3>Want to support<br>our Travel Nurses?</h3>
                 <p>Look into how you can get your space posted on our website</p>
-                <a href ="managerSignIn.html" class="learn-btn">Learn More</a>
+                <a href ="managerRegister.html" class="learn-btn">Learn More</a>
             </div>
 
         </div>
