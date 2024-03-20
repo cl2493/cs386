@@ -1,10 +1,7 @@
 <?php 
 session_start();
-
-	include("connection.php");
-
-	if($_SERVER['REQUEST_METHOD'] == "POST")
-	{
+include("connection.php");
+try {
 		//something was posted
 		$email = $_POST['email'];
 		$password = $_POST['password'];
@@ -13,11 +10,8 @@ session_start();
 		{
 
 			//save to database
-			$query = "INSERT INTO propertyownersdb (email,password) VALUES (:email, :password)";
-
-			$stmt = $conn->prepare($query);
-			$stmt->execute(['email' => $email, 'password' => $password]);
-			die;
+			$query = "INSERT INTO propertyownersdb (email,password) VALUES ($email, $password)";
+			$conn->exec($query);
 		}else
 		{
 			echo "Please enter some valid information!";
