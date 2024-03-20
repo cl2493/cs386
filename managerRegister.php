@@ -13,6 +13,7 @@ try
 {
     echo "Connection failed: ". $e->getMessage();
 }
+echo "help"
 if (isset($_POST['submit'])) {
 		//something was posted
 		$email = $_POST['email'];
