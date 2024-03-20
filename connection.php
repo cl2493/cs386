@@ -6,8 +6,8 @@ $password = 'w16mgna61998973p';
 // Create connection
 try
 {
-    $pdo = new PDO($dsn, $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn = new PDO($dsn, $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e)
 {
     echo "Connection failed: ". $e->getMessage();
