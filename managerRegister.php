@@ -7,7 +7,7 @@ if (isset($_POST['submitBtn'])) {
 		$email = $_POST['email'];
 		$password = $_POST['password'];
         
-        //save to database
+        // save to database
 		$query = "INSERT INTO propertyownersdb (email,password) VALUES (:email,:password)";
         $query_run = $conn->prepare($query);
 
