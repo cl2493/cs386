@@ -13,7 +13,7 @@ if (isset($_POST['submit-Btn'])) {
     $password = $_POST['password'];
 
     // insert data into the database
-    $query = $pdo->prepare("INSERT INTO travelnursesdb (first_name, last_name, birthday, email, password) VALUES (:first_name, :last_name, :birthday, :email, :password)");
+    $query = "INSERT INTO travelnursesdb (first_name, last_name, birthday, email, password) VALUES (:first_name, :last_name, :birthday, :email, :password)";
     $query_run = $conn->prepare($query);
 
     $data =[
