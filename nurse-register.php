@@ -27,21 +27,11 @@ if (isset($_POST['submit-Btn'])) {
 
     if ($query_execute) 
     {
-        echo "Data saved successfully!";
         header('Location: index.php');
         exit(0);
     } else 
     {
-        echo "Error: " . $sql->errorInfo()[2];
+        header('Location: index.php');
+        exit(0);
     }
-
-    $pdo = null; // Close the database connection
-    } catch (PDOException $e) {
-        echo "Connection failed: " . $e->getMessage();
-    }
-
-else {
-    // If the form was not submitted via POST method, redirect to the form page
-    header("Location: nurse-register.php");
-    exit; // Make sure to exit after redirection
 }
