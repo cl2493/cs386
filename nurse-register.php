@@ -23,7 +23,7 @@ if (isset($_POST['submit-Btn'])) {
         ':email' => $email,
         ':password' => $password,
     ];
-    $query_execute = $query_run->execute($data)
+    $query_execute = $query_run->execute($data);
 
     if ($query_execute) 
     {
