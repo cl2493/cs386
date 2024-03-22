@@ -2,7 +2,12 @@
 <?php
 session_start();
 
-	include("connection.php")
+include("connection.php")
+
+// check for registration success
+if(isset($_GET['registration']) && $_GET['registration'] === 'success'){
+        echo '<div id="welcomePopup" class="welcome-popup">Welcome! You have successfully registered.</div>';
+    }
 ?>
 
 <!----- HOMEPAGE  ----->
