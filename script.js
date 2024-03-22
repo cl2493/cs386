@@ -114,3 +114,26 @@ document.querySelector('.register-form').addEventListener('submit', function(eve
         alert('Registration failed. Please try again later.');
     });
 });
+
+
+//image upload
+const image_input = document.querySelector('#image_input');
+    let uploaded_image = ""; // Changed var to let for block-scoped variable
+
+    image_input.addEventListener("change", function () {
+        const reader = new FileReader();
+
+        reader.addEventListener("load", () => {
+            uploaded_image = reader.result; // Store the uploaded image
+            document.querySelector('#profile-picture').style.backgroundImage = `url(${uploaded_image})`; // Use template literals
+        });
+
+        if (this.files[0]) {
+            // Check if a file is selected
+            reader.readAsDataURL(this.files[0]); // Read the file
+        } else {
+            // Handle case where no file is selected
+            uploaded_image = ""; // Reset uploaded image
+            document.querySelector('#profile-picture').style.backgroundImage = 'none'; // Remove background image
+        }
+    });

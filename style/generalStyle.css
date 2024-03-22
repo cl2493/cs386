@@ -144,3 +144,12 @@ login-btn{
     color: #e7b93b;
     font-weight: bold;
 }
+ /*-----------upload photo ---------------*/
+ #profile-picture{
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 1px solid #e7b93b;
+  background-position: center;
+  background-size: cover;
+ }
