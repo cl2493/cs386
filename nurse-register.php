@@ -27,11 +27,11 @@ if (isset($_POST['submit-Btn'])) {
 
     if ($query_execute) 
     {
-        header('Location: index.php');
+        header('Location: index.php?registration=success');
         exit(0);
     } else 
     {
-        header('Location: index.php');
+        header('Location: index.php?registration=error');
         exit(0);
     }
 }
