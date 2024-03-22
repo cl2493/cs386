@@ -2,7 +2,7 @@
 <?php
 session_start();
 
-include("connection.php")
+include("connection.php");
 
 // check for registration success
 if(isset($_GET['registration']) && $_GET['registration'] === 'success'){
