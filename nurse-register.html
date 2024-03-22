@@ -8,13 +8,13 @@
         <!----connecting different files-->
         <link rel="stylesheet" href ="style/register-style.css">
         <script src="https://kit.fontawesome.com/c011338aa2.js" crossorigin="anonymous"></script>
-        <script src="script.js" defer></script>
+        <!--<script src="script.js" defer></script>-->
     </head>
     <!-------Start of Web Page---------->
     <body>
         <div class = "header">
             <nav id = "navBar">
-                <a href = "index.html"><img src = "images/logo.png" class="logo"></a>
+                <a href = "index.php"><img src = "images/logo.png" class="logo"></a>
                 <ul class = "nav-links">
                     <li><a href = "404ErrorPage.html">Locations</a></li>
                     <li><a href = "404ErrorPage.html">Benefits</a></li>
@@ -27,16 +27,16 @@
                 <form class="myPopup-Form">
                     <h2 class="tenants-login">Sign In</h2>
                     <label>Email</label><br>
-                    <input type="text"><br>
+                    <input name="signinemail" type="text"><br>
                     <label>Password</label><br>
-                    <input type="text"><br>
+                    <input name="signinpassword" type="text"><br>
                 </form>
                 <a href="404ErrorPage.html" class="sign-in-btn">Login</a>
                 <a href="nurse-register.html" class="sign-in-btn" id = "nurse-register">Register</a>
             </div>
         </div>
         <div class="container">
-            <form class="register-form" action="nurse-register.php" method="post" id="register-form">
+            <form class="register-form" action="nurse-register.php" method="POST" id="register-form">
                 <h2 class ="sign-up-title">Sign Up</h2>
                 <div class="name-input">
                     <div class="first-name">
@@ -57,9 +57,9 @@
                 </div>
                 <div class = "password-input">
                     <input type ="password" name="password" id = "password" placeholder="Password">
-                    <input type = "password" name="password" id = "check-password"  placeholder="Confirm Password" required>
+                    <input type = "password" id = "check-password"  placeholder="Confirm Password" required>
                 </div>
-            <button type= "submit" class="submit-btn">Submit</button>
+            <button name="submit-Btn" type= "submit" class="submit-btn">Submit</button>
             </form>
         </div>
 

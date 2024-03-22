@@ -6,9 +6,8 @@
         <meta name ="viewport">
         <title>Propertry Owner Portal</title>
         <!----connecting different files-->
-        <link rel="stylesheet" href ="style/generalStyle.css">
+        <link rel="stylesheet" href ="style/register-style.css">
         <script src="https://kit.fontawesome.com/c011338aa2.js" crossorigin="anonymous"></script>
-        <script src="script.js" defer></script>
     </head>
     <!-------Start of Web Page---------->
     <body>
@@ -26,30 +25,30 @@
                 <button class="exit-btn" onclick="closePopup()">X</button>
                 <form class="myPopup-Form">
                     <h2 class="tenants-login">Sign In</h2>
-                    <label>Email</label><br>
-                    <input type="text"><br>
-                    <label>Password</label><br>
-                    <input type="text"><br>
+                    <label>Email<br>
+                    <input name="signinemail" type="text"><br>
+                    </label>
+                    <label>Password<br>
+                    <input name="signinpassword" type="text"><br>
+                    </label>
                 </form>
                 <a href="404ErrorPage.html" class="sign-in-btn">Login</a>
                 <a href="nurse-register.html" class="sign-in-btn" id = "nurse-register">Register</a>
             </div>
         </div>
         <div class="container">
-            <form class="register-form">
+            <form action="managerRegister.php" method="POST">
                 <h2 class ="sign-up-title">Property Owner Login</h2>
-
                 <h3>Want to support<br>our Travel Nurses?</h3>
                 <p>Look into how you can get your space posted below! Or sign in with existing login!</p>
-                <div class="name-input">
-                    <div class="first-name">
-                        <input type="text" placeholder="username / email">
-                    </div>
-                    <div class="last-name">
-                        <input type="password" placeholder="password">
-                    </div>
+                <div>
+                    <input name="email" type="text" placeholder="email">
+                </div>
+                <div>
+                    <input name="password" type="password" placeholder="password">
+                </div>
                     <a href ="404ErrorPage.html" class="learn-btn">Learn More</a>
-                    <a href = "Portal.html" class="submit-btn">Submit</a>
+                    <button type="submit" name="submitBtn">Submit</button>
             </form>
         </div>
         
