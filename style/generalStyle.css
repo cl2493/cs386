@@ -35,12 +35,18 @@ nav{
 }
 .nav-links li a{
   text-decoration: none;
-  color: #fff;
   background-color: #e7b93b;
   color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
 }
+
+.nav-links li a:hover{
+  background-color: #fff;
+  color: #e7b93b;
+}
+
+
 .profile-btn
 {
   border: 1px solid #fff;
@@ -52,10 +58,6 @@ nav{
 }
 .profile-btn:hover
 {
-  background-color: #fff;
-  color: #e7b93b;
-}
-.nav-links li a:hover{
   background-color: #fff;
   color: #e7b93b;
 }

@@ -27,22 +27,18 @@ nav{
   list-style: none;
   display: inline-block;
   margin: 10px 30px;
+  
 }
 .nav-links li a{
   text-decoration: none;
   color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
 }
 
-.login-btn{
-  cursor: pointer;
-  border: 2px solid white;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 20px;
-  text-decoration: none;
-  width: 10%;
-  font-size: 20px;
-  text-align: center;
+.nav-links li a:hover{
+  background-color: #fff;
+  color: #e7b93b;
 }
 /*--------------NURSE LOGIN BUTTON FROM DEVIN :) ---------*/
 
@@ -51,12 +47,19 @@ nav{
   background: #e7b93b;
   color: #fff;
   padding: 10px 20px;
+  border: 1px solid #fff;
   border-radius: 20px;
   text-decoration: none;
   width: 10%;
   font-size: 20px;
   text-align: center;
 }
+
+.login-btn:hover{
+  background-color: #fff;
+  color: #e7b93b;
+}
+
 
 .left{
 	flex:1;
