@@ -274,10 +274,7 @@ body:not(:-moz-handler-blocked) fieldset {
   border-color: #c8942e;
   z-index: 1;
 }
-.toggle input:focus + label {
-  outline: dotted 1px #CCC;
-  outline-offset: 0.45rem;
-}
+
 @media (max-width: 800px) {
   .toggle input + label {
     padding: 0.75rem 0.25rem;
