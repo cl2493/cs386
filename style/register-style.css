@@ -226,6 +226,14 @@ input{
   /* ----- */
 }
 
+.profileType input:checked + label {
+  background-color: #4B9DEA;
+  color: #FFF;
+  box-shadow: 0 0 10px rgba(102, 179, 251, 0.5);
+  border-color: #4B9DEA;
+  z-index: 1;
+}
+
 .submit-btn{
     cursor: pointer;
       background: #e7b93b;
