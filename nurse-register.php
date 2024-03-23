@@ -29,7 +29,7 @@ if (isset($_POST['submit-Btn'])) {
     {
         // set session variables to show registration success and log-in status
         $_SESSION['registration_success'] = true;
-        $_SESSION['username'] = 'first_name';
+        $_SESSION['username'] = $first_name;
 
         header('Location: index.php');
         exit(0);
