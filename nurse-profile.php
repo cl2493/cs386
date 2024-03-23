@@ -14,7 +14,13 @@ $phone = "123-456-7890";
 $b_month = "October";
 $b_day = 1;
 $b_year = 1990;
-$verifiedFlag = true;
+$verifiedFlag = false;
+$submission_stages = ["Not Submitted", "Submitted", "Approved", "Rejected"];
+$user_submission_stage = $submission_stages[0];
+
+if ($user_submission_stage == "Approved") {
+    $verifiedFlag = true;
+}
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +53,7 @@ $verifiedFlag = true;
                 <li><a href="404ErrorPage.html">Accommodation</a></li>
             </ul>
             <!-- Profile button -->
-            <a class="profile-btn" onclick="popupFunction()">Profile</a>
+            <a class="profile-btn" onclick="popupFunction()"><?php echo "$first_name $last_name"; ?></a>
         </nav>
     </div>
 <!------------------------------------Profile Page------------------------------------>
@@ -89,13 +95,30 @@ $verifiedFlag = true;
                 <div class='space-top'></div>
                 <p><strong>User ID:</strong> <?php echo $userID; ?></p>
                 <div class='space-top'></div>
+                <p><strong>Certification Submission:</strong> <?php echo $user_submission_stage; ?></p>
+                <div class='space-top'></div>
                 <p><strong>Phone:</strong> <?php echo $phone; ?></p>
                 <div class='space-top'></div>
                 <p><strong>Email:</strong> <?php echo $email; ?></p>
                 <div class='space-top'></div>
                 <p><strong>Birthday:</strong> <?php echo "$b_month $b_day, $b_year"; ?></p>
             </div>
+            <div id = "certification">
+            <?php
+            if ($user_submission_stage == "Not Submitted" || $user_submission_stage == "Rejected") {
+                echo '<form id="certForm" action="upload_certification.php" method="post" enctype="multipart/form-data">';
 
+                echo '<div class="cert-upload">';
+                echo '<h2>Upload Certification</h2>';
+                echo '</div>';
+                echo '<label for="certFile" class="select-btn">Select PDF File</label>';
+                echo '<input type="file" id="certFile" name="certFile" accept=".pdf" class="file-input">';
+                echo '<button type="submit" class="upload-btn">Upload</button>';
+                echo '</form>';
+            }
+            ?>
+
+            </div>
            </div>
        </div>
 

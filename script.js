@@ -158,4 +158,11 @@ image_input.addEventListener("change", function () {
         document.querySelector('#profile-picture').style.backgroundImage = 'none'; // Remove background image
     }
 });
+document.getElementById("uploadBtn").addEventListener("click", function() {
+    document.getElementById("certFile").click();
+});
 
+// Optional: Submit the form when a file is selected
+document.getElementById("certFile").addEventListener("change", function() {
+    document.getElementById("certForm").submit();
+});

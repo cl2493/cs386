@@ -43,6 +43,7 @@ nav{
 }
 .profile-btn
 {
+  border: 1px solid #fff;
   background-color: #e7b93b;
   color: #fff;
   padding: 10px 20px;
@@ -59,7 +60,6 @@ nav{
   color: #e7b93b;
 }
 
- /*-----------upload photo ---------------*/
  .profile-container {
   display: flex;
   flex-direction: column;
@@ -157,4 +157,49 @@ nav{
 .space-top {
   margin-top: 10px; /* Adjust margin-top as needed */
 }
+#certification {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  border: 2px dotted #e7b93b;
+  padding: 20px;
+  border-radius: 5px;
+  width: 100%;
+}
 
+.cert-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the start */
+  padding: 10px; /* Add padding for spacing */
+}
+
+input[type="file"] {
+  display: none; /* Hide the default file input */
+}
+.select-btn{
+  border: 1px solid #e7b93b;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 2%;
+  transition: background-color 0.3s ease;
+}
+.select-btn:hover{
+  background-color: #e7b93b;
+  color: #fff;
+}
+
+.upload-btn {
+  border: 1px solid #e7b93b;
+  background-color: #e7b93b;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.upload-btn:hover {
+  background-color: #a67406; /* Darker shade of yellow on hover */
+}
