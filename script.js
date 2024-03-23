@@ -1,3 +1,23 @@
+// Welcome Pop Up
+document.addEventListener('DOMContentLoaded', function()
+{
+    // function to show the popup
+    function showPopup(){
+        var wPopUp = document.getElementById('welcomePopup');
+        wPopUp.style.display = 'block';
+
+        // hides the popup after 3 seconds
+        setTimeout(function(){
+            wPopUp.style.display = 'none';
+
+        }, 3000);
+
+    }
+
+    // call the function when DOM fully loads
+    showPopup();
+});
+
 /*
 Dropdown Menu Funciton
 checks if the user clicks on the dropdown

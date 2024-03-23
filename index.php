@@ -5,9 +5,21 @@ session_start();
 
 include("connection.php");
 
+// check if the user is logged in
+if(isset($_SESSION['username'])){
+    $loggedIn = true;
+}
+
+else{
+    $loggedIn = false;
+}
+
 // check for registration success
-if(isset($_GET['registration']) && $_GET['registration'] === 'success'){
+if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']){
         echo '<div id="welcomePopup" class="welcome-popup">Welcome! You have successfully registered.</div>';
+
+        // unset session variable to stop the message on following visits
+        unset($_SESSION['registration_success']);
     }
 ?>
 
