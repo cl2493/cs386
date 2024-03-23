@@ -72,7 +72,7 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
                     <label>Password</label><br>
                     <input type="text"><br>
                 </form>
-                <a href="404ErrorPage.html" class="sign-in-btn">Login</a>
+                <a href="managerRegister.html" class="sign-in-btn">Login</a>
                 <a href="nurse-register.html" class="sign-in-btn" id = "nurse-register">Register</a>
             </div>
             <div class="container">
