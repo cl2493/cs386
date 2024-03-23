@@ -52,26 +52,32 @@ $verifiedFlag = true;
     </div>
 <!------------------------------------Profile Page------------------------------------>
     <div class="profile-container">
-        <h1 id="profile-Title">User Profile</h1>
-        <div id="profile-picture"></div>
-            <?php
-                echo "<h2 class='name-info'><strong>$first_name $middle_name $last_name";
-                if ($verifiedFlag) {
-                    echo "<img src='images/icons/check-symbol.png' class='verified-icon'>";
-                }
-                echo "</strong></h2>";
-                ?>
-        <div class="profile-data">
-            <!-- Move the form and profile picture div here -->
-            <!--on the left will have tabs for payment to update the screen -->
-            <div class="profile-tabs">
-                <button class="tab-btn" onclick="window.location.href='nurse-profile.php'">Profile</button>
-                <button class="tab-btn" onclick="window.location.href='nurse-appointments.php'">Appointments</button>
-                <button class="tab-btn" onclick="window.location.href='nurse-payment.php'">Payment</button>
-                <button class="tab-btn" onclick="window.location.href='nurse-medical-history.php'">Medical History</button>
-            </div>
-            <div class="profile-info">
+        <div class = "profile-content">
 
+           <div class="profile-header">
+              <h1 id="profile-Title">User Profile</h1>
+              <div id="profile-picture"></div>
+                  <?php
+                      echo "<h2 class='name-info'><strong>$first_name $middle_name $last_name";
+                      if ($verifiedFlag) {
+                          echo "<img src='images/icons/check-symbol.png' class='verified-icon'>";
+                      }
+                      echo "</strong></h2>";
+                   ?>
+           </div>
+           <div class="profile-data">
+               <!-- Move the form and profile picture div here -->
+               <!--on the left will have tabs for payment to update the screen -->
+               <div class = "profile-nav">
+               <div class="profile-tabs">
+                   <li ><a href="nurse-profile.php" class="active">Profile</a></li>
+                   <li><a href="nurse-availability.php">Payment</a></li>
+                   <li><a href = "" >History</a></li>
+                   <li><a href="">Settings</a></li>
+               </div>
+            </div>
+
+            <div class="profile-info">
                 <div class='space-top'></div>
                 <p><strong>User ID:</strong> <?php echo $userID; ?></p>
                 <div class='space-top'></div>
@@ -82,10 +88,20 @@ $verifiedFlag = true;
                 <p><strong>Birthday:</strong> <?php echo "$b_month $b_day, $b_year"; ?></p>
             </div>
 
-            <!--button to edit profile-->
-            <!--goes to a web form to edit information-->
-            <button class="edit-profile-btn" onclick="window.location.href='nurse-edit-profile.php'">Edit Profile</button>
-        </div>
+           </div>
+       </div>
+
+    </div>
+    <!------ footer ----->
+    <div class = "footer">
+        <p>Follow Us On Social Media</p>
+        <a href = "404ErrorPage.html"><i class="fa-brands fa-facebook"></i></a>
+        <a href = "404ErrorPage.html"><i class="fa-brands fa-google-plus"></i></a>
+        <a href = "404ErrorPage.html"><i class="fa-brands fa-instagram"></i></a>
+        <a href = "404ErrorPage.html"><i class="fa-brands fa-yelp"></i></a>
+        <a href = "404ErrorPage.html">Help Center</a>
+        <a href = "404ErrorPage.html">About Us</a>
+        <p>Copyright © 2024, RNT-A-ROOM</p>
     </div>
 </body>
 </html>

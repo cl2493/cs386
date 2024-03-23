@@ -137,7 +137,7 @@ document.querySelector('.register-form').addEventListener('submit', function(eve
 
 
 //image upload
-//image upload
+//THIS DOESN'T WORK
 const image_input = document.querySelector('#image_input');
 let uploaded_image = ""; // Changed var to let for block-scoped variable
 
@@ -158,3 +158,4 @@ image_input.addEventListener("change", function () {
         document.querySelector('#profile-picture').style.backgroundImage = 'none'; // Remove background image
     }
 });
+
