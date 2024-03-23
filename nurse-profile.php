@@ -33,28 +33,72 @@
     </div>
 
     <div class="profile-container">
-        <h1>User Profile</h1>
+        <h1 id = "profile-Title">User Profile</h1>
+        <div class="profile-data">
+            <!-- Move the form and profile picture div here -->
+            <div id="profile-picture"></div>
+            <form action="upload.php" method="post" enctype="multipart/form-data">
+                <input type="file" id="image_input" accept="image/png, image/jpg">
+            </form>
+            <div class="profile-info">
+                <!-- Move the PHP code here -->
+                <?php
+                // Sample user data (replace this with data from database)
+                $first_name = "John ";
+                $middle_name = "";
+                $last_name = "Smith";
+          
+                $userID = 12341;
 
-        <!-- Move the PHP code here -->
-        <?php
-        // Sample user data (replace this with data from database)
-        $username = "JohnDoe";
-        $email = "john@example.com";
-        $age = 30;
+                $email = "john@example.com";
 
-        // Display user information
-        echo "<div class='profile-info'>";
-        echo "<p><strong>Username:</strong> $username</p>";
-        echo "<p><strong>Email:</strong> $email</p>";
-        echo "<p><strong>Age:</strong> $age</p>";
-        echo "</div>";
-        ?>
+                $phone = "123-456-7890";
 
-        <!-- Move the form and profile picture div here -->
-        <form action="upload.php" method="post" enctype="multipart/form-data">
-            <input type="file" id="image_input" accept="image/png, image/jpg">
-        </form>
-        <div id="profile-picture"></div>
+                $b_month = "October";
+                $b_day = 1;
+                $b_year = 1990;
+
+                $verifiedFlag = false;
+
+
+                // Display user information
+
+                echo "<div class='profile-info'>";
+                                
+                if ($verifiedFlag) {
+                    echo "<div class='name-info'>
+                    <h2>
+                    <strong>$first_name $middle_name $last_name</strong><img src='images/icons/check-symbol.png' class='verified-icon'>
+                    </h2>
+                    </div>";
+                }
+                else
+                {       
+                echo "<div class='name-info'>
+                <h2>
+                <strong>$first_name $middle_name $last_name</strong>
+                </h2>
+                </div>";                
+                }
+
+                // Add spacing using CSS class
+                echo "<div class='space-top'></div>"; 
+                echo "<p><strong>User ID:</strong> $userID</p>";
+
+                // Add spacing using CSS class
+                echo "<div class='space-top'></div>"; 
+                echo "<p><strong>Phone:</strong> $phone</p>";
+
+                // Add spacing using CSS class
+                echo "<div class='space-top'></div>"; 
+                echo "<p><strong>Email:</strong> $email</p>";
+
+                // Add spacing using CSS class
+                echo "<div class='space-top'></div>"; 
+                echo "<p><strong>Birthday:</strong> $b_month $b_day, $b_year</p>";
+                ?>
+            </div>
+        </div>
     </div>
 </body>
 </html>

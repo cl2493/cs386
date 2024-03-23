@@ -4,6 +4,10 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+p{
+  font-size: 17px;
+}
+
 .header{
   height: 14%;
   width: 100%;
@@ -144,20 +148,48 @@ login-btn{
     color: #e7b93b;
     font-weight: bold;
 }
+
  /*-----------upload photo ---------------*/
- .profile-container
- {
+ .profile-container {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  height: 100vh;
- 
- }
- #profile-picture{
-  width: 300px;
-  height: 300px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  text-align: center; /* Center text horizontally */
+}
+
+.profile-data {
+  display: flex;
+  flex-direction: column; /* Arrange elements vertically */
+  align-items: center; /* Center elements horizontally */
+  margin-top: 20px;
+  border: 1px solid #e7b93b;
+  padding: 20px;
+  width: 50%;
+}
+
+#profile-picture {
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   border: 1px solid #e7b93b;
-  background-position: center;
-  background-size: cover;
- }
+  margin-bottom: 20px; /* Add margin below the photo */
+}
+
+.profile-info {
+  width: 100%;
+  text-align: left; /* Align text to the left */
+}
+
+.name-info {
+  margin: 2%;
+  text-align: center; /* Center the name */
+}
+.verified-icon {
+  width: 20px; /* Adjust icon size as needed */
+  height: auto;
+  margin-left: 5px; /* Add margin between name and icon */
+}
+.space-top {
+  margin-top: 10px; /* Adjust margin-top as needed */
+}

@@ -1,5 +1,6 @@
 <!----- INDEX.PHP  ----->
 <?php
+
 session_start();
 
 include("connection.php");
@@ -33,7 +34,7 @@ if(isset($_GET['registration']) && $_GET['registration'] === 'success'){
             <nav id = "navBar">
                 <img  src="images/logo.png" class = "logo" >
                 <ul class = "nav-links">
-                    <li><a href = "404ErrorPage.html">Locations</a></li>
+                    <li><a href = "nurse-profile.php">Locations</a></li>
                     <li><a href = "404ErrorPage.html">Benefits</a></li>
                     <li><a href = "404ErrorPage.html">Accommodation</a></li>
                 </ul>
