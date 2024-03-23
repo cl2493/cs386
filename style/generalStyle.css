@@ -160,10 +160,9 @@ login-btn{
 
 .profile-data {
   display: flex;
-  flex-direction: column; /* Arrange elements vertically */
+  flex-direction: column; 
   align-items: center; /* Center elements horizontally */
   margin-top: 20px;
-  border: 1px solid #e7b93b;
   padding: 20px;
   width: 50%;
 }
@@ -181,6 +180,17 @@ login-btn{
   text-align: left; /* Align text to the left */
 }
 
+
+
+
+.profile-tabs {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px; /* Adjust the margin as needed */
+}
+.tab-btn {
+  margin-bottom: 10px; /* Adjust the spacing between buttons as needed */
+}
 .name-info {
   margin: 2%;
   text-align: center; /* Center the name */
@@ -193,3 +203,4 @@ login-btn{
 .space-top {
   margin-top: 10px; /* Adjust margin-top as needed */
 }
+

@@ -1,4 +1,10 @@
 <?php
+// This is a placeholder for the nurse profile page
+// The data will be retrieved from the database
+// For now, the data is hardcoded
+// The data will be displayed in the profile page
+// The profile page will have a form to upload a profile picture
+// profile picture currently does not display
 $first_name = "John";
 $middle_name = "";
 $last_name = "Smith";
@@ -8,7 +14,7 @@ $phone = "123-456-7890";
 $b_month = "October";
 $b_day = 1;
 $b_year = 1990;
-$verifiedFlag = false;
+$verifiedFlag = true;
 ?>
 
 <!DOCTYPE html>
@@ -44,23 +50,28 @@ $verifiedFlag = false;
             <a href="nurse-register.html" class="sign-in-btn" id="nurse-register">Register</a>
         </div>
     </div>
-
+<!------------------------------------Profile Page------------------------------------>
     <div class="profile-container">
         <h1 id="profile-Title">User Profile</h1>
-        <div class="profile-data">
-            <!-- Move the form and profile picture div here -->
-            <div id="profile-picture"></div>
-            <form action="upload.php" method="post" enctype="multipart/form-data">
-                <input type="file" id="image_input" accept="image/png, image/jpg">
-            </form>
-            <div class="profile-info">
-                <?php
+        <div id="profile-picture"></div>
+            <?php
                 echo "<h2 class='name-info'><strong>$first_name $middle_name $last_name";
                 if ($verifiedFlag) {
                     echo "<img src='images/icons/check-symbol.png' class='verified-icon'>";
                 }
                 echo "</strong></h2>";
                 ?>
+        <div class="profile-data">
+            <!-- Move the form and profile picture div here -->
+            <!--on the left will have tabs for payment to update the screen -->
+            <div class="profile-tabs">
+                <button class="tab-btn" onclick="window.location.href='nurse-profile.php'">Profile</button>
+                <button class="tab-btn" onclick="window.location.href='nurse-appointments.php'">Appointments</button>
+                <button class="tab-btn" onclick="window.location.href='nurse-payment.php'">Payment</button>
+                <button class="tab-btn" onclick="window.location.href='nurse-medical-history.php'">Medical History</button>
+            </div>
+            <div class="profile-info">
+
                 <div class='space-top'></div>
                 <p><strong>User ID:</strong> <?php echo $userID; ?></p>
                 <div class='space-top'></div>
@@ -70,6 +81,10 @@ $verifiedFlag = false;
                 <div class='space-top'></div>
                 <p><strong>Birthday:</strong> <?php echo "$b_month $b_day, $b_year"; ?></p>
             </div>
+
+            <!--button to edit profile-->
+            <!--goes to a web form to edit information-->
+            <button class="edit-profile-btn" onclick="window.location.href='nurse-edit-profile.php'">Edit Profile</button>
         </div>
     </div>
 </body>
