@@ -50,12 +50,8 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
                     <li><a href = "404ErrorPage.html">Benefits</a></li>
                     <li><a href = "404ErrorPage.html">Accommodation</a></li>
                 </ul>
-				<a class = "login-btn" onclick="popupFunction()">Sign In</a>
-            </nav>
-            <div class ="myPopup" id="myPopup">
-                <button class="exit-btn" onclick="closePopup()">X</button>
-                <form class="myPopup-Form">
-                    <?php
+				<a class = "login-btn" onclick="popupFunction()">
+                <?php
                     if(isset($_SESSION['username'])){
                         echo $_SESSION['username'];
                     }
@@ -63,6 +59,12 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
                         echo "Sign In";
                     }
                     ?>
+                </a>
+            </nav>
+            <div class ="myPopup" id="myPopup">
+                <button class="exit-btn" onclick="closePopup()">X</button>
+                <form class="myPopup-Form">
+                    <h2 class="tenants-login">Sign In</h2>
                     <label>Email</label><br>
                     <input type="text"><br>
                     <label>Password</label><br>
