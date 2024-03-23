@@ -57,10 +57,10 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
                 <form class="myPopup-Form">
                     <?php
                     if(isset($_SESSION['username'])){
-                        echo "<h2 class="tenants-login">$_SESSION['username']</h2>";
+                        echo $_SESSION['username'];
                     }
                     else{
-                        echo "<h2 class="tenants-login">Sign In</h2>";
+                        echo Sign In;
                     }
                     ?>
                     <label>Email</label><br>
