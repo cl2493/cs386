@@ -37,7 +37,7 @@
 
         <!-- Move the PHP code here -->
         <?php
-        // Sample user data (replace this with data from your database)
+        // Sample user data (replace this with data from database)
         $username = "JohnDoe";
         $email = "john@example.com";
         $age = 30;
