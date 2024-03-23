@@ -191,7 +191,7 @@ input{
   margin-bottom: 5%;
 }
 
-.pfType {
+.profileType {
   margin: 0 0 1.5rem;
   box-sizing: border-box;
   font-size: 0;
@@ -201,13 +201,13 @@ input{
   align-items: stretch;
 }
 
-.pfType input {
+.profileType input {
   width: 0;
   height: 0;
   position: absolute;
   left: -9999px;
 }
-.pfType input + label {
+.profileType input + label {
   margin: 0;
   padding: 0.75rem 2rem;
   box-sizing: border-box;
