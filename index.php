@@ -63,7 +63,6 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
                         <h2 class="tenants-login">Sign In</h2>
                     }
 
-                    <h2 class="tenants-login">Sign In</h2>
                     <label>Email</label><br>
                     <input type="text"><br>
                     <label>Password</label><br>
