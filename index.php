@@ -60,7 +60,7 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
                         echo $_SESSION['username'];
                     }
                     else{
-                        echo Sign In;
+                        echo "Sign In";
                     }
                     ?>
                     <label>Email</label><br>
