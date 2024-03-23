@@ -60,8 +60,9 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
                         echo "<h2 class="tenants-login">$_SESSION['username']</h2>";
                     }
                     else{
-                        echo <h2 class="tenants-login">Sign In</h2>;
+                        echo "<h2 class="tenants-login">Sign In</h2>";
                     }
+                    ?>
                     <label>Email</label><br>
                     <input type="text"><br>
                     <label>Password</label><br>
