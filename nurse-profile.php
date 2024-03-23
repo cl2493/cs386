@@ -29,26 +29,14 @@ $verifiedFlag = true;
 <body>
     <div class="header">           
         <nav id="navBar">
-            <img src="images/logo.png" class="logo">
+            <a href = "index.php"><img src="images/logo.png" class="logo"></a>
             <ul class="nav-links">
                 <li><a href="404ErrorPage.html">Locations</a></li>
                 <li><a href="404ErrorPage.html">Benefits</a></li>
                 <li><a href="404ErrorPage.html">Accommodation</a></li>
             </ul>
-            <a class="login-btn" onclick="popupFunction()">Sign In</a>
+            <a class="profile-btn" onclick="popupFunction()">Profile</a>
         </nav>
-        <div class="myPopup" id="myPopup">
-            <button class="exit-btn" onclick="closePopup()">X</button>
-            <form class="myPopup-Form">
-                <h2 class="tenants-login">Sign In</h2>
-                <label>Email</label><br>
-                <input type="text"><br>
-                <label>Password</label><br>
-                <input type="text"><br>
-            </form>
-            <a href="404ErrorPage.html" class="sign-in-btn">Login</a>
-            <a href="nurse-register.html" class="sign-in-btn" id="nurse-register">Register</a>
-        </div>
     </div>
 <!------------------------------------Profile Page------------------------------------>
     <div class="profile-container">
