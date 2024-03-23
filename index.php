@@ -50,7 +50,11 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
                     <li><a href = "404ErrorPage.html">Benefits</a></li>
                     <li><a href = "404ErrorPage.html">Accommodation</a></li>
                 </ul>
-				<a class = "login-btn" href="nurse-profile.php">
+                <?php if ($loggedIn): ?>
+				<a class = "login-btn" href="nurse-profile.php"><?php echo $_SESSION['username']; ?></a>
+                <?php else: ?>
+                    <a class="login-btn" href="index.php">Sign In</a>
+                    <?php endif; ?>
                     <div class="loginName">
                         <?php
                             if(isset($_SESSION['username'])){
