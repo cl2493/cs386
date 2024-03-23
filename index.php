@@ -55,6 +55,14 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
             <div class ="myPopup" id="myPopup">
                 <button class="exit-btn" onclick="closePopup()">X</button>
                 <form class="myPopup-Form">
+                    <?php
+                    if(isset($_SESSION['username'])){
+                        <h2 class="tenants-login">$_SESSION['username']</h2>
+                    }
+                    else{
+                        <h2 class="tenants-login">Sign In</h2>
+                    }
+
                     <h2 class="tenants-login">Sign In</h2>
                     <label>Email</label><br>
                     <input type="text"><br>
