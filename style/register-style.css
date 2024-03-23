@@ -275,6 +275,7 @@ body:not(:-moz-handler-blocked) fieldset {
   z-index: 1;
 }
 
+
 @media (max-width: 800px) {
   .toggle input + label {
     padding: 0.75rem 0.25rem;
