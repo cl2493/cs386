@@ -135,31 +135,13 @@ document.querySelector('.register-form').addEventListener('submit', function(eve
     });
 });
 
-
-//image upload
-//THIS DOESN'T WORK
-const image_input = document.querySelector('#image_input');
-let uploaded_image = ""; // Changed var to let for block-scoped variable
-
-image_input.addEventListener("change", function () {
-    const reader = new FileReader();
-
-    reader.addEventListener("load", () => {
-        uploaded_image = reader.result; // Store the uploaded image
-        document.querySelector('#profile-picture').style.backgroundImage = `url(${uploaded_image})`; // Use template literals
-    });
-
-    if (this.files[0]) {
-        // Check if a file is selected
-        reader.readAsDataURL(this.files[0]); // Read the file
-    } else {
-        // Handle case where no file is selected
-        uploaded_image = ""; // Reset uploaded image
-        document.querySelector('#profile-picture').style.backgroundImage = 'none'; // Remove background image
-    }
-});
-document.getElementById("uploadBtn").addEventListener("click", function() {
+document.querySelector(".select-btn").addEventListener("click", function() {
     document.getElementById("certFile").click();
+});
+
+document.getElementById("certFile").addEventListener("change", function() {
+    var fileName = this.files[0].name;
+    document.getElementById("fileNameDisplay").textContent = fileName;
 });
 
 // Optional: Submit the form when a file is selected

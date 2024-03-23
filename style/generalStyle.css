@@ -197,6 +197,7 @@ input[type="file"] {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  margin: 2%;
   transition: background-color 0.3s ease;
 }
 
