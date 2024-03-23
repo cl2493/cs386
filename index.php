@@ -50,7 +50,18 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
                     <li><a href = "404ErrorPage.html">Benefits</a></li>
                     <li><a href = "404ErrorPage.html">Accommodation</a></li>
                 </ul>
-				<a class = "login-btn" onclick="popupFunction()">Sign In</a>
+				<a class = "login-btn" onclick="popupFunction()">
+                    <div class="loginName">
+                        <?php
+                            if(isset($_SESSION['username'])){
+                            echo $_SESSION['username'];
+                        }
+                        else{
+                            echo "Sign In";
+                        }
+                        ?>
+                </div>
+                </a>
             </nav>
             <div class ="myPopup" id="myPopup">
                 <button class="exit-btn" onclick="closePopup()">X</button>
