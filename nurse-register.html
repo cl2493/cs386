@@ -52,13 +52,15 @@
                     <input type="date" name="birthday" required>
                     <p>To sign up you must but atleast 18.</p>
                 </div>
-                <div class="profileType">
-                    <h3>Are you a Travel Nurse or Property Owner?</h3>
-                    <input type="radio" name="pfType" required>
-                    <label>Travel Nurse</label>
-                    <input type="radio" name="pfType" required>
-                    <label>Property Owner</label>
-                </div>
+                <fieldset>
+                    <legend>Are you a Travel Nurse or Property Owner?</legend>
+                    <div class="toggle">
+                      <input type="radio" name="sizeBy" value="weight" id="sizeWeight" checked="checked" />
+                      <label for="sizeWeight">Travel Nurse</label>
+                      <input type="radio" name="sizeBy" value="dimensions" id="sizeDimensions" />
+                      <label for="sizeDimensions">Property Owners</label>
+                    </div>
+                </fieldset>
                 <div class="nurse-email">
                     <input type ="email" name="email" id = "nurse-email" placeholder="Email" required>
                 </div>
