@@ -51,6 +51,10 @@ nav{
     text-align: center;
 }
 
+.loginName{
+    font-size:100%;
+}
+
 .left{
 	flex:1;
 	display:flex;
