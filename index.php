@@ -50,16 +50,27 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
             <nav id = "navBar">
                 <img  src="images/logo.png" class = "logo" >
                 <ul class = "nav-links">
-                    <li><a href = "nurse-profile.php">TESTING PROFILE</a></li>
+                    <li><a href = "nurse-profile.php">Locations</a></li>
                     <li><a href = "404ErrorPage.html">Benefits</a></li>
                     <li><a href = "404ErrorPage.html">Accommodation</a></li>
                 </ul>
                 <?php if ($loggedIn): ?>
                     <?php if ($_SESSION['pfType'] == 'travelnursesdb')
                     {
-                    echo '<a class="login-btn" href="nurse-profile.php">';
-                    echo $user_data[2];
-                    echo '</a>';
+                        echo '<div class="profile-dropdown">';
+                        echo '<button class="profile-btn" data-dropdown-button>';
+                        echo $user_data[2];
+                        echo '</button>';
+                        echo '<div class="menu-dropdown" data-dropdown tabindex="0">';
+                        echo '<div class="menu-dropdown-content">';
+                        echo '<a href="nurse-profile.php">Profile</a>';
+                        echo '<a href="nurse-profile-tabs/payment-setting.php">Payment</a>';
+                        echo '<a href="404ErrorPage.html">History</a>';
+                        echo '<a href="404ErrorPage.html">Settings</a>';
+                        echo '<a href="logout.php">Logout</a>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
                     }
                     else
                     {
