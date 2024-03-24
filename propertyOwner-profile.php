@@ -1,20 +1,19 @@
 <?php
-// This is a placeholder for the nurse profile page
-// The data will be retrieved from the database
-// For now, the data is hardcoded
-// The data will be displayed in the profile page
-// The profile page will have a form to upload a profile picture
-// profile picture currently does not display
-$first_name = "John";
-$middle_name = "";
-$last_name = "Smith";
-$userID = 12341;
-$email = "john@example.com";
-$phone = "123-456-7890";
-$b_month = "October";
-$b_day = 1;
-$b_year = 1990;
-$verifiedFlag = true;
+
+session_start();
+include("connection.php");
+include("phpfunctions.php");
+
+if (isset($_SESSION['pfType']))
+{
+    $user_data = checkLogin($conn,$_SESSION['pfType']);
+    $verifiedFlag = false;
+}
+else
+{
+    header("Location: index.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -62,46 +61,76 @@ $verifiedFlag = true;
                 <!-- Profile name -->
                 <?php
                 // Display the name of the user
-                echo "<h2 class='name-info'><strong>$first_name $middle_name $last_name";
+                echo "<h2 class='name-info'><strong>$user_data[2] $user_data[3]";
                 // Display the verified icon if the user is verified
                 if ($verifiedFlag) {
-                    echo "<img src='images/icons/check-symbol.png' class='verified-icon'>";
+                echo "<img src='images/icons/check-symbol.png' class='verified-icon'>";
                 }
                 // Close the strong tag
                 echo "</strong></h2>";
                 ?>
             </div>
+
+            <div class="pfnav-and-pfinfo">
             <!-- Profile data -->
            <div class="profile-data">
                <!-- Move the form and profile picture div here -->
                <!--on the left will have tabs for payment to update the screen -->
                <div class = "profile-nav">
                <div class="profile-tabs">
-                   <li ><a href="nurse-profile.php" class="active">Profile</a></li>
+                   <li ><a href="propertyOwner-profile.php" class="active">Profile</a></li>
                    <!-- These links will be updated to the correct pages -->
                    <li><a href="">Payment</a></li>
                    <li><a href = "" >History</a></li>
                    <li><a href="">Settings</a></li>
-              <div class="create-listing">
-                   <li><a href="listingInterface.php">Listings</a></li>
+                   <li><a onclick="popupFunction()">Listings</a></li>
               </div>
-               </div>
             </div>
+            </div>
+
             <!-- Profile information -->
             <div class="profile-info">
-                <div class='space-top'></div>
-                <p><strong>User ID:</strong> <?php echo $userID; ?></p>
-                <div class='space-top'></div>
-                <p><strong>Phone:</strong> <?php echo $phone; ?></p>
-                <div class='space-top'></div>
-                <p><strong>Email:</strong> <?php echo $email; ?></p>
-                <div class='space-top'></div>
-                <p><strong>Birthday:</strong> <?php echo "$b_month $b_day, $b_year"; ?></p>
+            <?php
+                   echo "<div class='space-top'></div>";
+                   echo "<p><strong>User ID: </strong>$user_data[1]</p>";
+                   echo "<div class='space-top'></div>";
+                   echo "<p><strong>Email: </strong>$user_data[5]</p>";
+                   echo "<div class='space-top'></div>";
+                   echo "<p><strong>Birthday: </strong>$user_data[4]</p>";
+            ?>
+            </div>
+           </div>
             </div>
 
-           </div>
-       </div>
-
+           <div class="myPopup" id="myPopup">
+                <button class="exit-btn" onclick="closePopup()">X</button>
+                <form class="listing-forum" action="listingInterface.php" method="POST" id="listing-forum">
+                <h2 class ="listingForumTitle">listing information</h2>
+                <div>
+                    <label for="street-address">Street address</label>
+                    <input type="text" id="street-address" name="street-address" autocomplete="street-address" required enterkeyhint="next"></input>
+                </div>
+                <div>
+                    <label for="postal-code">ZIP or postal code (optional)</label>
+                    <input class="postal-code" id="postal-code" name="postal-code" autocomplete="postal-code" enterkeyhint="next">
+                </div>
+                <div>
+                    <label for="city">City</label>
+                    <input required type="text" id="city" name="city" autocomplete="address-level2" enterkeyhint="next">
+                </div>
+                <div>
+                    <label for="Monthly-Cost">Monthly Cost</label>
+                    <input required type="number" id="price" name="price" autocomplete="cost" enterkeyhint="">
+                </div>
+                <div>
+                    <label for="ImagesUpload">Images</label>
+                    <input required type="file" id="imgs" name="image" autocomplete="" enterkeyhint="">
+                </div>
+                <div>
+                    <button type="submit" name="submitBtn">Submit</button>
+                </div>
+                </form>
+            </div>
     </div>
     <!------ footer ----->
     <div class = "footer">
