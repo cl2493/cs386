@@ -16,15 +16,8 @@ if (isset($_POST['submit-Btn'])) {
     $password = $_POST['password'];
 
     // insert data into the database
-    if ($pfType == "travelnurse")
-    {
-        $query = "INSERT INTO travelnursesdb (user_id, first_name, last_name, birthday, email, password) VALUES (:user_id, :first_name, :last_name, :birthday, :email, :password)";
-    }
-    else
-    {
-        $query = "INSERT INTO propertyownersdb (user_id, first_name, last_name, birthday, email, password) VALUES (:user_id, :first_name, :last_name, :birthday, :email, :password)";
-    } 
-        $query_run = $conn->prepare($query);
+    $query = "INSERT INTO $pfType (user_id, first_name, last_name, birthday, email, password) VALUES (:user_id, :first_name, :last_name, :birthday, :email, :password)";
+    $query_run = $conn->prepare($query);
 
     $data =[
         ':user_id' => $user_id,

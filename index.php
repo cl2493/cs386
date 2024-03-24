@@ -52,8 +52,7 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
                 </ul>
                 <?php if ($loggedIn): ?>
                     <a class="login-btn" href="nurse-profile.php">
-                        <?php echo $_SESSION['username']; 
-                        unset($_SESSION['username']);
+                        <?php echo $_SESSION['username'];
                         ?>
                     </a>
                 <?php else: ?>
