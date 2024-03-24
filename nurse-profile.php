@@ -121,7 +121,7 @@ $inputFileName = "No File Selected";
                 <h1 id="profile-Title">User Profile</h1>
                 <!-- Profile name -->
                 <div id="profile-picture"></div>
-                <h2 class='name-info'><strong><?php echo "$first_name $last_name"?></strong></h2>;
+                <h2 class='name-info'><strong><?php echo "$first_name $last_name";?></strong></h2>
                 <?php
                 // Display the verified icon if the user is verified
                 if ($verifiedFlag) {
