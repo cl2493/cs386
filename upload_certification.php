@@ -28,6 +28,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
                 // file upload successfully 
                 echo "The file ".$fileName." has uploaded successfully.";
+
+                // set submission stage to "Submitted"
+                $_SESSION['submission_stage'] = "Submitted";
             }
 
             else{

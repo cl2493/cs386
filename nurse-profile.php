@@ -40,13 +40,17 @@ if(isset($_SESSION['user_id']) && isset($_SESSION['pfType'])){
         $last_name = $row['last_name'];
         $email = $row['email'];
         $birthday = $row['birthday'];
-        $submission_stage = $row['submission_stage'];
 
 
-        // check if the submission stage shows user is verified
-        if($submission_stage == "Approved")
+        // check user submission stage from session
+        if(isset($_SESSION['submission_stage']))
         {
-            $verifiedFlag = true;
+            $submission_stage = $_SESSION['submission_stage'];
+
+            // check if certificate was approved
+            if($submission_stage == "Approved"){
+                $verifiedFlag = true;
+            }
         }
     }
 
