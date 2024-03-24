@@ -5,17 +5,9 @@ session_start();
 include("connection.php");
 include("phpfunctions.php");
 
-if (isset($_SESSION['pfType']))
+if (isset($_SESSION['user_id']))
 {
     $user_data = checkLogin($conn,$_SESSION['pfType']);
-}
-// check if the user is logged in
-if(isset($_SESSION['username'])){
-    $loggedIn = true;
-}
-
-else{
-    $loggedIn = false;
 }
 
 // check for registration success
@@ -54,34 +46,51 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
                     <li><a href = "404ErrorPage.html">Benefits</a></li>
                     <li><a href = "404ErrorPage.html">Accommodation</a></li>
                 </ul>
-                <?php if ($loggedIn): ?>
-                    <?php if ($_SESSION['pfType'] == 'travelnursesdb')
+                <?php
+                    if (isset($_SESSION['user_id']))
                     {
-                        echo '<div class="profile-dropdown">';
-                        echo '<button class="profile-btn" data-dropdown-button>';
-                        echo $user_data[2];
-                        echo '</button>';
-                        echo '<div class="menu-dropdown" data-dropdown tabindex="0">';
-                        echo '<div class="menu-dropdown-content">';
-                        echo '<a href="nurse-profile.php">Profile</a>';
-                        echo '<a href="nurse-profile-tabs/payment-setting.php">Payment</a>';
-                        echo '<a href="404ErrorPage.html">History</a>';
-                        echo '<a href="404ErrorPage.html">Settings</a>';
-                        echo '<a href="logout.php">Logout</a>';
-                        echo '</div>';
-                        echo '</div>';
-                        echo '</div>';
+                        echo 'help';
+                        if ($_SESSION['pfType'] == 'travelnursesdb')
+                        {
+                            echo '<div class="profile-dropdown">';
+                            echo '<button class="profile-btn" data-dropdown-button>';
+                            echo $user_data[2];
+                            echo '</button>';
+                            echo '<div class="menu-dropdown" data-dropdown tabindex="0">';
+                            echo '<div class="menu-dropdown-content">';
+                            echo '<a href="nurse-profile.php">Profile</a>';
+                            echo '<a href="nurse-profile-tabs/payment-setting.php">Payment</a>';
+                            echo '<a href="404ErrorPage.html">History</a>';
+                            echo '<a href="404ErrorPage.html">Settings</a>';
+                            echo '<a href="logout.php">Logout</a>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
+                        }
+                        else
+                        {
+                            echo '</a>';
+                            echo '<div class="profile-dropdown">';
+                            echo '<button class="profile-btn" data-dropdown-button>';
+                            echo $user_data[2];
+                            echo '</button>';
+                            echo '<div class="menu-dropdown" data-dropdown tabindex="0">';
+                            echo '<div class="menu-dropdown-content">';
+                            echo '<a href="propertyOwner-profile.php">Profile</a>';
+                            echo '<a href="nurse-profile-tabs/payment-setting.php">Payment</a>';
+                            echo '<a href="404ErrorPage.html">History</a>';
+                            echo '<a href="404ErrorPage.html">Settings</a>';
+                            echo '<a href="logout.php">Logout</a>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
+                        }
                     }
                     else
                     {
-                    echo '<a class="login-btn" href="propertyOwner-profile.php">';
-                    echo $user_data[2];
-                    echo '</a>';
+                        echo '<a class="login-btn" onclick="popupFunction()">Sign In</a>';
                     }
-                    ?>
-                <?php else: ?>
-                    <a class="login-btn" onclick="popupFunction()">Sign In</a>
-                <?php endif; ?>
+                ?>
             </nav>
             <div class ="myPopup" id="myPopup">
                 <button class="exit-btn" onclick="closePopup()">X</button>
