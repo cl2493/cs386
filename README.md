@@ -1,6 +1,6 @@
-# Project Title
+# RNT-A-ROOM
 
-One Paragraph of project description goes here
+RNT-A-ROOM is a web application that focuses on serving housing options for travel nurses. Unlike our other competitors, RNT-A-ROOM aims to address and help travel nurses find their ideal rental home during their assignment.
 
 ## Getting Started
 
