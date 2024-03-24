@@ -2,7 +2,7 @@
 // error handling
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-var_dump($_SESSION);
+//var_dump($_SESSION);
 
 session_start();
 include("connection.php");
@@ -10,11 +10,11 @@ include("phpfunctions.php");
 
 if (isset($_SESSION['pfType']))
 {
-    $user_data = checkLogin($conn, $_SESSION['$pfType']);
+    $user_data = checkLogin($conn, $_SESSION['pfType']);
     $verifiedFlag = false;
 }
-
-else{
+else
+{
     header("Location: index.php");
     exit();
 }
