@@ -1,12 +1,13 @@
 <?php
-// This is a placeholder for the nurse profile page
-// The data will be retrieved from the database
-// For now, the data is hardcoded
-// The data will be displayed in the profile page
-// The profile page will have a form to upload a profile picture
-// profile picture currently does not display
+// error handling
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 session_start();
+
+var_dump($_SESSION);
+
+
 
 include("connection.php");
 
