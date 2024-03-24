@@ -5,25 +5,59 @@
 // The data will be displayed in the profile page
 // The profile page will have a form to upload a profile picture
 // profile picture currently does not display
-$first_name = "John";
-$middle_name = "Doe";
-$last_name = "Smith";
-$userID = 12341;
-$email = "john@example.com";
-$phone = "123-456-7890";
-$b_month = "October";
-$b_day = 1;
-$b_year = 1990;
-$verifiedFlag = false;
-$submission_stages = ["Not Submitted", "Submitted", "Approved", "Rejected"];
-$user_submission_stage = $submission_stages[2];
-if ($user_submission_stage == "Approved") {
-    $verifiedFlag = true;
-}
 
+session_start();
+
+include("connection.php");
+
+// check if user is logged in
+// get user info
+if(isset($_SESSION['user_id']) && isset($_SESSION['pfType'])){
+    $user_id = $_SESSION['user_id'];
+    $pfType = $_SESSION['pfType'];
+
+    // query to get user info from the database
+    $query = "SELECT first_name, last_name, email, phone, birthday, submission_stage FROM $pfType WHERE user_id=?";
+    $stmt = $conn->prepare($query);
+
+    // bind parameters
+    $stmt->bind_param("i",$user_id);
+
+    // execute statement
+    $stmt->execute();
+
+    // get result
+    $result = $stmt->get_result();
+
+    // check if query was successful and get user data
+    if($result && $result->num_rows > 0){
+        $row = $result->fetch_assoc();
+        $first_name = $row['first_name'];
+        $last_name = $row['last_name'];
+        $email = $row['email'];
+        $phone = $row['phone'];
+        $birthday = $row['birthday'];
+        $submission_stage = $row['submission_stage'];
+    }
+
+    else{
+        // handles error if couldn't get user data
+        echo "Error: Failed to get user information.";
+        exit();
+    }
+}
+    else{
+        // case if user isn't logged in
+        header("Location: index.php");
+        exit();
+    }
+
+
+// placeholder for uploaded file?
 $inputFileName = "No File Selected";
 ?>
 
+<!-- Nurse profile header -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -83,53 +117,55 @@ $inputFileName = "No File Selected";
                <!-- Move the form and profile picture div here -->
                <!--on the left will have tabs for payment to update the screen -->
                <div class = "profile-nav">
-                  <div class="profile-tabs">
-                      <li ><a href="nurse-profile.php" class="active">Profile</a></li>
-                      <!-- These links will be updated to the correct pages -->
-                      <li><a href="nurse-profile-tabs/payment-setting.php">Payment</a></li>
-                      <li><a href = "" >History</a></li>
-                      <li><a href="">Settings</a></li>
-                  </div>
-               </div>
-               <!-- Profile information -->
-               <div class="profile-info">
-                  <div class='space-top'></div>
-                  <p><strong>User ID:</strong> <?php echo $userID; ?></p>
-                  <div class='space-top'></div>
-                  <p><strong>Certification Submission:</strong> <?php echo $user_submission_stage; ?></p>
-                  <div class='space-top'></div>
-                  <p><strong>Phone:</strong> <?php echo $phone; ?></p>
-                  <div class='space-top'></div>
-                  <p><strong>Email:</strong> <?php echo $email; ?></p>
-                  <div class='space-top'></div>
-                  <p><strong>Birthday:</strong> <?php echo "$b_month $b_day, $b_year"; ?></p>
-               </div>
-               <div id = "certification">
-                   <?php
-                   if ($user_submission_stage == "Not Submitted" || $user_submission_stage == "Rejected") {
-                       echo '<form id="certForm" action="upload_certification.php" method="post" enctype="multipart/form-data">';
-                       echo '<div class="cert-upload">';
-                       echo '<h2>Upload Certification</h2>';
-                       echo '</div>';
-                       echo '<label for="certFile" class="select-btn">Select PDF File</label>';
-                       echo '<input type="file" id="certFile" name="certFile" accept=".pdf" class="file-input">';
-                       echo '<button type="submit" class="upload-btn">Upload</button>';
-                       echo "<span id='fileNameDisplay' class='file-name-display'>$inputFileName</span>";
-                       echo '</form>';
-                    } else if ($user_submission_stage == "Submitted") {
-                        echo '<div class="cert-upload">';
-                        echo '<h2>Certification Submitted</h2>';
-                        echo '</div>';
-                    } else if ($user_submission_stage == "Approved") {
-                        echo '<div class="cert-upload">';
-                        echo '<h2>Certification Approved</h2>';
-                        echo '</div>';
-                    }
-                ?>
-
+               <div class="profile-tabs">
+                   <li ><a href="nurse-profile.php" class="active">Profile</a></li>
+                   <!-- These links will be updated to the correct pages -->
+                   <li><a href="">Payment</a></li>
+                   <li><a href = "" >History</a></li>
+                   <li><a href="">Settings</a></li>
                </div>
             </div>
-        </div>
+            <!-- Profile information -->
+            <div class="profile-info">
+                <div class='space-top'></div>
+                <p><strong>User ID:</strong> <?php echo $userID; ?></p>
+                <div class='space-top'></div>
+                <p><strong>Certification Submission:</strong> <?php echo $submission_stage; ?></p>
+                <div class='space-top'></div>
+                <p><strong>Phone:</strong> <?php echo $phone; ?></p>
+                <div class='space-top'></div>
+                <p><strong>Email:</strong> <?php echo $email; ?></p>
+                <div class='space-top'></div>
+                <p><strong>Birthday:</strong> <?php echo date("F j, Y", strtotime($birthday)); ?></p>
+            </div>
+            <div id = "certification">
+            <?php
+            if ($submission_stage == "Not Submitted" || $submission_stage == "Rejected") {
+                echo '<form id="certForm" action="upload_certification.php" method="post" enctype="multipart/form-data">';
+                echo '<div class="cert-upload">';
+                echo '<h2>Upload Certification</h2>';
+                echo '</div>';
+                echo '<label for="certFile" class="select-btn">Select PDF File</label>';
+                echo '<input type="file" id="certFile" name="certFile" accept=".pdf" class="file-input">';
+                echo '<button type="submit" class="upload-btn">Upload</button>';
+                echo "<span id='fileNameDisplay' class='file-name-display'>$inputFileName</span>";
+                echo '</form>';
+            } else if ($submission_stage == "Submitted") {
+                echo '<div class="cert-upload">';
+                echo '<h2>Certification Submitted</h2>';
+                echo '</div>';
+            } else if ($submission_stage == "Approved") {
+                // set verified flag to true ?
+                $verifiedFlag = true;
+                echo '<div class="cert-upload">';
+                echo '<h2>Certification Approved</h2>';
+                echo '</div>';
+            }
+?>
+
+            </div>
+           </div>
+       </div>
 
     </div>
     <!------ footer ----->
