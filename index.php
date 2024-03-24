@@ -1,10 +1,14 @@
 <!----- INDEX.PHP  ----->
 <?php
-
 session_start();
 
 include("connection.php");
+include("phpfunctions.php");
 
+if (isset($_SESSION['pfType']))
+{
+    $user_data = checkLogin($conn,$_SESSION['pfType']);
+}
 // check if the user is logged in
 if(isset($_SESSION['username'])){
     $loggedIn = true;
@@ -51,7 +55,19 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
                     <li><a href = "404ErrorPage.html">Accommodation</a></li>
                 </ul>
                 <?php if ($loggedIn): ?>
-                    <a class="login-btn" href="nurse-profile.php"><?php echo $_SESSION['username']; ?></a>
+                    <?php if ($_SESSION['pfType'] == 'travelnursesdb')
+                    {
+                    echo '<a class="login-btn" href="nurse-profile.php">';
+                    echo $user_data[2];
+                    echo '</a>';
+                    }
+                    else
+                    {
+                    echo '<a class="login-btn" href="propertyOwner-profile.php">';
+                    echo $user_data[2];
+                    echo '</a>';
+                    }
+                    ?>
                 <?php else: ?>
                     <a class="login-btn" onclick="popupFunction()">Sign In</a>
                 <?php endif; ?>

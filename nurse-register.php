@@ -16,15 +16,8 @@ if (isset($_POST['submit-Btn'])) {
     $password = $_POST['password'];
 
     // insert data into the database
-    if ($pfType == "travelnurse")
-    {
-        $query = "INSERT INTO travelnursesdb (user_id, first_name, last_name, birthday, email, password) VALUES (:user_id, :first_name, :last_name, :birthday, :email, :password)";
-    }
-    else
-    {
-        $query = "INSERT INTO propertyownersdb (user_id, first_name, last_name, birthday, email, password) VALUES (:user_id, :first_name, :last_name, :birthday, :email, :password)";
-    } 
-        $query_run = $conn->prepare($query);
+    $query = "INSERT INTO $pfType (user_id, first_name, last_name, birthday, email, password) VALUES (:user_id, :first_name, :last_name, :birthday, :email, :password)";
+    $query_run = $conn->prepare($query);
 
     $data =[
         ':user_id' => $user_id,
@@ -41,13 +34,21 @@ if (isset($_POST['submit-Btn'])) {
         // set session variables to show registration success and log-in status
         $_SESSION['registration_success'] = true;
         $_SESSION['username'] = $first_name;
+        $_SESSION['user_id'] = $user_id;
+        $_SESSION['pfType'] = $pfType;
 
-        header('Location: index.php');
-        exit(0);
+        if ($pfType == "travelnursesdb")
+        {
+            header('Location: nurse-profile.php');
+        }
+        else
+        {
+            header('Location: propertyOwner-profile.php');
+        }
     } else 
     {
         header('Location: index.php?registration=error');
-        exit(0);
     }
 }
+exit(0);
 ?>
