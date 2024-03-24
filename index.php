@@ -51,21 +51,10 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
                     <li><a href = "404ErrorPage.html">Accommodation</a></li>
                 </ul>
                 <?php if ($loggedIn): ?>
-				<a class = "login-btn" href="nurse-profile.php"><?php echo $_SESSION['username']; ?></a>
+                    <a class = "login-btn" href="nurse-profile.php"><?php echo $_SESSION['username']; ?></a>
                 <?php else: ?>
-                    <a class="login-btn" href="index.php">Sign In</a>
-                    <?php endif; ?>
-                    <div class="loginName">
-                        <?php
-                            if(isset($_SESSION['username'])){
-                            echo $_SESSION['username'];
-                        }
-                        else{
-                            echo "Sign In";
-                        }
-                        ?>
-                </div>
-                </a>
+                    <a class="login-btn" onclick="popupFunction()">Sign In</a>
+                <?php endif; ?>
             </nav>
             <div class ="myPopup" id="myPopup">
                 <button class="exit-btn" onclick="closePopup()">X</button>
