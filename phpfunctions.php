@@ -26,11 +26,11 @@ function randomNum($length,$pfType,$conn)
     {
         $newId .= rand(0,9);
     }
-    $stmt = $conn->prepare("SELECT id FROM $pfType WHERE user_id = ? LIMIT 1");
+    $stmt = $conn->prepare("SELECT id FROM $pfType WHERE user_id <= ? LIMIT 1");
     $stmt->execute([$newId]);
     if ($stmt->rowCount() == 1)
         {
-            return randomNum($length);
+            return randomNum($length, $pfType, $conn);
         }
     return $newId;
 }

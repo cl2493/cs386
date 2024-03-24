@@ -1,11 +1,10 @@
 <!----- INDEX.PHP  ----->
 <?php
 session_start();
-
 include("connection.php");
 include("phpfunctions.php");
 
-if (isset($_SESSION['user_id']))
+if (isset($_SESSION['pfType']))
 {
     $user_data = checkLogin($conn,$_SESSION['pfType']);
 }
