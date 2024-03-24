@@ -10,6 +10,9 @@ session_start();
 
 include("connection.php");
 
+// initialize verified flag
+$verifiedFlag = false;
+
 // check if user is logged in
 // get user info
 if(isset($_SESSION['user_id']) && isset($_SESSION['pfType'])){
@@ -38,6 +41,13 @@ if(isset($_SESSION['user_id']) && isset($_SESSION['pfType'])){
         $phone = $row['phone'];
         $birthday = $row['birthday'];
         $submission_stage = $row['submission_stage'];
+
+
+        // check if the submission stage shows user is verified
+        if($submission_stage == "Approved")
+        {
+            $verifiedFlag = true;
+        }
     }
 
     else{
@@ -100,10 +110,8 @@ $inputFileName = "No File Selected";
                 <h1 id="profile-Title">User Profile</h1>
                 <!-- Profile name -->
                 <div id="profile-picture"></div>
-                <!-- Profile name -->
+                <h2 class='name-info'><strong><?php echo "$first_name $last_name"?></strong></h2>;
                 <?php
-                // Display the name of the user
-                echo "<h2 class='name-info'><strong>$first_name $middle_name $last_name";
                 // Display the verified icon if the user is verified
                 if ($verifiedFlag) {
                     echo "<img src='images/icons/check-symbol.png' class='verified-icon'>";
@@ -128,7 +136,7 @@ $inputFileName = "No File Selected";
             <!-- Profile information -->
             <div class="profile-info">
                 <div class='space-top'></div>
-                <p><strong>User ID:</strong> <?php echo $userID; ?></p>
+                <p><strong>User ID:</strong> <?php echo $user_id; ?></p>
                 <div class='space-top'></div>
                 <p><strong>Certification Submission:</strong> <?php echo $submission_stage; ?></p>
                 <div class='space-top'></div>
@@ -155,7 +163,6 @@ $inputFileName = "No File Selected";
                 echo '<h2>Certification Submitted</h2>';
                 echo '</div>';
             } else if ($submission_stage == "Approved") {
-                // set verified flag to true ?
                 $verifiedFlag = true;
                 echo '<div class="cert-upload">';
                 echo '<h2>Certification Approved</h2>';
