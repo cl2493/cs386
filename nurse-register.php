@@ -34,13 +34,20 @@ if (isset($_POST['submit-Btn'])) {
         // set session variables to show registration success and log-in status
         $_SESSION['registration_success'] = true;
         $_SESSION['username'] = $first_name;
+        $_SESSION['user_id'] = $user_id;
 
-        header('Location: index.php');
-        exit(0);
+        if ($pfType == "travelnursesdb")
+        {
+            header('Location: nurse-profile.php');
+        }
+        else
+        {
+            header('Location: propertyOwner-profile.php');
+        }
     } else 
     {
         header('Location: index.php?registration=error');
-        exit(0);
     }
 }
+exit(0);
 ?>
