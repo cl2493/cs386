@@ -2,6 +2,7 @@
 <?php
 session_start();
 include('connection.php');
+include('phpfunctions.php');
 
 // Check if the form was submitted
 if (isset($_POST['submit-Btn'])) {
@@ -9,14 +10,24 @@ if (isset($_POST['submit-Btn'])) {
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
     $birthday = $_POST['birthday'];
+    $pfType = $_POST['pfType'];
+    $user_id = randomNum(10,$pfType,$conn);
     $email = $_POST['email'];
     $password = $_POST['password'];
 
     // insert data into the database
-    $query = "INSERT INTO travelnursesdb (first_name, last_name, birthday, email, password) VALUES (:first_name, :last_name, :birthday, :email, :password)";
-    $query_run = $conn->prepare($query);
+    if ($pfType == "travelnurse")
+    {
+        $query = "INSERT INTO travelnursesdb (user_id, first_name, last_name, birthday, email, password) VALUES (:user_id, :first_name, :last_name, :birthday, :email, :password)";
+    }
+    else
+    {
+        $query = "INSERT INTO propertyownersdb (user_id, first_name, last_name, birthday, email, password) VALUES (:user_id, :first_name, :last_name, :birthday, :email, :password)";
+    } 
+        $query_run = $conn->prepare($query);
 
     $data =[
+        ':user_id' => $user_id,
         ':first_name' => $first_name,
         ':last_name' => $last_name,
         ':birthday' => $birthday,
