@@ -43,13 +43,12 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
                 <img  src="images/logo.png" class = "logo" >
                 <ul class = "nav-links">
                     <li><a href = "nurse-profile.php">Locations</a></li>
-                    <li><a href = "404ErrorPage.html">Benefits</a></li>
+                    <li><a href = "nurse-profile-tabs/profile-setting.php">Benefits</a></li>
                     <li><a href = "404ErrorPage.html">Accommodation</a></li>
                 </ul>
                 <?php
                     if (isset($_SESSION['user_id']))
                     {
-                        echo 'help';
                         if ($_SESSION['pfType'] == 'travelnursesdb')
                         {
                             echo '<div class="profile-dropdown">';
@@ -58,11 +57,11 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
                             echo '</button>';
                             echo '<div class="menu-dropdown" data-dropdown tabindex="0">';
                             echo '<div class="menu-dropdown-content">';
-                            // echo '<a href="nurse-profile.php">Profile</a>';
+                            echo '<a href="nurse-profile.php">Profile</a>';
                             echo '<a href="nurse-profile-tabs/payment-setting.php">Payment</a>';
                             echo '<a href="404ErrorPage.html">History</a>';
-                            echo '<a href="404ErrorPage.html">Settings</a>';
-                            //echo '<a href="logout.php">Logout</a>';
+                            echo '<a href="nurse-profile-tabs/profile-setting.php">Settings</a>';
+                            echo '<a href="logout.php">Logout</a>';
                             echo '</div>';
                             echo '</div>';
                             echo '</div>';

@@ -109,7 +109,7 @@ $inputFileName = "No File Selected";
                         <a href="nurse-profile.php">Profile</a>
                         <a href="../nurse-profile-tabs/payment-setting.php">Payment</a>
                         <a href="404ErrorPage.html">History</a>
-                        <a href="404ErrorPage.html">Settings</a>
+                        <a href="../nurse-profile-tabs/profile-setting.php">Settings</a>
                         <a href="404ErrorPage.html">Logout</a>
                     </div>
                 </div>
