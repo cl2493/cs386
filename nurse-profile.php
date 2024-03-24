@@ -151,8 +151,6 @@ $inputFileName = "No File Selected";
                 <div class='space-top'></div>
                 <p><strong>Certification Submission:</strong> <?php echo $submission_stage; ?></p>
                 <div class='space-top'></div>
-                <p><strong>Phone:</strong> <?php echo $phone; ?></p>
-                <div class='space-top'></div>
                 <p><strong>Email:</strong> <?php echo $email; ?></p>
                 <div class='space-top'></div>
                 <p><strong>Birthday:</strong> <?php echo date("F j, Y", strtotime($birthday)); ?></p>
