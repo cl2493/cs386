@@ -35,6 +35,7 @@ if (isset($_POST['submit-Btn'])) {
         $_SESSION['registration_success'] = true;
         $_SESSION['username'] = $first_name;
         $_SESSION['user_id'] = $user_id;
+        $_SESSION['pfType'] = $pfType;
 
         if ($pfType == "travelnursesdb")
         {
