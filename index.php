@@ -58,11 +58,11 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
                             echo '</button>';
                             echo '<div class="menu-dropdown" data-dropdown tabindex="0">';
                             echo '<div class="menu-dropdown-content">';
-                            // echo '<a href="nurse-profile.php">Profile</a>';
+                            echo '<a href="nurse-profile.php">Profile</a>';
                             echo '<a href="nurse-profile-tabs/payment-setting.php">Payment</a>';
                             echo '<a href="404ErrorPage.html">History</a>';
                             echo '<a href="404ErrorPage.html">Settings</a>';
-                            //echo '<a href="logout.php">Logout</a>';
+                            echo '<a href="logout.php">Logout</a>';
                             echo '</div>';
                             echo '</div>';
                             echo '</div>';
