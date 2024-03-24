@@ -98,7 +98,18 @@ $inputFileName = "No File Selected";
                 <li><a href="404ErrorPage.html">Accommodation</a></li>
             </ul>
             <!-- Profile button -->
-            <a class="profile-btn" onclick="popupFunction()"><?php echo "$first_name $last_name"; ?></a>
+            <div class="profile-dropdown">
+                <button class="profile-btn" data-dropdown-button><?php echo "$first_name $last_name"; ?></button>
+                <div class="menu-dropdown" data-dropdown tabindex="0">
+                    <div class="menu-dropdown-content">
+                        <a href="nurse-profile.php">Profile</a>
+                        <a href="../nurse-profile-tabs/payment-setting.php">Payment</a>
+                        <a href="404ErrorPage.html">History</a>
+                        <a href="404ErrorPage.html">Settings</a>
+                        <a href="404ErrorPage.html">Logout</a>
+                    </div>
+                </div>
+            </div>
         </nav>
     </div>
 <!------------------------------------Profile Page------------------------------------>
