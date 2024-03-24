@@ -3,34 +3,13 @@
 RNT-A-ROOM is a web application that focuses on serving housing options for travel nurses. Unlike our other competitors, RNT-A-ROOM aims to address and help travel nurses find their ideal rental home during their assignment.
 
 ## Getting Started
+To access our web application, either copy and paste the url into your browser or click on the link.
+Our current version only works on desktop computers. Sorry, no mobile devices.
+https://rnt-a-room-db33fe3ae403.herokuapp.com/index.php
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+You will need a web browser in order to access our web application. 
 
 ## Running the tests
 
@@ -54,21 +33,20 @@ Give an example
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+We push and commit our contributions of the website to github, make sure that there are no conflicts, then deploy the website on heroku.
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* Heroku
+* JawsDB
 
 ## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+NOT COMPLETED
+Please read [CONTRIBUTING.md](https://github.com/cl2493/cs386/blob/main/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available,  
 
 ## Authors
 
