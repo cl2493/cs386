@@ -132,6 +132,20 @@ else
                 </form>
             </div>
     </div>
+    <div class="images">
+        <?php
+            $stmt = $conn->prepare('SELECT * FROM listingimagedb');
+            $stmt->execute();
+            $imagesList = $stmt->fetchAll();
+
+            foreach($imagesList as $image)
+            {
+                ?>
+                <img src="<?= $image['image'] ?>" title="<?= $image['imagename'] ?>" width="200" height="200">
+                <?php
+            }
+        ?>
+    </div>
     <!------ footer ----->
     <div class = "footer">
         <p>Follow Us On Social Media</p>
