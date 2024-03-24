@@ -2,73 +2,22 @@
 // error handling
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
-session_start();
-
 var_dump($_SESSION);
 
-
-
+session_start();
 include("connection.php");
+include("phpfunctions.php");
 
-// initialize verified flag
-$verifiedFlag = false;
-
-// check if user is logged in
-// get user info
-if(isset($_SESSION['user_id']) && isset($_SESSION['pfType'])){
-    $user_id = $_SESSION['user_id'];
-    $pfType = $_SESSION['pfType'];
-
-    // query to get user info from the database
-    $query = "SELECT first_name, last_name, email, birthday FROM $pfType WHERE user_id=?";
-    $stmt = $conn->prepare($query);
-
-    // bind parameters
-    $stmt->bindValue(1,$user_id, PDO::PARAM_INT);
-
-    // execute statement
-    $stmt->execute();
-
-    // get result
-    $result = $stmt->get_result();
-
-    // check if query was successful and get user data
-    if($result && $result->num_rows > 0){
-        $row = $result->fetch_assoc();
-        $first_name = $row['first_name'];
-        $last_name = $row['last_name'];
-        $email = $row['email'];
-        $birthday = $row['birthday'];
-
-
-        // check user submission stage from session
-        if(isset($_SESSION['submission_stage']))
-        {
-            $submission_stage = $_SESSION['submission_stage'];
-
-            // check if certificate was approved
-            if($submission_stage == "Approved"){
-                $verifiedFlag = true;
-            }
-        }
-    }
-
-    else{
-        // handles error if couldn't get user data
-        echo "Error: Failed to get user information.";
-        exit();
-    }
+if (isset($_SESSION['pfType']))
+{
+    $user_data = checkLogin($conn, $_SESSION['$pfType']);
+    $verifiedFlag = false;
 }
-    else{
-        // case if user isn't logged in
-        header("Location: index.php");
-        exit();
-    }
 
-
-// placeholder for uploaded file?
-$inputFileName = "No File Selected";
+else{
+    header("Location: index.php");
+    exit();
+}
 ?>
 
 <!-- Nurse profile header -->
@@ -102,18 +51,7 @@ $inputFileName = "No File Selected";
                 <li><a href="404ErrorPage.html">Accommodation</a></li>
             </ul>
             <!-- Profile button -->
-            <div class="profile-dropdown">
-                <button class="profile-btn" data-dropdown-button><?php echo "$first_name $last_name"; ?></button>
-                <div class="menu-dropdown" data-dropdown tabindex="0">
-                    <div class="menu-dropdown-content">
-                        <a href="nurse-profile.php">Profile</a>
-                        <a href="../nurse-profile-tabs/payment-setting.php">Payment</a>
-                        <a href="404ErrorPage.html">History</a>
-                        <a href="404ErrorPage.html">Settings</a>
-                        <a href="404ErrorPage.html">Logout</a>
-                    </div>
-                </div>
-            </div>
+                <button class="profile-btn" onclick="popupFunction()">Profile</a>
         </nav>
     </div>
 <!------------------------------------Profile Page------------------------------------>
@@ -125,8 +63,8 @@ $inputFileName = "No File Selected";
                 <h1 id="profile-Title">User Profile</h1>
                 <!-- Profile name -->
                 <div id="profile-picture"></div>
-                <h2 class='name-info'><strong><?php echo "$first_name $last_name";?></strong></h2>
                 <?php
+                echo "<h2 class='name-info'><strong>$user_data[2] $user_data[3]";
                 // Display the verified icon if the user is verified
                 if ($verifiedFlag) {
                     echo "<img src='images/icons/check-symbol.png' class='verified-icon'>";
@@ -150,14 +88,14 @@ $inputFileName = "No File Selected";
             </div>
             <!-- Profile information -->
             <div class="profile-info">
-                <div class='space-top'></div>
-                <p><strong>User ID:</strong> <?php echo $user_id; ?></p>
-                <div class='space-top'></div>
-                <p><strong>Certification Submission:</strong> <?php echo $submission_stage; ?></p>
-                <div class='space-top'></div>
-                <p><strong>Email:</strong> <?php echo $email; ?></p>
-                <div class='space-top'></div>
-                <p><strong>Birthday:</strong> <?php echo date("F j, Y", strtotime($birthday)); ?></p>
+            <?php
+                   echo "<div class='space-top'></div>";
+                   echo "<p><strong>User ID: </strong>$user_data[1]</p>";
+                   echo "<div class='space-top'></div>";
+                   echo "<p><strong>Email: </strong>$user_data[5]</p>";
+                   echo "<div class='space-top'></div>";
+                   echo "<p><strong>Birthday: </strong>$user_data[4]</p>";
+            ?>
             </div>
             <div id = "certification">
             <?php
