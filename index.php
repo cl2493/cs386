@@ -60,7 +60,7 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
                             echo '<a href="nurse-profile.php">Profile</a>';
                             echo '<a href="nurse-profile-tabs/payment-setting.php">Payment</a>';
                             echo '<a href="404ErrorPage.html">History</a>';
-                            echo '<a href="404ErrorPage.html">Settings</a>';
+                            echo '<a href="nurse-profile-tabs/profile-setting.php">Settings</a>';
                             echo '<a href="logout.php">Logout</a>';
                             echo '</div>';
                             echo '</div>';
