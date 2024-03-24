@@ -5,8 +5,8 @@ RNT-A-ROOM is a web application that focuses on serving housing options for trav
 ## Getting Started
 To access our web application, either copy and paste the url into your browser or click on the link.
 Our current version only works on desktop computers. Sorry, no mobile devices.
-https://rnt-a-room-db33fe3ae403.herokuapp.com/index.php
-
+[RNT-A-ROOM Website Link](https://rnt-a-room-db33fe3ae403.herokuapp.com/index.php)
+[https://rnt-a-room-db33fe3ae403.herokuapp.com/index.php](https://rnt-a-room-db33fe3ae403.herokuapp.com/index.php)
 
 ### Prerequisites
 You will need a web browser in order to access our web application. 
@@ -46,20 +46,16 @@ Please read [CONTRIBUTING.md](https://github.com/cl2493/cs386/blob/main/CONTRIBU
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available,  
+We use [SemVer](http://semver.org/) for versioning. For the versions available,  we are on version 1.0.0.
 
 ## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
+See the list of contributors who participated in this project in our repository.
+[RNT-A-ROOM Repo](https://github.com/cl2493/cs386)
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Google
+* Youtube
