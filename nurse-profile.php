@@ -21,7 +21,7 @@ if(isset($_SESSION['user_id']) && isset($_SESSION['pfType'])){
     $pfType = $_SESSION['pfType'];
 
     // query to get user info from the database
-    $query = "SELECT first_name, last_name, email, birthday, submission_stage FROM $pfType WHERE user_id=?";
+    $query = "SELECT first_name, last_name, email, birthday FROM $pfType WHERE user_id=?";
     $stmt = $conn->prepare($query);
 
     // bind parameters
