@@ -39,7 +39,10 @@ if(isset($_SESSION['user_id']) && isset($_SESSION['pfType'])){
         $first_name = $row['first_name'];
         $last_name = $row['last_name'];
         $email = $row['email'];
-        $phone = $row['phone'];
+       // check if 'phone' column exists in the results
+       // this just easier instead of changing the registration
+       // to include phone and adding to database
+        $phone = isset($row['phone']) ? $row['phone'] : null;
         $birthday = $row['birthday'];
         $submission_stage = $row['submission_stage'];
 
