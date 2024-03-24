@@ -25,7 +25,7 @@ if(isset($_SESSION['user_id']) && isset($_SESSION['pfType'])){
     $stmt = $conn->prepare($query);
 
     // bind parameters
-    $stmt->bind_param("i",$user_id);
+    $stmt->bindValue(1,$user_id, PDO::PARAM_INT);
 
     // execute statement
     $stmt->execute();
