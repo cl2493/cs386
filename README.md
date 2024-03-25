@@ -51,7 +51,6 @@ We push and commit our contributions of the website to github, make sure that th
 * JawsDB
 
 ## Contributing
-NOT COMPLETED
 Please read [CONTRIBUTING.md](https://github.com/cl2493/cs386/blob/main/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
