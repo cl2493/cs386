@@ -134,32 +134,21 @@ We push and commit changes on github and make sure there are no conflicts affect
 
 ## 7. Licensing
 Mit License : https://choosealicense.com/licenses/mit/
-(License Application)[]
+[Our License](https://github.com/cl2493/cs386/blob/main/LICENSE)
 We chose the MIT license because it’s recognized for being simple and flexible. We want others to have access and allow them to do what they want to the code with minimal restrictions.
 
-
 ## 8. README File
-You should also prepare your repository for receiving new contributors. You should prepare a README.md file. See an example at https://gist.github.com/PurpleBooth/109311bb0361f32d87a2Links to an external site.. In the README file, the current version should be stated. You should follow the Semantic VersioningLinks to an external site. schema. Tag the GitHub repository accordingly (see Git Basics TaggingLinks to an external site.). 
+[README](https://github.com/cl2493/cs386/blob/main/README.md)
 
-Your repository should contain a CONTRIBUTING.md file, a LICENSE file, and a CODE_OF_CONDUCT.md file. Search online for some examples of these files. In this section of the deliverable, put links to these files on GitHub.
+[CONTRIBUTION.MD](https://github.com/cl2493/cs386/blob/main/CONTRIBUTING.md)
 
-Grading criteria (3 points): This section will be based on the presence and quality of the information presented in the files.
-
+[CODE OF CONDUCT](https://github.com/cl2493/cs386/blob/main/CODE_OF_CONDUCT.md)
 ## 9. Look & feel
-Describe the approach you adopted to design your user interface. Include some screenshots.
-
-Grading criteria (3 points): This section will be graded based on the appearance (aesthetics) and usability (ease of use) of the system.
+RNT-A-ROOM was created using HTML, CSS, JS, along with PHP. The HTML and CSS made it look pleasing to the eye along with JS for friendly user interaction. We wanted an elegant and modern look to our website. The logo is simple yet professional and the colors are calm and consistent throughout the website. The only time the colors change is to show the difference between the nurse profile page and property owner profile page. We referenced Airbnb and FurnishedFinders to understand what was already on the market and the following photos is what we came up with:
 
 ## 10. Lessons learned
-In retrospective, describe what your team learned during this first release and what you are planning to change for the second release. 
-
-Grading criteria (2 points): Adequate reflection about problems and solutions, clear description with adequate use of language. 
+During the first release, we assigned roles to ourselves and concluded that Aiden hates frontend, Faith hates the backend, Devin hates the back end but prefers it over the front end, and Cathy loves the front end. Aiden learned a lot about specific adopted technology and is more familiar with it, he struggled with CSS and sometimes it doesn’t do what is expected. Devin learned that he loves to use VS Code for development and it’s ideal instead of Notepad++. He mentions that dealing with the database is the most annoying thing. We started with 2 tables and now have 5 tables. Faith learned a lot about php and sql syntax, but getting it to communicate with the frontend is not easy. Errors are hard to understand, she feels like it would be more helpful to understand the database before development. Cathy loves CSS and doing animations through CSS is more fun for her and not as complicated as JS. She found php to be easier than she expected. For the second release, we collectively agreed that the front end needs a routine and to make things simple so it’s easier on the backend to handle tasks. That friend end should push basic things for the website such as forms and buttons. We agreed on writing at least 10 lines of code a week, and to amp up our communication in our group chat. For example, mentioning what we did and creating pull requests, also to write more comments with our code.
 
 ## 11. Demo
-Include a link to a video showing the system working.
+[RENT-A-ROOM Demo](https://drive.google.com/file/d/1X09KP0NJy46pzPvZEwxM_6r5hLa022jE/view)
 
-Grading criteria (6 points): This section will be graded based on the quality of the video and on the evidence that the features are running as expected. Additional criteria are the relevance of the demonstrated functionalities, the correctness of the functionalities, and the quality of the developed system from the external point of view (user interface).
-
-
-Example from the previous semesters (not necessarily perfect or complete)
-https://github.com/ChrisKeefe/DontPanic/blob/master/project_documentation/Implementation.mdLinks to an external site. 
