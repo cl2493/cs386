@@ -1,35 +1,30 @@
 # D.4 Implementation 1
 
-For this deliverable, you should have a fully functional piece of software that delivers a set of features (don’t need to be the complete set, but it needs to be a working prototype). Structure your deliverable according to the following sections. See the Team Project Instructions for details about formatting. 
-
 ## 1. Introduction
 
-Provide a short paragraph that describes your system. This paragraph should contain the value proposition and a description of the main features of the software. At the end of the introduction, include a link to your project on GitHub.
+RNT-A-ROOM is a housing web application that focuses on the needs of travel nurses. We offer comfort and safety on an easy-to-use platform that protects our users by verifying both tenants and rentals. Our system’s main features include a responsive homepage that loads within 3 seconds, a user profile that will display 5 user descriptions, user verification, and have the ability to book listings. 
 
-Grading criteria (1 point): This section will be evaluated in terms of correctness, completeness, thoroughness, consistency, coherence, and adequate use of language. The description should be consistent with the current state of the project. You should include the link to GitHub.
+Disclaimer: RNT-A-ROOM is in early development.
+
+https://github.com/cl2493/cs386
 
 ## 2. Implemented requirements
 
-List in this section, the requirements and associated pull request that you implemented for this release, following the example below---include the description of the requirement, a link to the issue, a link to the pull request(s) that implement the requirement, who implemented the requirement, who approved it, and a print screen that depicts the implemented feature (if applicable). I expect that you implement the features you specified in your MVP (c.f. D.2 Requirements). 
+Requirement: As a Travel Nurse, I want the system to be accessible via desktop so that I can better complete my day-to-day tasks.
 
-Order the requirements below by the name of the student who implemented them. All the members of the group should have worked on implementation activities and submitted pull requests. Only stable code should be included in the release. The code that is still under development should be in branches. See the example:
+Issue:
+https://github.com/cl2493/cs386/issues/13
 
-# Example of Requirement Description
-Requirement: As a Student, I want to add a homework assignment so that I can organize my ToDo list.
+Pull request:
+https://github.com/cl2493/cs386/pull/1
+https://github.com/cl2493/cs386/pull/2
 
-Issue: <link to your GitHub issue>
 
-Pull request: https://github.com/fake-user/project/pull/426Links to an external site.
+Implemented by: Cathy Ly
 
-Implemented by: Martin Fowler
+Approved by: Cathy Ly
 
-Approved by: Ada Lovelace
-
-Print screen: A print screen that depicts the implemented feature (if applicable)
-
-All source code should be submitted by means of pull requests and the scrum master in the team should review and approve each pull request. For more information about pull requests: https://help.github.com/articles/about-pull-requests/Links to an external site.  
-
-Grading criteria (10 points): This section will be evaluated in terms of correctness, completeness, thoroughness, consistency, coherence, adequate use of language, and amount of work put into the implementation. Students can receive different grades depending on their involvement. It is expected that all members contribute with non-trivial implementation. All pull requests should be approved and integrated by the scrum master. You should follow an adequate workflow (description of the requirement on the issue tracker, submission of the implemented requirement as a pull request, and review of the pull request by another developer). 
+Print screen: 
 
 ## 3. Tests
 You should implement automated tests that aim to verify the correct behavior of your code. Provide the following information:
