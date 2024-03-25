@@ -71,8 +71,12 @@ You should implement automated tests that aim to verify the correct behavior of 
 
 1. We are using phpUnit.
 2. [Folder to our unit test](https://github.com/cl2493/cs386/tree/9b08377fa2e60d77c91ed406581a74fd020165e8/Deliverables/Unit%20Test)
-3. An example of a test case. Include in your answer a GitHub link to the class being tested and to the test
-4.![url](https://github.com/cl2493/cs386/blob/ceac6939dff5c74103dc09f64a146e54484c30a5/assets/phpunit.png)
+3. Example of A Test Case
+   - An Email with letters
+   - An Email with numbers
+   - An Email with both
+   - [Link to the the class being tested](https://github.com/cl2493/cs386/blob/485fbf2f19ad01ed8a8967c20aca601a1dfc21f1/Deliverables/Unit%20Test/userRegisteration.php)
+4. ![url](https://github.com/cl2493/cs386/blob/ceac6939dff5c74103dc09f64a146e54484c30a5/assets/phpunit.png)
 
 Grading criteria (4 points): You should have an adequate number of automated tests. They should be well-written to exercise the main components of your system, covering the relevant inputs.
 
