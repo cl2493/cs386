@@ -31,14 +31,18 @@ class RegistrationTest extends PHPUNIT\Framework\TestCase {
         $conn = $this->getMockedPDO();
         // Call registerUser() method
         $result = $test->registerUser($conn, $email, $password);
-
         // Assertions
         $this->assertTrue($result); // Check if registration was successful
 
-        // Check session variables
-        //$this->assertTrue($_SESSION['registration_success']);
-        //$this->assertEquals('John', $_SESSION['username']);
-        //$this->assertEquals('travelnursesdb', $_SESSION['pfType']);
+        $result = $test->registerUser($conn,'sally@example.com', $password);
+        // Assertions
+        $this->assertTrue($result); // Check if registration was successful
+        
+        $result = $test->registerUser($conn,'1234@example.com', $password);
+        $this->assertTrue($result); // Check if registration was successful
+
+        $result = $test->registerUser($conn,'as12@example.com', $password);
+        $this->assertTrue($result); // Check if registration was successful
     }
 }
 
