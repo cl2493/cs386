@@ -70,7 +70,7 @@ Print screen: N/A
 You should implement automated tests that aim to verify the correct behavior of your code. Provide the following information:
 
 1. We are using phpUnit.
-2. Link to your GitHub folder where your automated unit tests are located
+2. [Folder to our unit test](https://github.com/cl2493/cs386/tree/9b08377fa2e60d77c91ed406581a74fd020165e8/Deliverables/Unit%20Test)
 3. An example of a test case. Include in your answer a GitHub link to the class being tested and to the test
 4.![url](https://github.com/cl2493/cs386/blob/ceac6939dff5c74103dc09f64a146e54484c30a5/assets/phpunit.png)
 
