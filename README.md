@@ -14,7 +14,7 @@ You will need a web browser in order to access our web application.
 ## Running the tests
 **Accessing the Website**
 You can acces the deployed version of the website by following the link: 
-[https://rnt-a-room-db33fe3ae403.herokuapp.com/index.php](https://rnt-a-room-db33fe3ae403.herokuapp.com/index.php)
+[RNT-A-ROOM Link](https://rnt-a-room-db33fe3ae403.herokuapp.com/index.php)
 ### Break down into end to end tests
 User Scenarios
 Manually test the following scenarios to make sure the functions are working properly:
