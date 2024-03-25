@@ -80,32 +80,32 @@ Grading criteria (4 points): You should have an adequate number of automated tes
 HTML/CSS/Javascript
 **Description**:
 These are the core structure of creating web pages and applications. HTML gives us the structure, CSS focusing on presentation and styles, and Javascript allows our website to be more dynamic.
-Justification: 
+**Justification**: 
 These are fundamental in creating a website or a web application. They are applicable for all different web browsers.
 
 PHP
-Description: PHP is a scripting language often used for web development. It’s used mainly in web development to create dynamic websites and applications.
-Justification: PHP is used to provide an open source and server side scripting in our website.
+**Description**: PHP is a scripting language often used for web development. It’s used mainly in web development to create dynamic websites and applications.
+**Justification**: PHP is used to provide an open source and server side scripting in our website.
 
 MySQL
-Description: MySQL is a database management system. 
-Justification: This helps us to store data in tables in our database. It is not a programming language, but is used to store data.
+**Description**: MySQL is a database management system. 
+**Justification**: This helps us to store data in tables in our database. It is not a programming language, but is used to store data.
 
 GitHub
-Description:
+**Description**:
 Github was adopted as the team’s choice of version control software. Github provided our team with all the necessary tools to properly collaborate and maintain our project. Github allows for seamless VS code integration, allowing us to maintain our project in any manner, straight from our chosen coding environment.
-Justification:
+**Justification**:
 We selected github as our version control platform due to its simplicity and its wide adoption in the industry as well as third party app support. 
 
 Heroku
-Description:
+**Description**:
 Heroku is a cloud platform service that allows developers to deploy, manage, and scale their applications. They support multiple coding languages and provide built-in tools for continuous integration.
-Justification:
+**Justification**:
 We chose Heroku for their ease of use platform and their simple layout. Being familiar with Github pages, Heroku allowed us to seamlessly integrate our application on their cloud platform service.
 
 VSCode
-Description: VS code is a source-code editor. It allows developers to write code with a clean and simple UI. It has several features that make it a great candidate for our project. One feature is that it works well with git. You can easily stage, commit, and push your changes with clicking of buttons. You don’t have to spend precious time memorizing or writing commands. You can also create pull requests and see the issue tracker very easily.
-Justification: We chose to use VS code because of how easy it is to use. It looks nice and works well. Also, we needed a code editor that works on everyone’s device. The added git features makes VS code the best choice for us. Because of how easy VS code is to use with git, we spend more time coding and developing than we memorizing and typing commands.
+**Description**: VS code is a source-code editor. It allows developers to write code with a clean and simple UI. It has several features that make it a great candidate for our project. One feature is that it works well with git. You can easily stage, commit, and push your changes with clicking of buttons. You don’t have to spend precious time memorizing or writing commands. You can also create pull requests and see the issue tracker very easily.
+**Justification**: We chose to use VS code because of how easy it is to use. It looks nice and works well. Also, we needed a code editor that works on everyone’s device. The added git features makes VS code the best choice for us. Because of how easy VS code is to use with git, we spend more time coding and developing than we memorizing and typing commands.
 
 ## 5. Learning/training
 HTML/CSS/Javascript
