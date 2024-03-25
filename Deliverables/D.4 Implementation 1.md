@@ -108,22 +108,22 @@ VSCode
 **Justification**: We chose to use VS code because of how easy it is to use. It looks nice and works well. Also, we needed a code editor that works on everyone’s device. The added git features makes VS code the best choice for us. Because of how easy VS code is to use with git, we spend more time coding and developing than we memorizing and typing commands.
 
 ## 5. Learning/training
-HTML/CSS/Javascript
-Using our past experience in CS 212 and 312, we applied that our knowledge to this project to create our website.
+**HTML/CSS/Javascript**
+  We applied our past knowledge of CS 212/312 for this project to create our website.
 
-PHP
-The team employed the strategy of Youtube videos and online resources. We spent much of our time learning the syntax of the language.
+**PHP**
+The team employed the strategy of YouTube videos and online resources. We spent much of our time learning the syntax of the language.
 
-MySQL
-The team did research on these technologies beforehand and brought it upon themselves to experiment and see what worked for the benefit of the website. The perseverance of the team to implement technologies that we haven’t previously used before for trial and error is admirable.
+**MySQL**
+The team did their research on these technologies beforehand and brought it upon themselves to experiment and see what worked for the benefit of the website. The perseverance of the team to implement technologies that we haven’t previously used before for trial and error is admirable.
 
-GitHub
-Our team utilized numerous online videos as well as the heavy in class assignments focusing on github and its many features.
+**GitHub**
+Our team utilized numerous online videos as well as the heavy in-class assignments focusing on Github and its many features.
 
-Heroku
+**Heroku**
 We reviewed videos and other online resources to understand how to implement their services for our application. We also talked to other students to understand how a cloud service platform works.
 
-VSCode
+**VSCode**
 We used both strategies of trial and error and past experiences to learn VS code. Online references were also helpful.
 
 ## 6. Deployment
