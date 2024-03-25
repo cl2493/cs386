@@ -25,7 +25,7 @@ Implemented by: Cathy Ly
 Approved by: Cathy Ly
 
 Print screen: 
-![url](https://github.com/cl2493/cs386/blob/ceac6939dff5c74103dc09f64a146e54484c30a5/assets/desktop.png)
+![url](https://github.com/cl2493/cs386/blob/a8e872dec36b748953a8a76e19b1852ca1a7e2db/assets/desktop.png)
 
 Requirement: As a user, I want a user profile so that I can review my personal information.
 
