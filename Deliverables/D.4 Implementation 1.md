@@ -25,7 +25,7 @@ Implemented by: Cathy Ly
 Approved by: Cathy Ly
 
 Print screen: 
-![url](https://github.com/cl2493/cs386/blob/ceac6939dff5c74103dc09f64a146e54484c30a5/assets/desktop-display.png)
+![url](https://github.com/cl2493/cs386/blob/ceac6939dff5c74103dc09f64a146e54484c30a5/assets/desktop.png)
 
 Requirement: As a user, I want a user profile so that I can review my personal information.
 
@@ -145,8 +145,10 @@ We chose the MIT license because it’s recognized for being simple and flexible
 [CODE OF CONDUCT](https://github.com/cl2493/cs386/blob/main/CODE_OF_CONDUCT.md)
 ## 9. Look & feel
 RNT-A-ROOM was created using HTML, CSS, JS, along with PHP. The HTML and CSS made it look pleasing to the eye along with JS for friendly user interaction. We wanted an elegant and modern look to our website. The logo is simple yet professional and the colors are calm and consistent throughout the website. The only time the colors change is to show the difference between the nurse profile page and property owner profile page. We referenced Airbnb and FurnishedFinders to understand what was already on the market and the following photos is what we came up with:
-![url]()
-![url]()
+![url](https://github.com/cl2493/cs386/blob/f02a68ab9df2b38a387e6ab20f7f864d0bd9bb05/assets/signup.png)
+![url](https://github.com/cl2493/cs386/blob/90446f1638e98e549e49fd5f8b5cb6f5e22a1539/assets/nurse-profile.png)
+![url](https://github.com/cl2493/cs386/blob/ceac6939dff5c74103dc09f64a146e54484c30a5/assets/property-owner.png)
+![url](https://github.com/cl2493/cs386/blob/ceac6939dff5c74103dc09f64a146e54484c30a5/assets/desktop.png)
 ## 10. Lessons learned
 During the first release, we assigned roles to ourselves and concluded that Aiden hates frontend, Faith hates the backend, Devin hates the back end but prefers it over the front end, and Cathy loves the front end. Aiden learned a lot about specific adopted technology and is more familiar with it, he struggled with CSS and sometimes it doesn’t do what is expected. Devin learned that he loves to use VS Code for development and it’s ideal instead of Notepad++. He mentions that dealing with the database is the most annoying thing. We started with 2 tables and now have 5 tables. Faith learned a lot about php and sql syntax, but getting it to communicate with the frontend is not easy. Errors are hard to understand, she feels like it would be more helpful to understand the database before development. Cathy loves CSS and doing animations through CSS is more fun for her and not as complicated as JS. She found php to be easier than she expected. For the second release, we collectively agreed that the front end needs a routine and to make things simple so it’s easier on the backend to handle tasks. That friend end should push basic things for the website such as forms and buttons. We agreed on writing at least 10 lines of code a week, and to amp up our communication in our group chat. For example, mentioning what we did and creating pull requests, also to write more comments with our code.
 
