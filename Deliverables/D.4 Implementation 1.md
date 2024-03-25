@@ -25,7 +25,7 @@ Implemented by: Cathy Ly
 Approved by: Cathy Ly
 
 Print screen: 
-![Diagram](https://github.com/cl2493/cs386/blob/ceac6939dff5c74103dc09f64a146e54484c30a5/assets/desktop-display.png)
+![url](https://github.com/cl2493/cs386/blob/ceac6939dff5c74103dc09f64a146e54484c30a5/assets/desktop-display.png)
 
 Requirement: As a user, I want a user profile so that I can review my personal information.
 
@@ -45,7 +45,7 @@ Implemented by: Faith, Aidan, Cathy, Devin
 Approved by: Cathy Ly
 
 Print screen: 
-
+![url](https://github.com/cl2493/cs386/blob/90446f1638e98e549e49fd5f8b5cb6f5e22a1539/assets/nurse-profile.png)
 
 Requirement: As a property owner, I want a community of verified traveling professionals so that I can have peace of mind regarding my property.
 
