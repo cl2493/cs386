@@ -70,10 +70,9 @@ Print screen: N/A
 You should implement automated tests that aim to verify the correct behavior of your code. Provide the following information:
 
 1. We are using phpUnit.
-1.Link to your GitHub folder where your automated unit tests are located
-1.An example of a test case. Include in your answer a GitHub link to the class being tested and to the test???
-1.A print screen showing the result of the execution of the automated tests
-![url](https://github.com/cl2493/cs386/blob/ceac6939dff5c74103dc09f64a146e54484c30a5/assets/phpunit.png)
+2. Link to your GitHub folder where your automated unit tests are located
+3. An example of a test case. Include in your answer a GitHub link to the class being tested and to the test
+4.![url](https://github.com/cl2493/cs386/blob/ceac6939dff5c74103dc09f64a146e54484c30a5/assets/phpunit.png)
 
 Grading criteria (4 points): You should have an adequate number of automated tests. They should be well-written to exercise the main components of your system, covering the relevant inputs.
 
