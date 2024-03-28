@@ -52,7 +52,7 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
             <nav id = "navBar">
                 <img  src="images/logo.png" class = "logo" >
                 <ul class = "nav-links">
-                    <li><a href = "nurse-profile.php">Locations</a></li>
+                    <li><a href = "listing.php">Locations</a></li>
                     <li><a href = "404ErrorPage.html">Benefits</a></li>
                     <li><a href = "404ErrorPage.html">Accommodation</a></li>
                 </ul>
