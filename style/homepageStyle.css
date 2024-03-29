@@ -135,7 +135,8 @@ nav{
     display: inline-block;
     transition: all 0.3s ease;
     width: 50%;
-    margin: 1% auto; 
+    margin: 1% auto;
+    background-color: #e7b93b;
 }
 
 .sign-in-btn:hover {

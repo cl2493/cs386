@@ -37,6 +37,17 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
   </head>
     <!----- Start of the Enter Webpage ----->
   <body>
+        <?php
+                    if(isset($_GET['Message'])){
+                        echo '<script type="text/javascript">
+                        window.onload = function () 
+                        {
+                            alert("The email or password you have entered is incorrect.");
+                        } 
+                        </script>';
+                        unset($_GET['Message']);
+                    }
+        ?>
         <div class = "header">           
             <nav id = "navBar">
                 <img  src="images/logo.png" class = "logo" >
@@ -48,7 +59,6 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
                 <?php
                     if (isset($_SESSION['user_id']))
                     {
-                        echo 'help';
                         if ($_SESSION['pfType'] == 'travelnursesdb')
                         {
                             echo '<div class="profile-dropdown">';
@@ -93,15 +103,15 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
             </nav>
             <div class ="myPopup" id="myPopup">
                 <button class="exit-btn" onclick="closePopup()">X</button>
-                <form class="myPopup-Form">
+                <form action="signin.php" method="POST" class="myPopup-Form">
                     <h2 class="tenants-login">Sign In</h2>
                     <label>Email</label><br>
-                    <input type="text"><br>
+                    <input name="signinemail" type="text"><br>
                     <label>Password</label><br>
-                    <input type="text"><br>
+                    <input name="signinpassword" type="text"><br>
+                    <button name="sign-in-btn" type= "submit" class="sign-in-btn">Login</button>
                 </form>
-                <a href="managerRegister.html" class="sign-in-btn">Login</a>
-                <a href="nurse-register.html" class="sign-in-btn" id = "nurse-register">Register</a>
+                <a href="nurse-register.php" class="sign-in-btn" id = "nurse-register">Register</a>
             </div>
             <div class="container">
 				<div class="left">
