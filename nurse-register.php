@@ -71,7 +71,7 @@
                 </div>
                 <div class = "password-input">
                     <input type ="password" name="password" id = "password" placeholder="Password">
-                    <input type = "password" id = "check-password"  placeholder="Confirm Password" required>
+                    <input type = "password" name="checkPassword" id = "check-password"  placeholder="Confirm Password" required>
                 </div>
             <button name="submit-Btn" type= "submit" class="submit-btn">Submit</button>
             </form>
