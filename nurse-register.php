@@ -16,7 +16,7 @@
             <nav id = "navBar">
                 <a href = "index.php"><img src = "images/logo.png" class="logo"></a>
                 <ul class = "nav-links">
-                    <li><a href = "404ErrorPage.html">Locations</a></li>
+                    <li><a href = "listing.php">Locations</a></li>
                     <li><a href = "404ErrorPage.html">Benefits</a></li>
                     <li><a href = "404ErrorPage.html">Accommodation</a></li>
                 </ul>
