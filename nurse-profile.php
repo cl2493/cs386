@@ -102,8 +102,11 @@ else
             </div>
             <div id = "certification">
             <?php
-                if (isset($submission_stage)) {
-                    if ($submission_stage == "Not Submitted" || $submission_stage == "Rejected") {
+            // check submission stage
+                if (isset($submission_stage)) 
+                {
+                    if ($submission_stage == "Not Submitted" || $submission_stage == "Rejected") 
+                    {
                        
                         echo '<form id="certForm" action="upload_certification.php" method="post" enctype="multipart/form-data">';
                         echo '<div class="cert-upload">';
