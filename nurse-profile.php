@@ -8,6 +8,9 @@ session_start();
 include("connection.php");
 include("phpfunctions.php");
 
+// initialize $submission_stage with a default value
+$submission_stage = "Not Submitted";
+
 if (isset($_SESSION['pfType']))
 {
     $user_data = checkLogin($conn, $_SESSION['pfType']);
@@ -99,27 +102,38 @@ else
             </div>
             <div id = "certification">
             <?php
-            if ($submission_stage == "Not Submitted" || $submission_stage == "Rejected") {
-                echo '<form id="certForm" action="upload_certification.php" method="post" enctype="multipart/form-data">';
-                echo '<div class="cert-upload">';
-                echo '<h2>Upload Certification</h2>';
-                echo '</div>';
-                echo '<label for="certFile" class="select-btn">Select PDF File</label>';
-                echo '<input type="file" id="certFile" name="certFile" accept=".pdf" class="file-input">';
-                echo '<button type="submit" class="upload-btn">Upload</button>';
-                echo "<span id='fileNameDisplay' class='file-name-display'>$inputFileName</span>";
-                echo '</form>';
-            } else if ($submission_stage == "Submitted") {
-                echo '<div class="cert-upload">';
-                echo '<h2>Certification Submitted</h2>';
-                echo '</div>';
-            } else if ($submission_stage == "Approved") {
-                $verifiedFlag = true;
-                echo '<div class="cert-upload">';
-                echo '<h2>Certification Approved</h2>';
-                echo '</div>';
-            }
+            // check submission stage
+                if (isset($submission_stage)) 
+                {
+                    if ($submission_stage == "Not Submitted" || $submission_stage == "Rejected") 
+                    {
+                       
+                        echo '<form id="certForm" action="upload_certification.php" method="post" enctype="multipart/form-data">';
+                        echo '<div class="cert-upload">';
+                        echo '<h2>Upload Certification</h2>';
+                        echo '</div>';
+                        echo '<label for="certFile" class="select-btn">Select PDF File</label>';
+                        echo '<input type="file" id="certFile" name="certFile" accept=".pdf" class="file-input">';
+                        echo '<button type="submit" class="upload-btn">Upload</button>';
+                        echo "<span id='fileNameDisplay' class='file-name-display'>$inputFileName</span>";
+                        echo '</form>';
+                    } 
+                    else if ($submission_stage == "Submitted") 
+                    {
+                        echo '<div class="cert-upload">';
+                        echo '<h2>Certification Submitted</h2>';
+                        echo '</div>';
+                    } 
+                    else if ($submission_stage == "Approved") 
+                    {
+                        $verifiedFlag = true;
+                        echo '<div class="cert-upload">';
+                        echo '<h2>Certification Approved</h2>';
+                        echo '</div>';
+                    }
+                }
 ?>
+
 
             </div>
            </div>
