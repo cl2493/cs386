@@ -88,12 +88,18 @@ class User {
 }
 
 class TravelNurse extends User {
-    public $submission_stage;
+    public $stage;
+
+    public function __construct($user_id, $first_name, $last_name, $birthday, $pfType, $email, $stage)
+    {
+        parent::__construct($user_id, $first_name, $last_name, $birthday, $pfType, $email);
+        $this->stage = $stage;
+    }
 
     function updateStage(DatabaseConnection $conn, $newStage) {
         $query = "UPDATE $this->pfType SET stage=:stage WHERE user_id=:user_id";
         $data = [
-            'stage' => $this->submission_stage,
+            'stage' => $this->stage,
             'user_id' => $this->user_id,
         ];
         

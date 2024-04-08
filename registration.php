@@ -39,9 +39,6 @@ if (isset($_POST['submit-Btn'])) {
         header("Location:nurse-register.php?Message=".$Message);
         die;
     }
-    // insert data into the database
-    $query = "INSERT INTO $pfType (user_id, first_name, last_name, birthday, email, password) VALUES (:user_id, :first_name, :last_name, :birthday, :email, :password)";
-    $query_run = $conn->prepare($query);
 
     $data =[
         ':user_id' => $user_id,
@@ -51,6 +48,19 @@ if (isset($_POST['submit-Btn'])) {
         ':email' => $email,
         ':password' => $password,
     ];
+
+    if ($pfType === "travelnursesdb")
+    {
+        $query = "INSERT INTO $pfType (user_id, first_name, last_name, birthday, email, password, stage) VALUES (:user_id, :first_name, :last_name, :birthday, :email, :password, :stage)";
+        $data[':stage'] = "Not Submitted";
+    }
+    else
+    {
+        $query = "INSERT INTO $pfType (user_id, first_name, last_name, birthday, email, password) VALUES (:user_id, :first_name, :last_name, :birthday, :email, :password)"; 
+    }
+
+    $query_run = $conn->prepare($query);
+
     $query_execute = $query_run->execute($data);
 
     if ($query_execute) 
