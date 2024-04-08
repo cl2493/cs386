@@ -77,10 +77,6 @@
         </div>
 
 
-
-
-
-
     <!------ footer ----->
     <div class = "footer">
         <p>Follow Us On Social Media</p>
