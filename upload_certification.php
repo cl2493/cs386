@@ -5,10 +5,12 @@ include("connection.php");
 
 
 // check if the form was submitted
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if($_SERVER["REQUEST_METHOD"] == "POST")
+{
 
     // check if the file uploaded without errors
-    if(isset($_FILES["certFile"]) && $_FILES["certFile"]["error"] == 0){
+    if(isset($_FILES["certFile"]) && $_FILES["certFile"]["error"] == 0)
+    {
         // directory where we want to store the uploads
         $targetDir = "uploads/";
 
@@ -21,16 +23,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         // allow file formats (currently pdf)
         $allowedTypes = array('pdf');
 
-        if(in_array($fileType, $allowedTypes)){
+        if(in_array($fileType, $allowedTypes))
+        {
 
             // move the uploaded file to the directory
-            if(move_uploaded_file($_FILES["certFile"]["tmp_name"], $targetFilePath)){
+            if(move_uploaded_file($_FILES["certFile"]["tmp_name"], $targetFilePath))
+            {
 
                 // file upload successfully 
                 echo "The file ".$fileName." has uploaded successfully.";
 
-                // set submission stage to "Submitted"
-                $_SESSION['submission_stage'] = "Submitted";
+                // just for now, let's assume it's approved immediately
+
+                // set submission stage to "Approved"
+                $_SESSION['submission_stage'] = "Approved";
+
+                // redirect to nurse profile
+                header("Location: nurse-profile.php");
+                exit();
             }
 
             else{
