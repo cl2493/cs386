@@ -6,7 +6,7 @@ include("phpfunctions.php");
 
 if (isset($_SESSION['pfType']))
 {
-    $user_data = checkLogin($conn,$_SESSION['pfType']);
+    $user = checkLogin($conn,$_SESSION['pfType']);
     $verifiedFlag = false;
 }
 else
@@ -61,7 +61,7 @@ else
                 <!-- Profile name -->
                 <?php
                 // Display the name of the user
-                echo "<h2 class='name-info'><strong>$user_data[2] $user_data[3]";
+                echo "<h2 class='name-info'><strong>$user->first_name $user->last_name";
                 // Display the verified icon if the user is verified
                 if ($verifiedFlag) {
                 echo "<img src='images/icons/check-symbol.png' class='verified-icon'>";
@@ -96,11 +96,11 @@ else
             <div class="profile-info">
             <?php
                    echo "<div class='space-top'></div>";
-                   echo "<p><strong>User ID: </strong>$user_data[1]</p>";
+                   echo "<p><strong>User ID: </strong>$user->user_id</p>";
                    echo "<div class='space-top'></div>";
-                   echo "<p><strong>Email: </strong>$user_data[5]</p>";
+                   echo "<p><strong>Email: </strong>$user->email</p>";
                    echo "<div class='space-top'></div>";
-                   echo "<p><strong>Birthday: </strong>$user_data[4]</p>";
+                   echo "<p><strong>Birthday: </strong>$user->birthday</p>";
             ?>
             </div>
            </div>

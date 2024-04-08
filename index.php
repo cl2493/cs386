@@ -6,7 +6,7 @@ include("phpfunctions.php");
 
 if (isset($_SESSION['pfType']))
 {
-    $user_data = checkLogin($conn,$_SESSION['pfType']);
+    $user = checkLogin($conn,$_SESSION['pfType']);
 }
 
 // check for registration success
@@ -63,7 +63,7 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
                         {
                             echo '<div class="profile-dropdown">';
                             echo '<button class="profile-btn" data-dropdown-button>';
-                            echo $user_data[2];
+                            echo $user->first_name;
                             echo '</button>';
                             echo '<div class="menu-dropdown" data-dropdown tabindex="0">';
                             echo '<div class="menu-dropdown-content">';
@@ -81,7 +81,7 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
                             echo '</a>';
                             echo '<div class="profile-dropdown">';
                             echo '<button class="profile-btn" data-dropdown-button>';
-                            echo $user_data[2];
+                            echo $user->first_name;
                             echo '</button>';
                             echo '<div class="menu-dropdown" data-dropdown tabindex="0">';
                             echo '<div class="menu-dropdown-content">';
@@ -208,7 +208,7 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
             <div class="prop-owner-contact">
                 <h3>Want to support<br>our Travel Nurses?</h3>
                 <p>Look into how you can get your space posted on our website</p>
-                <a href ="managerRegister.html" class="learn-btn">Learn More</a>
+                <a href ="learn-more.html" class="learn-btn">Learn More</a>
             </div>
 
         </div>
