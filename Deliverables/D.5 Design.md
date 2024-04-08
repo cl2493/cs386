@@ -30,6 +30,8 @@ Design Pattern: Behavorial -> Command
 
 Design Pattern: Structural -> Composite
 
+[classes.php](https://github.com/cl2493/cs386/blob/main/classes.php)
+
 ![url](https://github.com/cl2493/cs386/blob/271b5d39eeff0a0218db9814edefa200fd1e540a/images/compositeDiagram.png)
 
 ## 6. Design Principle 
