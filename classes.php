@@ -161,12 +161,3 @@ class Image {
         $this->image = $image;
     }
 }
-
-// Implement the DatabaseConnection interface for specific database connections
-class MySQLConnection implements DatabaseConnection {
-    // Implement methods for MySQL connection...
-}
-
-class PostgreSQLConnection implements DatabaseConnection {
-    // Implement methods for PostgreSQL connection...
-}
