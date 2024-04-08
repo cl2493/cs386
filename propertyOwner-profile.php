@@ -83,10 +83,14 @@ else
                    <li><a href="">Payment</a></li>
                    <li><a href = "" >History</a></li>
                    <li><a href="">Settings</a></li>
-                   <li><a onclick="popupFunction()">Listings</a></li>
+                   <li><a href="profileListing.php">Listings</a></li>
               </div>
             </div>
             </div>
+
+        
+           
+
 
             <!-- Profile information -->
             <div class="profile-info">
@@ -102,50 +106,13 @@ else
            </div>
             </div>
 
-           <div class="myPopup" id="myPopup">
-                <button class="exit-btn" onclick="closePopup()">X</button>
-                <form class="listing-forum" action="listingInterface.php" method="POST" id="listing-forum" enctype='multipart/form-data'>
-                <h2 class ="listingForumTitle">listing information</h2>
-                <div>
-                    <label>Street address</label>
-                    <input type="text" id="street-address" name="street-address" autocomplete="street-address" required enterkeyhint="next"></input>
-                </div>
-                <div>
-                    <label>ZIP or postal code (optional)</label>
-                    <input class="postal-code" id="postal-code" name="postal-code" autocomplete="postal-code" enterkeyhint="next">
-                </div>
-                <div>
-                    <label>City</label>
-                    <input required type="text" id="city" name="city" autocomplete="address-level2" enterkeyhint="next">
-                </div>
-                <div>
-                    <label>Monthly Cost</label>
-                    <input required type="number" id="price" name="price" autocomplete="cost" enterkeyhint="">
-                </div>
-                <div>
-                    <label>Images</label>
-                    <input required type="file" id="imgs" name="files[]" multiple>
-                </div>
-                <div>
-                    <button type="submit" name="submitBtn">Submit</button>
-                </div>
-                </form>
+            <div class="listingText">
+                <h1 id=>You have no listings</h1>
             </div>
-    </div>
-    <div class="images">
-        <?php
-            $stmt = $conn->prepare('SELECT * FROM listingimagedb');
-            $stmt->execute();
-            $imagesList = $stmt->fetchAll();
 
-            foreach($imagesList as $image)
-            {
-                ?>
-                <img src="<?= $image['image'] ?>" title="<?= $image['imagename'] ?>" width="200" height="200">
-                <?php
-            }
-        ?>
-    </div>
+          
+
+           
     <!------ footer ----->
     <div class = "footer">
         <p>Follow Us On Social Media</p>

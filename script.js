@@ -73,8 +73,8 @@ function closePopup() {
 
 
 
-// the form 
-// Capture form submission
+/* the form 
+Capture form submission
 document.querySelector('.register-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default form submission behavior
     
@@ -148,3 +148,4 @@ document.getElementById("certFile").addEventListener("change", function() {
 document.getElementById("certFile").addEventListener("change", function() {
     document.getElementById("certForm").submit();
 });
+*/

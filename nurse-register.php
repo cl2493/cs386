@@ -8,7 +8,7 @@
         <!----connecting different files-->
         <link rel="stylesheet" href ="style/register-style.css">
         <script src="https://kit.fontawesome.com/c011338aa2.js" crossorigin="anonymous"></script>
-        <!--<script src="script.js" defer></script>-->
+        <script src="script.js" defer></script>
     </head>
     <!-------Start of Web Page---------->
     <body>
@@ -16,7 +16,7 @@
             <nav id = "navBar">
                 <a href = "index.php"><img src = "images/logo.png" class="logo"></a>
                 <ul class = "nav-links">
-                    <li><a href = "404ErrorPage.html">Locations</a></li>
+                    <li><a href = "listing.php">Locations</a></li>
                     <li><a href = "404ErrorPage.html">Benefits</a></li>
                     <li><a href = "404ErrorPage.html">Accommodation</a></li>
                 </ul>
@@ -24,15 +24,14 @@
             </nav>
             <div class ="myPopup" id="myPopup">
                 <button class="exit-btn" onclick="closePopup()">X</button>
-                <form class="myPopup-Form">
+                <form action="signin.php" method="POST" class="myPopup-Form">
                     <h2 class="tenants-login">Sign In</h2>
                     <label>Email</label><br>
                     <input name="signinemail" type="text"><br>
                     <label>Password</label><br>
                     <input name="signinpassword" type="text"><br>
+                    <button name="sign-in-btn" type= "submit" class="sign-in-btn">Login</button>
                 </form>
-                <a href="404ErrorPage.html" class="sign-in-btn">Login</a>
-                <a href="nurse-register.html" class="sign-in-btn" id = "nurse-register">Register</a>
             </div>
         </div>
         <div class="container">
@@ -71,15 +70,11 @@
                 </div>
                 <div class = "password-input">
                     <input type ="password" name="password" id = "password" placeholder="Password">
-                    <input type = "password" id = "check-password"  placeholder="Confirm Password" required>
+                    <input type = "password" name="checkPassword" id = "check-password"  placeholder="Confirm Password" required>
                 </div>
             <button name="submit-Btn" type= "submit" class="submit-btn">Submit</button>
             </form>
         </div>
-
-
-
-
 
 
     <!------ footer ----->

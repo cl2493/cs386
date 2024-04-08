@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 include('connection.php');
@@ -14,15 +13,32 @@ if (isset($_POST['submit-Btn'])) {
     $user_id = randomNum(5,$pfType,$conn);
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $checkPassword = $_POST['checkPassword'];
 
+    // check if email has been used
     if (checkIfEmailInUse( $conn, $email))
     {
-        //header('Location: nurse-register.php?error= Email is already in use.');
-        $Message = urlencode("The email you have entered is already in use.");
+        $Message = "The email you have entered is already in use. ";
+    }
+
+    // check if user is atleast 18 years old
+    if (time() - strtotime($birthday) < 18 * 31536000)
+    {
+        $Message .= "You must be at least 18 years old. ";
+    }
+
+    // check if passwords match
+    if (!($password === $checkPassword))
+    {
+        $Message .= "The passwords you have entered do not match. ";
+    }
+
+    if (isset($Message))
+    {
+        $Message = urlencode($Message);
         header("Location:nurse-register.php?Message=".$Message);
         die;
     }
-
     // insert data into the database
     $query = "INSERT INTO $pfType (user_id, first_name, last_name, birthday, email, password) VALUES (:user_id, :first_name, :last_name, :birthday, :email, :password)";
     $query_run = $conn->prepare($query);
@@ -59,4 +75,4 @@ if (isset($_POST['submit-Btn'])) {
     }
 }
 exit(0);
-?>
+

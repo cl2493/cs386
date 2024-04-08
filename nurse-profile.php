@@ -8,6 +8,8 @@ session_start();
 include("connection.php");
 include("phpfunctions.php");
 
+$inputFileName = '';
+
 // initialize $submission_stage with a default value
 $submission_stage = "Not Submitted";
 
