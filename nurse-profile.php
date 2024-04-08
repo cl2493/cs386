@@ -13,15 +13,27 @@ $inputFileName = '';
 // initialize $submission_stage with a default value
 $submission_stage = "Not Submitted";
 
-if (isset($_SESSION['pfType']))
+// set the verified flag based on submission stage
+if (isset($_SESSION['submission_stage']) && $_SESSION['submission_stage'] == "Approved")
 {
-    $user_data = checkLogin($conn, $_SESSION['pfType']);
-    $verifiedFlag = false;
+    // user is verified
+    $verifiedFlag = true;
 }
 else
 {
+    // user isn't verified
+    $verifiedFlag = false;
+}
+
+if(isset($_SESSION['pfType']))
+{
+    $user_data = checkLogin($conn, $_SESSION['pfType']);
+}
+
+else
+{
+    // redirect to homepage
     header("Location: index.php");
-    exit();
 }
 ?>
 
@@ -56,7 +68,7 @@ else
                 <li><a href="404ErrorPage.html">Accommodation</a></li>
             </ul>
             <!-- Profile button -->
-                <button class="profile-btn" onclick="popupFunction()">Profile</a>
+                <button class="profile-btn" onclick="popupFunction()">Profile</button>
         </nav>
     </div>
 <!------------------------------------Profile Page------------------------------------>
