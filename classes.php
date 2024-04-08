@@ -1,7 +1,11 @@
 <?php
 
-class User 
-{
+interface DatabaseConnection {
+    public function prepare($query);
+    public function execute($data);
+}
+
+class User {
     public $user_id;
     public $first_name;
     public $last_name;
@@ -9,8 +13,7 @@ class User
     public $pfType;
     public $email;
 
-    function __construct($user_id, $first_name, $last_name, $birthday, $pfType, $email)
-    {
+    function __construct($user_id, $first_name, $last_name, $birthday, $pfType, $email) {
         $this->user_id = $user_id;
         $this->first_name = $first_name;
         $this->last_name = $last_name;
@@ -19,49 +22,37 @@ class User
         $this->email = $email;
     }
 
-    function changeName($conn, $firstName, $lastName)
-    {
-        // initialize data array and query string
+    function changeName(DatabaseConnection $conn, $firstName, $lastName) {
         $data = [];
         $query = "UPDATE $this->pfType SET";
 
-        // check if first name is changed
         if ($firstName != $this->first_name) {
-            // add change to query
-            $query .= "first_name=:first_name,";
+            $query .= " first_name=:first_name,";
             $data['first_name'] = $firstName;
-            $fn = true;
         }
 
-        // check if last name is changed
         if ($lastName != $this->last_name) {
-            // add change to query
-            $query .= "last_name=:last_name";
+            $query .= " last_name=:last_name";
             $data['last_name'] = $lastName;
-            $ln = true;
         }
 
-        if ($fn || $ln) {
-            $query .= "WHERE user_id=:user_id";
+        if (!empty($data)) {
+            $query .= " WHERE user_id=:user_id";
             $data['user_id'] = $this->user_id;
 
             $query_run = $conn->prepare($query);
             $query_execute = $query_run->execute($data);
 
-            if ($query_execute)
-            {
+            if ($query_execute) {
                 return true;
             }
         }
         return false;
     }
 
-    function changeBirth($conn, $newBirthday)
-    {
-        // check if birthday is changed
+    function changeBirth(DatabaseConnection $conn, $newBirthday) {
         if ($newBirthday != $this->birthday) {
-            // add change to query
-            $query .= "UPDATE $this->pfType SET birthday=:birthday WHERE user_id=:user_id";
+            $query = "UPDATE $this->pfType SET birthday=:birthday WHERE user_id=:user_id";
             $data = [
                 'birthday' => $newBirthday,
                 'user_id' => $this->user_id,
@@ -70,20 +61,16 @@ class User
             $query_run = $conn->prepare($query);
             $query_execute = $query_run->execute($data);
 
-            if ($query_execute)
-            {
+            if ($query_execute) {
                 return true;
             }
         }
         return false;
     }
 
-    function changeEmail($conn, $newEmail)
-    {
-        // check if email is changed
+    function changeEmail(DatabaseConnection $conn, $newEmail) {
         if ($newEmail != $this->email) {
-            // add change to query
-            $query .= "UPDATE $this->pfType SET email=:email WHERE user_id=:user_id";
+            $query = "UPDATE $this->pfType SET email=:email WHERE user_id=:user_id";
             $data = [
                 'email' => $newEmail,
                 'user_id' => $this->user_id,
@@ -92,8 +79,7 @@ class User
             $query_run = $conn->prepare($query);
             $query_execute = $query_run->execute($data);
 
-            if ($query_execute)
-            {
+            if ($query_execute) {
                 return true;
             }
         }
@@ -101,13 +87,11 @@ class User
     }
 }
 
-class TravelNurse extends User
-{
+class TravelNurse extends User {
     public $submission_stage;
 
-    function updateStage($conn, $newStage)
-    {
-        $query .= "UPDATE $this->pfType SET stage=:stage WHERE user_id=:user_id";
+    function updateStage(DatabaseConnection $conn, $newStage) {
+        $query = "UPDATE $this->pfType SET stage=:stage WHERE user_id=:user_id";
         $data = [
             'stage' => $this->submission_stage,
             'user_id' => $this->user_id,
@@ -116,90 +100,73 @@ class TravelNurse extends User
         $query_run = $conn->prepare($query);
         $query_execute = $query_run->execute($data);
         
-        if ($query_execute)
-        {
+        if ($query_execute) {
             return true;
         }
-
         return false;
     }
 }
 
-class PropertyOwner extends User
-{
-    // array has listing objects for po pfpage
+class PropertyOwner extends User {
     public $pfListings = array();
 
-    function addListing($listing)
-    {
+    function addListing($listing) {
         array_push($this->pfListings, $listing);
     }
 
-    function removeListing($listing)
-    {
-        $index = 0;
-        while ($this->pfListings[$index] && $this->pfListings[$index] != $listing)
-        {
-            $index++;
-        }
-
-        if ($this->pfListings[$index] == $listing)
-        {
+    function removeListing($listing) {
+        $index = array_search($listing, $this->pfListings);
+        if ($index !== false) {
             array_splice($this->pfListings, $index, 1);
             return true;
         }
-
         return false;
     }
 }
 
-class Listing
-{
+class Listing {
     public $address;
     public $zip;
     public $city;
     public $price;
     public $images = array();
 
-    function __construct($address, $zip, $city, $price)
-    {
+    function __construct($address, $zip, $city, $price) {
         $this->address = $address;
         $this->zip = $zip;
         $this->city = $city;
         $this->price = $price;
     }
 
-    function addImage($newImage)
-    {
+    function addImage($newImage) {
         array_push($this->images, $newImage); 
     }
 
-    function removeImage($image)
-    {
-        $index = 0;
-        while ($this->images[$index] && $this->images[$index] != $image)
-        {
-            $index++;
-        }
-
-        if ($this->images[$index] == $image)
-        {
+    function removeImage($image) {
+        $index = array_search($image, $this->images);
+        if ($index !== false) {
             array_splice($this->images, $index, 1);
             return true;
         }
-
         return false;
     }
 }
 
-class Image
-{
+class Image {
     public $imageName;
     public $image;
 
-    public function __construct($imageName, $image)
-    {
+    public function __construct($imageName, $image) {
         $this->imageName = $imageName;
         $this->image = $image;
     }
+}
+
+// Implement the DatabaseConnection interface for specific database connections
+class MySQLConnection implements DatabaseConnection {
+    // Implement methods for MySQL connection...
+}
+
+class PostgreSQLConnection implements DatabaseConnection {
+    // Implement methods for PostgreSQL connection...
 }
