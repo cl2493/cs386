@@ -59,12 +59,11 @@ function checkIfEmailInUse( $conn, $email)
     return false;
 }
 
-function getListings($conn)
+function getListings($conn, $query)
 {
     // get listings db as array
-    $stmt = $conn->prepare('SELECT * FROM listingsdb');
-    $stmt->execute();
-    $listingsStmt = $stmt->fetchAll(PDO::FETCH_NUM);
+    $query->execute();
+    $listingsStmt = $query->fetchAll(PDO::FETCH_NUM);
 
     $images = getImagesForListings($conn);
 
@@ -73,7 +72,7 @@ function getListings($conn)
     for ($listing = 0; $listing < count($listingsStmt); $listing++)
     {
         // create listing object
-        $newListing = new Listing($listingsStmt[$listing][1],$listingsStmt[$listing][2],$listingsStmt[$listing][3],$listingsStmt[$listing][4],$listingsStmt[$listing][5],$listingsStmt[$listing][6]);
+        $newListing = new Listing($listingsStmt[$listing][2],$listingsStmt[$listing][3],$listingsStmt[$listing][4],$listingsStmt[$listing][5],$listingsStmt[$listing][6],$listingsStmt[$listing][7]);
 
         for ($image = 0; $image < count($images); $image++)
         {

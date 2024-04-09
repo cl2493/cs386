@@ -8,8 +8,12 @@ if (isset($_SESSION['pfType']))
     $user = checkLogin($conn,$_SESSION['pfType']);
 }
 
+if (!isset($_SESSION['query']))
+{
+    $query = $conn->prepare("SELECT * FROM listingsdb");
+}
 // $listings is an array of Listing objects (look at Listing class to see more)
-$listings = getListings($conn);
+$listings = getListings($conn, $query);
 ?>
 
 <!DOCTYPE html>
@@ -87,7 +91,6 @@ $listings = getListings($conn);
     <div class = "listing-content">
         <div class = "property-display">
             <?php
-            //echo '<pre>'; print_r($listings); echo '</pre>';
             for ($listing = 0; $listing < count($listings); $listing++)
             {
                 ?>

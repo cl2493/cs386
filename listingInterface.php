@@ -11,12 +11,14 @@ if (isset($_POST['submitBtn'])) {
     $price = $_POST['price'];
     $bed = $_POST['bed'];
     $bath = $_POST['bath'];
+    $user_id = $_SESSION['user_id'];
 
     // insert data into the database
-    $query = "INSERT INTO listingsdb (address, zip, city, price,bed,bath) VALUES (:address, :zip, :city, :price,:bed,:bath)";
+    $query = "INSERT INTO listingsdb (user_id, address, zip, city, price,bed,bath) VALUES (:user_id, :address, :zip, :city, :price,:bed,:bath)";
     $query_run = $conn->prepare($query);
 
     $data =[
+        ':user_id' => $user_id,
         ':address' => $address,
         ':zip' => $zip,
         ':city' => $city,

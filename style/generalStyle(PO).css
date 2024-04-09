@@ -207,11 +207,63 @@ animation: fadeIn 1s;
   color: #000;
   justify-content: center;
   margin-bottom: 275px;
-
-
-  
-
-
 }
 
+.property-square
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2%;
+    width: 20%;
+    border: #e7b93b 1px dotted;
+    border-radius: 10px;
+}
 
+.property-square img
+{
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+    margin: 5%;
+}
+.property-square img:hover
+{
+    transform: scale(1.1);
+}
+.property-square img
+{
+    transition: transform 0.5s;
+}
+.property-square h3
+{
+    text-align: center;
+    margin: 10px 0;
+}
+.property-square p
+{
+    text-align: center;
+    margin: 10px 0;
+}
+
+.property-info {
+    display: flex;
+    flex-direction: column; /* Ensures child elements stack vertically */
+    align-items: center; /* Centers items horizontally */
+    justify-content: center; /* Centers items vertically */
+    margin: 2%;
+    border-radius: 10px;
+    padding: 2%;
+    width: 90%;
+}
+
+.property-btn {
+    width: 80%;
+    border: #e7b93b 2px solid;
+    border-radius: 10px;
+    margin: 5% auto; /* Center horizontally */
+    padding: 5%;
+    text-decoration: none;
+    color: black;
+    text-align: center; /* Ensures text alignment */
+}

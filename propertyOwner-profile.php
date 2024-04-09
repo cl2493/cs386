@@ -14,6 +14,12 @@ else
     header("Location: index.php");
     exit();
 }
+
+$user_id = $_SESSION['user_id'];
+$query = $conn->prepare("SELECT * FROM listingsdb WHERE user_id = :user_id");
+$query->bindParam(':user_id', $user_id, PDO::PARAM_STR);
+
+$listings = getListings($conn, $query);
 ?>
 
 <!DOCTYPE html>
@@ -105,14 +111,35 @@ else
             </div>
            </div>
             </div>
-
+            <?php if (!$listings)
+            {
+                ?>
             <div class="listingText">
                 <h1 id=>You have no listings</h1>
             </div>
-
-          
-
-           
+            <?php
+            }
+            ?>
+            </div>
+            <div class="images">
+    <?php
+            for ($listing = 0; $listing < count($listings); $listing++)
+            {
+                ?>
+                <div class ="property-square">
+                <img src="<?=$listings[$listing]->images[0]->image?>" class="property-image">
+                <div class="property-info">
+                       <h2 class='property-name'><strong><?=$listings[$listing]->address?></strong></h2>
+                       <h3 class='property-bed'>Beds: <?=$listings[$listing]->bed?></h3>
+                       <h3 class='property-bath'>Baths: <?=$listings[$listing]->bath?></h3>
+                       <h3 class='property-rent'><?=$listings[$listing]->price?></h3>
+                    <a class="property-btn" href = "#">View Property</a>
+                </div>
+            </div>
+                <?php
+            }
+            ?>
+    </div>
     <!------ footer ----->
     <div class = "footer">
         <p>Follow Us On Social Media</p>
