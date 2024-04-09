@@ -123,6 +123,14 @@ else
                     <input required type="number" id="price" name="price" autocomplete="cost" enterkeyhint="">
                 </div>
                 <div>
+                    <label>Number of Bedrooms</label>
+                    <input required type="number" id="bed" name="bed" autocomplete="cost" enterkeyhint="">
+                </div>
+                <div>
+                    <label>Number of Bathrooms</label>
+                    <input required type="number" id="bath" name="bath" autocomplete="cost" enterkeyhint="">
+                </div>
+                <div>
                     <label>Images</label>
                     <input required type="file" id="imgs" name="files[]" multiple>
                 </div>
