@@ -1,19 +1,25 @@
 <?php
-
+include("classes.php");
 function checkLogin($conn, $pfType)
 {
     if (isset($_SESSION['user_id']))
     {
         $user_id = $_SESSION['user_id'];
-        //$query = "SELECT * FROM $pfType WHERE user_id = $user_id LIMIT 1";
-        //$stmt = $conn->prepare($query);
-        //$stmt->execute();
 
         $stmt = $conn->prepare("SELECT * FROM $pfType WHERE user_id = ? LIMIT 1");
         $stmt->execute([$user_id]);
 
         $user_data = $stmt->fetch();
-        return $user_data;
+
+        if ($pfType == "travelnursesdb")
+        {
+            $user = new TravelNurse($user_data[1],$user_data[2],$user_data[3],$user_data[4],$pfType,$user_data[5],$user_data[7]);
+        }
+        else
+        {
+            $user = new PropertyOwner($user_data[1],$user_data[2],$user_data[3],$user_data[4],$pfType,$user_data[5]);
+        }
+        return $user;
     }
     header('Location: index.php');
     die;

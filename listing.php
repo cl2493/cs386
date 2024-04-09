@@ -1,6 +1,15 @@
 <?php
-   $property_data = ["1", "Fake Property Name", "2", "1.5", "$1000"];
-    ?>
+session_start();
+include("connection.php");
+include("phpfunctions.php");
+
+if (isset($_SESSION['pfType']))
+{
+    $user = checkLogin($conn,$_SESSION['pfType']);
+}
+
+$property_data = ["1", "Fake Property Name", "2", "1.5", "$1000"];
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +43,7 @@
                         {
                             echo '<div class="profile-dropdown">';
                             echo '<button class="profile-btn" data-dropdown-button>';
-                            echo $user_data[2];
+                            echo $user->first_name;
                             echo '</button>';
                             echo '<div class="menu-dropdown" data-dropdown tabindex="0">';
                             echo '<div class="menu-dropdown-content">';
@@ -52,7 +61,7 @@
                             echo '</a>';
                             echo '<div class="profile-dropdown">';
                             echo '<button class="profile-btn" data-dropdown-button>';
-                            echo $user_data[2];
+                            echo $user->first_name;
                             echo '</button>';
                             echo '<div class="menu-dropdown" data-dropdown tabindex="0">';
                             echo '<div class="menu-dropdown-content">';
