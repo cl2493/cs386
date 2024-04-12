@@ -18,6 +18,9 @@ if (isset($_SESSION['submission_stage']) && $_SESSION['submission_stage'] == "Ap
 {
     // user is verified
     $verifiedFlag = true;
+
+    // make sure the user stays verified in session
+    $_SESSION['verified'] = true;
 }
 else
 {
@@ -28,6 +31,8 @@ else
 if(isset($_SESSION['pfType']))
 {
     $user = checkLogin($conn, $_SESSION['pfType']);
+    // Check if the user is verified
+    $verifiedFlag = isset($_SESSION['verified']) && $_SESSION['verified'] == true;
 }
 
 else
