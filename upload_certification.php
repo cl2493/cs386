@@ -77,10 +77,33 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             echo "Sorry, only PDF files are allowed.";
         }
     }
-    else{
-        echo "Sorry, an error occured during upload";
-    }
-}
+    else {
+        // Check if the file upload encountered an error
+        switch ($_FILES["certFile"]["error"]) {
+            case 1:
+            case 2:
+                echo "Sorry, the uploaded file exceeds the maximum file size limit.";
+                break;
+            case 3:
+                echo "Sorry, the uploaded file was only partially uploaded.";
+                break;
+            case 4:
+                echo "Sorry, no file was uploaded.";
+                break;
+            case 6:
+                echo "Sorry, missing temporary folder.";
+                break;
+            case 7:
+                echo "Sorry, failed to write file to disk.";
+                break;
+            case 8:
+                echo "Sorry, a PHP extension stopped the file upload.";
+                break;
+            default:
+                echo "Sorry, an unknown error occurred during upload.";
+                break;
+        }
+}}
     else{
         // redirect to the form page if accessed directly
         header("Location: nurse-profile.php");
