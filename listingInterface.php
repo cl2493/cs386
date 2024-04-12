@@ -40,10 +40,10 @@ if (isset($_POST['submitBtn'])) {
     // Loop all files
     for($i=0;$i<$countfiles;$i++){
         // File name
-        $filename = $_FILES['files']['name'][$i];
+        $filename = $_FILES['files']['name'];
 
         // Location
-        $target_file = './upload/'.$filename;
+        $target_file = 'upload/'.$filename;
 
         // file extension
         $file_extension = pathinfo($target_file, PATHINFO_EXTENSION);
