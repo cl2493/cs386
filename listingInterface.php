@@ -9,16 +9,22 @@ if (isset($_POST['submitBtn'])) {
     $zip = $_POST['postal-code'];
     $city = $_POST['city'];
     $price = $_POST['price'];
+    $bed = $_POST['bed'];
+    $bath = $_POST['bath'];
+    $user_id = $_SESSION['user_id'];
 
     // insert data into the database
-    $query = "INSERT INTO listingsdb (address, zip, city, price) VALUES (:address, :zip, :city, :price)";
+    $query = "INSERT INTO listingsdb (user_id, address, zip, city, price,bed,bath) VALUES (:user_id, :address, :zip, :city, :price,:bed,:bath)";
     $query_run = $conn->prepare($query);
 
     $data =[
+        ':user_id' => $user_id,
         ':address' => $address,
         ':zip' => $zip,
         ':city' => $city,
         ':price' => $price,
+        ':bed' => $bed,
+        ':bath' => $bath,
     ];
 
     $query_execute = $query_run->execute($data);

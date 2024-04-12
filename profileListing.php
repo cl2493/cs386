@@ -14,6 +14,11 @@ else
     header("Location: index.php");
     exit();
 }
+$user_id = $_SESSION['user_id'];
+$query = $conn->prepare("SELECT * FROM listingsdb WHERE user_id = :user_id");
+$query->bindParam(':user_id', $user_id, PDO::PARAM_STR);
+
+$listings = getListings($conn, $query);
 ?>
 
 <!DOCTYPE html>
@@ -123,6 +128,14 @@ else
                     <input required type="number" id="price" name="price" autocomplete="cost" enterkeyhint="">
                 </div>
                 <div>
+                    <label>Number of Bedrooms</label>
+                    <input required type="number" id="bed" name="bed" autocomplete="cost" enterkeyhint="">
+                </div>
+                <div>
+                    <label>Number of Bathrooms</label>
+                    <input required type="number" id="bath" name="bath" autocomplete="cost" enterkeyhint="">
+                </div>
+                <div>
                     <label>Images</label>
                     <input required type="file" id="imgs" name="files[]" multiple>
                 </div>
@@ -133,18 +146,23 @@ else
             </div>
     </div>
     <div class="images">
-        <?php
-            $stmt = $conn->prepare('SELECT * FROM listingimagedb');
-            $stmt->execute();
-            $imagesList = $stmt->fetchAll();
-
-            foreach($imagesList as $image)
+    <?php
+            for ($listing = 0; $listing < count($listings); $listing++)
             {
                 ?>
-                <img src="<?= $image['image'] ?>" title="<?= $image['imagename'] ?>" width="200" height="200">
+                <div class ="property-square">
+                <img src="<?=$listings[$listing]->images[0]->image?>" class="property-image">
+                <div class="property-info">
+                       <h2 class='property-name'><strong><?=$listings[$listing]->address?></strong></h2>
+                       <h3 class='property-bed'>Beds: <?=$listings[$listing]->bed?></h3>
+                       <h3 class='property-bath'>Baths: <?=$listings[$listing]->bath?></h3>
+                       <h3 class='property-rent'><?=$listings[$listing]->price?></h3>
+                    <a class="property-btn" href = "#">View Property</a>
+                </div>
+            </div>
                 <?php
             }
-        ?>
+            ?>
     </div>
     <!------ footer ----->
     <div class = "footer">

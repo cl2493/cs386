@@ -8,7 +8,12 @@ if (isset($_SESSION['pfType']))
     $user = checkLogin($conn,$_SESSION['pfType']);
 }
 
-$property_data = ["1", "Fake Property Name", "2", "1.5", "$1000"];
+if (!isset($_SESSION['query']))
+{
+    $query = $conn->prepare("SELECT * FROM listingsdb");
+}
+// $listings is an array of Listing objects (look at Listing class to see more)
+$listings = getListings($conn, $query);
 ?>
 
 <!DOCTYPE html>
@@ -85,18 +90,23 @@ $property_data = ["1", "Fake Property Name", "2", "1.5", "$1000"];
    <div class = "listing-container">
     <div class = "listing-content">
         <div class = "property-display">
-            <div class ="property-square">
-                <img src="images/propertyImage/fake-property.jpg" class="property-image">
+            <?php
+            for ($listing = 0; $listing < count($listings); $listing++)
+            {
+                ?>
+                <div class ="property-square">
+                <img src="<?=$listings[$listing]->images[0]->image?>" class="property-image">
                 <div class="property-info">
-                    <?php
-                       echo "<h2 class='property-name'><strong>$property_data[1]</strong></h2>";
-                       echo "<h3 class='property-bed'>Beds: $property_data[2]</h3>";
-                       echo "<h3 class='property-bath'>Baths: $property_data[3]</h3>";
-                       echo "<h3 class='property-rent'>$property_data[4]</h3>";
-                    ?>
+                       <h2 class='property-name'><strong><?=$listings[$listing]->address?></strong></h2>
+                       <h3 class='property-bed'>Beds: <?=$listings[$listing]->bed?></h3>
+                       <h3 class='property-bath'>Baths: <?=$listings[$listing]->bath?></h3>
+                       <h3 class='property-rent'><?=$listings[$listing]->price?></h3>
                     <a class="property-btn" href = "#">View Property</a>
                 </div>
             </div>
+                <?php
+            }
+            ?>
         </div>
     </div>
 </div>
