@@ -43,7 +43,7 @@ if (isset($_POST['submitBtn'])) {
         $filename = $_FILES['files']['name'][$i];
 
         // Location
-        $target_file = 'upload/'.$filename;
+        $target_file = 'https://github.com/cl2493/cs386/tree/1d229566fd22a780ebdbcca07ef8d2846f1e7f4b/upload/'.$filename;
 
         // file extension
         $file_extension = pathinfo($target_file, PATHINFO_EXTENSION);
