@@ -40,7 +40,7 @@ if (isset($_POST['submitBtn'])) {
     // Loop all files
     for($i=0;$i<$countfiles;$i++){
         // File name
-        $filename = $_FILES['files']['tmp_name'];
+        $filename = $_FILES['files']['name'][$i];
 
         // Location
         $target_file = 'upload/'.$filename;
