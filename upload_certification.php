@@ -11,16 +11,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     // check if the file uploaded without errors
     if(isset($_FILES["certFile"]) && $_FILES["certFile"]["error"] == 0)
     {
-        // directory where we want to store the uploads
-        $targetDir = "uploads/";
+        // directory where we want to store the certification 
+        $targetDir = "upload/";
 
+        // get user id from session
+        $user_id = $_SESSION['user_id'];
+
+        // get file name
         $fileName = basename($_FILES["certFile"]["name"]);
 
         $targetFilePath = $targetDir.$fileName;
 
         $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
 
-        // allow file formats (currently pdf)
+        // allow only PDF format 
         $allowedTypes = array('pdf');
 
         if(in_array($fileType, $allowedTypes))
@@ -30,17 +34,35 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             if(move_uploaded_file($_FILES["certFile"]["tmp_name"], $targetFilePath))
             {
 
-                // file upload successfully 
-                echo "The file ".$fileName." has uploaded successfully.";
+                // insert certification details into certdb 
+                $query = "INSERT INTO certdb (user_id, filename, file, uploaded, approved) VALUES (:user_id, :filename, :file, 1, 1)";
 
-                // just for now, let's assume it's approved immediately
+                // put data in array
+                $data = array(
+                    ':user_id' => $user_id,
+                    ':filename' => $fileName,
+                    ':file' => $targetFilePath
+                );
 
-                // set submission stage to "Approved"
-                $_SESSION['submission_stage'] = "Approved";
+                $stmt = $conn->prepare($query);
+                $query_execute = $stmt->execute($data);
 
-                // redirect to nurse profile
-                header("Location: nurse-profile.php");
-                exit();
+                if($query_execute)
+                {
+                    // update submission stage to approved in travelnursesdb
+                    $query = "INSERT INTO travelnursesdb SET stage = 'Approved' WHERE user_id = :user_id";
+                    $data = array(':user_id' => $user_id);
+                    $stmt = $conn->prepare($query);
+                    $stmt->execute($data);
+
+                    // set submission stage to "Approved" (for now)
+                    $_SESSION['submission_stage'] = "Approved";
+
+                    // redirect to nurse profile
+                    header("Location: nurse-profile.php");
+                     exit();
+                }
+                   
             }
 
             else{
