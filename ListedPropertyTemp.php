@@ -14,7 +14,6 @@ else
     header("Location: index.php");
     exit();
 }
-
 $user_id = $_SESSION['user_id'];
 $query = $conn->prepare("SELECT * FROM listingsdb WHERE user_id = :user_id");
 $query->bindParam(':user_id', $user_id, PDO::PARAM_STR);
@@ -61,7 +60,7 @@ $listings = getListings($conn, $query);
             <!-- Profile header -->
             <div class="profile-header">
                 <!-- Profile picture -->
-                <h1 id="profile-Title">User Profile</h1>
+                <h1 id="profile-Title">Address here</h1>
                 <!-- Profile name -->
                 <div id="profile-picture"></div>
                 <!-- Profile name -->
@@ -94,40 +93,38 @@ $listings = getListings($conn, $query);
             </div>
             </div>
 
-        
-           
-
-
             <!-- Profile information -->
             <div class="profile-info">
             <?php
                    echo "<div class='space-top'></div>";
-                   echo "<p><strong>User ID: </strong>$user->user_id</p>";
+                   echo "<p><strong>Bedrooms: </strong>$user->user_id</p>";
                    echo "<div class='space-top'></div>";
-                   echo "<p><strong>Email: </strong>$user->email</p>";
+                   echo "<p><strong>bathrooms: </strong>$user->email</p>";
                    echo "<div class='space-top'></div>";
-                   echo "<p><strong>Birthday: </strong>$user->birthday</p>";
+                   echo "<p><strong>monthly cost: </strong>$user->birthday</p>";
             ?>
+
+<p>Rating: <span class="star-rating">
+		<label for="rate-1" style="--i:1"><i class="fa-solid fa-star"></i></label>
+		<input type="radio" name="rating" id="rate-1" value="1">
+		<label for="rate-2" style="--i:2"><i class="fa-solid fa-star"></i></label>
+		<input type="radio" name="rating" id="rate-2" value="2" checked>
+		<label for="rate-3" style="--i:3"><i class="fa-solid fa-star"></i></label>
+		<input type="radio" name="rating" id="rate-3" value="3">
+		<label for="rate-4" style="--i:4"><i class="fa-solid fa-star"></i></label>
+		<input type="radio" name="rating" id="rate-4" value="4">
+		<label for="rate-5" style="--i:5"><i class="fa-solid fa-star"></i></label>
+		<input type="radio" name="rating" id="rate-5" value="5">
+	</span></p>
             </div>
+            
            </div>
             </div>
 
+ 
 
-
-
-            
-            
-            <?php if (!$listings)
-            {
-                ?>
-            <div class="listingText">
-                <h1 id=>You have no listings</h1>
-            </div>
-            <?php
-            }
-            ?>
-            </div>
-            <div class="images">
+    </div>
+    <div class="images">
     <?php
             for ($listing = 0; $listing < count($listings); $listing++)
             {
