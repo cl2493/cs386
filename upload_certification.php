@@ -52,7 +52,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 if($query_execute)
                 {
                     // update submission stage to approved in travelnursesdb
-                    $query = "INSERT INTO travelnursesdb SET stage = 'Approved' WHERE user_id = :user_id";
+                    $query = "UPDATE travelnursesdb SET stage = 'Approved' WHERE user_id = :user_id";
                     $data = array(':user_id' => $user_id);
                     $stmt = $conn->prepare($query);
                     $stmt->execute($data);
