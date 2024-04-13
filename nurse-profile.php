@@ -40,6 +40,29 @@ else
     // redirect to homepage
     header("Location: index.php");
 }
+
+
+
+
+//Displays the filled icon if there is a message
+$newMessageFlag = true;
+function newMessageIcon($newMessageFlag)
+{
+    //if there is a new message
+    if ($newMessageFlag)
+    {
+        //display the shake Bell icon
+        echo '<i class="fa-solid fa-bell fa-shake fa-2xl" style="color: #ffffff;"></i>';
+    }
+    //otherwise, there is no new message
+    else
+    {
+        echo '<i class="fa-regular fa-bell fa-2xl" style="color: #ffffff;"></i>';
+    }
+}
+
+
+
 ?>
 
 <!-- Nurse profile header -->
@@ -73,7 +96,53 @@ else
                 <li><a href="404ErrorPage.html">Accommodation</a></li>
             </ul>
             <!-- Profile button -->
-                <button class="profile-btn" onclick="popupFunction()">Profile</button>
+            <?php
+                    if (isset($_SESSION['user_id']))
+                    {
+                        if ($_SESSION['pfType'] == 'travelnursesdb')
+                        {
+                            //calls newMessageIcon function to display the bell icon
+                            newMessageIcon($newMessageFlag);
+                            echo '<div class="profile-dropdown">';
+                            echo '<button class="profile-btn" data-dropdown-button>';
+                            echo $user->first_name;
+                            echo '</button>';
+                            echo '<div class="menu-dropdown" data-dropdown tabindex="0">';
+                            echo '<div class="menu-dropdown-content">';
+                            echo '<a href="nurse-profile.php">Profile</a>';
+                            echo '<a href="nurse-profile-tabs/payment-setting.php">Payment</a>';
+                            echo '<a href="404ErrorPage.html">History</a>';
+                            echo '<a href="404ErrorPage.html">Settings</a>';
+                            echo '<a href="logout.php">Logout</a>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
+                        }
+                        else
+                        {
+                            //calls newMessageIcon function to display the bell icon
+                            newMessageIcon($newMessageFlag);
+                            echo '<div class="profile-dropdown">';
+                            echo '<button class="profile-btn" data-dropdown-button>';
+                            echo $user->first_name;
+                            echo '</button>';
+                            echo '<div class="menu-dropdown" data-dropdown tabindex="0">';
+                            echo '<div class="menu-dropdown-content">';
+                            echo '<a href="propertyOwner-profile.php">Profile</a>';
+                            echo '<a href="nurse-profile-tabs/payment-setting.php">Payment</a>';
+                            echo '<a href="404ErrorPage.html">History</a>';
+                            echo '<a href="404ErrorPage.html">Settings</a>';
+                            echo '<a href="logout.php">Logout</a>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
+                        }
+                    }
+                    else
+                    {
+                        echo '<a class="login-btn" onclick="popupFunction()">Sign In</a>';
+                    }
+                ?>
         </nav>
     </div>
 <!------------------------------------Profile Page------------------------------------>

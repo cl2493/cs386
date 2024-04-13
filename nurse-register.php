@@ -1,3 +1,27 @@
+<?php
+
+
+//Displays the filled icon if there is a message
+$newMessageFlag = true;
+function newMessageIcon($newMessageFlag)
+{
+    //if there is a new message
+    if ($newMessageFlag)
+    {
+        //display the shake Bell icon
+        echo '<i class="fa-solid fa-bell fa-shake fa-2xl" style="color: #ffffff;"></i>';
+    }
+    //otherwise, there is no new message
+    else
+    {
+        echo '<i class="fa-regular fa-bell fa-2xl" style="color: #ffffff;"></i>';
+    }
+}
+
+
+
+?>
+
 <!-----USER REGISTER PAGE------->
 <! DOCTYPE html>
 <!----STARTING SETUP------->
@@ -20,19 +44,56 @@
                     <li><a href = "404ErrorPage.html">Benefits</a></li>
                     <li><a href = "404ErrorPage.html">Accommodation</a></li>
                 </ul>
-                <a class = "login-btn" onclick="popupFunction()">Sign In</a>
+          <!-- Profile button -->
+          <?php
+                    if (isset($_SESSION['user_id']))
+                    {
+                        if ($_SESSION['pfType'] == 'travelnursesdb')
+                        {
+                            //calls newMessageIcon function to display the bell icon
+                            newMessageIcon($newMessageFlag);
+                            echo '<div class="profile-dropdown">';
+                            echo '<button class="profile-btn" data-dropdown-button>';
+                            echo $user->first_name;
+                            echo '</button>';
+                            echo '<div class="menu-dropdown" data-dropdown tabindex="0">';
+                            echo '<div class="menu-dropdown-content">';
+                            echo '<a href="nurse-profile.php">Profile</a>';
+                            echo '<a href="nurse-profile-tabs/payment-setting.php">Payment</a>';
+                            echo '<a href="404ErrorPage.html">History</a>';
+                            echo '<a href="404ErrorPage.html">Settings</a>';
+                            echo '<a href="logout.php">Logout</a>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
+                        }
+                        else
+                        {
+                            //calls newMessageIcon function to display the bell icon
+                            newMessageIcon($newMessageFlag);
+                            echo '<div class="profile-dropdown">';
+                            echo '<button class="profile-btn" data-dropdown-button>';
+                            echo $user->first_name;
+                            echo '</button>';
+                            echo '<div class="menu-dropdown" data-dropdown tabindex="0">';
+                            echo '<div class="menu-dropdown-content">';
+                            echo '<a href="propertyOwner-profile.php">Profile</a>';
+                            echo '<a href="nurse-profile-tabs/payment-setting.php">Payment</a>';
+                            echo '<a href="404ErrorPage.html">History</a>';
+                            echo '<a href="404ErrorPage.html">Settings</a>';
+                            echo '<a href="logout.php">Logout</a>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
+                        }
+                    }
+                    else
+                    {
+                        echo '<a class="login-btn" onclick="popupFunction()">Sign In</a>';
+                    }
+                ?>
             </nav>
-            <div class ="myPopup" id="myPopup">
-                <button class="exit-btn" onclick="closePopup()">X</button>
-                <form action="signin.php" method="POST" class="myPopup-Form">
-                    <h2 class="tenants-login">Sign In</h2>
-                    <label>Email</label><br>
-                    <input name="signinemail" type="text"><br>
-                    <label>Password</label><br>
-                    <input name="signinpassword" type="text"><br>
-                    <button name="sign-in-btn" type= "submit" class="sign-in-btn">Login</button>
-                </form>
-            </div>
+
         </div>
         <div class="container">
             <form class="register-form" action="registration.php" method="POST" id="register-form">
