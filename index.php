@@ -16,6 +16,25 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
         // unset session variable to stop the message on following visits
         unset($_SESSION['registration_success']);
     }
+
+
+//Displays the filled icon if there is a message
+$newMessageFlag = true;
+function newMessageIcon($newMessageFlag)
+{
+    //if there is a new message
+    if ($newMessageFlag)
+    {
+        //display the shake Bell icon
+        echo '<i class="fa-solid fa-bell fa-shake fa-2xl" style="color: #ffffff;"></i>';
+    }
+    //otherwise, there is no new message
+    else
+    {
+        echo '<i class="fa-regular fa-bell fa-2xl" style="color: #ffffff;"></i>';
+    }
+}
+
 ?>
 
 <!----- HOMEPAGE  ----->
@@ -61,6 +80,8 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
                     {
                         if ($_SESSION['pfType'] == 'travelnursesdb')
                         {
+                            //calls newMessageIcon function to display the bell icon
+                            newMessageIcon($newMessageFlag);
                             echo '<div class="profile-dropdown">';
                             echo '<button class="profile-btn" data-dropdown-button>';
                             echo $user->first_name;
@@ -78,7 +99,8 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
                         }
                         else
                         {
-                            echo '</a>';
+                            //calls newMessageIcon function to display the bell icon
+                            newMessageIcon($newMessageFlag);
                             echo '<div class="profile-dropdown">';
                             echo '<button class="profile-btn" data-dropdown-button>';
                             echo $user->first_name;

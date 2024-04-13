@@ -9,16 +9,22 @@ if (isset($_POST['submitBtn'])) {
     $zip = $_POST['postal-code'];
     $city = $_POST['city'];
     $price = $_POST['price'];
+    $bed = $_POST['bed'];
+    $bath = $_POST['bath'];
+    $user_id = $_SESSION['user_id'];
 
     // insert data into the database
-    $query = "INSERT INTO listingsdb (address, zip, city, price) VALUES (:address, :zip, :city, :price)";
+    $query = "INSERT INTO listingsdb (user_id, address, zip, city, price,bed,bath) VALUES (:user_id, :address, :zip, :city, :price,:bed,:bath)";
     $query_run = $conn->prepare($query);
 
     $data =[
+        ':user_id' => $user_id,
         ':address' => $address,
         ':zip' => $zip,
         ':city' => $city,
         ':price' => $price,
+        ':bed' => $bed,
+        ':bath' => $bath,
     ];
 
     $query_execute = $query_run->execute($data);
@@ -37,7 +43,7 @@ if (isset($_POST['submitBtn'])) {
         $filename = $_FILES['files']['name'][$i];
 
         // Location
-        $target_file = 'upload/'.$filename;
+        $target_file = __DIR__ . '/upload/'.$filename;
 
         // file extension
         $file_extension = pathinfo($target_file, PATHINFO_EXTENSION);
@@ -52,6 +58,9 @@ if (isset($_POST['submitBtn'])) {
                 // Execute query
 	            $statement->execute(array($address,$filename,$target_file));
             }
+	    else{
+		 exit("it didn't work"); 
+	    }
         }
     }
 

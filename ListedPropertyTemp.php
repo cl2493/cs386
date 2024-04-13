@@ -14,35 +14,11 @@ else
     header("Location: index.php");
     exit();
 }
-
 $user_id = $_SESSION['user_id'];
 $query = $conn->prepare("SELECT * FROM listingsdb WHERE user_id = :user_id");
 $query->bindParam(':user_id', $user_id, PDO::PARAM_STR);
 
 $listings = getListings($conn, $query);
-
-
-
-
-//Displays the filled icon if there is a message
-$newMessageFlag = true;
-function newMessageIcon($newMessageFlag)
-{
-    //if there is a new message
-    if ($newMessageFlag)
-    {
-        //display the shake Bell icon
-        echo '<i class="fa-solid fa-bell fa-shake fa-2xl" style="color: #ffffff;"></i>';
-    }
-    //otherwise, there is no new message
-    else
-    {
-        echo '<i class="fa-regular fa-bell fa-2xl" style="color: #ffffff;"></i>';
-    }
-}
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -74,54 +50,8 @@ function newMessageIcon($newMessageFlag)
                 <li><a href="404ErrorPage.html">Benefits</a></li>
                 <li><a href="404ErrorPage.html">Accommodation</a></li>
             </ul>
-          <!-- Profile button -->
-          <?php
-                    if (isset($_SESSION['user_id']))
-                    {
-                        if ($_SESSION['pfType'] == 'travelnursesdb')
-                        {
-                            //calls newMessageIcon function to display the bell icon
-                            newMessageIcon($newMessageFlag);
-                            echo '<div class="profile-dropdown">';
-                            echo '<button class="profile-btn" data-dropdown-button>';
-                            echo $user->first_name;
-                            echo '</button>';
-                            echo '<div class="menu-dropdown" data-dropdown tabindex="0">';
-                            echo '<div class="menu-dropdown-content">';
-                            echo '<a href="nurse-profile.php">Profile</a>';
-                            echo '<a href="nurse-profile-tabs/payment-setting.php">Payment</a>';
-                            echo '<a href="404ErrorPage.html">History</a>';
-                            echo '<a href="404ErrorPage.html">Settings</a>';
-                            echo '<a href="logout.php">Logout</a>';
-                            echo '</div>';
-                            echo '</div>';
-                            echo '</div>';
-                        }
-                        else
-                        {
-                            //calls newMessageIcon function to display the bell icon
-                            newMessageIcon($newMessageFlag);
-                            echo '<div class="profile-dropdown">';
-                            echo '<button class="profile-btn" data-dropdown-button>';
-                            echo $user->first_name;
-                            echo '</button>';
-                            echo '<div class="menu-dropdown" data-dropdown tabindex="0">';
-                            echo '<div class="menu-dropdown-content">';
-                            echo '<a href="propertyOwner-profile.php">Profile</a>';
-                            echo '<a href="nurse-profile-tabs/payment-setting.php">Payment</a>';
-                            echo '<a href="404ErrorPage.html">History</a>';
-                            echo '<a href="404ErrorPage.html">Settings</a>';
-                            echo '<a href="logout.php">Logout</a>';
-                            echo '</div>';
-                            echo '</div>';
-                            echo '</div>';
-                        }
-                    }
-                    else
-                    {
-                        echo '<a class="login-btn" onclick="popupFunction()">Sign In</a>';
-                    }
-                ?>
+            <!-- Profile button -->
+            <a class="profile-btn" onclick="popupFunction()">Profile</a>
         </nav>
     </div>
 <!------------------------------------Profile Page------------------------------------>
@@ -130,7 +60,7 @@ function newMessageIcon($newMessageFlag)
             <!-- Profile header -->
             <div class="profile-header">
                 <!-- Profile picture -->
-                <h1 id="profile-Title">User Profile</h1>
+                <h1 id="profile-Title">Address here</h1>
                 <!-- Profile name -->
                 <div id="profile-picture"></div>
                 <!-- Profile name -->
@@ -163,40 +93,38 @@ function newMessageIcon($newMessageFlag)
             </div>
             </div>
 
-        
-           
-
-
             <!-- Profile information -->
             <div class="profile-info">
             <?php
                    echo "<div class='space-top'></div>";
-                   echo "<p><strong>User ID: </strong>$user->user_id</p>";
+                   echo "<p><strong>Bedrooms: </strong>$user->user_id</p>";
                    echo "<div class='space-top'></div>";
-                   echo "<p><strong>Email: </strong>$user->email</p>";
+                   echo "<p><strong>bathrooms: </strong>$user->email</p>";
                    echo "<div class='space-top'></div>";
-                   echo "<p><strong>Birthday: </strong>$user->birthday</p>";
+                   echo "<p><strong>monthly cost: </strong>$user->birthday</p>";
             ?>
+
+<p>Rating: <span class="star-rating">
+		<label for="rate-1" style="--i:1"><i class="fa-solid fa-star"></i></label>
+		<input type="radio" name="rating" id="rate-1" value="1">
+		<label for="rate-2" style="--i:2"><i class="fa-solid fa-star"></i></label>
+		<input type="radio" name="rating" id="rate-2" value="2" checked>
+		<label for="rate-3" style="--i:3"><i class="fa-solid fa-star"></i></label>
+		<input type="radio" name="rating" id="rate-3" value="3">
+		<label for="rate-4" style="--i:4"><i class="fa-solid fa-star"></i></label>
+		<input type="radio" name="rating" id="rate-4" value="4">
+		<label for="rate-5" style="--i:5"><i class="fa-solid fa-star"></i></label>
+		<input type="radio" name="rating" id="rate-5" value="5">
+	</span></p>
             </div>
+            
            </div>
             </div>
 
+ 
 
-
-
-            
-            
-            <?php if (!$listings)
-            {
-                ?>
-            <div class="listingText">
-                <h1 id=>You have no listings</h1>
-            </div>
-            <?php
-            }
-            ?>
-            </div>
-            <div class="images">
+    </div>
+    <div class="images">
     <?php
             for ($listing = 0; $listing < count($listings); $listing++)
             {

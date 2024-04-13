@@ -59,4 +59,53 @@ function checkIfEmailInUse( $conn, $email)
     return false;
 }
 
+function getListings($conn, $query)
+{
+    // get listings db as array
+    $query->execute();
+    $listingsStmt = $query->fetchAll(PDO::FETCH_NUM);
+
+    $images = getImagesForListings($conn);
+
+    $listings = array();
+
+    for ($listing = 0; $listing < count($listingsStmt); $listing++)
+    {
+        // create listing object
+        $newListing = new Listing($listingsStmt[$listing][2],$listingsStmt[$listing][3],$listingsStmt[$listing][4],$listingsStmt[$listing][5],$listingsStmt[$listing][6],$listingsStmt[$listing][7]);
+
+        for ($image = 0; $image < count($images); $image++)
+        {
+            if ($images[$image]->address === $newListing->address)
+            {
+                $newListing->addImage($images[$image]);
+            }
+        }
+
+        // push new listing object to listings array
+        array_push($listings, $newListing);
+    }
+
+    return $listings;
+}
+
+function getImagesForListings($conn)
+{
+    $stmt = $conn->prepare('SELECT * FROM listingimagedb');
+    $stmt->execute();
+    $imagesStmt = $stmt->fetchAll(PDO::FETCH_NUM);
+
+    $images = array();
+
+    for ($image = 0; $image < count($imagesStmt); $image++)
+    {
+        // create image object
+        $newImage = new Image($imagesStmt[$image][1], $imagesStmt[$image][2], $imagesStmt[$image][3]);
+
+        // push new image object to images array
+        array_push($images, $newImage);
+    }
+
+    return $images;
+}
 

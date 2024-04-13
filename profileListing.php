@@ -14,6 +14,31 @@ else
     header("Location: index.php");
     exit();
 }
+$user_id = $_SESSION['user_id'];
+$query = $conn->prepare("SELECT * FROM listingsdb WHERE user_id = :user_id");
+$query->bindParam(':user_id', $user_id, PDO::PARAM_STR);
+
+$listings = getListings($conn, $query);
+
+
+//Displays the filled icon if there is a message
+$newMessageFlag = true;
+function newMessageIcon($newMessageFlag)
+{
+    //if there is a new message
+    if ($newMessageFlag)
+    {
+        //display the shake Bell icon
+        echo '<i class="fa-solid fa-bell fa-shake fa-2xl" style="color: #ffffff;"></i>';
+    }
+    //otherwise, there is no new message
+    else
+    {
+        echo '<i class="fa-regular fa-bell fa-2xl" style="color: #ffffff;"></i>';
+    }
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -45,8 +70,54 @@ else
                 <li><a href="404ErrorPage.html">Benefits</a></li>
                 <li><a href="404ErrorPage.html">Accommodation</a></li>
             </ul>
-            <!-- Profile button -->
-            <a class="profile-btn" onclick="popupFunction()">Profile</a>
+          <!-- Profile button -->
+          <?php
+                    if (isset($_SESSION['user_id']))
+                    {
+                        if ($_SESSION['pfType'] == 'travelnursesdb')
+                        {
+                            //calls newMessageIcon function to display the bell icon
+                            newMessageIcon($newMessageFlag);
+                            echo '<div class="profile-dropdown">';
+                            echo '<button class="profile-btn" data-dropdown-button>';
+                            echo $user->first_name;
+                            echo '</button>';
+                            echo '<div class="menu-dropdown" data-dropdown tabindex="0">';
+                            echo '<div class="menu-dropdown-content">';
+                            echo '<a href="nurse-profile.php">Profile</a>';
+                            echo '<a href="nurse-profile-tabs/payment-setting.php">Payment</a>';
+                            echo '<a href="404ErrorPage.html">History</a>';
+                            echo '<a href="404ErrorPage.html">Settings</a>';
+                            echo '<a href="logout.php">Logout</a>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
+                        }
+                        else
+                        {
+                            //calls newMessageIcon function to display the bell icon
+                            newMessageIcon($newMessageFlag);
+                            echo '<div class="profile-dropdown">';
+                            echo '<button class="profile-btn" data-dropdown-button>';
+                            echo $user->first_name;
+                            echo '</button>';
+                            echo '<div class="menu-dropdown" data-dropdown tabindex="0">';
+                            echo '<div class="menu-dropdown-content">';
+                            echo '<a href="propertyOwner-profile.php">Profile</a>';
+                            echo '<a href="nurse-profile-tabs/payment-setting.php">Payment</a>';
+                            echo '<a href="404ErrorPage.html">History</a>';
+                            echo '<a href="404ErrorPage.html">Settings</a>';
+                            echo '<a href="logout.php">Logout</a>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
+                        }
+                    }
+                    else
+                    {
+                        echo '<a class="login-btn" onclick="popupFunction()">Sign In</a>';
+                    }
+                ?>
         </nav>
     </div>
 <!------------------------------------Profile Page------------------------------------>
@@ -123,6 +194,14 @@ else
                     <input required type="number" id="price" name="price" autocomplete="cost" enterkeyhint="">
                 </div>
                 <div>
+                    <label>Number of Bedrooms</label>
+                    <input required type="number" id="bed" name="bed" autocomplete="cost" enterkeyhint="">
+                </div>
+                <div>
+                    <label>Number of Bathrooms</label>
+                    <input required type="number" id="bath" name="bath" autocomplete="cost" enterkeyhint="">
+                </div>
+                <div>
                     <label>Images</label>
                     <input required type="file" id="imgs" name="files[]" multiple>
                 </div>
@@ -133,18 +212,23 @@ else
             </div>
     </div>
     <div class="images">
-        <?php
-            $stmt = $conn->prepare('SELECT * FROM listingimagedb');
-            $stmt->execute();
-            $imagesList = $stmt->fetchAll();
-
-            foreach($imagesList as $image)
+    <?php
+            for ($listing = 0; $listing < count($listings); $listing++)
             {
                 ?>
-                <img src="<?= $image['image'] ?>" title="<?= $image['imagename'] ?>" width="200" height="200">
+                <div class ="property-square">
+                <img src="<?=$listings[$listing]->images[0]->image?>" class="property-image">
+                <div class="property-info">
+                       <h2 class='property-name'><strong><?=$listings[$listing]->address?></strong></h2>
+                       <h3 class='property-bed'>Beds: <?=$listings[$listing]->bed?></h3>
+                       <h3 class='property-bath'>Baths: <?=$listings[$listing]->bath?></h3>
+                       <h3 class='property-rent'><?=$listings[$listing]->price?></h3>
+                    <a class="property-btn" href = "#">View Property</a>
+                </div>
+            </div>
                 <?php
             }
-        ?>
+            ?>
     </div>
     <!------ footer ----->
     <div class = "footer">
