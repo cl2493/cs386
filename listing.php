@@ -146,14 +146,16 @@ function displayStar ($rating)
                           <h3 class='property-bath'>Baths: <?=$listings[$listing]->bath?></h3>
                           <h3 class='property-rent'>Rent: $<?=$listings[$listing]->price?></h3>
                        <a class="property-btn" href = "#">View Property</a>
-                       </div>
+                     </div>
                  </div>
-                <?php
+            <?php
             }
             ?>
         </div>
     </div>
-</div>
     </div>
+
+<?php include("footer.php"); ?>
+
 </body>
 </html>
