@@ -50,6 +50,7 @@ function newMessageIcon($newMessageFlag)
     <title>Nurse Profile</title>
     <!-- CSS links -->
     <link rel="stylesheet" href="style/generalStyle(PO).css">
+    <link rel="stylesheet" href="style/dropDownProfile.css">
     <!-- JavaScript links -->
     <!-- Font Awesome links for the Footer Icons -->
     <script src="https://kit.fontawesome.com/c011338aa2.js" crossorigin="anonymous"></script>

@@ -48,6 +48,7 @@ function newMessageIcon($newMessageFlag)
     <title>RNT-A-ROOM Home Listings</title>
     <!-- CSS links -->
     <link rel="stylesheet" href="style/listingStyle.css">
+    <link rel="stylesheet" href="style/dropDownProfile.css">
     <!-- JavaScript links -->
     <!-- Font Awesome links for the Footer Icons -->
     <script src="https://kit.fontawesome.com/c011338aa2.js" crossorigin="anonymous"></script>

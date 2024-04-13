@@ -31,6 +31,7 @@ function newMessageIcon($newMessageFlag)
         <title>RNT-A-ROOM REGISTER</title>
         <!----connecting different files-->
         <link rel="stylesheet" href ="style/register-style.css">
+        <link rel="stylesheet" href="style/dropDownProfile.css">
         <script src="https://kit.fontawesome.com/c011338aa2.js" crossorigin="anonymous"></script>
         <script src="script.js" defer></script>
     </head>

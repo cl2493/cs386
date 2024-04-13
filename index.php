@@ -51,6 +51,7 @@ function newMessageIcon($newMessageFlag)
     which will make the website look pretty
     ----->
     <link rel="stylesheet" href = "style/homepageStyle.css">
+    <link rel="stylesheet" href="style/dropDownProfile.css">
     <script src="https://kit.fontawesome.com/c011338aa2.js" crossorigin="anonymous"></script>
     <script src="script.js" defer></script>
   </head>
