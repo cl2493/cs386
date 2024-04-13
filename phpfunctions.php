@@ -1,5 +1,6 @@
 <?php
 include("classes.php");
+
 function checkLogin($conn, $pfType)
 {
     if (isset($_SESSION['user_id']))
@@ -91,6 +92,15 @@ function getListings($conn, $query)
 
 function getImagesForListings($conn)
 {
+    require('vendor/autoload.php');
+
+    $s3 = new Aws\S3\S3Client([
+        'version'  => 'latest',
+        'region'   => 'us-west-1',
+    ]);
+
+    $bucket = 'listingimagesdb';
+
     $stmt = $conn->prepare('SELECT * FROM listingimagedb');
     $stmt->execute();
     $imagesStmt = $stmt->fetchAll(PDO::FETCH_NUM);
@@ -99,8 +109,16 @@ function getImagesForListings($conn)
 
     for ($image = 0; $image < count($imagesStmt); $image++)
     {
+        $filename = $imagesStmt[$image][2];
+        $file = $s3->getObject([
+                                 'Bucket' => $bucket,
+                                 'Key' => $filename,
+                                ]);
+        
+        $file = $file->get('@metadata')['effectiveUri'];
+
         // create image object
-        $newImage = new Image($imagesStmt[$image][1], $imagesStmt[$image][2], $imagesStmt[$image][3]);
+        $newImage = new Image($imagesStmt[$image][1], $imagesStmt[$image][2], $file);
 
         // push new image object to images array
         array_push($images, $newImage);
