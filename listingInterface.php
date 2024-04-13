@@ -8,7 +8,7 @@ $s3 = new Aws\S3\S3Client([
     'region'   => 'us-west-1',
 ]);
 
-$bucket = 'listingimagesdb';//getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!');
+$bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!');
 
 // Check if the form was submitted
 if (isset($_POST['submitBtn'])) {
