@@ -32,7 +32,15 @@ if(isset($_SESSION['pfType']))
 {
     $user = checkLogin($conn, $_SESSION['pfType']);
     // Check if the user is verified
-    $verifiedFlag = isset($_SESSION['verified']) && $_SESSION['verified'] == true;
+    if(isset($_SESSION['verified']) && $_SESSION['verified'] == true)
+    {
+        // set verified flag to true
+        $verifiedFlag = true;
+    }
+    else
+    {
+        $verifiedFlag = false;
+    }
 }
 
 else
