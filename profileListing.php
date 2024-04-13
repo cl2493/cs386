@@ -203,7 +203,7 @@ function newMessageIcon($newMessageFlag)
                 </div>
                 <div>
                     <label>Images</label>
-                    <input required type="file" id="imgs" name="files[]" multiple>
+                    <input required type="file" id="imgs" name="file" multiple>
                 </div>
                 <div>
                     <button type="submit" name="submitBtn">Submit</button>
