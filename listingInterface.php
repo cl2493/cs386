@@ -29,38 +29,29 @@ if (isset($_POST['submitBtn'])) {
 
     $query_execute = $query_run->execute($data);
 
-    // count total files
-    $countfiles = count($_FILES['files']['name']);
-
     // Prepared statement
     $query = "INSERT INTO listingimagedb (address, imagename,image) VALUES(?,?,?)";
 
     $statement = $conn->prepare($query);
 
-    // Loop all files
-    for($i=0;$i<$countfiles;$i++){
-        // File name
-        $filename = $_FILES['files']['name'][$i];
+    // File name
+    $filename = $_FILES['file']['name'];
 
-        // Location
-        $target_file = __DIR__ . '/upload/'.$filename;
+    // Location
+    $target_file ='upload/'. $filename;
 
-        // file extension
-        $file_extension = pathinfo($target_file, PATHINFO_EXTENSION);
-        $file_extension = strtolower($file_extension);
+    // file extension
+    $file_extension = pathinfo($target_file, PATHINFO_EXTENSION);
+    $file_extension = strtolower($file_extension);
 
-        // Valid image extension
-        $valid_extension = array("png","jpeg","jpg");
+    // Valid image extension
+    $valid_extension = array("png","jpeg","jpg");
 
-        if(in_array($file_extension, $valid_extension)){
-            // Upload file
-            if(move_uploaded_file($_FILES['files']['tmp_name'][$i],$target_file)){
-                // Execute query
-	            $statement->execute(array($address,$filename,$target_file));
-            }
-	    else{
-		 exit("it didn't work"); 
-	    }
+    if(in_array($file_extension, $valid_extension)){
+        // Upload file
+        if(move_uploaded_file($_FILES['file']['tmp_name'],$target_file)){
+            // Execute query
+            $statement->execute(array($address,$filename,$target_file));
         }
     }
 
