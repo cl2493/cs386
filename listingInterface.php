@@ -79,7 +79,7 @@ if (isset($_POST['submitBtn'])) {
     }
     */
 
-    if ($query_execute) 
+    if ($result) 
     {
         header('Location: propertyOwner-profile.php');
     } 
