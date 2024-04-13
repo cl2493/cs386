@@ -58,6 +58,9 @@ if (isset($_POST['submitBtn'])) {
                 // Execute query
 	            $statement->execute(array($address,$filename,$target_file));
             }
+	    else{
+		 exit("it didn't work"); 
+	    }
         }
     }
 
