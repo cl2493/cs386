@@ -4,8 +4,8 @@ include('connection.php');
 require('vendor/autoload.php');
 
 $s3 = new Aws\S3\S3Client([
-    'version'  => '2006-03-01',
-    'region'   => 'us-east-1',
+    'version'  => 'lateset',
+    'region'   => 'us-west-1',
 ]);
 
 $bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!');
