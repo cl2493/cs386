@@ -1,6 +1,14 @@
 <?php
 session_start();
 include('connection.php');
+require('vendor/autoload.php');
+
+$s3 = new Aws\S3\S3Client([
+    'version'  => '2006-03-01',
+    'region'   => 'us-east-1',
+]);
+
+$bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!');
 
 // Check if the form was submitted
 if (isset($_POST['submitBtn'])) {
@@ -34,6 +42,12 @@ if (isset($_POST['submitBtn'])) {
 
     $statement = $conn->prepare($query);
 
+    if (isset($_FILES['file']) && $_FILES['file']['error'] == UPLOAD_ERR_OK && is_uploaded_file($_FILES['file']['tmp_name'])) {
+        // FIXME: you should not use 'name' for the upload, since that's the original filename from the user's computer - generate a random filename that youthen store in your database, or similar 
+        $upload = $s3->upload($bucket, $_FILES['file']['name'], fopen($_FILES['file']['tmp_name'], 'rb'), 'public-read');
+    }
+
+    /*
     // File name
     $filename = $_FILES['file']['name'];
 
@@ -54,6 +68,7 @@ if (isset($_POST['submitBtn'])) {
             $statement->execute(array($address,$filename,$target_file));
         }
     }
+    */
 
     if ($query_execute) 
     {
