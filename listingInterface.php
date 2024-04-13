@@ -4,7 +4,7 @@ include('connection.php');
 require('vendor/autoload.php');
 
 $s3 = new Aws\S3\S3Client([
-    'version'  => 'lateset',
+    'version'  => 'latest',
     'region'   => 'us-west-1',
 ]);
 
