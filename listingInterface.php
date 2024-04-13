@@ -38,7 +38,7 @@ if (isset($_POST['submitBtn'])) {
     $query_execute = $query_run->execute($data);
 
     // Prepared statement
-    $query = "INSERT INTO listingimagedb (address, imagename,image) VALUES(?,?,?)";
+    $query = "INSERT INTO listingimagedb (address, imagename) VALUES(?,?)";
 
     $statement = $conn->prepare($query);
 
@@ -53,31 +53,10 @@ if (isset($_POST['submitBtn'])) {
                                  'ACL' => 'public-read',
         ]);
 
+        $statement->execute(array($address, $filename));
+
         fclose($file);
     }
-
-    /*
-    // File name
-    $filename = $_FILES['file']['name'];
-
-    // Location
-    $target_file ='upload/'. $filename;
-
-    // file extension
-    $file_extension = pathinfo($target_file, PATHINFO_EXTENSION);
-    $file_extension = strtolower($file_extension);
-
-    // Valid image extension
-    $valid_extension = array("png","jpeg","jpg");
-
-    if(in_array($file_extension, $valid_extension)){
-        // Upload file
-        if(move_uploaded_file($_FILES['file']['tmp_name'],$target_file)){
-            // Execute query
-            $statement->execute(array($address,$filename,$target_file));
-        }
-    }
-    */
 
     if ($result) 
     {

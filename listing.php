@@ -134,14 +134,14 @@ function displayStar ($rating)
                 ?>
                 <div class ="property-square">
                     <!--- Replaced the images with fake property ---->
-                     <img src="images/propertyImage/fake-property.jpg" class="property-image">
+                     <img src="<?=$listings[$listing]->images[0]->image?>" class="property-image">
                      <!--- Displays the star ratings (please round up if it's a fraction)---->
                      <?php
                           displayStar ($rating)
                      ?>
                      <div class="property-info">
                           <!--- Location is a placeholder, please replace with the actual location of the property ---->
-                          <h3 class='property-location'>Location: Phoenix, AZ</h3>
+                          <h3 class='property-location'>Location: <?=$listings[$listing]->city?></h3>
                           <h2 class='property-name'><strong><?=$listings[$listing]->address?></strong></h2>
                           <h3 class='property-bed'>Beds: <?=$listings[$listing]->bed?></h3>
                           <h3 class='property-bath'>Baths: <?=$listings[$listing]->bath?></h3>
