@@ -126,6 +126,7 @@ function displayStar ($rating)
    </div>
    <div class = "listing-container">
     <div class = "listing-content">
+        <?php include("directorySearch.php"); ?>
         <div class = "property-display">
             <?php
             for ($listing = 0; $listing < count($listings); $listing++)
