@@ -44,7 +44,16 @@ if (isset($_POST['submitBtn'])) {
 
     if (isset($_FILES['file']) && $_FILES['file']['error'] == UPLOAD_ERR_OK && is_uploaded_file($_FILES['file']['tmp_name'])) {
         // FIXME: you should not use 'name' for the upload, since that's the original filename from the user's computer - generate a random filename that youthen store in your database, or similar 
-        $upload = $s3->upload($bucket, $_FILES['file']['name'], fopen($_FILES['file']['tmp_name'], 'rb'), 'public-read');
+        $filename = uniqid() . '_' . $_FILES['file']['name'];
+        $file = fopen($_FILES['file']['tmp_name'], 'rb');
+        $result = $s3->putObject([
+                                 'Bucket' => $bucket,
+                                 'Key' => $filename,
+                                 'Body' => $file,
+                                 'ACL' => 'public-read',
+        ]);
+
+        fclose($file);
     }
 
     /*
