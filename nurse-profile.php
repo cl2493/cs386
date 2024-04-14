@@ -13,39 +13,39 @@ $inputFileName = '';
 // initialize $submission_stage with a default value
 $submission_stage = "Not Submitted";
 
-// set the verified flag based on submission stage
-if (isset($_SESSION['submission_stage']) && $_SESSION['submission_stage'] == "Approved")
-{
-    // user is verified
-    $verifiedFlag = true;
-
-    // make sure the user stays verified in session
-    $_SESSION['verified'] = true;
-}
-else
-{
-    // user isn't verified
-    $verifiedFlag = false;
-}
-
+// check if user is logged in
 if(isset($_SESSION['pfType']))
 {
     $user = checkLogin($conn, $_SESSION['pfType']);
-    // Check if the user is verified
+
+    // set verified flag to false
+    $verifiedFlag = false;
+
+    // check if user is verified
     if(isset($_SESSION['verified']) && $_SESSION['verified'] == true)
     {
         // set verified flag to true
         $verifiedFlag = true;
     }
-    else
+
+// set the verified flag based on submission stage
+else
+{
+    if (isset($_SESSION['submission_stage']) && $_SESSION['submission_stage'] == "Approved")
     {
-        $verifiedFlag = false;
+        // user is verified
+        $verifiedFlag = true;
+
+         // make sure the user stays verified in session
+         $_SESSION['verified'] = true;
     }
 }
 
+}
+
+// redirect to homepage
 else
 {
-    // redirect to homepage
     header("Location: index.php");
 }
 
