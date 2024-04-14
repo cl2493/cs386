@@ -1,0 +1,45 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-items: space-between;
+    background-color: #e7b93b;
+    color: #fff;
+    padding: 20px 6%;
+
+}
+
+.footer a {
+    color: #fff; /* Style links within the footer */
+    padding: 2%;
+    margin-top: 5%;
+    text-decoration: none;
+}
+.footer a:hover {
+    color: #000; /* Change link color to black on hover */
+}
+
+.social-media {
+    text-align: center;
+    padding: 5%;
+}
+
+.social-media p {
+    margin-bottom: 5%;
+}
+
+.icon {
+    font-size: 30px;
+    margin: 0 10px;
+}
+
+.info-footer{
+    align-content: center;
+    text-align: center;
+    width: 30%;
+    margin: 3%;
+    padding: 1%;
+}
+
+.newsletter{
+    margin: 2%;
+}

@@ -1,6 +1,14 @@
 <?php
 session_start();
 include('connection.php');
+require('vendor/autoload.php');
+
+$s3 = new Aws\S3\S3Client([
+    'version'  => 'latest',
+    'region'   => 'us-west-1',
+]);
+
+$bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!');
 
 // Check if the form was submitted
 if (isset($_POST['submitBtn'])) {
@@ -29,39 +37,28 @@ if (isset($_POST['submitBtn'])) {
 
     $query_execute = $query_run->execute($data);
 
-    // count total files
-    $countfiles = count($_FILES['files']['name']);
-
     // Prepared statement
-    $query = "INSERT INTO listingimagedb (address, imagename,image) VALUES(?,?,?)";
+    $query = "INSERT INTO listingimagedb (address, imagename) VALUES(?,?)";
 
     $statement = $conn->prepare($query);
 
-    // Loop all files
-    for($i=0;$i<$countfiles;$i++){
-        // File name
-        $filename = $_FILES['files']['name'][$i];
+    if (isset($_FILES['file']) && $_FILES['file']['error'] == UPLOAD_ERR_OK && is_uploaded_file($_FILES['file']['tmp_name'])) {
+        // FIXME: you should not use 'name' for the upload, since that's the original filename from the user's computer - generate a random filename that youthen store in your database, or similar 
+        $filename = uniqid() . '_' . $_FILES['file']['name'];
+        $file = fopen($_FILES['file']['tmp_name'], 'rb');
+        $result = $s3->putObject([
+                                 'Bucket' => $bucket,
+                                 'Key' => $filename,
+                                 'Body' => $file,
+                                 'ACL' => 'public-read',
+        ]);
 
-        // Location
-        $target_file = 'upload/'.$filename;
+        $statement->execute(array($address, $filename));
 
-        // file extension
-        $file_extension = pathinfo($target_file, PATHINFO_EXTENSION);
-        $file_extension = strtolower($file_extension);
-
-        // Valid image extension
-        $valid_extension = array("png","jpeg","jpg");
-
-        if(in_array($file_extension, $valid_extension)){
-            // Upload file
-            if(move_uploaded_file($_FILES['files']['tmp_name'][$i],$target_file)){
-                // Execute query
-	            $statement->execute(array($address,$filename,$target_file));
-            }
-        }
+        fclose($file);
     }
 
-    if ($query_execute) 
+    if ($result) 
     {
         header('Location: propertyOwner-profile.php');
     } 

@@ -14,6 +14,40 @@ if (!isset($_SESSION['query']))
 }
 // $listings is an array of Listing objects (look at Listing class to see more)
 $listings = getListings($conn, $query);
+
+
+//Displays the filled icon if there is a message
+$newMessageFlag = true;
+function newMessageIcon($newMessageFlag)
+{
+    //if there is a new message
+    if ($newMessageFlag)
+    {
+        //display the shake Bell icon
+        echo '<i class="fa-solid fa-bell fa-shake fa-2xl" style="color: #ffffff;"></i>';
+    }
+    //otherwise, there is no new message
+    else
+    {
+        echo '<i class="fa-regular fa-bell fa-2xl" style="color: #ffffff;"></i>';
+    }
+}
+
+$rating = 3;
+$index;
+function displayStar ($rating)
+{
+    $rating = round($rating);
+    for ($index = 0; $index < $rating; $index++)
+    {
+        echo '<i class="fa-solid fa-star fa-lg" style="color: #FFD43B;"></i>';
+    }
+    for ($index = 0; $index < 5 - $rating; $index++)
+    {
+        echo '<i class="fa-regular fa-star fa-lg" style="color: #FFD43B;"></i>';
+    }
+
+}
 ?>
 
 <!DOCTYPE html>
@@ -46,6 +80,8 @@ $listings = getListings($conn, $query);
                     {
                         if ($_SESSION['pfType'] == 'travelnursesdb')
                         {
+                            //calls newMessageIcon function to display the bell icon
+                            newMessageIcon($newMessageFlag);
                             echo '<div class="profile-dropdown">';
                             echo '<button class="profile-btn" data-dropdown-button>';
                             echo $user->first_name;
@@ -63,7 +99,8 @@ $listings = getListings($conn, $query);
                         }
                         else
                         {
-                            echo '</a>';
+                            //calls newMessageIcon function to display the bell icon
+                            newMessageIcon($newMessageFlag);
                             echo '<div class="profile-dropdown">';
                             echo '<button class="profile-btn" data-dropdown-button>';
                             echo $user->first_name;
@@ -89,27 +126,37 @@ $listings = getListings($conn, $query);
    </div>
    <div class = "listing-container">
     <div class = "listing-content">
+        <?php include("directorySearch.php"); ?>
         <div class = "property-display">
             <?php
             for ($listing = 0; $listing < count($listings); $listing++)
             {
                 ?>
                 <div class ="property-square">
+                    <!--- Replaced the images with fake property ---->
                      <img src="<?=$listings[$listing]->images[0]->image?>" class="property-image">
+                     <!--- Displays the star ratings (please round up if it's a fraction)---->
+                     <?php
+                          displayStar ($rating)
+                     ?>
                      <div class="property-info">
+                          <!--- Location is a placeholder, please replace with the actual location of the property ---->
+                          <h3 class='property-location'>Location: <?=$listings[$listing]->city?></h3>
                           <h2 class='property-name'><strong><?=$listings[$listing]->address?></strong></h2>
                           <h3 class='property-bed'>Beds: <?=$listings[$listing]->bed?></h3>
                           <h3 class='property-bath'>Baths: <?=$listings[$listing]->bath?></h3>
-                          <h3 class='property-rent'><?=$listings[$listing]->price?></h3>
+                          <h3 class='property-rent'>Rent: $<?=$listings[$listing]->price?></h3>
                        <a class="property-btn" href = "#">View Property</a>
-                       </div>
+                     </div>
                  </div>
-                <?php
+            <?php
             }
             ?>
         </div>
     </div>
-</div>
     </div>
+
+<?php include("footer.php"); ?>
+
 </body>
 </html>

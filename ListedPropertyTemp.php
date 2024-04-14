@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+//session_start();
 include("connection.php");
 include("phpfunctions.php");
 
@@ -54,15 +54,15 @@ $listings = getListings($conn, $query);
             <a class="profile-btn" onclick="popupFunction()">Profile</a>
         </nav>
     </div>
-<!------------------------------------Profile Page------------------------------------>
+<!------------------------------------Listing Page------------------------------------>
     <div class="profile-container">
         <div class = "profile-content">
             <!-- Profile header -->
             <div class="profile-header">
                 <!-- Profile picture -->
-                <h1 id="profile-Title">Address here</h1>
+
                 <!-- Profile name -->
-                <div id="profile-picture"></div>
+                <div id="listing-picture"></div>
                 <!-- Profile name -->
                 <?php
                 // Display the name of the user
@@ -76,33 +76,15 @@ $listings = getListings($conn, $query);
                 ?>
             </div>
 
-            <div class="pfnav-and-pfinfo">
-            <!-- Profile data -->
-           <div class="profile-data">
-               <!-- Move the form and profile picture div here -->
-               <!--on the left will have tabs for payment to update the screen -->
-               <div class = "profile-nav">
-               <div class="profile-tabs">
-                   <li ><a href="propertyOwner-profile.php" class="active">Profile</a></li>
-                   <!-- These links will be updated to the correct pages -->
-                   <li><a href="">Payment</a></li>
-                   <li><a href = "" >History</a></li>
-                   <li><a href="">Settings</a></li>
-                   <li><a href="profileListing.php">Listings</a></li>
-              </div>
-            </div>
-            </div>
+            <!-- listing information -->
+            <div class="listing-info">
+                
 
-            <!-- Profile information -->
-            <div class="profile-info">
-            <?php
-                   echo "<div class='space-top'></div>";
-                   echo "<p><strong>Bedrooms: </strong>$user->user_id</p>";
-                   echo "<div class='space-top'></div>";
-                   echo "<p><strong>bathrooms: </strong>$user->email</p>";
-                   echo "<div class='space-top'></div>";
-                   echo "<p><strong>monthly cost: </strong>$user->birthday</p>";
-            ?>
+             <h6 id="">Address here</h6>
+
+            <p><strong>Bedrooms: </strong></p>
+            <p><strong>Bathrooms: </strong></p>
+            <p><strong>Monthly Cost: $ </strong></p>
 
 <p>Rating: <span class="star-rating">
 		<label for="rate-1" style="--i:1"><i class="fa-solid fa-star"></i></label>
@@ -124,35 +106,8 @@ $listings = getListings($conn, $query);
  
 
     </div>
-    <div class="images">
-    <?php
-            for ($listing = 0; $listing < count($listings); $listing++)
-            {
-                ?>
-                <div class ="property-square">
-                <img src="<?=$listings[$listing]->images[0]->image?>" class="property-image">
-                <div class="property-info">
-                       <h2 class='property-name'><strong><?=$listings[$listing]->address?></strong></h2>
-                       <h3 class='property-bed'>Beds: <?=$listings[$listing]->bed?></h3>
-                       <h3 class='property-bath'>Baths: <?=$listings[$listing]->bath?></h3>
-                       <h3 class='property-rent'><?=$listings[$listing]->price?></h3>
-                    <a class="property-btn" href = "#">View Property</a>
-                </div>
-            </div>
-                <?php
-            }
-            ?>
-    </div>
+   
     <!------ footer ----->
-    <div class = "footer">
-        <p>Follow Us On Social Media</p>
-        <a href = "404ErrorPage.html"><i class="fa-brands fa-facebook"></i></a>
-        <a href = "404ErrorPage.html"><i class="fa-brands fa-google-plus"></i></a>
-        <a href = "404ErrorPage.html"><i class="fa-brands fa-instagram"></i></a>
-        <a href = "404ErrorPage.html"><i class="fa-brands fa-yelp"></i></a>
-        <a href = "404ErrorPage.html">Help Center</a>
-        <a href = "404ErrorPage.html">About Us</a>
-        <p>Copyright © 2024, RNT-A-ROOM</p>
-    </div>
+    <?php include("footer.php"); ?>
 </body>
 </html>

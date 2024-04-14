@@ -32,7 +32,15 @@ if(isset($_SESSION['pfType']))
 {
     $user = checkLogin($conn, $_SESSION['pfType']);
     // Check if the user is verified
-    $verifiedFlag = isset($_SESSION['verified']) && $_SESSION['verified'] == true;
+    if(isset($_SESSION['verified']) && $_SESSION['verified'] == true)
+    {
+        // set verified flag to true
+        $verifiedFlag = true;
+    }
+    else
+    {
+        $verifiedFlag = false;
+    }
 }
 
 else
@@ -40,6 +48,29 @@ else
     // redirect to homepage
     header("Location: index.php");
 }
+
+
+
+
+//Displays the filled icon if there is a message
+$newMessageFlag = true;
+function newMessageIcon($newMessageFlag)
+{
+    //if there is a new message
+    if ($newMessageFlag)
+    {
+        //display the shake Bell icon
+        echo '<i class="fa-solid fa-bell fa-shake fa-2xl" style="color: #ffffff;"></i>';
+    }
+    //otherwise, there is no new message
+    else
+    {
+        echo '<i class="fa-regular fa-bell fa-2xl" style="color: #ffffff;"></i>';
+    }
+}
+
+
+
 ?>
 
 <!-- Nurse profile header -->
@@ -73,7 +104,53 @@ else
                 <li><a href="404ErrorPage.html">Accommodation</a></li>
             </ul>
             <!-- Profile button -->
-                <button class="profile-btn" onclick="popupFunction()">Profile</button>
+            <?php
+                    if (isset($_SESSION['user_id']))
+                    {
+                        if ($_SESSION['pfType'] == 'travelnursesdb')
+                        {
+                            //calls newMessageIcon function to display the bell icon
+                            newMessageIcon($newMessageFlag);
+                            echo '<div class="profile-dropdown">';
+                            echo '<button class="profile-btn" data-dropdown-button>';
+                            echo $user->first_name;
+                            echo '</button>';
+                            echo '<div class="menu-dropdown" data-dropdown tabindex="0">';
+                            echo '<div class="menu-dropdown-content">';
+                            echo '<a href="nurse-profile.php">Profile</a>';
+                            echo '<a href="nurse-profile-tabs/payment-setting.php">Payment</a>';
+                            echo '<a href="404ErrorPage.html">History</a>';
+                            echo '<a href="404ErrorPage.html">Settings</a>';
+                            echo '<a href="logout.php">Logout</a>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
+                        }
+                        else
+                        {
+                            //calls newMessageIcon function to display the bell icon
+                            newMessageIcon($newMessageFlag);
+                            echo '<div class="profile-dropdown">';
+                            echo '<button class="profile-btn" data-dropdown-button>';
+                            echo $user->first_name;
+                            echo '</button>';
+                            echo '<div class="menu-dropdown" data-dropdown tabindex="0">';
+                            echo '<div class="menu-dropdown-content">';
+                            echo '<a href="propertyOwner-profile.php">Profile</a>';
+                            echo '<a href="nurse-profile-tabs/payment-setting.php">Payment</a>';
+                            echo '<a href="404ErrorPage.html">History</a>';
+                            echo '<a href="404ErrorPage.html">Settings</a>';
+                            echo '<a href="logout.php">Logout</a>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
+                        }
+                    }
+                    else
+                    {
+                        echo '<a class="login-btn" onclick="popupFunction()">Sign In</a>';
+                    }
+                ?>
         </nav>
     </div>
 <!------------------------------------Profile Page------------------------------------>
@@ -160,15 +237,6 @@ else
 
     </div>
     <!------ footer ----->
-    <div class = "footer">
-        <p>Follow Us On Social Media</p>
-        <a href = "404ErrorPage.html"><i class="fa-brands fa-facebook"></i></a>
-        <a href = "404ErrorPage.html"><i class="fa-brands fa-google-plus"></i></a>
-        <a href = "404ErrorPage.html"><i class="fa-brands fa-instagram"></i></a>
-        <a href = "404ErrorPage.html"><i class="fa-brands fa-yelp"></i></a>
-        <a href = "404ErrorPage.html">Help Center</a>
-        <a href = "404ErrorPage.html">About Us</a>
-        <p>Copyright © 2024, RNT-A-ROOM</p>
-    </div>
+    <?php include("footer.php"); ?>
 </body>
 </html>
