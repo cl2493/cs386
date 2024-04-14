@@ -71,6 +71,10 @@ function closePopup() {
     });
 }
 
+function showMessageFunction() {
+    alert("You need to be logged in to view a property.")
+}
+
 
 
 /* the form 

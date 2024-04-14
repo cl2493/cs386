@@ -122,13 +122,25 @@ function displayStar ($rating)
                           displayStar ($rating)
                      ?>
                      <div class="property-info">
-                          <!--- Location is a placeholder, please replace with the actual location of the property ---->
                           <h3 class='property-location'>Location: <?=$listings[$listing]->city?></h3>
                           <h2 class='property-name'><strong><?=$listings[$listing]->address?></strong></h2>
                           <h3 class='property-bed'>Beds: <?=$listings[$listing]->bed?></h3>
                           <h3 class='property-bath'>Baths: <?=$listings[$listing]->bath?></h3>
                           <h3 class='property-rent'>Rent: $<?=$listings[$listing]->price?></h3>
-                       <a class="property-btn" href = "#">View Property</a>
+                          <?php
+                          if (isset($user))
+                          {
+                            ?>
+                            <a class="property-btn" href = "ListedPropertyTemp.php?Listing=<?=$listing?>">View Property</a>
+                            <?php
+                          }
+                          else
+                          {
+                            ?>
+                            <a class="property-btn" onclick="showMessageFunction()">View Property</a>
+                            <?php  
+                          }
+                          ?>
                      </div>
                  </div>
             <?php
