@@ -130,7 +130,7 @@ function newMessageIcon($newMessageFlag)
                     <label>Email</label><br>
                     <input name="signinemail" type="text"><br>
                     <label>Password</label><br>
-                    <input name="signinpassword" type="text"><br>
+                    <input type="password" id="password" name="password" class="input-box" placeholder="Password">
                     <button name="sign-in-btn" type= "submit" class="sign-in-btn">Login</button>
                 </form>
                 <a href="nurse-register.php" class="sign-in-btn" id = "nurse-register">Register</a>
