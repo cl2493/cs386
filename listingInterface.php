@@ -22,7 +22,7 @@ if (isset($_POST['submitBtn'])) {
     $user_id = $_SESSION['user_id'];
 
     // insert data into the database
-    $query = "INSERT INTO listingsdb (user_id, address, zip, city, price,bed,bath) VALUES (:user_id, :address, :zip, :city, :price,:bed,:bath)";
+    $query = "INSERT INTO listingsdb (user_id, address, zip, city, price,bed,bath,availability) VALUES (:user_id, :address, :zip, :city, :price,:bed,:bath,:availability)";
     $query_run = $conn->prepare($query);
 
     $data =[
@@ -33,6 +33,7 @@ if (isset($_POST['submitBtn'])) {
         ':price' => $price,
         ':bed' => $bed,
         ':bath' => $bath,
+        ':availability' => "available",
     ];
 
     $query_execute = $query_run->execute($data);

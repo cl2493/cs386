@@ -10,7 +10,7 @@ if (isset($_SESSION['pfType']))
 
 if (!isset($_SESSION['query']))
 {
-    $query = $conn->prepare("SELECT * FROM listingsdb");
+    $query = $conn->prepare("SELECT * FROM listingsdb WHERE availability = 'available'");
 }
 // $listings is an array of Listing objects (look at Listing class to see more)
 $listings = getListings($conn, $query);
