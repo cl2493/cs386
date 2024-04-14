@@ -1,25 +1,6 @@
 <?php
 
-
-//Displays the filled icon if there is a message
-$newMessageFlag = true;
-function newMessageIcon($newMessageFlag)
-{
-    //if there is a new message
-    if ($newMessageFlag)
-    {
-        //display the shake Bell icon
-        echo '<i class="fa-solid fa-bell fa-shake fa-2xl" style="color: #ffffff;"></i>';
-    }
-    //otherwise, there is no new message
-    else
-    {
-        echo '<i class="fa-regular fa-bell fa-2xl" style="color: #ffffff;"></i>';
-    }
-}
-
-
-
+include('phpfunctions.php');
 ?>
 
 <!-----USER REGISTER PAGE------->

@@ -15,24 +15,6 @@ if (!isset($_SESSION['query']))
 // $listings is an array of Listing objects (look at Listing class to see more)
 $listings = getListings($conn, $query);
 
-
-//Displays the filled icon if there is a message
-$newMessageFlag = true;
-function newMessageIcon($newMessageFlag)
-{
-    //if there is a new message
-    if ($newMessageFlag)
-    {
-        //display the shake Bell icon
-        echo '<i class="fa-solid fa-bell fa-shake fa-2xl" style="color: #ffffff;"></i>';
-    }
-    //otherwise, there is no new message
-    else
-    {
-        echo '<i class="fa-regular fa-bell fa-2xl" style="color: #ffffff;"></i>';
-    }
-}
-
 $rating = 3;
 $index;
 function displayStar ($rating)
