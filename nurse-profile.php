@@ -42,9 +42,10 @@ else
 }
 
 }
+
+// redirect to homepage
 else
 {
-    // redirect to homepage
     header("Location: index.php");
 }
 
