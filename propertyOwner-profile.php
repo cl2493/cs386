@@ -208,7 +208,7 @@ function newMessageIcon($newMessageFlag)
                        <h3 class='property-bed'>Beds: <?=$listings[$listing]->bed?></h3>
                        <h3 class='property-bath'>Baths: <?=$listings[$listing]->bath?></h3>
                        <h3 class='property-rent'><?=$listings[$listing]->price?></h3>
-                    <a class="property-btn" href = "#">View Property</a>
+                    <a class="property-btn" href = "ListedPropertyTemp">View Property</a>
                 </div>
             </div>
                 <?php
