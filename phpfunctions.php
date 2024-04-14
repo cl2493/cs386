@@ -128,9 +128,10 @@ function getImagesForListings($conn)
 }
 
 //Displays the filled icon if there is a message
-$newMessageFlag = true;
 function newMessageIcon($newMessageFlag)
 {
+    $newMessageFlag = true;
+    
     //if there is a new message
     if ($newMessageFlag)
     {
