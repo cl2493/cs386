@@ -160,7 +160,7 @@ function getVerificationStatus($conn, $user_id)
     $approved = $stmt->fetchColumn();
 
     // close statement
-    $stmt->close();
+    $stmt->closeCursor();
 
     // if the user is approved, return true, otherwise false
     return ($approved == 1) ? true : false;

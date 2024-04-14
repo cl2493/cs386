@@ -21,7 +21,6 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
     }
 
 
-
 ?>
 
 <!----- HOMEPAGE  ----->
