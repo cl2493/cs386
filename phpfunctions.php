@@ -127,3 +127,37 @@ function getImagesForListings($conn)
     return $images;
 }
 
+//Displays the filled icon if there is a message
+$newMessageFlag = true;
+function newMessageIcon($newMessageFlag)
+{
+    //if there is a new message
+    if ($newMessageFlag)
+    {
+        //display the shake Bell icon
+        echo '<i class="fa-solid fa-bell fa-shake fa-2xl" style="color: #ffffff;"></i>';
+    }
+    //otherwise, there is no new message
+    else
+    {
+        echo '<i class="fa-regular fa-bell fa-2xl" style="color: #ffffff;"></i>';
+    }
+}
+
+// get verification status from certdb
+function getVerificationStatus($conn, $user_id)
+{
+    // statement to get user's status
+    $stmt = $conn->prepare("SELECT approved FROM certdb WHERE user_id = ?");
+    $stmt->execute([$user_id]);
+
+    // get the result
+    $approved = $stmt->fetchColumn();
+
+    // close statement
+    $stmt->close();
+
+    // if the user is approved, return true, otherwise false
+    return ($approved == 1) ? true : false;
+
+}

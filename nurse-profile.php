@@ -21,55 +21,20 @@ if(isset($_SESSION['pfType']))
     // set verified flag to false
     $verifiedFlag = false;
 
-    // check if user is verified
-    if(isset($_SESSION['verified']) && $_SESSION['verified'] == true)
+    // check if user is verified in certdb
+    if(isset($_SESSION['user_id']))
     {
-        // set verified flag to true
-        $verifiedFlag = true;
-    }
-
-// set the verified flag based on submission stage
-else
-{
-    if (isset($_SESSION['submission_stage']) && $_SESSION['submission_stage'] == "Approved")
-    {
-        // user is verified
-        $verifiedFlag = true;
-
-         // make sure the user stays verified in session
-         $_SESSION['verified'] = true;
+        $user_id = $_SESSION['user_id'];
+        $verifiedFlag = getVerificationStatus($conn, $user_id);
     }
 }
 
-}
-
-// redirect to homepage
+// user is not logged in, redirect to homepage
 else
 {
     header("Location: index.php");
+    exit();
 }
-
-
-
-
-//Displays the filled icon if there is a message
-$newMessageFlag = true;
-function newMessageIcon($newMessageFlag)
-{
-    //if there is a new message
-    if ($newMessageFlag)
-    {
-        //display the shake Bell icon
-        echo '<i class="fa-solid fa-bell fa-shake fa-2xl" style="color: #ffffff;"></i>';
-    }
-    //otherwise, there is no new message
-    else
-    {
-        echo '<i class="fa-regular fa-bell fa-2xl" style="color: #ffffff;"></i>';
-    }
-}
-
-
 
 ?>
 
@@ -199,8 +164,9 @@ function newMessageIcon($newMessageFlag)
             <div id = "certification">
             <?php
             // check submission stage
-                if (isset($submission_stage)) 
+                if (isset($_SESSION['submission_stage'])) 
                 {
+                    $submission_stage = $_SESSION['submission_stage'];
                     if ($submission_stage == "Not Submitted" || $submission_stage == "Rejected") 
                     {
                        
