@@ -203,7 +203,7 @@ function newMessageIcon($newMessageFlag)
                 </div>
                 <div>
                     <label>Images</label>
-                    <input required type="file" id="imgs" name="files[]" multiple>
+                    <input required type="file" id="imgs" name="file" multiple>
                 </div>
                 <div>
                     <button type="submit" name="submitBtn">Submit</button>
@@ -231,15 +231,8 @@ function newMessageIcon($newMessageFlag)
             ?>
     </div>
     <!------ footer ----->
-    <div class = "footer">
-        <p>Follow Us On Social Media</p>
-        <a href = "404ErrorPage.html"><i class="fa-brands fa-facebook"></i></a>
-        <a href = "404ErrorPage.html"><i class="fa-brands fa-google-plus"></i></a>
-        <a href = "404ErrorPage.html"><i class="fa-brands fa-instagram"></i></a>
-        <a href = "404ErrorPage.html"><i class="fa-brands fa-yelp"></i></a>
-        <a href = "404ErrorPage.html">Help Center</a>
-        <a href = "404ErrorPage.html">About Us</a>
-        <p>Copyright © 2024, RNT-A-ROOM</p>
-    </div>
+
+    <?php include("footer.php"); ?>
+
 </body>
 </html>
