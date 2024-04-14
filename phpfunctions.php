@@ -1,4 +1,8 @@
 <?php
+// error handling
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 include("classes.php");
 
 function checkLogin($conn, $pfType)
@@ -128,9 +132,9 @@ function getImagesForListings($conn)
 }
 
 //Displays the filled icon if there is a message
+$newMessageFlag = true;
 function newMessageIcon($newMessageFlag)
 {
-    $newMessageFlag = true;
     
     //if there is a new message
     if ($newMessageFlag)
