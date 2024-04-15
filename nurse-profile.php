@@ -17,6 +17,7 @@ $submission_stage = "Not Submitted";
 if(isset($_SESSION['pfType']))
 {
     $user = checkLogin($conn, $_SESSION['pfType']);
+    $submission_stage = $user->stage;
 
     // set verified flag to false
     $verifiedFlag = false;
@@ -170,9 +171,9 @@ else
             <div id = "certification">
             <?php
             // check submission stage
-                if (isset($_SESSION['submission_stage'])) 
+                if ($submission_stage)
                 {
-                    $submission_stage = $_SESSION['submission_stage'];
+                    //$submission_stage = $_SESSION['submission_stage'];
                     if ($submission_stage == "Not Submitted" || $submission_stage == "Rejected") 
                     {
                        
