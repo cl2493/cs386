@@ -1,6 +1,6 @@
 <?php
 
-//session_start();
+session_start();
 include("connection.php");
 include("phpfunctions.php");
 
@@ -14,11 +14,13 @@ else
     header("Location: index.php");
     exit();
 }
-$user_id = $_SESSION['user_id'];
-$query = $conn->prepare("SELECT * FROM listingsdb WHERE user_id = :user_id");
-$query->bindParam(':user_id', $user_id, PDO::PARAM_STR);
-
+if (!isset($_SESSION['query']))
+{
+    $query = $conn->prepare("SELECT * FROM listingsdb WHERE availability = 'available'");
+}
+// $listings is an array of Listing objects (look at Listing class to see more)
 $listings = getListings($conn, $query);
+$listing = $_GET['Listing'];
 ?>
 
 <!DOCTYPE html>
@@ -78,13 +80,12 @@ $listings = getListings($conn, $query);
 
             <!-- listing information -->
             <div class="listing-info">
-                
+                <img src="<?=$listings[$listing]->images[0]->image?>" class="property-image">
+                <h6 id=""><?=$listings[$listing]->address?></h6>
 
-             <h6 id="">Address here</h6>
-
-            <p><strong>Bedrooms: </strong></p>
-            <p><strong>Bathrooms: </strong></p>
-            <p><strong>Monthly Cost: $ </strong></p>
+            <p><strong>Bedrooms: <?=$listings[$listing]->bed?></strong></p>
+            <p><strong>Bathrooms: <?=$listings[$listing]->bath?></strong></p>
+            <p><strong>Monthly Cost: $<?=$listings[$listing]->price?></strong></p>
 
 <p>Rating: <span class="star-rating">
 		<label for="rate-1" style="--i:1"><i class="fa-solid fa-star"></i></label>
