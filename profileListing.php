@@ -14,11 +14,12 @@ else
     header("Location: index.php");
     exit();
 }
-$user_id = $_SESSION['user_id'];
-$query = $conn->prepare("SELECT * FROM listingsdb WHERE user_id = :user_id");
-$query->bindParam(':user_id', $user_id, PDO::PARAM_STR);
 
-$listings = getListings($conn, $query);
+// gets listings that current user owns
+$query = $conn->prepare("SELECT * FROM listingsdb WHERE user_id = :user_id");
+$data[':user_id'] = $_SESSION['user_id'];
+
+$listings = getListings($conn, $query, $data);
 
 ?>
 

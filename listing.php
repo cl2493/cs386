@@ -10,10 +10,33 @@ if (isset($_SESSION['pfType']))
 
 if (!isset($_SESSION['query']))
 {
-    $query = $conn->prepare("SELECT * FROM listingsdb WHERE availability = 'available'");
+    // default query
+    $query = "SELECT * FROM listingsdb WHERE availability = 'available'";
+    $data = [];
 }
+else
+{
+    // filter query
+    $query = $_SESSION['query'];
+    $data = $_SESSION['data'];
+
+    // show current filterng options
+    $location ='';
+    $bed = "Beds";
+    if (isset($data[':location']))
+    {
+        $location = $data[':location'];
+    }
+    if (isset($data[':bed']))
+    {
+        $bed = $data[':bed'];
+    }
+
+    // TODO: OTHER FILTERING OPTIONS
+}
+
 // $listings is an array of Listing objects (look at Listing class to see more)
-$listings = getListings($conn, $query);
+$listings = getListings($conn, $query, $data);
 
 $rating = 3;
 $index;
