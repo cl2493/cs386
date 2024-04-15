@@ -27,6 +27,12 @@ if(isset($_SESSION['pfType']))
         $user_id = $_SESSION['user_id'];
         $verifiedFlag = getVerificationStatus($conn, $user_id);
     }
+
+    // check if certificate submission stage is set
+    if(isset($_SESSION['submission_stage']))
+    {
+        $submission_stage = $_SESSION['submission_stage'];
+    }
 }
 
 // user is not logged in, redirect to homepage
