@@ -10,28 +10,10 @@ if (isset($_SESSION['pfType']))
 
 if (!isset($_SESSION['query']))
 {
-    $query = $conn->prepare("SELECT * FROM listingsdb");
+    $query = $conn->prepare("SELECT * FROM listingsdb WHERE availability = 'available'");
 }
 // $listings is an array of Listing objects (look at Listing class to see more)
 $listings = getListings($conn, $query);
-
-
-//Displays the filled icon if there is a message
-$newMessageFlag = true;
-function newMessageIcon($newMessageFlag)
-{
-    //if there is a new message
-    if ($newMessageFlag)
-    {
-        //display the shake Bell icon
-        echo '<i class="fa-solid fa-bell fa-shake fa-2xl" style="color: #ffffff;"></i>';
-    }
-    //otherwise, there is no new message
-    else
-    {
-        echo '<i class="fa-regular fa-bell fa-2xl" style="color: #ffffff;"></i>';
-    }
-}
 
 $rating = 3;
 $index;
@@ -140,13 +122,25 @@ function displayStar ($rating)
                           displayStar ($rating)
                      ?>
                      <div class="property-info">
-                          <!--- Location is a placeholder, please replace with the actual location of the property ---->
                           <h3 class='property-location'>Location: <?=$listings[$listing]->city?></h3>
                           <h2 class='property-name'><strong><?=$listings[$listing]->address?></strong></h2>
                           <h3 class='property-bed'>Beds: <?=$listings[$listing]->bed?></h3>
                           <h3 class='property-bath'>Baths: <?=$listings[$listing]->bath?></h3>
                           <h3 class='property-rent'>Rent: $<?=$listings[$listing]->price?></h3>
-                       <a class="property-btn" href = "#">View Property</a>
+                          <?php
+                          if (isset($user))
+                          {
+                            ?>
+                            <a class="property-btn" href = "ListedPropertyTemp.php?Listing=<?=$listing?>">View Property</a>
+                            <?php
+                          }
+                          else
+                          {
+                            ?>
+                            <a class="property-btn" onclick="showMessageFunction()">View Property</a>
+                            <?php  
+                          }
+                          ?>
                      </div>
                  </div>
             <?php

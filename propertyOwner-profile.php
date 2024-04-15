@@ -23,26 +23,6 @@ $listings = getListings($conn, $query);
 
 
 
-
-//Displays the filled icon if there is a message
-$newMessageFlag = true;
-function newMessageIcon($newMessageFlag)
-{
-    //if there is a new message
-    if ($newMessageFlag)
-    {
-        //display the shake Bell icon
-        echo '<i class="fa-solid fa-bell fa-shake fa-2xl" style="color: #ffffff;"></i>';
-    }
-    //otherwise, there is no new message
-    else
-    {
-        echo '<i class="fa-regular fa-bell fa-2xl" style="color: #ffffff;"></i>';
-    }
-}
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -163,9 +143,6 @@ function newMessageIcon($newMessageFlag)
             </div>
             </div>
 
-        
-           
-
 
             <!-- Profile information -->
             <div class="profile-info">
@@ -180,12 +157,7 @@ function newMessageIcon($newMessageFlag)
             </div>
            </div>
             </div>
-
-
-
-
-            
-            
+   
             <?php if (!$listings)
             {
                 ?>
@@ -208,7 +180,7 @@ function newMessageIcon($newMessageFlag)
                        <h3 class='property-bed'>Beds: <?=$listings[$listing]->bed?></h3>
                        <h3 class='property-bath'>Baths: <?=$listings[$listing]->bath?></h3>
                        <h3 class='property-rent'><?=$listings[$listing]->price?></h3>
-                    <a class="property-btn" href = "ListedPropertyTemp">View Property</a>
+                    <a class="property-btn" href = "ListedPropertyTemp.php">View Property</a>
                 </div>
             </div>
                 <?php
