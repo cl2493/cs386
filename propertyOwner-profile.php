@@ -143,9 +143,6 @@ $listings = getListings($conn, $query);
             </div>
             </div>
 
-        
-           
-
 
             <!-- Profile information -->
             <div class="profile-info">
@@ -160,12 +157,7 @@ $listings = getListings($conn, $query);
             </div>
            </div>
             </div>
-
-
-
-
-            
-            
+   
             <?php if (!$listings)
             {
                 ?>
@@ -188,7 +180,7 @@ $listings = getListings($conn, $query);
                        <h3 class='property-bed'>Beds: <?=$listings[$listing]->bed?></h3>
                        <h3 class='property-bath'>Baths: <?=$listings[$listing]->bath?></h3>
                        <h3 class='property-rent'><?=$listings[$listing]->price?></h3>
-                    <a class="property-btn" href = "ListedPropertyTemp">View Property</a>
+                    <a class="property-btn" href = "ListedPropertyTemp.php">View Property</a>
                 </div>
             </div>
                 <?php
