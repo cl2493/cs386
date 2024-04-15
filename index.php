@@ -125,13 +125,22 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
 				<div class="left">
                     <h1>A Place That<br>Feels Like Home</h1>
                     <div class="search-bar">
-                        <form>
+                        <form action="filter.php" method="POST">
                             <div class="search-input">
                                 <label>Location</label>
-                                <input type="text" placeholder="New York, Chicago...">
+                                <input name="location" type="text" placeholder="New York, Chicago...">
                             </div>
                             <div class="content-dropdown" data-dropdown>
                                 <label># of Beds</label>
+                                <select name="bed" id="" class="drop">
+                                    <option value="">Beds</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                                <!-- idk how to make look pretty so I leave this for reference
                                 <button class="drop" data-dropdown-button>Beds</button>
                                 <div class="dropdown-menu">
                                     <div class= "dropdown-menu-selection">
@@ -142,6 +151,7 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
                                         <a href="#" class = "link">5</a>
                                     </div>
                                 </div>
+                                -->
                             </div>
                             <div class="content-dropdown" data-dropdown>
                                 <label>Lease Length</label>
@@ -156,7 +166,7 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
                                     </div>
                                 </div>                            
                             </div>
-                            <button class="sub-btn" type="submit"><img src = "assets/search.png" alt="serach icon"></button>
+                            <button name="searchBtn" class="sub-btn" type="submit"><img src = "assets/search.png" alt="serach icon"></button>
                         </form>
                     </div>
                 </div>
