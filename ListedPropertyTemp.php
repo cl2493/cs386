@@ -80,13 +80,16 @@ $listing = $_GET['Listing'];
 
             <!-- listing information -->
             <div class="listing-info">
+                <!-- listing image source & address -->
                 <img src="<?=$listings[$listing]->images[0]->image?>" class="property-image">
                 <h6 id=""><?=$listings[$listing]->address?></h6>
-
+            
+            <!-- Amenities information -->
             <p><strong>Bedrooms: <?=$listings[$listing]->bed?></strong></p>
             <p><strong>Bathrooms: <?=$listings[$listing]->bath?></strong></p>
             <p><strong>Monthly Cost: $<?=$listings[$listing]->price?></strong></p>
 
+            <!-- lstar rating display -->
 <p>Rating: <span class="star-rating">
 		<label for="rate-1" style="--i:1"><i class="fa-solid fa-star"></i></label>
 		<input type="radio" name="rating" id="rate-1" value="1">
@@ -103,9 +106,6 @@ $listing = $_GET['Listing'];
             
            </div>
             </div>
-
- 
-
     </div>
    
     <!------ footer ----->
