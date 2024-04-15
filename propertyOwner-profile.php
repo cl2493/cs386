@@ -15,13 +15,11 @@ else
     exit();
 }
 
-$user_id = $_SESSION['user_id'];
+// gets listings that current user owns
 $query = $conn->prepare("SELECT * FROM listingsdb WHERE user_id = :user_id");
-$query->bindParam(':user_id', $user_id, PDO::PARAM_STR);
+$data[':user_id'] = $_SESSION['user_id'];
 
-$listings = getListings($conn, $query);
-
-
+$listings = getListings($conn, $query, $data);
 
 ?>
 

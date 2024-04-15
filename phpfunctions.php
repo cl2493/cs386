@@ -64,11 +64,19 @@ function checkIfEmailInUse( $conn, $email)
     return false;
 }
 
-function getListings($conn, $query)
+function getListings($conn, $query, $data)
 {
+    // prepare statement
+    $stmt = $conn->prepare($query);
+
+    foreach ($data as $key => $value)
+{
+        $stmt->bindParam($key, $data[$key], PDO::PARAM_STR);
+    }
+
     // get listings db as array
-    $query->execute();
-    $listingsStmt = $query->fetchAll(PDO::FETCH_NUM);
+    $stmt->execute();
+    $listingsStmt = $stmt->fetchAll(PDO::FETCH_NUM);
 
     $images = getImagesForListings($conn);
 

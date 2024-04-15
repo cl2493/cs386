@@ -17,6 +17,7 @@ $submission_stage = "Not Submitted";
 if(isset($_SESSION['pfType']))
 {
     $user = checkLogin($conn, $_SESSION['pfType']);
+    $submission_stage = $user->stage;
 
     // set verified flag to false
     $verifiedFlag = false;
@@ -146,59 +147,59 @@ else
             </div>
             <!-- Profile data -->
            <div class="profile-data">
-                  <!-- Move the form and profile picture div here -->
-                  <!--on the left will have tabs for payment to update the screen -->
-                  <div class = "profile-nav">
-                     <div class="profile-tabs">
-                       <li ><a href="nurse-profile.php" class="active">Profile</a></li>
-                       <!-- These links will be updated to the correct pages -->
-                       <li><a href="">Payment</a></li>
-                       <li><a href = "" >History</a></li>
-                       <li><a href="">Settings</a></li>
-                  </div>
-                  </div>
-                  <!-- Profile information -->
-                  <div class="profile-info">
-                  <?php
-                      echo "<div class='space-top'></div>";
-                      echo "<p><strong>User ID: </strong>$user->user_id</p>";
-                      echo "<div class='space-top'></div>";
-                      echo "<p><strong>Email: </strong>$user->email</p>";
-                      echo "<div class='space-top'></div>";
-                      echo "<p><strong>Birthday: </strong>$user->birthday</p>";
-                      ?>
-                  </div>
-                  <div id = "certification">
-                  <?php
-                  // check submission stage
-                  if (isset($_SESSION['submission_stage'])) 
-                  {
-                    $submission_stage = $_SESSION['submission_stage'];
-                       if ($submission_stage == "Not Submitted" || $submission_stage == "Rejected") 
-                       {
-                           echo '<form id="certForm" action="upload_certification.php" method="post" enctype="multipart/form-data">';
-                           echo '<div class="cert-upload">';
-                           echo '<h2>Upload Certification</h2>';
-                           echo '</div>';
-                           echo '<label for="certFile" class="select-btn">Select PDF File</label>';
-                           echo '<input type="file" id="certFile" name="certFile" accept=".pdf" class="file-input">';
-                           echo '<button type="submit" class="upload-btn">Upload</button>';
-                           echo "<span id='fileNameDisplay' class='file-name-display'>$inputFileName</span>";
-                           echo '</form>';
-                        } 
-                        else if ($submission_stage == "Submitted") 
-                        {
-                            echo '<div class="cert-upload">';
-                            echo '<h2>Certification Submitted</h2>';
-                            echo '</div>';
-                        } 
-                        else if ($submission_stage == "Approved") 
-                        {
-                            $verifiedFlag = true;
-                            echo '<div class="cert-upload">';
-                            echo '<h2>Certification Approved</h2>';
-                            echo '</div>';
-                        }
+               <!-- Move the form and profile picture div here -->
+               <!--on the left will have tabs for payment to update the screen -->
+               <div class = "profile-nav">
+               <div class="profile-tabs">
+                   <li ><a href="nurse-profile.php" class="active">Profile</a></li>
+                   <!-- These links will be updated to the correct pages -->
+                   <li><a href="">Payment</a></li>
+                   <li><a href = "" >History</a></li>
+                   <li><a href="">Settings</a></li>
+               </div>
+            </div>
+            <!-- Profile information -->
+            <div class="profile-info">
+            <?php
+                   echo "<div class='space-top'></div>";
+                   echo "<p><strong>User ID: </strong>$user->user_id</p>";
+                   echo "<div class='space-top'></div>";
+                   echo "<p><strong>Email: </strong>$user->email</p>";
+                   echo "<div class='space-top'></div>";
+                   echo "<p><strong>Birthday: </strong>$user->birthday</p>";
+            ?>
+            </div>
+            <div id = "certification">
+            <?php
+            // check submission stage
+                if ($submission_stage)
+                {
+                    //$submission_stage = $_SESSION['submission_stage'];
+                    if ($submission_stage == "Not Submitted" || $submission_stage == "Rejected") 
+                    {
+                       
+                        echo '<form id="certForm" action="upload_certification.php" method="post" enctype="multipart/form-data">';
+                        echo '<div class="cert-upload">';
+                        echo '<h2>Upload Certification</h2>';
+                        echo '</div>';
+                        echo '<label for="certFile" class="select-btn">Select PDF File</label>';
+                        echo '<input type="file" id="certFile" name="certFile" accept=".pdf" class="file-input">';
+                        echo '<button type="submit" class="upload-btn">Upload</button>';
+                        echo "<span id='fileNameDisplay' class='file-name-display'>$inputFileName</span>";
+                        echo '</form>';
+                    } 
+                    else if ($submission_stage == "Submitted") 
+                    {
+                        echo '<div class="cert-upload">';
+                        echo '<h2>Certification Submitted</h2>';
+                        echo '</div>';
+                    } 
+                    else if ($submission_stage == "Approved") 
+                    {
+                        $verifiedFlag = true;
+                        echo '<div class="cert-upload">';
+                        echo '<h2>Certification Approved</h2>';
+                        echo '</div>';
                     }
                     ?>
                 </div>

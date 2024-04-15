@@ -16,10 +16,19 @@ else
 }
 if (!isset($_SESSION['query']))
 {
-    $query = $conn->prepare("SELECT * FROM listingsdb WHERE availability = 'available'");
+    // default query
+    $query = "SELECT * FROM listingsdb WHERE availability = 'available'";
+    $data = [];
 }
+else
+{
+    // filtered query
+    $query = $_SESSION['query'];
+    $data = $_SESSION['data'];
+}
+
 // $listings is an array of Listing objects (look at Listing class to see more)
-$listings = getListings($conn, $query);
+$listings = getListings($conn, $query, $data);
 $listing = $_GET['Listing'];
 ?>
 
