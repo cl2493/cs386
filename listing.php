@@ -8,11 +8,20 @@ if (isset($_SESSION['pfType']))
     $user = checkLogin($conn,$_SESSION['pfType']);
 }
 
+// set default filtering options
+$location ='';
+$bed = "Beds";
+
 if (!isset($_SESSION['query']))
 {
     // default query
-    $query = "SELECT * FROM listingsdb WHERE availability = 'available'";
-    $data = [];
+    $query = "SELECT * FROM listingsdb WHERE availability = 'available' AND price>=:minPrice AND price<=:maxPrice";
+
+    // default price range is all prices
+    $data = [
+        ":minPrice" => 0,
+        ":maxPrice" => 10000,
+    ];
 }
 else
 {
@@ -21,8 +30,6 @@ else
     $data = $_SESSION['data'];
 
     // show current filterng options
-    $location ='';
-    $bed = "Beds";
     if (isset($data[':location']))
     {
         $location = $data[':location'];
@@ -31,7 +38,6 @@ else
     {
         $bed = $data[':bed'];
     }
-
     // TODO: OTHER FILTERING OPTIONS
 }
 
@@ -67,8 +73,6 @@ function displayStar ($rating)
     <!-- JavaScript links -->
     <!-- Font Awesome links for the Footer Icons -->
     <script src="https://kit.fontawesome.com/c011338aa2.js" crossorigin="anonymous"></script>
-    <!-- JavaScript for the navigation bar -->
-    <script src="script.js"></script>
 </head>
 <body>
 <!-- Body of the page -->
@@ -174,6 +178,6 @@ function displayStar ($rating)
     </div>
 
 <?php include("footer.php"); ?>
-
+<script src="script.js"></script>
 </body>
 </html>
