@@ -8,11 +8,20 @@ if (isset($_SESSION['pfType']))
     $user = checkLogin($conn,$_SESSION['pfType']);
 }
 
+// set default filtering options
+$location ='';
+$bed = "Beds";
+
 if (!isset($_SESSION['query']))
 {
     // default query
-    $query = "SELECT * FROM listingsdb WHERE availability = 'available'";
-    $data = [];
+    $query = "SELECT * FROM listingsdb WHERE availability = 'available' AND price>=:minPrice AND price<=:maxPrice";
+
+    // default price range is all prices
+    $data = [
+        ":minPrice" => 0,
+        ":maxPrice" => 10000,
+    ];
 }
 else
 {
@@ -21,8 +30,6 @@ else
     $data = $_SESSION['data'];
 
     // show current filterng options
-    $location ='';
-    $bed = "Beds";
     if (isset($data[':location']))
     {
         $location = $data[':location'];
