@@ -38,7 +38,6 @@ else
     {
         $bed = $data[':bed'];
     }
-
     // TODO: OTHER FILTERING OPTIONS
 }
 
@@ -74,8 +73,6 @@ function displayStar ($rating)
     <!-- JavaScript links -->
     <!-- Font Awesome links for the Footer Icons -->
     <script src="https://kit.fontawesome.com/c011338aa2.js" crossorigin="anonymous"></script>
-    <!-- JavaScript for the navigation bar -->
-    <script src="script.js"></script>
 </head>
 <body>
 <!-- Body of the page -->
@@ -181,6 +178,6 @@ function displayStar ($rating)
     </div>
 
 <?php include("footer.php"); ?>
-
+<script src="script.js"></script>
 </body>
 </html>
