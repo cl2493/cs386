@@ -16,19 +16,10 @@ else
 }
 if (!isset($_SESSION['query']))
 {
-    // default query
-    $query = "SELECT * FROM listingsdb WHERE availability = 'available'";
-    $data = [];
+    $query = $conn->prepare("SELECT * FROM listingsdb WHERE availability = 'available'");
 }
-else
-{
-    // filtered query
-    $query = $_SESSION['query'];
-    $data = $_SESSION['data'];
-}
-
-// $listings is an array of Listing objects (look at Listing class to see more)
-$listings = getListings($conn, $query, $data);
+$listings is an array of Listing objects (look at Listing class to see more)
+$listings = getListings($conn, $query);
 $listing = $_GET['Listing'];
 ?>
 
@@ -88,6 +79,8 @@ $listing = $_GET['Listing'];
             </div>
 
             <!-- listing information -->
+            <div id="property-picture"></div>
+
             <div class="listing-info">
                 <!-- listing image source & address -->
                 <img src="<?=$listings[$listing]->images[0]->image?>" class="property-image">
