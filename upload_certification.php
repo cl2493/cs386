@@ -52,8 +52,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
                 if($query_execute)
                 {
-                    // update submission stage to approved in travelnursesdb
-                    $query = "UPDATE travelnursesdb SET stage = 'Approved' WHERE user_id = :user_id";
+                    // check user type and update submission stage 
+                    if($_SESSION['pfType'] == 'travelnursesdb')
+                    {
+                        // update submission stage to approved in travel nurses db
+                        $query = "UPDATE travelnursesdb SET stage = 'Approved' WHERE user_id = :user_id";
+                    }
+                    
+                    else if($_SESSION['pfType'] == 'propertyownersdb')
+                    {
+                        // update submission stage to approved in property owners db
+                        $query = "UPDATE propertyownersdb SET stage = 'Approved' WHERE user_id = :user_id";
+
+                    }
+
+                    // execute the query
                     $data = array(':user_id' => $user_id);
                     $stmt = $conn->prepare($query);
                     $stmt->execute($data);
@@ -61,24 +74,35 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                     // set submission stage to "Approved" (for now)
                     $_SESSION['submission_stage'] = "Approved";
 
-                    // redirect to nurse profile
-                    header("Location: nurse-profile.php");
+                    // redirect to the respective profile page based on user type
+                    if($_SESSION['pfType'] == 'travelnursesdb')
+                    {
+                        header("Location: nurse-profile.php");
+                    }
+                    else if($_SESSION['pfType'] == 'propertyownersdb')
+                    {
+                        header("Location: propertyOwner-profile.php");
+                    }
+                    
                      exit();
                 }
                    
             }
 
-            else{
+            else
+            {
                 // for error handling
                 echo "Sorry, there was an error uploading your file.";
                 
             }
         }
-        else{
+        else
+        {
             echo "Sorry, only PDF files are allowed.";
         }
     }
-    else {
+    else 
+    {
         // Check if the file upload encountered an error
         switch ($_FILES["certFile"]["error"]) {
             case 1:
@@ -105,8 +129,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 break;
         }
 }}
-    else{
-        // redirect to the form page if accessed directly
-        header("Location: nurse-profile.php");
-        exit();
+    else
+    {
+        if($_SESSION['pfType'] == 'travelnursesdb')
+        {
+            header("Location: nurse-profile.php");
+        }
+        else if($_SESSION['pfType'] == 'propertyownersdb')
+        {
+            header("Location: propertyOwner-profile.php");
+        }
     }

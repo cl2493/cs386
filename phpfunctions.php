@@ -164,20 +164,4 @@ function newMessageIcon($newMessageFlag)
     }
 }
 
-// get verification status from certdb
-function getVerificationStatus($conn, $user_id)
-{
-    // statement to get user's status
-    $stmt = $conn->prepare("SELECT approved FROM certdb WHERE user_id = ?");
-    $stmt->execute([$user_id]);
 
-    // get the result
-    $approved = $stmt->fetchColumn();
-
-    // close statement
-    $stmt->closeCursor();
-
-    // if the user is approved, return true, otherwise false
-    return ($approved == 1) ? true : false;
-
-}
