@@ -137,9 +137,10 @@ class Listing {
     public $price;
     public $bed;
     public $bath;
+    public $availability;
     public $images = array();
 
-    function __construct($address, $zip, $city, $price, $bed, $bath)
+    function __construct($address, $zip, $city, $price, $bed, $bath, $availability)
     {
         $this->address = $address;
         $this->zip = $zip;
@@ -147,6 +148,7 @@ class Listing {
         $this->price = $price;
         $this->bed = $bed;
         $this->bath = $bath;
+        $this->availability = $availability;
     }
 
     function addImage($newImage) {
