@@ -28,17 +28,17 @@ class User {
 
         if ($firstName != $this->first_name) {
             $query .= " first_name=:first_name,";
-            $data['first_name'] = $firstName;
+            $data[':first_name'] = $firstName;
         }
 
         if ($lastName != $this->last_name) {
             $query .= " last_name=:last_name";
-            $data['last_name'] = $lastName;
+            $data[':last_name'] = $lastName;
         }
 
         if (!empty($data)) {
             $query .= " WHERE user_id=:user_id";
-            $data['user_id'] = $this->user_id;
+            $data[':user_id'] = $this->user_id;
 
             $query_run = $conn->prepare($query);
             $query_execute = $query_run->execute($data);
@@ -54,8 +54,8 @@ class User {
         if ($newBirthday != $this->birthday) {
             $query = "UPDATE $this->pfType SET birthday=:birthday WHERE user_id=:user_id";
             $data = [
-                'birthday' => $newBirthday,
-                'user_id' => $this->user_id,
+                ':birthday' => $newBirthday,
+                ':user_id' => $this->user_id,
             ];
 
             $query_run = $conn->prepare($query);
@@ -72,8 +72,8 @@ class User {
         if ($newEmail != $this->email) {
             $query = "UPDATE $this->pfType SET email=:email WHERE user_id=:user_id";
             $data = [
-                'email' => $newEmail,
-                'user_id' => $this->user_id,
+                ':email' => $newEmail,
+                ':user_id' => $this->user_id,
             ];
 
             $query_run = $conn->prepare($query);
@@ -99,8 +99,8 @@ class TravelNurse extends User {
     function updateStage(DatabaseConnection $conn, $newStage) {
         $query = "UPDATE $this->pfType SET stage=:stage WHERE user_id=:user_id";
         $data = [
-            'stage' => $this->stage,
-            'user_id' => $this->user_id,
+            ':stage' => $this->stage,
+            ':user_id' => $this->user_id,
         ];
         
         $query_run = $conn->prepare($query);
@@ -137,9 +137,10 @@ class Listing {
     public $price;
     public $bed;
     public $bath;
+    public $availability;
     public $images = array();
 
-    function __construct($address, $zip, $city, $price, $bed, $bath)
+    function __construct($address, $zip, $city, $price, $bed, $bath, $availability)
     {
         $this->address = $address;
         $this->zip = $zip;
@@ -147,6 +148,7 @@ class Listing {
         $this->price = $price;
         $this->bed = $bed;
         $this->bath = $bath;
+        $this->availability = $availability;
     }
 
     function addImage($newImage) {
@@ -157,6 +159,23 @@ class Listing {
         $index = array_search($image, $this->images);
         if ($index !== false) {
             array_splice($this->images, $index, 1);
+            return true;
+        }
+        return false;
+    }
+
+    // function to change listings availability
+    function changeAvailability(DatabaseConnection $conn, $newAvailability) {
+        $query = "UPDATE listingsdb SET availability=:availability WHERE address=:address";
+        $data = [
+            ':availability' => $newAvailability,
+            ':address' => $this->address,
+        ];
+        
+        $query_run = $conn->prepare($query);
+        $query_execute = $query_run->execute($data);
+        
+        if ($query_execute) {
             return true;
         }
         return false;

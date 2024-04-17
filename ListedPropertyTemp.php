@@ -73,7 +73,9 @@ $listing = $_GET['Listing'];
                 <!-- Profile picture -->
 
                 <!-- Profile name -->
-                <div id="listing-picture"></div>
+                <div id="listing-picture">
+                    <img src="<?=$listings[$listing]->images[0]->image?>" class="property-image">
+                </div>
                 <!-- Profile name -->
                 <?php
                 // Display the name of the user
@@ -90,7 +92,6 @@ $listing = $_GET['Listing'];
             <!-- listing information -->
             <div class="listing-info">
                 <!-- listing image source & address -->
-                <img src="<?=$listings[$listing]->images[0]->image?>" class="property-image">
                 <h6 id=""><?=$listings[$listing]->address?></h6>
             
             <!-- Amenities information -->

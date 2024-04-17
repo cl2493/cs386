@@ -21,8 +21,8 @@
                     </div>
                     <div class="content-dropdown" data-dropdown>
                         <label># of Baths</label>
-                        <select name="baths" id="" class="drop">
-                            <option value="">Baths</option>
+                        <select name="bath" id="" class="drop">
+                            <option value=""><?=$baths?></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -40,11 +40,11 @@
                         <div class="price-input"> 
                             <div class="price-field"> 
                                 <span>Minimum Price</span> 
-                                <input name="minPrice" type="number" class="min-input" value="0"> 
+                                <input name="minPrice" type="number" class="min-input" value="<?=$minPrice?>"> 
                             </div> 
                             <div class="price-field"> 
                                 <span>Maximum Price</span> 
-                                <input name="maxPrice" type="number" class="max-input" value="10000"> 
+                                <input name="maxPrice" type="number" class="max-input" value="<?=$maxPrice?>"> 
                             </div> 
                         </div> 
                     <div class="slider-container"> 
@@ -53,8 +53,8 @@
                 </div> 
                 <!-- Slider -->
                 <div class="range-input"> 
-                    <input type="range" class="min-range" min="0" max="10000" value="0" step="500"> 
-                    <input type="range" class="max-range" min="0" max="10000" value="10000" step="500"> 
+                    <input type="range" class="min-range" min="0" max="10000" value="<?=$minPrice?>" step="500"> 
+                    <input type="range" class="max-range" min="0" max="10000" value="<?=$maxPrice?>" step="500"> 
                 </div>
                     <button name="filterBtn" class="sub-btn" type="submit"><img src = "assets/search.png" alt="serach icon"></button>
                 </form>

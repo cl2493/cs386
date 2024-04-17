@@ -11,6 +11,9 @@ if (isset($_SESSION['pfType']))
 // set default filtering options
 $location ='';
 $bed = "Beds";
+$baths = "Baths";
+$minPrice = 0;
+$maxPrice = 10000;
 
 if (!isset($_SESSION['query']))
 {
@@ -38,7 +41,19 @@ else
     {
         $bed = $data[':bed'];
     }
-    // TODO: OTHER FILTERING OPTIONS
+    if (isset($data[':bath']))
+    {
+        $baths = $data[':bath'];
+    }
+    if (isset($data[':minPrice']))
+    {
+        $minPrice = $data[':minPrice'];
+    }
+    if (isset($data[':maxPrice']))
+    {
+        $maxPrice = $data[':maxPrice'];
+    }
+    // TODO: LEASE LENGTH
 }
 
 // $listings is an array of Listing objects (look at Listing class to see more)

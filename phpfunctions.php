@@ -85,7 +85,7 @@ function getListings($conn, $query, $data)
     for ($listing = 0; $listing < count($listingsStmt); $listing++)
     {
         // create listing object
-        $newListing = new Listing($listingsStmt[$listing][2],$listingsStmt[$listing][3],$listingsStmt[$listing][4],$listingsStmt[$listing][5],$listingsStmt[$listing][6],$listingsStmt[$listing][7]);
+        $newListing = new Listing($listingsStmt[$listing][2],$listingsStmt[$listing][3],$listingsStmt[$listing][4],$listingsStmt[$listing][5],$listingsStmt[$listing][6],$listingsStmt[$listing][7], $listingsStmt[$listing][8]);
 
         for ($image = 0; $image < count($images); $image++)
         {
@@ -139,8 +139,21 @@ function getImagesForListings($conn)
     return $images;
 }
 
+// function that check if a user's listings are have been reserved
+function checkListingsAvailability($listings)
+{
+    for ($listing = 0; $listing < count($listings); $listing++)
+    {
+        if ($listings[$listing]->availability == "reserved")
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 //Displays the filled icon if there is a message
-$newMessageFlag = true;
 function newMessageIcon($newMessageFlag)
 {
     

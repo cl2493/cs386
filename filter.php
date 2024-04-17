@@ -26,15 +26,33 @@ if (isset($_POST['searchBtn']) || isset( $_POST['filterBtn']))
         $data[":bed"] = $bed;
     }
 
+    // check if user set bath number
+    if (isset($_POST['bath']) && $_POST['bath'] > 0)
+    {
+        $bath = $_POST['bath'];
+        $query .= " AND bath = :bath";
+        $data[":bath"] = $bath;
+    }
+
     // set price range for listings
     // if not set, it'll do default range
     $query .= " AND price >= :minPrice AND price <= :maxPrice";
-    $minPrice =  $_POST['minPrice'];
-    $maxPrice =  $_POST['maxPrice'];
-    $data[":minPrice"] =$minPrice;
-    $data[":maxPrice"] = $maxPrice;
+    $data[":minPrice"] = 0;
+    $data[":maxPrice"] = 10000;
 
-    // TODO: OTHER FILTERING OPTIONS
+    if (isset($_POST["minPrice"]))
+    {
+        $minPrice =  $_POST['minPrice'];
+        $data[":minPrice"] = $minPrice;
+    }
+
+    if (isset($_POST["maxPrice"]))
+    {
+        $maxPrice =  $_POST['maxPrice'];
+        $data[":maxPrice"] = $maxPrice;
+    }
+
+    // TODO: LEASE LENGTH
     
     $_SESSION['query'] = $query;
     $_SESSION['data'] = $data;
