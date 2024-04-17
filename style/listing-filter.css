@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  width: 75%;
+  height: 250px;
+  border-radius: 10px;
+  background-color: #e7b93bb0;
+}
+.search-content {
+  width: 100%;
+  padding: 10%;
+  border: black 1px solid;
+}
+
+
+form {
+    display: inline-block;
+    margin: 10px 30px;
+    width: 75%;
+    flex-wrap: wrap;
+    border: black 1px dotted;
+}
+.price-input-container {
+    margin: 2%;
+    width: 50%;
+    border: black 1px solid;
+}
