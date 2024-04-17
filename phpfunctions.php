@@ -139,8 +139,21 @@ function getImagesForListings($conn)
     return $images;
 }
 
+// function that check if a user's listings are have been reserved
+function checkListingsAvailability($listings)
+{
+    for ($listing = 0; $listing < count($listings); $listing++)
+    {
+        if ($listings[$listing]->availability == "reserved")
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 //Displays the filled icon if there is a message
-$newMessageFlag = true;
 function newMessageIcon($newMessageFlag)
 {
     
