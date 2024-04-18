@@ -20,7 +20,6 @@ $query = "SELECT * FROM listingsdb WHERE user_id = :user_id";
 $data[':user_id'] = $_SESSION['user_id'];
 
 $listings = getListings($conn, $query, $data);
-$newMessageFlag = checkListingsAvailability($listings);
 ?>
 
 <!DOCTYPE html>
