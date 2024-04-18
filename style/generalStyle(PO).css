@@ -45,7 +45,7 @@ nav{
 
 .nav-links li a:hover{
   background-color: #fff;
-  color: #e7b93b;
+  color: #eb3d60;
 }
 
 .profile-dropdown {
@@ -68,7 +68,7 @@ nav{
 }
 .profile-btn:hover {
   background-color: #fff;
-  color: #e7b93b;
+  color: #eb3d60;
 }
 .profile-dropdown:hover .menu-dropdown {
   opacity: 1;
@@ -108,7 +108,7 @@ nav{
 .menu-dropdown-content a:hover {
   font-size: 25px; /* Increase font size on hover */
   font-weight: bold;
-  color: #e7b93b;
+  color: #eb3d60;
 }
 
 .profile-btn
@@ -122,11 +122,11 @@ nav{
 .profile-btn:hover
 {
   background-color: #fff;
-  color: #e7b93b;
+  color: #eb3d60;
 }
 .nav-links li a:hover{
   background-color: #fff;
-  color: #e7b93b;
+  color: #eb3d60;
 }
 
  /*-----------upload photo ---------------*/
@@ -274,7 +274,7 @@ nav{
     justify-content: center;
     margin: 2%;
     width: 20%;
-    border: #e7b93b 1px dotted;
+    border: #eb3d60 1px dotted;
     border-radius: 10px;
 }
 
@@ -317,7 +317,7 @@ nav{
 
 .property-btn {
     width: 80%;
-    border: #e7b93b 2px solid;
+    border: #eb3d60 2px solid;
     border-radius: 10px;
     margin: 5% auto; /* Center horizontally */
     padding: 5%;
@@ -329,7 +329,7 @@ nav{
 /* sign in popup */
 .login-btn{
 	cursor: pointer;
-    background: #e7b93b;
+    background: #eb3d60;
     color: #fff;
     padding: 10px 20px;
     border-radius: 20px;
@@ -369,7 +369,7 @@ nav{
     position: absolute;
     transform: translate(55%, 20%);
     z-index: 9999;
-    background: #e7b93b;
+    background: #eb3d60;
     color: #fff;
     padding: 20px;
     border-radius: 10px;
@@ -424,12 +424,12 @@ nav{
     transition: all 0.3s ease;
     width: 50%;
     margin: 1% auto;
-    background-color: #e7b93b;
+    background-color: #eb3d60;
 }
 
 .sign-in-btn:hover {
     background-color: #fff;
-    color: #e7b93b;
+    color: #eb3d60;
     font-weight: bold;
 }
 
@@ -450,7 +450,7 @@ nav{
 	animation: jump 0.5s calc(0.3s + (var(--i) - 1) * 0.15s) alternate infinite;
 }
 .star-rating label:has(~ :checked) i {
-	color: #faec1b;
+	color: #eb3d60;
 	text-shadow: 0 0 2px #ffffff, 0 0 10px #ffee58;
 }
 
