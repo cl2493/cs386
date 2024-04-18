@@ -47,16 +47,17 @@ if (isset($_POST['submit-Btn'])) {
         ':birthday' => $birthday,
         ':email' => $email,
         ':password' => $password,
+        ':messageFlag' => false,
     ];
 
     if ($pfType === "travelnursesdb")
     {
-        $query = "INSERT INTO $pfType (user_id, first_name, last_name, birthday, email, password, stage) VALUES (:user_id, :first_name, :last_name, :birthday, :email, :password, :stage)";
+        $query = "INSERT INTO $pfType (user_id, first_name, last_name, birthday, email, password, stage, messageFlag) VALUES (:user_id, :first_name, :last_name, :birthday, :email, :password, :stage, :messageFlag)";
         $data[':stage'] = "Not Submitted";
     }
     else
     {
-        $query = "INSERT INTO $pfType (user_id, first_name, last_name, birthday, email, password) VALUES (:user_id, :first_name, :last_name, :birthday, :email, :password)"; 
+        $query = "INSERT INTO $pfType (user_id, first_name, last_name, birthday, email, password, messageFlag) VALUES (:user_id, :first_name, :last_name, :birthday, :email, :password, :messageFlag)"; 
     }
 
     $query_run = $conn->prepare($query);

@@ -1,4 +1,3 @@
-<link rel="stylesheet" type="text/css" href="style/footer/footer.css">
 <!------ footer ----->
 <div class="footer">
     <h1>RNT-A-ROOM</h1>

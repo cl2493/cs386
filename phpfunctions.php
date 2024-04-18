@@ -18,11 +18,11 @@ function checkLogin($conn, $pfType)
 
         if ($pfType == "travelnursesdb")
         {
-            $user = new TravelNurse($user_data[1],$user_data[2],$user_data[3],$user_data[4],$pfType,$user_data[5],$user_data[7]);
+            $user = new User($user_data[1],$user_data[2],$user_data[3],$user_data[4],$pfType,$user_data[5],$user_data[7],$user_data[8]);
         }
         else
         {
-            $user = new PropertyOwner($user_data[1],$user_data[2],$user_data[3],$user_data[4],$pfType,$user_data[5]);
+            $user = new PropertyOwner($user_data[1],$user_data[2],$user_data[3],$user_data[4],$pfType,$user_data[5], $user_data[7], $user_data[8]);
         }
         return $user;
     }
@@ -85,7 +85,7 @@ function getListings($conn, $query, $data)
     for ($listing = 0; $listing < count($listingsStmt); $listing++)
     {
         // create listing object
-        $newListing = new Listing($listingsStmt[$listing][2],$listingsStmt[$listing][3],$listingsStmt[$listing][4],$listingsStmt[$listing][5],$listingsStmt[$listing][6],$listingsStmt[$listing][7], $listingsStmt[$listing][8]);
+        $newListing = new Listing($listingsStmt[$listing][1],$listingsStmt[$listing][2],$listingsStmt[$listing][3],$listingsStmt[$listing][4],$listingsStmt[$listing][5],$listingsStmt[$listing][6],$listingsStmt[$listing][7], $listingsStmt[$listing][8]);
 
         for ($image = 0; $image < count($images); $image++)
         {
