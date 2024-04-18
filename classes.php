@@ -178,7 +178,7 @@ class Listing {
             // notify the property owner
             $this->notifyPropertyOwner($conn);
         }
-        
+
         if ($query_execute) {
             return true;
         }
