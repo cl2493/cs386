@@ -10,28 +10,18 @@ include("phpfunctions.php");
 
 $inputFileName = '';
 
-// initialize $submission_stage with a default value
-$submission_stage = "Not Submitted";
-
 // check if user is logged in
 if(isset($_SESSION['pfType']))
 {
     $user = checkLogin($conn, $_SESSION['pfType']);
+    $submission_stage = $user->stage;
 
-    // set verified flag to false
     $verifiedFlag = false;
 
-    // check if user is verified in certdb
-    if(isset($_SESSION['user_id']))
+    // check if user is verified
+    if ($submission_stage == 'Approved')
     {
-        $user_id = $_SESSION['user_id'];
-        $verifiedFlag = getVerificationStatus($conn, $user_id);
-    }
-
-    // check if certificate submission stage is set
-    if(isset($_SESSION['submission_stage']))
-    {
-        $submission_stage = $_SESSION['submission_stage'];
+        $verifiedFlag = true;
     }
 }
 
