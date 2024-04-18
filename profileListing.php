@@ -96,7 +96,7 @@ $listings = getListings($conn, $query, $data);
 
            <div class="listing" id="listing">
                 <form class="listing-forum" action="listingInterface.php" method="POST" id="listing-forum" enctype='multipart/form-data'>
-                <h2 class ="listingForumTitle">listing information</h2>
+                <h2 class ="listingForumTitle">Listing Information</h2>
                 <div>
                     <label>Street address</label>
                     <input type="text" id="street-address" name="street-address" autocomplete="street-address" required enterkeyhint="next"></input>
@@ -121,6 +121,12 @@ $listings = getListings($conn, $query, $data);
                     <label>Number of Bathrooms</label>
                     <input required type="number" id="bath" name="bath" autocomplete="cost" enterkeyhint="">
                 </div>
+                <div class="content-select">
+                        <label>Lease Start</label>
+                        <input type="date" id="lease_length" placeholder="Select lease length">
+                        <label>Lease End</label>
+                        <input type="date" id="lease_length" placeholder="Select lease length">
+                    </div>
                 <div>
                     <label>Images</label>
                     <input required type="file" id="imgs" name="file" multiple>
