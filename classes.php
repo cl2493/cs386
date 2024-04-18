@@ -125,6 +125,7 @@ class PropertyOwner extends User {
 }
 
 class Listing {
+    public $user_id;
     public $address;
     public $zip;
     public $city;
@@ -134,8 +135,9 @@ class Listing {
     public $availability;
     public $images = array();
 
-    function __construct($address, $zip, $city, $price, $bed, $bath, $availability)
+    function __construct($user_id, $address, $zip, $city, $price, $bed, $bath, $availability)
     {
+        $this->user_id = $user_id;
         $this->address = $address;
         $this->zip = $zip;
         $this->city = $city;
@@ -160,6 +162,7 @@ class Listing {
 
     // function to change listings availability
     function changeAvailability(DatabaseConnection $conn, $newAvailability) {
+        // set listings to newAvailability
         $query = "UPDATE listingsdb SET availability=:availability WHERE address=:address";
         $data = [
             ':availability' => $newAvailability,
@@ -168,10 +171,38 @@ class Listing {
         
         $query_run = $conn->prepare($query);
         $query_execute = $query_run->execute($data);
+
+        // if listing has been reserved
+        if ($newAvailability == "reserved")
+        {
+            // notify the property owner
+            $this->notifyPropertyOwner($conn);
+        }
         
         if ($query_execute) {
             return true;
         }
+        return false;
+    }
+    
+    // function that notifies the owner of the listing
+    private function notifyPropertyOwner(DatabaseConnection $conn)
+    {
+        // change property owners messageFlag to true
+        $query = "UPDATE propertyownersdb SET messageFlag=:messageFlag WHERE user_id=:user_id";
+        $data = [
+            ':messageFlag' => 1,
+            ':user_id' => $this->user_id,
+        ];
+
+        $query_run = $conn->prepare($query);
+        $query_execute = $query_run->execute($data);
+
+        if ($query_execute)
+        {
+            return true;
+        }
+
         return false;
     }
 }
