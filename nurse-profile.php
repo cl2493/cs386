@@ -2,7 +2,7 @@
 // error handling
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-//var_dump($_SESSION);
+
 
 session_start();
 include("connection.php");

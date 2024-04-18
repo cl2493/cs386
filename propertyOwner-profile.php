@@ -1,14 +1,30 @@
 <?php
+// error handling
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 session_start();
 include("connection.php");
 include("phpfunctions.php");
 
+$inputFileName = '';
+
 if (isset($_SESSION['pfType']))
 {
     $user = checkLogin($conn,$_SESSION['pfType']);
+    // get stage from user
+    $submission_stage = $user->stage;
+
     $verifiedFlag = false;
+
+    // check if user is verified
+    if ($submission_stage == 'Approved')
+    {
+        $verifiedFlag = true;
+    }
 }
+
+// user is not logged in, redirect to homepage
 else
 {
     header("Location: index.php");
@@ -23,6 +39,7 @@ $listings = getListings($conn, $query, $data);
 $newMessageFlag = checkListingsAvailability($listings);
 ?>
 
+<!-- PO profile header -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -153,6 +170,39 @@ $newMessageFlag = checkListingsAvailability($listings);
                    echo "<p><strong>Birthday: </strong>$user->birthday</p>";
             ?>
             </div>
+            <div id = "certification">
+            <?php
+            // check submission stage
+            if ($submission_stage)
+            {
+                //$submission_stage = $_SESSION['submission_stage'];
+                if ($submission_stage == "Not Submitted" || $submission_stage == "Rejected") 
+                {
+                   
+                    echo '<form id="certForm" action="upload_certification.php" method="post" enctype="multipart/form-data">';
+                    echo '<div class="cert-upload">';
+                    echo '<h2>Upload Certification</h2>';
+                    echo '</div>';
+                    echo '<label for="certFile" class="select-btn">Select PDF File</label>';
+                    echo '<input type="file" id="certFile" name="certFile" accept=".pdf" class="file-input">';
+                    echo '<button type="submit" class="upload-btn">Upload</button>';
+                    echo "<span id='fileNameDisplay' class='file-name-display'>$inputFileName</span>";
+                    echo '</form>';
+                } 
+                else if ($submission_stage == "Submitted") 
+                {
+                    echo '<div class="cert-upload">';
+                    echo '<h2>Certification Submitted</h2>';
+                    echo '</div>';
+                } 
+                else if ($submission_stage == "Approved") 
+                {
+                    echo '<div class="cert-upload">';
+                    echo '<h2>Certification Approved</h2>';
+                    echo '</div>';
+                }
+            }  
+            ?>              
            </div>
             </div>
    
