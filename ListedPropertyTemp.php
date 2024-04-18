@@ -50,21 +50,7 @@ $listing = $_GET['Listing'];
 <!-- Body of the page -->
 <body>
     <!-- Top of the page -->
-    <div class="header">           
-        <!-- Navigation bar -->
-        <nav id="navBar">
-            <!-- Logo -->
-            <!-- Navigation links -->
-            <a href = "index.php"><img src="images/logo.png" class="logo"></a>
-            <ul class="nav-links">
-                <li><a href="404ErrorPage.html">Locations</a></li>
-                <li><a href="404ErrorPage.html">Benefits</a></li>
-                <li><a href="404ErrorPage.html">Accommodation</a></li>
-            </ul>
-            <!-- Profile button -->
-            <a class="profile-btn" onclick="popupFunction()">Profile</a>
-        </nav>
-    </div>
+    <?php include('header.php'); ?>
 <!------------------------------------Listing Page------------------------------------>
     <div class="profile-container">
         <div class = "profile-content">
