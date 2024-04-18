@@ -12,14 +12,18 @@ class User {
     public $birthday;
     public $pfType;
     public $email;
+    public $stage;
+    public $messageFlag;
 
-    function __construct($user_id, $first_name, $last_name, $birthday, $pfType, $email) {
+    function __construct($user_id, $first_name, $last_name, $birthday, $pfType, $email, $stage, $messageFlag) {
         $this->user_id = $user_id;
         $this->first_name = $first_name;
         $this->last_name = $last_name;
         $this->birthday = $birthday;
         $this->pfType = $pfType;
         $this->email = $email;
+        $this->stage = $stage;
+        $this->messageFlag = $messageFlag;
     }
 
     function changeName(DatabaseConnection $conn, $firstName, $lastName) {
@@ -84,16 +88,6 @@ class User {
             }
         }
         return false;
-    }
-}
-
-class TravelNurse extends User {
-    public $stage;
-
-    public function __construct($user_id, $first_name, $last_name, $birthday, $pfType, $email, $stage)
-    {
-        parent::__construct($user_id, $first_name, $last_name, $birthday, $pfType, $email);
-        $this->stage = $stage;
     }
 
     function updateStage(DatabaseConnection $conn, $newStage) {
