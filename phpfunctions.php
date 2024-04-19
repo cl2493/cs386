@@ -64,7 +64,7 @@ function checkIfEmailInUse( $conn, $email)
     return false;
 }
 
-/*function getListings($conn, $query, $data)
+function getListings($conn, $query, $data)
 {
     // prepare statement
     $stmt = $conn->prepare($query);
@@ -101,7 +101,7 @@ function checkIfEmailInUse( $conn, $email)
 
     return $listings;
 }
-*/
+
 function getImagesForListings($conn)
 {
     require('vendor/autoload.php');
