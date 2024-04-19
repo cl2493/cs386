@@ -12,14 +12,18 @@ class User {
     public $birthday;
     public $pfType;
     public $email;
+    public $stage;
+    public $messageFlag;
 
-    function __construct($user_id, $first_name, $last_name, $birthday, $pfType, $email) {
+    function __construct($user_id, $first_name, $last_name, $birthday, $pfType, $email, $stage, $messageFlag) {
         $this->user_id = $user_id;
         $this->first_name = $first_name;
         $this->last_name = $last_name;
         $this->birthday = $birthday;
         $this->pfType = $pfType;
         $this->email = $email;
+        $this->stage = $stage;
+        $this->messageFlag = $messageFlag;
     }
 
     function changeName(DatabaseConnection $conn, $firstName, $lastName) {
@@ -85,16 +89,6 @@ class User {
         }
         return false;
     }
-}
-
-class TravelNurse extends User {
-    public $stage;
-
-    public function __construct($user_id, $first_name, $last_name, $birthday, $pfType, $email, $stage)
-    {
-        parent::__construct($user_id, $first_name, $last_name, $birthday, $pfType, $email);
-        $this->stage = $stage;
-    }
 
     function updateStage(DatabaseConnection $conn, $newStage) {
         $query = "UPDATE $this->pfType SET stage=:stage WHERE user_id=:user_id";
@@ -131,6 +125,7 @@ class PropertyOwner extends User {
 }
 
 class Listing {
+    public $user_id;
     public $address;
     public $zip;
     public $city;
@@ -140,8 +135,9 @@ class Listing {
     public $availability;
     public $images = array();
 
-    function __construct($address, $zip, $city, $price, $bed, $bath, $availability)
+    function __construct($user_id, $address, $zip, $city, $price, $bed, $bath, $availability)
     {
+        $this->user_id = $user_id;
         $this->address = $address;
         $this->zip = $zip;
         $this->city = $city;
@@ -166,6 +162,7 @@ class Listing {
 
     // function to change listings availability
     function changeAvailability(DatabaseConnection $conn, $newAvailability) {
+        // set listings to newAvailability
         $query = "UPDATE listingsdb SET availability=:availability WHERE address=:address";
         $data = [
             ':availability' => $newAvailability,
@@ -174,10 +171,38 @@ class Listing {
         
         $query_run = $conn->prepare($query);
         $query_execute = $query_run->execute($data);
-        
+
+        // if listing has been reserved
+        if ($newAvailability == "reserved")
+        {
+            // notify the property owner
+            $this->notifyPropertyOwner($conn);
+        }
+
         if ($query_execute) {
             return true;
         }
+        return false;
+    }
+    
+    // function that notifies the owner of the listing
+    private function notifyPropertyOwner(DatabaseConnection $conn)
+    {
+        // change property owners messageFlag to true
+        $query = "UPDATE propertyownersdb SET messageFlag=:messageFlag WHERE user_id=:user_id";
+        $data = [
+            ':messageFlag' => 1,
+            ':user_id' => $this->user_id,
+        ];
+
+        $query_run = $conn->prepare($query);
+        $query_execute = $query_run->execute($data);
+
+        if ($query_execute)
+        {
+            return true;
+        }
+
         return false;
     }
 }

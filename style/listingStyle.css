@@ -116,6 +116,113 @@ nav{
   border-radius: 5px;
   cursor: pointer;
 }
+
+/* sign in popup */
+.login-btn{
+	cursor: pointer;
+    background: #e7b93b;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    width: 10%;
+    font-size: 20px;
+    text-align: center;
+}
+
+.loginName{
+    font-size:0.9em;
+}
+
+.left{
+	flex:1;
+	display:flex;
+	flex-direction:column;
+	order:1;
+}
+
+.container{
+    padding: 0 7%;
+}
+
+.exit-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.myPopup{ 
+    position: absolute;
+    transform: translate(55%, 20%);
+    z-index: 9999;
+    background: #e7b93b;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: none;
+    width:50%;
+    height:50%;
+    text-align: center;
+}
+
+.myPopup.exit {
+    animation: fadeOut 1s;
+}
+
+.myPopup.show{
+    display: block;
+	animation: fadeIn 1s;
+}
+
+.myPopup h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.myPopup-Form{
+    margin-bottom: 1%;
+}
+
+.myPopup-Form label {
+    margin-bottom: 5px;
+    font-size: 25px;
+}
+
+.myPopup-Form input {
+    margin-bottom: 1%;
+    width: 50%;
+    height: 10%;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+}
+
+.sign-in-btn {
+    font-size: 18px;
+    border: 2px solid white;
+    cursor: pointer;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    width: 50%;
+    margin: 1% auto;
+    background-color: #e7b93b;
+}
+
+.sign-in-btn:hover {
+    background-color: #fff;
+    color: #e7b93b;
+    font-weight: bold;
+}
   /*-----------LISTING DISPLAYS ---------------*/
 
 .property-display
@@ -191,116 +298,4 @@ nav{
 
 .container {
   width: 20%;
-}
-/* Styles for the price input container */
-.price-input-container { 
-  width: 100%; 
-} 
-
-.price-input .price-field { 
-  display: flex; 
-  margin-bottom: 22px; 
-} 
-
-.price-field span { 
-  margin-right: 10px; 
-  margin-top: 6px; 
-  font-size: 17px; 
-} 
-
-.price-field input { 
-  flex: 1; 
-  height: 35px; 
-  font-size: 15px; 
-  font-family: "DM Sans", sans-serif; 
-  border-radius: 9px; 
-  text-align: center; 
-  border: 0px; 
-  background: #e4e4e4; 
-} 
-
-.price-input { 
-  width: 100%; 
-  font-size: 19px; 
-  color: #555; 
-} 
-
-/* Remove Arrows/Spinners */
-input::-webkit-outer-spin-button, 
-input::-webkit-inner-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
-} 
-
-.slider-container { 
-  width: 100%; 
-} 
-
-.slider-container { 
-  height: 6px; 
-  position: relative; 
-  background: #e4e4e4; 
-  border-radius: 5px; 
-} 
-
-.slider-container .price-slider { 
-  height: 100%; 
-  left: 25%; 
-  right: 15%; 
-  position: absolute; 
-  border-radius: 5px; 
-  background: #01940b; 
-} 
-
-.range-input { 
-  position: relative; 
-} 
-
-.range-input input { 
-  position: absolute; 
-  width: 100%; 
-  height: 5px; 
-  background: none; 
-  top: -5px; 
-  pointer-events: none; 
-  cursor: pointer; 
-  -webkit-appearance: none; 
-} 
-
-/* Styles for the range thumb in WebKit browsers */
-input[type="range"]::-webkit-slider-thumb { 
-  height: 18px; 
-  width: 18px; 
-  border-radius: 70%; 
-  background: #555; 
-  pointer-events: auto; 
-  -webkit-appearance: none; 
-} 
-
-@media screen and (max-width: 768px) { 
-  .main { 
-      width: 80%; 
-      margin-right: 5px; 
-  } 
-
-  .custom-wrapper { 
-      width: 100%; 
-      left: 0; 
-      padding: 0 10px; 
-  } 
-
-  .projtitle { 
-      width: 100%; 
-      position: relative; 
-      right: 26px; 
-  } 
-
-  .price-input { 
-      flex-direction: column; 
-      align-items: center; 
-  } 
-
-  .price-field { 
-      margin-bottom: 10px; 
-  } 
 }

@@ -20,7 +20,6 @@ $query = "SELECT * FROM listingsdb WHERE user_id = :user_id";
 $data[':user_id'] = $_SESSION['user_id'];
 
 $listings = getListings($conn, $query, $data);
-$newMessageFlag = checkListingsAvailability($listings);
 ?>
 
 <!DOCTYPE html>
@@ -41,67 +40,7 @@ $newMessageFlag = checkListingsAvailability($listings);
 <!-- Body of the page -->
 <body>
     <!-- Top of the page -->
-    <div class="header">           
-        <!-- Navigation bar -->
-        <nav id="navBar">
-            <!-- Logo -->
-            <!-- Navigation links -->
-            <a href = "index.php"><img src="images/logo.png" class="logo"></a>
-            <ul class="nav-links">
-                <li><a href="404ErrorPage.html">Locations</a></li>
-                <li><a href="404ErrorPage.html">Benefits</a></li>
-                <li><a href="404ErrorPage.html">Accommodation</a></li>
-            </ul>
-          <!-- Profile button -->
-          <?php
-                    if (isset($_SESSION['user_id']))
-                    {
-                        if ($_SESSION['pfType'] == 'travelnursesdb')
-                        {
-                            //calls newMessageIcon function to display the bell icon
-                            newMessageIcon($newMessageFlag);
-                            echo '<div class="profile-dropdown">';
-                            echo '<button class="profile-btn" data-dropdown-button>';
-                            echo $user->first_name;
-                            echo '</button>';
-                            echo '<div class="menu-dropdown" data-dropdown tabindex="0">';
-                            echo '<div class="menu-dropdown-content">';
-                            echo '<a href="nurse-profile.php">Profile</a>';
-                            echo '<a href="nurse-profile-tabs/payment-setting.php">Payment</a>';
-                            echo '<a href="404ErrorPage.html">History</a>';
-                            echo '<a href="404ErrorPage.html">Settings</a>';
-                            echo '<a href="logout.php">Logout</a>';
-                            echo '</div>';
-                            echo '</div>';
-                            echo '</div>';
-                        }
-                        else
-                        {
-                            //calls newMessageIcon function to display the bell icon
-                            newMessageIcon($newMessageFlag);
-                            echo '<div class="profile-dropdown">';
-                            echo '<button class="profile-btn" data-dropdown-button>';
-                            echo $user->first_name;
-                            echo '</button>';
-                            echo '<div class="menu-dropdown" data-dropdown tabindex="0">';
-                            echo '<div class="menu-dropdown-content">';
-                            echo '<a href="propertyOwner-profile.php">Profile</a>';
-                            echo '<a href="nurse-profile-tabs/payment-setting.php">Payment</a>';
-                            echo '<a href="404ErrorPage.html">History</a>';
-                            echo '<a href="404ErrorPage.html">Settings</a>';
-                            echo '<a href="logout.php">Logout</a>';
-                            echo '</div>';
-                            echo '</div>';
-                            echo '</div>';
-                        }
-                    }
-                    else
-                    {
-                        echo '<a class="login-btn" onclick="popupFunction()">Sign In</a>';
-                    }
-                ?>
-        </nav>
-    </div>
+    <?php include('header.php'); ?>
 <!------------------------------------Profile Page------------------------------------>
     <div class="profile-container">
         <div class = "profile-content">
@@ -155,10 +94,9 @@ $newMessageFlag = checkListingsAvailability($listings);
            </div>
             </div>
 
-           <div class="myPopup" id="myPopup">
-                <button class="exit-btn" onclick="closePopup()">X</button>
+           <div class="listing" id="listing">
                 <form class="listing-forum" action="listingInterface.php" method="POST" id="listing-forum" enctype='multipart/form-data'>
-                <h2 class ="listingForumTitle">listing information</h2>
+                <h2 class ="listingForumTitle">Listing Information</h2>
                 <div>
                     <label>Street address</label>
                     <input type="text" id="street-address" name="street-address" autocomplete="street-address" required enterkeyhint="next"></input>
@@ -183,6 +121,12 @@ $newMessageFlag = checkListingsAvailability($listings);
                     <label>Number of Bathrooms</label>
                     <input required type="number" id="bath" name="bath" autocomplete="cost" enterkeyhint="">
                 </div>
+                <div class="content-select">
+                        <label>Lease Start</label>
+                        <input type="date" id="lease_length" placeholder="Select lease length">
+                        <label>Lease End</label>
+                        <input type="date" id="lease_length" placeholder="Select lease length">
+                    </div>
                 <div>
                     <label>Images</label>
                     <input required type="file" id="imgs" name="file" multiple>
@@ -213,7 +157,6 @@ $newMessageFlag = checkListingsAvailability($listings);
             ?>
     </div>
     <!------ footer ----->
-
     <?php include("footer.php"); ?>
 
 </body>
