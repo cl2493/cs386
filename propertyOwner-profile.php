@@ -176,6 +176,5 @@ $listings = getListings($conn, $query, $data);
     </div>
     <!------ footer ----->
     <?php include("footer.php"); ?>
-
 </body>
 </html>
