@@ -57,7 +57,6 @@ form {
   margin: 1%;
 }
 .content-select {
-  border: black 1px dotted;
   display: flex;
   flex-direction: column;
   width: 30%;
@@ -76,7 +75,6 @@ form {
   align-items: flex-start;
   width: 50%;
   height: 20%;
-  border: #e7b93b 1px dotted;
 }
 
 .price-field {
