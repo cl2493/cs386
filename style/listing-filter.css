@@ -1,35 +1,98 @@
+label{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+select{
+    margin-bottom: 1%;
+    width: 50%;
+    font-size: 18px;
+    border: none;
+}
+button{
+  height: 15%;
+}
+
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
+    display: flex;
+    justify-content: left;
+    align-content: left;
+}
+.search-input input {
+    width: 75%;
+    margin: 1%;
+
 }
 .search-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 20px;
-  width: 75%;
+  margin: 10px;
+  width: 100%;
   height: 250px;
   border-radius: 10px;
   background-color: #e7b93bb0;
 }
 .search-content {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   padding: 10%;
-  border: black 1px solid;
 }
-
 
 form {
-    display: inline-block;
-    margin: 10px 30px;
-    width: 75%;
-    flex-wrap: wrap;
-    border: black 1px dotted;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+  border: black 1px dotted;
 }
+
+
+.content-select input{
+  width: 50%;
+  margin: 1%;
+}
+.content-select {
+  border: black 1px dotted;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
 .price-input-container {
-    margin: 2%;
-    width: 50%;
-    border: black 1px solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 50%;
+  height: 20%;
+  border: #e7b93b 1px dotted;
+}
+
+.price-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-field label {
+  margin-bottom: 5px;
+}
+
+.price-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-input input {
+  margin-bottom: 10px;
 }
