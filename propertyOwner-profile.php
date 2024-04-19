@@ -176,7 +176,5 @@ $listings = getListings($conn, $query, $data);
     </div>
     <!------ footer ----->
     <?php include("footer.php"); ?>
-    <script src="script.js"defer></script>
-
 </body>
 </html>
