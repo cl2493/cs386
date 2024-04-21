@@ -57,7 +57,7 @@ else
 }
 
 // $listings is an array of Listing objects (look at Listing class to see more)
-$listings = getListings($conn, $query, $data);
+//$listings = getListings($conn, $query, $data);
 
 $rating = 3;
 $index;
