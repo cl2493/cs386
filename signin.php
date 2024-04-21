@@ -33,3 +33,4 @@ if (isset($_POST["sign-in-btn"]))
         die;
     }
 }
+?>
