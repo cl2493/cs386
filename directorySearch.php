@@ -21,7 +21,7 @@
                     </div>
                     <div class="content-dropdown" data-dropdown>
                         <label># of Baths</label>
-                        <select name="bath" id="" class="drop">
+                        <select name="bath" id="bath-input" class="drop">
                             <option value=""><?=$baths?></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -30,34 +30,78 @@
                             <option value="5">5</option>
                         </select>
                     </div>
-                    <div class="content-select">
-                        <div class = "input-lease">
-                            <label>Lease Start</label>
-                            <input type="date" id="lease_length" placeholder="Select lease length">
-                        </div>
-                        <div class = "input-lease">
-                            <label>Lease End</label>
-                            <input type="date" id="lease_length" placeholder="Select lease length">
-                        </div>
-                    </div>
                     <div class="price-input-container">
                         <div class="price-field">
                             <label for="minPrice">Minimum Price</label>
-                            <input name="minPrice" type="number" class="min-input" value="<?=$minPrice?>">
+                            <input name="minPrice" type="number" class="min-input" value="1200">
                         </div>
                         <div class="price-field">
                             <label for="maxPrice">Maximum Price</label>
-                            <input name="maxPrice" type="number" class="max-input" value="<?=$maxPrice?>">
+                            <input name="maxPrice" type="number" class="max-input" value="3800">
                         </div>
                     </div>
-
-                <!-- Slider -->
-                <div class="range-input"> 
-                    <input type="range" class="min-range" min="0" max="10000" value="<?=$minPrice?>" step="500"> 
-                    <input type="range" class="max-range" min="0" max="10000" value="<?=$maxPrice?>" step="500"> 
-                </div>
-                <button name="filterBtn" class="sub-btn" type="submit"><img src = "assets/search.png" alt="serach icon"></button>
+                    <div class = "slider">
+                        <div class="price"></div>
+                    </div>
+                    <div class = "range-input">
+                        <input type="range" class="range-min" min="0" max="5000" value="1200" id="myRange" step ="100">
+                        <input type="range" class="range-max" min="0" max="5000" value="3800" id="myRange" step ="100">
+                    </div>
                 </form>
-            </div>
+                <button name="filterBtn" class="sub-btn" type="submit"><img src = "assets/search.png" alt="serach icon"></button>
+        </div>
     </div>
 </div>
+
+<script>
+    const rangeInput = document.querySelectorAll('.range-input input');
+    priceInput = document.querySelectorAll('.price-input-container input');
+    progress = document.querySelector(".slider .price");
+
+    let priceGap = 1000;
+
+    priceInput.forEach(input =>{
+        input.addEventListener("input", e =>{
+            //get the two input values of the range input
+            let minVal = parseInt(priceInput[0].value);
+            maxVal = parseInt(priceInput[1].value);
+
+            if((maxVal - minVal >= priceGap) && max <= 5000 && min >= 0){
+                if (e.target.className === "min-input")
+                {
+                    rangeInput[0].value = minVal;
+                    progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
+                }
+                else{
+                    rangeInput[1].value = maxVal;
+                    progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                }
+            }
+        })
+    })
+
+
+    rangeInput.forEach(input =>{
+        input.addEventListener("input", e =>{
+            //get the two values of the range input
+            let minVal = parseInt(rangeInput[0].value);
+            maxVal = parseInt(rangeInput[1].value);
+
+            if(maxVal - minVal < priceGap){
+                if (e.target.className === "range-min")
+                {
+                    rangeInput[0].value = maxVal - priceGap;
+                }
+                else{
+                    rangeInput[1].value = minVal + priceGap;
+                }
+            }
+            else{
+                priceInput[0].value = minVal;
+                priceInput[1].value = maxVal;
+                progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
+                progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+            }
+        })
+    })
+</script>

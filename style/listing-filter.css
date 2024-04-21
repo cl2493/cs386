@@ -1,11 +1,11 @@
 label{
     font-size: 20px;
-    margin-bottom: 5px;
 }
 select{
-    margin-bottom: 1%;
-    width: 50%;
+    width: 60%;
     font-size: 18px;
+    height: 30px;
+    border-radius: 10px;
     border: none;
 }
 button{
@@ -15,23 +15,25 @@ button{
 .container {
     width: 100%;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-content: left;
 }
 .search-input input {
-    width: 75%;
-    margin: 1%;
-
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
 }
 .search-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 10px;
-  width: 100%;
+  width: 80%;
   height: 250px;
   border-radius: 10px;
-  background-color: #e7b93bb0;
+  background-color: #e7b93ba0;
 }
 .search-content {
   width: 100%;
@@ -41,128 +43,109 @@ button{
   padding: 10%;
 }
 
+.content-dropdown {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
 form {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
   height: 100%;
-  flex-wrap: wrap;
-}
-
-
-.content-select input{
-  width: 50%;
-  margin: 1%;
-}
-.content-select {
-  display: flex;
-  flex-direction: column;
-  width: 30%;
-}
-.input-group {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-  width: 100%;
 }
 
 .price-input-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 50%;
-  height: 20%;
+  align-items: center;
+  width: 55%; 
+  margin-left: 10%;
 }
 
 /* Styles for the price input container */
-.price-input-container { 
-  width: 100%; 
-} 
 
 .price-input .price-field { 
-  display: flex; 
-  margin-bottom: 22px; 
+  margin-bottom: 22px;
 } 
 
 .price-field span { 
-  margin-right: 10px; 
   margin-top: 6px; 
   font-size: 17px; 
+
 } 
 
 .price-field input { 
-  flex: 1; 
   height: 35px; 
-  font-size: 15px; 
-  font-family: "DM Sans", sans-serif; 
-  border-radius: 9px; 
+  font-size: 15px;
+  border-radius: 10px; 
   text-align: center; 
-  border: 0px; 
-  background: #e4e4e4; 
+  border: none; 
+  background: white;
 } 
 
-/* Remove Arrows/Spinners */
-input::-webkit-outer-spin-button, 
-input::-webkit-inner-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
-} 
 
-.slider-container { 
-  width: 100%; 
-} 
+.slider{
+  height: 5px;
+  width: 50%;
+  border-radius: 5px;
+  background: grey;
+  position: relative;
+  margin: 2%;
+}
 
-.slider-container { 
-  height: 6px; 
-  position: relative; 
-  background: #e4e4e4; 
-  border-radius: 5px; 
-} 
+.slider .price{
+  height: 5px;
+  left: 25%;
+  right: 25%;
+  position: absolute;
+  background: #eb3d60;
+  border-radius: 5px;
+}
 
-.slider-container .price-slider { 
-  height: 100%; 
-  left: 25%; 
-  right: 15%; 
-  position: absolute; 
-  border-radius: 5px; 
-  background: #01940b; 
-} 
-
-.range-input { 
-  position: relative; 
-} 
-
-.range-input input { 
-  position: absolute; 
-  width: 100%; 
-  height: 5px; 
-  background: none; 
-  top: -5px; 
-  pointer-events: none; 
-  cursor: pointer; 
-  -webkit-appearance: none; 
-} 
-
-/* Styles for the range thumb in WebKit browsers */
-input[type="range"]::-webkit-slider-thumb { 
-  height: 18px; 
-  width: 18px; 
-  border-radius: 70%; 
-  background: #555; 
-  pointer-events: auto; 
-  -webkit-appearance: none; 
-} 
-
-.sub-btn {
+.range-input{
+  position: relative;
+  width: 50%;
+}
+.range-input input{
+  width: 100%;
+  top: -20px;
+  height: 5px;
+  position: absolute;
+  background: none;
+  -webkit-appearance: none;
+  pointer-events: none;
+}
+input[type = range]::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  width: 17px;
+  height: 17px;
+  background: #eb3d60;
+  border-radius: 50%;
   cursor: pointer;
-  width: 3%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-  background-color: transparent;
+  pointer-events: auto;
+}
+input[type = range]::-moz-range-thumb{
+  -moz-appearance: none;
+  width: 17px;
+  height: 17px;
+  background: #eb3d60;
   border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+
+.sub-btn{
+  border: white 1px solid;
+  background-color: transparent;
   border-radius: 10px;
+  padding: 5px;
+  margin-left: 48%;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
