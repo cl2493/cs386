@@ -120,13 +120,19 @@ $listings = getListings($conn, $query, $data);
                    
                     echo '<form id="certForm" action="upload_certification.php" method="post" enctype="multipart/form-data">';
                     echo '<div class="cert-upload">';
-                    echo '<h2>Upload Certification</h2>';
+                    echo '<h2>Upload Bill</h2>';
                     echo '</div>';
                     echo '<label for="certFile" class="select-btn">Select PDF File</label>';
                     echo '<input type="file" id="certFile" name="certFile" accept=".pdf" class="file-input">';
                     echo '<button type="submit" class="upload-btn">Upload</button>';
                     echo "<span id='fileNameDisplay' class='file-name-display'>$inputFileName</span>";
                     echo '</form>';
+
+                    // display you have no listings message
+                    if(!$listings)
+                    {
+                        echo "<div class='listingText'><h1>You have no listings</h1></div>";
+                    }
                 } 
                 else if ($submission_stage == "Submitted") 
                 {
@@ -145,15 +151,7 @@ $listings = getListings($conn, $query, $data);
            </div>
             </div>
    
-            <?php if (!$listings)
-            {
-                ?>
-            <div class="listingText">
-                <h1 id=>You have no listings</h1>
-            </div>
-            <?php
-            }
-            ?>
+           
             </div>
             <div class="images">
     <?php
