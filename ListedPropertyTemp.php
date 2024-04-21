@@ -100,6 +100,9 @@ $listing = $_GET['Listing'];
 	</span></p>
             </div>
             
+            <a href="" class="sign-in-btn" id = "reserve">Reserve</a>              
+
+
            </div>
             </div>
     </div>
