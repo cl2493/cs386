@@ -33,22 +33,22 @@
                     <div class="price-input-container">
                         <div class="price-field">
                             <label for="minPrice">Minimum Price</label>
-                            <input name="minPrice" type="number" class="min-input" value="1200">
+                            <input name="minPrice" type="number" class="min-input" value="<?=$minPrice?>">
                         </div>
                         <div class="price-field">
                             <label for="maxPrice">Maximum Price</label>
-                            <input name="maxPrice" type="number" class="max-input" value="3800">
+                            <input name="maxPrice" type="number" class="max-input" value="<?=$maxPrice?>">
                         </div>
                     </div>
                     <div class = "slider">
                         <div class="price"></div>
                     </div>
                     <div class = "range-input">
-                        <input type="range" class="range-min" min="0" max="5000" value="1200" id="myRange" step ="100">
-                        <input type="range" class="range-max" min="0" max="5000" value="3800" id="myRange" step ="100">
+                        <input type="range" class="range-min" min="0" max="5000" value="<?=$minPrice?>" id="myRange" step ="100">
+                        <input type="range" class="range-max" min="0" max="5000" value="<?=$maxPrice?>" id="myRange" step ="100">
                     </div>
-                </form>
-                <button name="filterBtn" class="sub-btn" type="submit"><img src = "assets/search.png" alt="serach icon"></button>
+                <button name="filterBtn" class="filterBtn" type="submit"><img src = "assets/search.png" alt="serach icon"></button>
+            </form>
         </div>
     </div>
 </div>
