@@ -27,6 +27,12 @@ else
     $data = $_SESSION['data'];
 }
 
+// set the button message to reserve if it is not set
+if (!isset($buttonMessage))
+{
+    $buttonMessage = 'Reserve';
+}
+
 // $listings is an array of Listing objects (look at Listing class to see more)
 $listings = getListings($conn, $query, $data);
 $listing = $_GET['Listing'];
@@ -99,10 +105,34 @@ $listing = $_GET['Listing'];
 		<input type="radio" name="rating" id="rate-5" value="5">
 	</span></p>
             </div>
-            
-            <a href="" class="sign-in-btn" id = "reserve">Reserve</a>              
+            <?php
+            // if the reserve button is pressed
+            if (array_key_exists('reserve',$_POST) && $buttonMessage == 'Reserve')
+            {
+                // if the user is a travel nurse
+                if ($user->pfType == 'travelnursesdb')
+                {
+                    // reserve property for current user
+                    $listings[$listing]->changeAvailability($conn, $user->user_id);
+                    // change button to say property reserved
+                    $buttonMessage = 'Property Reserved!';
+                }
+                else
+                {
+                    $Message = 'You must be a travel nurse to reserve a property!';
+                }
 
-
+                // print message to user
+                if (isset($Message))
+                {
+                    echo "<script>alert('$Message')</script>"; 
+                }
+        
+            }
+            ?>
+            <form method="post">
+            <input type="submit" name="reserve" class="sign-in-btn" id = "reserve" value="<?=$buttonMessage?>">             
+            </form>
            </div>
             </div>
     </div>

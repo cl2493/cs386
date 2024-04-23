@@ -161,8 +161,8 @@ class Listing {
     }
 
     // function to change listings availability
-    function changeAvailability(DatabaseConnection $conn, $newAvailability) {
-        // set listings to newAvailability
+    function changeAvailability($conn, $newAvailability) {
+        // set listings to newAvailability (travelnurses's user_id)
         $query = "UPDATE listingsdb SET availability=:availability WHERE address=:address";
         $data = [
             ':availability' => $newAvailability,
@@ -173,7 +173,7 @@ class Listing {
         $query_execute = $query_run->execute($data);
 
         // if listing has been reserved
-        if ($newAvailability == "reserved")
+        if ($newAvailability != "available")
         {
             // notify the property owner
             $this->notifyPropertyOwner($conn);
@@ -186,7 +186,7 @@ class Listing {
     }
     
     // function that notifies the owner of the listing
-    private function notifyPropertyOwner(DatabaseConnection $conn)
+    private function notifyPropertyOwner($conn)
     {
         // change property owners messageFlag to true
         $query = "UPDATE propertyownersdb SET messageFlag=:messageFlag WHERE user_id=:user_id";
