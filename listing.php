@@ -12,8 +12,8 @@ if (isset($_SESSION['pfType']))
 $location ='';
 $bed = "Beds";
 $baths = "Baths";
-$minPrice = 0;
-$maxPrice = 10000;
+$minPrice = 1200;
+$maxPrice = 3800;
 
 if (!isset($_SESSION['query']))
 {
