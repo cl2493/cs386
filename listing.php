@@ -12,8 +12,8 @@ if (isset($_SESSION['pfType']))
 $location ='';
 $bed = "Beds";
 $baths = "Baths";
-$minPrice = 0;
-$maxPrice = 10000;
+$minPrice = 1200;
+$maxPrice = 3800;
 
 if (!isset($_SESSION['query']))
 {
@@ -57,7 +57,7 @@ else
 }
 
 // $listings is an array of Listing objects (look at Listing class to see more)
-$listings = getListings($conn, $query, $data);
+//$listings = getListings($conn, $query, $data);
 
 $rating = 3;
 $index;
