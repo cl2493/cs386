@@ -154,6 +154,7 @@ function checkListingsAvailability($listings)
 }
 
 //Displays the filled icon if there is a message
+//Include the notificaiton Message .php file if the message plag is true
 function newMessageIcon($newMessageFlag)
 {
     
@@ -161,10 +162,19 @@ function newMessageIcon($newMessageFlag)
     if ($newMessageFlag)
     {
         //Let the user to access messages
-        echo '<a href = "messages.php">';
         //if there is a new messgae then the bell will shake
+        echo '<style>';
+        echo '.container {';
+        echo 'display: flex;';
+        echo 'align-items: center;';
+        echo '}';
+        echo '</style>';
+
+        echo '<div class = "container">';
         echo '<i class="fa-solid fa-bell fa-shake fa-2xl" style="color: #ffffff;"></i>';
-        echo '</a>';
+        include("notificationMessage.php");
+        echo '</div>';
+  
     }
     //otherwise, there is no new message
     else

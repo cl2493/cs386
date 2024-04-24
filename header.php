@@ -13,6 +13,7 @@
                         {
                             //calls newMessageIcon function to display the bell icon
                             newMessageIcon($user->messageFlag);
+                            
                             echo '<div class="profile-dropdown">';
                             echo '<button class="profile-btn" data-dropdown-button>';
                             echo $user->first_name;
@@ -27,11 +28,11 @@
                             echo '</div>';
                             echo '</div>';
                             echo '</div>';
-                        }
+                        } 
                         else
                         {
                             //calls newMessageIcon function to display the bell icon
-                            newMessageIcon($user->messageFlag);
+                            newMessageIcon(true);
                             echo '<div class="profile-dropdown">';
                             echo '<button class="profile-btn" data-dropdown-button>';
                             echo $user->first_name;
