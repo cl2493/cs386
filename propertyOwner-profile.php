@@ -128,11 +128,7 @@ $listings = getListings($conn, $query, $data);
                     echo "<span id='fileNameDisplay' class='file-name-display'>$inputFileName</span>";
                     echo '</form>';
 
-                    // display you have no listings message
-                    if(!$listings)
-                    {
-                        echo "<div class='listingText'><h1>You have no listings</h1></div>";
-                    }
+
                 } 
                 else if ($submission_stage == "Submitted") 
                 {
@@ -145,6 +141,12 @@ $listings = getListings($conn, $query, $data);
                     echo '<div class="cert-upload">';
                     echo '<h2>Certification Approved</h2>';
                     echo '</div>';
+
+                    // display you have no listings message
+                    if(!$listings)
+                    {
+                         echo "<div class='listingText'><h1>You have no listings</h1></div>";
+                    }
                 }
             }  
             ?>              
