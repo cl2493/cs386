@@ -70,8 +70,6 @@ $listing = $_GET['Listing'];
                 </div>
                 <!-- Profile name -->
                 <?php
-                // Display the name of the user
-                echo "<h2 class='name-info'><strong>$user->first_name $user->last_name";
                 // Display the verified icon if the user is verified
                 if ($verifiedFlag) {
                 echo "<img src='images/icons/check-symbol.png' class='verified-icon'>";
@@ -92,7 +90,7 @@ $listing = $_GET['Listing'];
             <p><strong>Monthly Cost: $<?=$listings[$listing]->price?></strong></p>
 
             <!-- lstar rating display -->
-<p>Rating: <span class="star-rating">
+    <p>Rating: <span class="star-rating">
 		<label for="rate-1" style="--i:1"><i class="fa-solid fa-star"></i></label>
 		<input type="radio" name="rating" id="rate-1" value="1">
 		<label for="rate-2" style="--i:2"><i class="fa-solid fa-star"></i></label>
@@ -131,7 +129,7 @@ $listing = $_GET['Listing'];
             }
             ?>
             <form method="post">
-            <input type="submit" name="reserve" class="sign-in-btn" id = "reserve" value="<?=$buttonMessage?>">             
+            <input type="submit" name="reserve" class="reserve-btn" id = "reserve" value="<?=$buttonMessage?>">             
             </form>
            </div>
             </div>
