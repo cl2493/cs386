@@ -90,9 +90,12 @@ $listing = $_GET['Listing'];
             <p><strong>Bedrooms: <?=$listings[$listing]->bed?></strong></p>
             <p><strong>Bathrooms: <?=$listings[$listing]->bath?></strong></p>
             <p><strong>Monthly Cost: $<?=$listings[$listing]->price?></strong></p>
-
             <!-- lstar rating display -->
-<p>Rating: <span class="star-rating">
+        <?php
+        if ($user->pfType == "travelnursesdb")
+        {
+        ?>
+        <form action="rate.php?Listing=<?=$listing?>" method="post" class="rating-form">Rating: <span class="star-rating">
 		<label for="rate-1" style="--i:1"><i class="fa-solid fa-star"></i></label>
 		<input type="radio" name="rating" id="rate-1" value="1">
 		<label for="rate-2" style="--i:2"><i class="fa-solid fa-star"></i></label>
@@ -103,7 +106,18 @@ $listing = $_GET['Listing'];
 		<input type="radio" name="rating" id="rate-4" value="4">
 		<label for="rate-5" style="--i:5"><i class="fa-solid fa-star"></i></label>
 		<input type="radio" name="rating" id="rate-5" value="5">
-	</span></p>
+            </span>
+        <button name="rate-Btn" type= "submit" class="submit-btn">rate</button>
+        </form>
+        <?php
+        }
+        else
+        {
+            echo "<p>Rating: ";
+            displayStar($listings[$listing]->rating);
+            echo "</p>";
+        }
+        ?>
             </div>
             <?php
             // if the reserve button is pressed
@@ -131,7 +145,7 @@ $listing = $_GET['Listing'];
             }
             ?>
             <form method="post">
-            <input type="submit" name="reserve" class="sign-in-btn" id = "reserve" value="<?=$buttonMessage?>">             
+            <input type="submit" name="reserve" class="reserve-btn" id = "reserve" value="<?=$buttonMessage?>">             
             </form>
            </div>
             </div>
