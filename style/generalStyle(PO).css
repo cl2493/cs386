@@ -525,3 +525,26 @@ nav{
 .newsletter{
   margin: 2%;
 }
+
+.reserve-btn {
+  font-size: 18px;
+  border: 2px solid white;
+  cursor: pointer;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  width: auto;
+  margin: 1% auto;
+  background-color: #eb3d60;
+}
+
+.reserve-btn:hover {
+  background-color: #fff;
+  color: #eb3d60;
+  font-weight: bold;
+}
+
+
