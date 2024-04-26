@@ -166,9 +166,8 @@ function newMessageIcon($newMessageFlag)
         echo '<style>
         </style>';
 
-        echo '<div class = "container">
-                  <i id = "bell" class="fa-solid fa-bell fa-shake fa-2xl" style="color: #ffffff;"></i>
-             </div>';
+        echo '<i id = "bell" class="fa-solid fa-bell fa-shake fa-2xl" style="color: #ffffff;"></i>';
+
 
     }
     //otherwise, there is no new message

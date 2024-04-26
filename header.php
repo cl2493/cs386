@@ -1,3 +1,5 @@
+
+
 <div class = "header">           
             <nav id = "navBar">
                 <a href = "index.php"><img src="images/logo.png" class="logo"></a>
@@ -67,7 +69,8 @@
                 <a href="nurse-register.php" class="sign-in-btn" id = "nurse-register">Register</a>
             </div>
 <?php
-if ($user->messageFlag)
+$MessageFlag = true;
+if ($MessageFlag)
 {
     include("notificationMessage.php");
 }
