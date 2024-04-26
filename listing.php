@@ -92,7 +92,7 @@ function displayStar ($rating)
 <body>
 <!-- Body of the page -->
    <?php include('header.php');
-   if (true)
+   if ($user->messageFlag)
    {
     include("notificationMessage.php");
    }
