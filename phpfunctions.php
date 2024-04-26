@@ -193,18 +193,12 @@ function newMessageIcon($newMessageFlag)
     {
         //Let the user to access messages
         //if there is a new messgae then the bell will shake
-        echo '<style>';
-        echo '.container {';
-        echo 'display: flex;';
-        echo 'align-items: center;';
-        echo '}';
-        echo '</style>';
+        echo '<style>
+        </style>';
 
-        echo '<div class = "container">';
-        echo '<i class="fa-solid fa-bell fa-shake fa-2xl" style="color: #ffffff;"></i>';
-        include("notificationMessage.php");
-        echo '</div>';
-  
+        echo '<i id = "bell" class="fa-solid fa-bell fa-shake fa-2xl" style="color: #ffffff;"></i>';
+
+
     }
     //otherwise, there is no new message
     else

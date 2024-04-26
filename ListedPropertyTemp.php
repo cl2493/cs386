@@ -70,8 +70,6 @@ $listing = $_GET['Listing'];
                 </div>
                 <!-- Profile name -->
                 <?php
-                // Display the name of the user
-                echo "<h2 class='name-info'><strong>$user->first_name $user->last_name";
                 // Display the verified icon if the user is verified
                 if ($verifiedFlag) {
                 echo "<img src='images/icons/check-symbol.png' class='verified-icon'>";

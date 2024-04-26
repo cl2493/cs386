@@ -75,7 +75,8 @@ $listings = getListings($conn, $query, $data);
 </head>
 <body>
 <!-- Body of the page -->
-   <?php include('header.php');?>
+   <?php include('header.php')?>
+
    <div class = "listing-container">
     <div class = "listing-content">
         <?php include("directorySearch.php"); ?>
