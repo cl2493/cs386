@@ -91,12 +91,7 @@ function displayStar ($rating)
 </head>
 <body>
 <!-- Body of the page -->
-   <?php include('header.php');
-   if ($user->messageFlag)
-   {
-    include("notificationMessage.php");
-   }
-   ?>
+   <?php include('header.php')?>
 
    <div class = "listing-container">
     <div class = "listing-content">
