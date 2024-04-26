@@ -1,4 +1,6 @@
-
+<?php
+include("connection.php");
+?>
 <style>
 /* Style for the notification message container */
 .message-container {

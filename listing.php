@@ -72,6 +72,7 @@ $listings = getListings($conn, $query, $data);
     <!-- JavaScript links -->
     <!-- Font Awesome links for the Footer Icons -->
     <script src="https://kit.fontawesome.com/c011338aa2.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </head>
 <body>
 <!-- Body of the page -->
@@ -122,6 +123,5 @@ $listings = getListings($conn, $query, $data);
     </div>
     <link rel="stylesheet" type="text/css" href="style/footer/footer.css">
 <?php include("footer.php"); ?>
-<script src="script.js"></script>
 </body>
 </html>
