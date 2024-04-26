@@ -1,7 +1,7 @@
 
-<style href="style/message.css">
-    .message-content{
-border: black 3px solid;
+<style>
+    .message-contianer{
+    opacity: 1;
 }
 
 h2{
@@ -17,7 +17,7 @@ h2{
                 <div class = "title">
                     <h2>Notification Message</h2>
                 </div>
-                <div class = "message">
+                <div id = "pop-up" class = "message">
                     <?php
 
                         //if the user is a nurse

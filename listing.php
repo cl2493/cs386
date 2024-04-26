@@ -91,7 +91,13 @@ function displayStar ($rating)
 </head>
 <body>
 <!-- Body of the page -->
-   <?php include('header.php');?>
+   <?php include('header.php');
+   if (true)
+   {
+    include("notificationMessage.php");
+   }
+   ?>
+
    <div class = "listing-container">
     <div class = "listing-content">
         <?php include("directorySearch.php"); ?>
