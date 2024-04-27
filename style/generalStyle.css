@@ -112,7 +112,7 @@ nav{
 .profile-btn {
   font-size: 20px;
   border: 1px solid #fff;
-  background-color: #e7b93b;
+  background-color: hwb(0 91% 9% / 0.732);
   color: #fff;
   padding: 10px 20px;
   width: 150px;

@@ -107,6 +107,32 @@ class User {
     }
 }
 
+class TravelNurse extends User {
+    public $ratings = array();
+
+    // function to add/ change tn rating for listing
+    function rateListing($conn, $listing, $rating)
+    {
+        $query = "INSERT INTO ratings (address, user_id, rating) VALUES (:address, :user_id, :rating)";
+
+        $data = [
+            ':address' => $listing->address,
+            ':user_id' => $this->user_id,
+            ':rating' => $rating
+        ];
+
+        $query_run = $conn->prepare($query);
+        
+        $query_execute = $query_run->execute($data);
+        
+        if ($query_execute) 
+        {
+            return true;
+        }
+        return false;
+    }
+}
+
 class PropertyOwner extends User {
     public $pfListings = array();
 
@@ -133,9 +159,10 @@ class Listing {
     public $bed;
     public $bath;
     public $availability;
+    public $rating;
     public $images = array();
 
-    function __construct($user_id, $address, $zip, $city, $price, $bed, $bath, $availability)
+    function __construct($user_id, $address, $zip, $city, $price, $bed, $bath, $availability, $rating)
     {
         $this->user_id = $user_id;
         $this->address = $address;
@@ -145,6 +172,7 @@ class Listing {
         $this->bed = $bed;
         $this->bath = $bath;
         $this->availability = $availability;
+        $this->rating = $rating;
     }
 
     function addImage($newImage) {

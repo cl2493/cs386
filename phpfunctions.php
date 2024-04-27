@@ -18,7 +18,7 @@ function checkLogin($conn, $pfType)
 
         if ($pfType == "travelnursesdb")
         {
-            $user = new User($user_data[1],$user_data[2],$user_data[3],$user_data[4],$pfType,$user_data[5],$user_data[7],$user_data[8]);
+            $user = new TravelNurse($user_data[1],$user_data[2],$user_data[3],$user_data[4],$pfType,$user_data[5],$user_data[7],$user_data[8]);
         }
         else
         {
@@ -78,14 +78,23 @@ function getListings($conn, $query, $data)
     $stmt->execute();
     $listingsStmt = $stmt->fetchAll(PDO::FETCH_NUM);
 
+    // get listings images
     $images = getImagesForListings($conn);
+
+    // get listings ratings
+    $stmt = $conn->prepare('SELECT * FROM ratings');
+    $stmt->execute();
+    $ratings = $stmt->fetchAll(PDO::FETCH_NUM);
 
     $listings = array();
 
     for ($listing = 0; $listing < count($listingsStmt); $listing++)
     {
+        // calculate ratings
+        $rating = calculateRatings($ratings, $listingsStmt[$listing][2]);
+
         // create listing object
-        $newListing = new Listing($listingsStmt[$listing][1],$listingsStmt[$listing][2],$listingsStmt[$listing][3],$listingsStmt[$listing][4],$listingsStmt[$listing][5],$listingsStmt[$listing][6],$listingsStmt[$listing][7], $listingsStmt[$listing][8]);
+        $newListing = new Listing($listingsStmt[$listing][1],$listingsStmt[$listing][2],$listingsStmt[$listing][3],$listingsStmt[$listing][4],$listingsStmt[$listing][5],$listingsStmt[$listing][6],$listingsStmt[$listing][7], $listingsStmt[$listing][8], $rating);
 
         for ($image = 0; $image < count($images); $image++)
         {
@@ -101,7 +110,28 @@ function getListings($conn, $query, $data)
 
     return $listings;
 }
+function calculateRatings($ratings, $listingAddress)
+{
+    $listingRating = 0;
+    $count = 0;
 
+    for ($rating = 0; $rating < count($ratings); $rating++)
+    {
+        // get rating for listing
+        if ($ratings[$rating][1] == $listingAddress)
+        {
+            $listingRating = $listingRating + $ratings[$rating][3];
+            $count = $count + 1;
+        }
+    }
+
+    if ($count == 0)
+    {
+        return 0;
+    }
+
+    return round($listingRating / $count,0);
+}
 function getImagesForListings($conn)
 {
     require('vendor/autoload.php');
@@ -163,18 +193,12 @@ function newMessageIcon($newMessageFlag)
     {
         //Let the user to access messages
         //if there is a new messgae then the bell will shake
-        echo '<style>';
-        echo '.container {';
-        echo 'display: flex;';
-        echo 'align-items: center;';
-        echo '}';
-        echo '</style>';
+        echo '<style>
+        </style>';
 
-        echo '<div class = "container">';
-        echo '<i class="fa-solid fa-bell fa-shake fa-2xl" style="color: #ffffff;"></i>';
-        include("notificationMessage.php");
-        echo '</div>';
-  
+        echo '<i id = "bell" class="fa-solid fa-bell fa-shake fa-2xl" style="color: #ffffff;"></i>';
+
+
     }
     //otherwise, there is no new message
     else
@@ -185,6 +209,20 @@ function newMessageIcon($newMessageFlag)
         echo '<i class="fa-regular fa-bell fa-2xl" style="color: #ffffff;"></i>';
         echo '</a>';
     }
+}
+
+function displayStar ($rating)
+{
+    $rating = round($rating);
+    for ($index = 0; $index < $rating; $index++)
+    {
+        echo '<i class="fa-solid fa-star fa-lg" style="color: #FFD43B;"></i>';
+    }
+    for ($index = 0; $index < 5 - $rating; $index++)
+    {
+        echo '<i class="fa-regular fa-star fa-lg" style="color: #FFD43B;"></i>';
+    }
+
 }
 
 

@@ -24,7 +24,7 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
 ?>
 
 <!----- HOMEPAGE  ----->
-<! DOCTYPE html>
+<!DOCTYPE html>
 <!----- Basic Starting Set Up ----->
 <html lang="en">
   <head>
@@ -74,18 +74,6 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
                                     <option value="4">4</option>
                                     <option value="5">5</option>
                                 </select>
-                                <!-- idk how to make look pretty so I leave this for reference
-                                <button class="drop" data-dropdown-button>Beds</button>
-                                <div class="dropdown-menu">
-                                    <div class= "dropdown-menu-selection">
-                                        <a href="#" class = "link">1</a>
-                                        <a href="#" class = "link">2</a>
-                                        <a href="#" class = "link">3</a>
-                                        <a href="#" class = "link">4</a>
-                                        <a href="#" class = "link">5</a>
-                                    </div>
-                                </div>
-                                -->
                             </div>
                             <div class="content-dropdown" data-dropdown>
                                 <label>Lease Length</label>

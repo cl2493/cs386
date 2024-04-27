@@ -57,23 +57,7 @@ else
 }
 
 // $listings is an array of Listing objects (look at Listing class to see more)
-//$listings = getListings($conn, $query, $data);
-
-$rating = 3;
-$index;
-function displayStar ($rating)
-{
-    $rating = round($rating);
-    for ($index = 0; $index < $rating; $index++)
-    {
-        echo '<i class="fa-solid fa-star fa-lg" style="color: #FFD43B;"></i>';
-    }
-    for ($index = 0; $index < 5 - $rating; $index++)
-    {
-        echo '<i class="fa-regular fa-star fa-lg" style="color: #FFD43B;"></i>';
-    }
-
-}
+$listings = getListings($conn, $query, $data);
 ?>
 
 <!DOCTYPE html>
@@ -91,7 +75,8 @@ function displayStar ($rating)
 </head>
 <body>
 <!-- Body of the page -->
-   <?php include('header.php');?>
+   <?php include('header.php')?>
+
    <div class = "listing-container">
     <div class = "listing-content">
         <?php include("directorySearch.php"); ?>
@@ -105,7 +90,7 @@ function displayStar ($rating)
                      <img src="<?=$listings[$listing]->images[0]->image?>" class="property-image">
                      <!--- Displays the star ratings (please round up if it's a fraction)---->
                      <?php
-                          displayStar ($rating)
+                          displayStar($listings[$listing]->rating);
                      ?>
                      <div class="property-info">
                           <h3 class='property-location'>Location: <?=$listings[$listing]->city?></h3>

@@ -1,23 +1,43 @@
 
-<style href="style/message.css">
-    .message-content{
-border: black 3px solid;
+<style>
+/* Style for the notification message container */
+.message-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    text-align: center; /* Center text horizontally */
+    background-color: rgba(233, 233, 233, 0.7);
+    width: 20%;
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    top: 12%; /* Adjust the position as needed */
+    right: 13%; /* Adjust the position as needed */
+    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.3);
 }
 
-h2{
-    color: red;
+/* Style for the dropdown container */
+.dropdown-container {
+    background-color: red;
 }
+button {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
 
+}
 </style>
 
-<div class = "container">
     <div class = "dropdown-container">
-        <div class = "message-contianer">
+        <div class = "message-container">
             <div class = "message-content">
                 <div class = "title">
                     <h2>Notification Message</h2>
                 </div>
-                <div class = "message">
+                <div id = "pop-up" class = "message">
                     <?php
 
                         //if the user is a nurse
@@ -87,4 +107,3 @@ h2{
             </div>
         </div>
     </div>
-</div>

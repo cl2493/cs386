@@ -433,6 +433,30 @@ nav{
     font-weight: bold;
 }
 
+.reserve-btn {
+  font-size: 18px;
+  border: 2px solid white;
+  cursor: pointer;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  margin: 1% auto;
+  background-color: #eb3d60;
+}
+
+.reserve-btn:hover {
+  background-color: #fff;
+  color: #eb3d60;
+  font-weight: bold;
+}
+
+.rating-form {
+  font-size: 17px;
+}
+
 .star-rating {
 	white-space: nowrap;
 }
@@ -446,12 +470,12 @@ nav{
 
 .star-rating label:is(:hover, :has(~ :hover)) i {
 	transform: scale(1.35);
-	color: #fffdba;
+	color: #eb3d60;
 	animation: jump 0.5s calc(0.3s + (var(--i) - 1) * 0.15s) alternate infinite;
 }
 .star-rating label:has(~ :checked) i {
 	color: #eb3d60;
-	text-shadow: 0 0 2px #ffffff, 0 0 10px #ffee58;
+	text-shadow: 0 0 2px #ffffff, 0 0 10px #eb3d60;
 }
 
 @keyframes jump {
@@ -525,3 +549,26 @@ nav{
 .newsletter{
   margin: 2%;
 }
+
+.reserve-btn {
+  font-size: 18px;
+  border: 2px solid white;
+  cursor: pointer;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  width: auto;
+  margin: 1% auto;
+  background-color: #eb3d60;
+}
+
+.reserve-btn:hover {
+  background-color: #fff;
+  color: #eb3d60;
+  font-weight: bold;
+}
+
+
