@@ -42,19 +42,6 @@
     pointer-events: auto; /* Enable pointer events when visible */
 }
 
-.butt {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    right: 22%;
-    top: 6%;
-    height: 4%;
-    width: 3%;
-    z-index: 1;
-    opacity: 1;
-    border: green 1px solid
-}
 
 .dropdown-btn {   
     display: flex;

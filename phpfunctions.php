@@ -199,11 +199,9 @@ function newMessageIcon($newMessageFlag)
     //otherwise, there is no new message
     else
     {
-        //let the user to access messages
-        echo '<a href = "messages.php">';
+
         //no new messages -> no shake
         echo '<i class="fa-regular fa-bell fa-2xl" style="color: #ffffff;"></i>';
-        echo '</a>';
         return false;
     }
 }
