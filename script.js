@@ -97,11 +97,11 @@ function showMessageFunction() {
                 {
                     // Set the value of the range input
                     rangeInput[0].value = minVal;
-                    progress.style.left = (minVal / rangeInput[0].max) * 90 + "%";
+                    progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
                 }
                 else{
                     rangeInput[1].value = maxVal;
-                    progress.style.right = 100 - (maxVal / rangeInput[1].max) * 90 + "%";
+                    progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
                 }
             }
         })
