@@ -71,9 +71,3 @@
                 </form>
                 <a href="nurse-register.php" class="sign-in-btn" id = "nurse-register">Register</a>
             </div>
-<?php
-if ($MessageFlag)
-{
-    include("notificationMessage.php");
-}
-?>
