@@ -119,7 +119,7 @@ nav{
 
 /* sign in popup */
 .login-btn{
-	cursor: pointer;
+    cursor: pointer;
     background: #e7b93b;
     color: #fff;
     padding: 10px 20px;
@@ -132,98 +132,105 @@ nav{
 }
 
 .loginName{
-    font-size:0.9em;
+  font-size:0.9em;
 }
 
 .left{
-	flex:1;
-	display:flex;
-	flex-direction:column;
-	order:1;
+flex:1;
+display:flex;
+flex-direction:column;
+order:1;
 }
 
 .container{
-    padding: 0 7%;
+  padding: 0 7%;
 }
 
 .exit-btn {
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 30px;
-    cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
 }
 
 .myPopup{ 
-    position: absolute;
-    transform: translate(55%, 20%);
-    z-index: 9999;
-    background: #e7b93b;
-    color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    display: none;
-    width:50%;
-    height:50%;
-    text-align: center;
+  position: absolute;
+  transform: translate(55%, 20%);
+  z-index: 9999;
+  background: #e7b93b;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: none;
+  width:50%;
+  height:50%;
+  text-align: center;
 }
 
 .myPopup.exit {
-    animation: fadeOut 1s;
+  animation: fadeOut 1s;
 }
 
 .myPopup.show{
-    display: block;
-	animation: fadeIn 1s;
+  display: block;
+  animation: fadeIn 1s;
 }
 
 .myPopup h2{
-    font-size: 30px;
-    margin-bottom: 20px;
+  font-size: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .myPopup-Form{
-    margin-bottom: 1%;
+  margin-bottom: 1%;
+  
 }
 
 .myPopup-Form label {
-    margin-bottom: 5px;
-    font-size: 25px;
+  font-size: 25px;
 }
 
 .myPopup-Form input {
-    margin-bottom: 1%;
-    width: 50%;
-    height: 10%;
-    font-size: 18px;
-    border: none;
-    border-radius: 10px;
+  margin-bottom: 1%;
+  width: 50%;
+  height: 5%;
+  height: 10%;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
 }
 
 .sign-in-btn {
-    font-size: 18px;
-    border: 2px solid white;
-    cursor: pointer;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 20px;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s ease;
-    width: 50%;
-    margin: 1% auto;
-    background-color: #e7b93b;
+  font-size: 18px;
+  border: 2px solid white;
+  cursor: pointer;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  width: 50%;
+  margin: 1% auto;
+  background-color: #e7b93b;
+  text-align: center;
 }
 
 .sign-in-btn:hover {
-    background-color: #fff;
-    color: #e7b93b;
-    font-weight: bold;
+  background-color: #fff;
+  color: #e7b93b;
+  font-weight: bold;
 }
+
+
   /*-----------LISTING DISPLAYS ---------------*/
 
 .property-display
