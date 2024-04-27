@@ -1,5 +1,8 @@
 <style>
-
+.login-btn:hover{
+    background-color: #fff;
+    color: #e7b93b;
+}
 </style>
 <div class = "header">           
             <nav id = "navBar">
