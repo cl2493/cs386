@@ -12,8 +12,8 @@ if (isset($_SESSION['pfType']))
 $location ='';
 $bed = "Beds";
 $baths = "Baths";
-$minPrice = 1200;
-$maxPrice = 3800;
+$minPrice = 0;
+$maxPrice = 5000;
 
 if (!isset($_SESSION['query']))
 {
@@ -23,7 +23,7 @@ if (!isset($_SESSION['query']))
     // default price range is all prices
     $data = [
         ":minPrice" => 0,
-        ":maxPrice" => 10000,
+        ":maxPrice" => 5000,
     ];
 }
 else
@@ -32,6 +32,8 @@ else
     $query = $_SESSION['query'];
     $data = $_SESSION['data'];
 
+    unset($_SESSION['query']);
+    unset($_SESSION['data']);
     // show current filterng options
     if (isset($data[':location']))
     {
@@ -76,7 +78,7 @@ $listings = getListings($conn, $query, $data);
 </head>
 <body>
 <!-- Body of the page -->
-   <?php include('header.php')?>
+   <?php include('header.php'); ?>
 
    <div class = "listing-container">
     <div class = "listing-content">
