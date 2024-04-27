@@ -28,7 +28,6 @@
     cursor: pointer;
     width: 20px;
     height: 20px;
-    background-color: #e7b93b;
     position: absolute;
     right: 23%;
     top: 8%;
