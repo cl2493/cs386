@@ -77,12 +77,12 @@ function showMessageFunction() {
 
     // JavaScript for the price range slider
     // Get the range input and price input
-    const rangeInput = document.querySelectorAll('.range-input input');
-    priceInput = document.querySelectorAll('.price-input-container input');
-    // Get the progress bar
-    progress = document.querySelector(".slider .price");
-    // Set the price gap
-    let priceGap = 1000;
+const rangeInput = document.querySelectorAll('.range-input input');
+priceInput = document.querySelectorAll('.price-input-container input');
+// Get the progress bar
+progress = document.querySelector(".slider .price");
+// Set the price gap
+let priceGap = 1000;
 
     priceInput.forEach(input =>{
         // Add event listener to the input
@@ -97,11 +97,11 @@ function showMessageFunction() {
                 {
                     // Set the value of the range input
                     rangeInput[0].value = minVal;
-                    progress.style.left = (minVal / rangeInput[0].max) * 90 + "%";
+                    progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
                 }
                 else{
                     rangeInput[1].value = maxVal;
-                    progress.style.right = 100 - (maxVal / rangeInput[1].max) * 90 + "%";
+                    progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
                 }
             }
         })
