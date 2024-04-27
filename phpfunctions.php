@@ -193,7 +193,7 @@ function newMessageIcon($newMessageFlag)
     {
         //Let the user to access messages
         //if there is a new messgae then the bell will shake
-        echo '<i id = "bell" class="fa-solid fa-bell fa-shake fa-2xl" style="color: #ffffff;"></i>';
+        echo '<i id = "bell" class="fa-solid fa-bell fa-shake fa-2xl"></i>';
         return true;
     }
     //otherwise, there is no new message
@@ -201,7 +201,7 @@ function newMessageIcon($newMessageFlag)
     {
 
         //no new messages -> no shake
-        echo '<i class="fa-regular fa-bell fa-2xl" style="color: #ffffff;"></i>';
+        echo '<i class="fa-regular fa-bell fa-2xl"></i>';
         return false;
     }
 }
