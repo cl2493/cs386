@@ -105,7 +105,7 @@ $listings = getListings($conn, $query, $data);
                           if (isset($user))
                           {
                             ?>
-                            <a class="property-btn" href = "ListedPropertyTemp.php?Listing=<?=$listing?>">View Property</a>
+                            <a class="property-btn" href = "ListedPropertyTemp.php?Listing=<?=$listings[$listing]->address?>">View Property</a>
                             <?php
                           }
                           else

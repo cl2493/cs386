@@ -14,18 +14,6 @@ else
     header("Location: index.php");
     exit();
 }
-if (!isset($_SESSION['query']))
-{
-    // default query
-    $query = "SELECT * FROM listingsdb WHERE availability = 'available'";
-    $data = [];
-}
-else
-{
-    // filtered query
-    $query = $_SESSION['query'];
-    $data = $_SESSION['data'];
-}
 
 // set the button message to reserve if it is not set
 if (!isset($buttonMessage))
@@ -33,9 +21,11 @@ if (!isset($buttonMessage))
     $buttonMessage = 'Reserve';
 }
 
-// $listings is an array of Listing objects (look at Listing class to see more)
+// get listing that user clicked on
+$query = "SELECT * FROM listingsdb WHERE address = :address";
+$data[':address'] = $_GET['Listing'];
 $listings = getListings($conn, $query, $data);
-$listing = $_GET['Listing'];
+$selectedListing = $listings[0];
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +56,7 @@ $listing = $_GET['Listing'];
 
                 <!-- Profile name -->
                 <div id="listing-picture">
-                    <img src="<?=$listings[$listing]->images[0]->image?>" class="property-image">
+                    <img src="<?=$selectedListing->images[0]->image?>" class="property-image">
                 </div>
                 <!-- Profile name -->
                 <?php
@@ -82,18 +72,18 @@ $listing = $_GET['Listing'];
             <!-- listing information -->
             <div class="listing-info">
                 <!-- listing image source & address -->
-                <h6 id=""><?=$listings[$listing]->address?></h6>
+                <h6 id=""><?=$selectedListing->address?></h6>
             
             <!-- Amenities information -->
-            <p><strong>Bedrooms: <?=$listings[$listing]->bed?></strong></p>
-            <p><strong>Bathrooms: <?=$listings[$listing]->bath?></strong></p>
-            <p><strong>Monthly Cost: $<?=$listings[$listing]->price?></strong></p>
+            <p><strong>Bedrooms: <?=$selectedListing->bed?></strong></p>
+            <p><strong>Bathrooms: <?=$selectedListing->bath?></strong></p>
+            <p><strong>Monthly Cost: $<?=$selectedListing->price?></strong></p>
             <!-- lstar rating display -->
         <?php
         if ($user->pfType == "travelnursesdb")
         {
         ?>
-        <form action="rate.php?Listing=<?=$listing?>" method="post" class="rating-form">Rating: <span class="star-rating">
+        <form action="rate.php?Listing=<?=$selectedListing?>" method="post" class="rating-form">Rating: <span class="star-rating">
 		<label for="rate-1" style="--i:1"><i class="fa-solid fa-star"></i></label>
 		<input type="radio" name="rating" id="rate-1" value="1">
 		<label for="rate-2" style="--i:2"><i class="fa-solid fa-star"></i></label>
@@ -112,7 +102,7 @@ $listing = $_GET['Listing'];
         else
         {
             echo "<p>Rating: ";
-            displayStar($listings[$listing]->rating);
+            displayStar($selectedListing->rating);
             echo "</p>";
         }
         ?>
@@ -125,7 +115,7 @@ $listing = $_GET['Listing'];
                 if ($user->pfType == 'travelnursesdb')
                 {
                     // reserve property for current user
-                    $listings[$listing]->changeAvailability($conn, $user->user_id);
+                    $selectedListing->changeAvailability($conn, $user->user_id);
                     // change button to say property reserved
                     $buttonMessage = 'Property Reserved!';
                 }
