@@ -1,3 +1,9 @@
+<style>
+.login-btn:hover{
+    background-color: #fff;
+    color: #e7b93b;
+}
+</style>
 <div class = "header">           
             <nav id = "navBar">
                 <a href = "index.php"><img src="images/logo.png" class="logo"></a>
@@ -12,6 +18,7 @@
                         if ($_SESSION['pfType'] == 'travelnursesdb')
                         {
                             //calls newMessageIcon function to display the bell icon
+
                             newMessageIcon($user->messageFlag);
                             echo '<div class="profile-dropdown">';
                             echo '<button class="profile-btn" data-dropdown-button>';
@@ -30,8 +37,9 @@
                         } 
                         else
                         {
+                            include("notificationMessage.php");
                             //calls newMessageIcon function to display the bell icon
-                            newMessageIcon($user->messageFlag);
+
                             echo '<div class="profile-dropdown">';
                             echo '<button class="profile-btn" data-dropdown-button>';
                             echo $user->first_name;
@@ -67,8 +75,3 @@
                 <a href="nurse-register.php" class="sign-in-btn" id = "nurse-register">Register</a>
             </div>
 <?php
-if (isset($_SESSION['user_id']) && $user->messageFlag)
-{
-    include("notificationMessage.php");
-}
-?>

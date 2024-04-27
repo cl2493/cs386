@@ -30,7 +30,7 @@ button{
   justify-content: space-between;
   align-items: center;
   margin: 10px;
-  width: 80%;
+  width: 70%;
   height: 250px;
   border-radius: 10px;
   background-color: #e7b93ba0;
@@ -139,12 +139,18 @@ input[type = range]::-moz-range-thumb{
 }
 
 
-.sub-btn{
+.filterBtn{
+  position: absolute;
   border: white 1px solid;
   background-color: transparent;
   border-radius: 10px;
-  padding: 5px;
-  margin-left: 48%;
-  margin-bottom: 10px;
+  align-items: center;
+  top: 42.5%;
+  width: 6%;
+  height: 5%;
   cursor: pointer;
+}
+
+.filterBtn:hover{
+  background-color: #eb3d60ba;
 }

@@ -128,6 +128,7 @@ nav{
     width: 10%;
     font-size: 20px;
     text-align: center;
+    border: #fff 2px solid;
 }
 
 .loginName{
