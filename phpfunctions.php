@@ -23,6 +23,7 @@ function checkLogin($conn, $pfType)
         else
         {
             $user = new PropertyOwner($user_data[1],$user_data[2],$user_data[3],$user_data[4],$pfType,$user_data[5], $user_data[7], $user_data[8]);
+            $user->getPOListings($conn);
         }
         return $user;
     }
@@ -68,7 +69,6 @@ function getListings($conn, $query, $data)
 {
     // prepare statement
     $stmt = $conn->prepare($query);
-
     foreach ($data as $key => $value)
 {
         $stmt->bindParam($key, $data[$key], PDO::PARAM_STR);
@@ -107,9 +107,9 @@ function getListings($conn, $query, $data)
         // push new listing object to listings array
         array_push($listings, $newListing);
     }
-
     return $listings;
 }
+
 function calculateRatings($ratings, $listingAddress)
 {
     $listingRating = 0;

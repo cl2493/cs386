@@ -1,5 +1,4 @@
 <?php
-
 interface DatabaseConnection {
     public function prepare($query);
     public function execute($data);
@@ -136,17 +135,12 @@ class TravelNurse extends User {
 class PropertyOwner extends User {
     public $pfListings = array();
 
-    function addListing($listing) {
-        array_push($this->pfListings, $listing);
-    }
-
-    function removeListing($listing) {
-        $index = array_search($listing, $this->pfListings);
-        if ($index !== false) {
-            array_splice($this->pfListings, $index, 1);
-            return true;
-        }
-        return false;
+    // function that get's a PO's listings
+    function getPOListings($conn)
+    {
+        $query = "SELECT * FROM listingsdb WHERE user_id = :user_id";
+        $data[':user_id'] = $_SESSION['user_id'];
+        $this->pfListings = getListings($conn, $query, $data);
     }
 }
 
