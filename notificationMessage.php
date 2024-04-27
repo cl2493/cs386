@@ -10,7 +10,6 @@
     border-radius: 10px;
     padding: 10px;
     position: absolute;
-    margin-top: 2%;
     box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.3);
     transform: translateY(-20%);
     transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
@@ -64,11 +63,10 @@
     position: absolute;
     right: 22%;
     top: 6%;
-    height: 4%;
+    height: 6%;
     width: 3%;
     z-index: 1;
-    opacity: 1;
-    border: green 1px solid;
+    opacity: 0;
     background-color: transparent;
     cursor: pointer;
 }
@@ -77,9 +75,9 @@
     display: flex;
     position: absolute;
     width: 19%;
-    height: 50%;
+    height: 55%;
     z-index: 1;
-    top: 10%; /* Adjust the position as needed */
+    top: 11%; /* Adjust the position as needed */
     right: 13.5%; 
     pointer-events: none;
 }
