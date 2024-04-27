@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="style/listing-filter.css">
 
-<script src="script.js"></script>
+<link href = "script.js">
 
 
 <!--- Listing Search Filter --->
