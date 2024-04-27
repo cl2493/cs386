@@ -70,6 +70,7 @@ $listings = getListings($conn, $query, $data);
     <!-- CSS links -->
     <link rel="stylesheet" href="style/listingStyle.css">
     <!-- JavaScript links -->
+    <script src="script.js" defer></script>
     <!-- Font Awesome links for the Footer Icons -->
     <script src="https://kit.fontawesome.com/c011338aa2.js" crossorigin="anonymous"></script>
 </head>

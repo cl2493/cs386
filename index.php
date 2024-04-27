@@ -67,7 +67,8 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
                             <div class="content-dropdown" data-dropdown>
                                 <label># of Beds</label>
                                 <select name="bed" id="" class="drop">
-                                    <option value="">Beds</option>
+                                    <option value=""><?=$baths?></option>
+                                    <option value="">0</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -76,17 +77,16 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
                                 </select>
                             </div>
                             <div class="content-dropdown" data-dropdown>
-                                <label>Lease Length</label>
-                                <button class="drop" data-dropdown-button># of Weeks</button>
-                                <div class="dropdown-menu">
-                                    <div class= "dropdown-menu-selection">
-                                        <a href="#" class = "link">1-3</a>
-                                        <a href="#" class = "link">4-6</a>
-                                        <a href="#" class = "link">7-9</a>
-                                        <a href="#" class = "link">10-15</a>
-                                        <a href="#" class = "link">15+</a>
-                                    </div>
-                                </div>                            
+                                <label># of Baths</label>
+                                <select name="bed" id="" class="drop">
+                                    <option value=""><?=$baths?></option>
+                                    <option value="">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
                             </div>
                             <button name="searchBtn" class="sub-btn" type="submit"><img src = "assets/search.png" alt="serach icon"></button>
                         </form>
