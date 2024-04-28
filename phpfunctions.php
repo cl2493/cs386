@@ -70,7 +70,7 @@ function getListings($conn, $query, $data)
     // prepare statement
     $stmt = $conn->prepare($query);
     foreach ($data as $key => $value)
-{
+    {
         $stmt->bindParam($key, $data[$key], PDO::PARAM_STR);
     }
 
@@ -118,7 +118,7 @@ function calculateRatings($ratings, $listingAddress)
     for ($rating = 0; $rating < count($ratings); $rating++)
     {
         // get rating for listing
-        if ($ratings[$rating][1] == $listingAddress)
+        if ($ratings[$rating][1] == $listingAddress && $ratings[$rating][3] != NULL)
         {
             $listingRating = $listingRating + $ratings[$rating][3];
             $count = $count + 1;
@@ -194,15 +194,12 @@ function newMessageIcon($newMessageFlag)
         //Let the user to access messages
         //if there is a new messgae then the bell will shake
         echo '<i id = "bell" class="fa-solid fa-bell fa-shake fa-2xl" style="color: #ffffff;"></i>';
-        return true;
     }
     //otherwise, there is no new message
     else
     {
-
         //no new messages -> no shake
         echo '<i class="fa-regular fa-bell fa-2xl" style="color: #ffffff;"></i>';
-        return false;
     }
 }
 
@@ -220,4 +217,24 @@ function displayStar ($rating)
 
 }
 
+// function that notifies the owner of the listing
+function notifyUser($conn, $newMessageFlag, $user_id, $pfType)
+{
+    // change messageFlag to newMessageFlag
+    $query = "UPDATE $pfType SET messageFlag=:messageFlag WHERE user_id=:user_id";
+    $data = [
+        ':messageFlag' => $newMessageFlag,
+        ':user_id' => $user_id,
+    ];
+
+    $query_run = $conn->prepare($query);
+    $query_execute = $query_run->execute($data);
+
+    if ($query_execute)
+    {
+        return true;
+    }
+
+    return false;
+}
 

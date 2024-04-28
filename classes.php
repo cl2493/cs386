@@ -201,36 +201,15 @@ class Listing {
         $query_execute = $query_run->execute($data);
 
         // if listing has been reserved
-        if ($newAvailability != "available")
+        if ($newAvailability != "available" && $newAvailability != "reserved")
         {
             // notify the property owner
-            $this->notifyPropertyOwner($conn);
+            notifyUser($conn, 1, $this->user_id, 'propertyownersdb');
         }
 
         if ($query_execute) {
             return true;
         }
-        return false;
-    }
-    
-    // function that notifies the owner of the listing
-    private function notifyPropertyOwner($conn)
-    {
-        // change property owners messageFlag to true
-        $query = "UPDATE propertyownersdb SET messageFlag=:messageFlag WHERE user_id=:user_id";
-        $data = [
-            ':messageFlag' => 1,
-            ':user_id' => $this->user_id,
-        ];
-
-        $query_run = $conn->prepare($query);
-        $query_execute = $query_run->execute($data);
-
-        if ($query_execute)
-        {
-            return true;
-        }
-
         return false;
     }
 }
