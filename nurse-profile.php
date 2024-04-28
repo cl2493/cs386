@@ -92,7 +92,7 @@ else
                    <!-- These links will be updated to the correct pages -->
                    <li><a href="">Payment</a></li>
                    <li><a href = "" >History</a></li>
-                   <li><a href="">Settings</a></li>
+                   <li><a href="settings.php">Settings</a></li>
                </div>
             </div>
             <!-- Profile information -->
