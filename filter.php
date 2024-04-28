@@ -37,8 +37,8 @@ if (isset($_POST['searchBtn']) || isset( $_POST['filterBtn']))
     // set price range for listings
     // if not set, it'll do default range
     $query .= " AND price >= :minPrice AND price <= :maxPrice";
-    $data[":minPrice"] = 1200;
-    $data[":maxPrice"] = 3800;
+    $data[":minPrice"] = 0;
+    $data[":maxPrice"] = 5000;
 
     if (isset($_POST["minPrice"]))
     {

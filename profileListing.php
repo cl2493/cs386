@@ -16,10 +16,7 @@ else
 }
 
 // gets listings that current user owns
-$query = "SELECT * FROM listingsdb WHERE user_id = :user_id";
-$data[':user_id'] = $_SESSION['user_id'];
-
-$listings = getListings($conn, $query, $data);
+$listings = $user->pfListings;
 ?>
 
 <!DOCTYPE html>
@@ -149,7 +146,7 @@ $listings = getListings($conn, $query, $data);
                        <h3 class='property-bed'>Beds: <?=$listings[$listing]->bed?></h3>
                        <h3 class='property-bath'>Baths: <?=$listings[$listing]->bath?></h3>
                        <h3 class='property-rent'><?=$listings[$listing]->price?></h3>
-                    <a class="property-btn" href = "#">View Property</a>
+                       <a class="property-btn" href = "ListedPropertyTemp.php?Listing=<?=$listings[$listing]->address?>">View Property</a>
                 </div>
             </div>
                 <?php
