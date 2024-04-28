@@ -130,26 +130,25 @@ nav{
     border: 2px solid white;
     cursor: pointer;
     color: #fff;
-    padding: 15px 20px;
-    border-radius: 20px;
+    border-radius: 25px;
     text-decoration: none;
     display: inline-block;
     transition: all 0.3s ease;
     width: 50%;
     margin: 1% auto;
     background-color: #e7b93b;
+    text-align: center;
 }
 
 .sign-in-btn:hover {
     background-color: #fff;
     color: #e7b93b;
     font-weight: bold;
-    
 }
-
 #nurse-register{
   border: none;
   background-color: #eb3d60;
+  padding: 15px;
 }
 #nurse-register:hover {
   background-color: #fff;
