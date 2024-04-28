@@ -90,8 +90,11 @@ include("connection.php");
                         if ($user->pfType == "travelnursesdb")
                         {
                             // get the listing that the user is reserving
-                            $query = "SELECT * FROM listingsdb WHERE address = :address";
-                            $userListing = [':address' => $user->reservedProperty];
+                            $query = "SELECT * FROM listingsdb WHERE address = :address OR availability=:user_id";
+                            $userListing = [
+                                ':address' => $user->reservedProperty,
+                                ':user_id' => $user->user_id,
+                            ];
 
                             $userListings = getListings($conn, $query, $userListing);
 
