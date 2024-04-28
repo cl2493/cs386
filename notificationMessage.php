@@ -171,6 +171,10 @@ include("connection.php");
                                     echo "<p> You canceled a reservation at ".$user->pfListings[$listing]->city." for ".$user->pfListings[$listing]->bed." beds and ".$user->pfListings[$listing]->bath." baths. The price was ".$user->pfListings[$listing]->price.". </p>";
                                     echo "<p> Please try to make a reservation at another location. </p>";
                                 }
+                                else
+                                {
+                                    echo "<h3> No Notifications </h3>";
+                                }
                             }
                         }
                         ?>
