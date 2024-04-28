@@ -38,15 +38,17 @@
             </div>
             <button name="submitBtn" type="submit" class="submit-btn">Submit</button>
     </form>
-    <form id="certForm" action="upload_certification.php" method="post" enctype="multipart/form-data">
-        <div class="cert-upload">
-            <h2>Upload Certification</h2>
-        </div>
-        <label for="certFile" class="select-btn">Select PDF File</label>
-        <input type="file" id="certFile" name="certFile" accept=".pdf" class="file-input">
-        <button type="submit" class="upload-btn">Upload</button>
-        <span id='fileNameDisplay' class='file-name-display'></span>
-    </form>
+    <div id = "certification">
+        <form id="certForm" action="upload_certification.php" method="post" enctype="multipart/form-data">
+            <div class="cert-upload">
+                <h2>Upload Certification</h2>
+            </div>
+            <label for="certFile" class="select-btn">Select PDF File</label>
+            <input type="file" id="certFile" name="certFile" accept=".pdf" class="file-input">
+            <button type="submit" class="upload-btn">Upload</button>
+            <span id='fileNameDisplay' class='file-name-display'></span>
+        </form>
+    </div>
 </body>
 </html>
 
