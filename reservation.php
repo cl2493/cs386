@@ -21,6 +21,9 @@ if (isset($_POST['accept']))
     $query_run = $conn->prepare($query);
     $query_execute = $query_run->execute($data);
 
+    // add a empty rating to listing for travel nurse
+    $currentListing->addRating($conn);
+
     // change listings availability to reserved
     $currentListing->changeAvailability($conn, "reserved");
 }

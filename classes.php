@@ -212,6 +212,27 @@ class Listing {
         }
         return false;
     }
+
+    function addRating($conn)
+    {
+        $query = "INSERT INTO ratings (address, user_id, rating) VALUES (:address, :user_id, :rating)";
+
+        $data = [
+            ':address' => $this->address,
+            ':user_id' => $this->availability,
+            ':rating' => NULL,
+        ];
+
+        $query_run = $conn->prepare($query);
+        
+        $query_execute = $query_run->execute($data);
+        
+        if ($query_execute) 
+        {
+            return true;
+        }
+        return false;
+    }
 }
 
 class Image {
