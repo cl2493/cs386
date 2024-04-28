@@ -115,10 +115,11 @@ class TravelNurse extends User {
         $this->reservedProperty = $property;
         parent::__construct($user_id,$first_name, $last_name, $birthday, $pfType, $email,$stage,$messageFlag);
     }
-    // function to add/ change tn rating for listing
+
+    // function to change tn rating for listing
     function rateListing($conn, $listing, $rating)
     {
-        $query = "INSERT INTO ratings (address, user_id, rating) VALUES (:address, :user_id, :rating)";
+        $query = "UPDATE ratings SET rating=:rating WHERE address=:address AND user_id=:user_id";
 
         $data = [
             ':address' => $listing->address,

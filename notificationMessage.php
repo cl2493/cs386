@@ -117,6 +117,7 @@ include("connection.php");
                                 echo "<h3> Reservation Accepted </h3>";
                                 echo "<p> Your reservation request at ".$reservedListing->city." for ".$reservedListing->bed." beds and ".$reservedListing->bath." baths was accepted. The price was ".$reservedListing->price.". </p>";
                                 echo "<p> Please wait for the owner to contact you. </p>";
+                                echo '<a href = "ListedPropertyTemp.php?Listing='.$reservedListing->address.'">View Property</a>';
                             }
                             // if tn's request has been declined
                             else if ($user->messageFlag == 3)
