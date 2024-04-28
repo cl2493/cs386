@@ -1,7 +1,11 @@
+
 <?php
+
 include("connection.php");
+
 ?>
 <style>
+
 /* Style for the notification message container */
 .message-content{
     align-items: center;
@@ -39,7 +43,7 @@ include("connection.php");
 .dropdown-btn:hover + .message-container .message-content,
 .message-content:hover {
     opacity: 1;
-    transform: translateX(0%);
+    transform: translateY(-8%) translateX(-15%);
     pointer-events: auto; /* Enable pointer events when visible */
 }
 
@@ -49,7 +53,7 @@ include("connection.php");
     justify-content: center;
     align-items: center;
     position: absolute;
-    right: 22%;
+    right: 25%;
     top: 6%;
     height: 6%;
     width: 3%;
@@ -70,12 +74,9 @@ include("connection.php");
     pointer-events: none;
 }
 </style>
-
-
-<?php newMessageIcon(true);?>
-
     <div class = "dropdown-container">
-            <button class="dropdown-btn">No</button>
+    <?php newMessageIcon($user->messageFlag);?>
+    <button class="dropdown-btn"></button>
         <div class = "message-container">
             <div class = "message-content">
                 <div class = "title">
