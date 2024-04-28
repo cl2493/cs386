@@ -213,7 +213,6 @@ nav{
     border: 2px solid white;
     cursor: pointer;
     color: #fff;
-    padding: 15px 20px;
     border-radius: 25px;
     text-decoration: none;
     display: inline-block;
@@ -221,8 +220,7 @@ nav{
     width: 50%;
     margin: 1% auto;
     background-color: #e7b93b;
-    text-align: center; /* Center horizontally */
-    line-height: 50px; 
+    text-align: center;
 }
 
 .sign-in-btn:hover {
@@ -238,6 +236,7 @@ nav{
   background-color: #fff;
   color: #eb3d60;
   font-weight: bold;
+  padding: 15px;
 }
   /*-----------LISTING DISPLAYS ---------------*/
 
