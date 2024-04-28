@@ -62,7 +62,15 @@ else
                 <!-- Profile picture -->
                 <h1 id="profile-Title">User Profile</h1>
                 <!-- Profile name -->
-                <div id="profile-picture"></div>
+                <div class="profile-picture">
+                    <?php
+                    $profile_picture_path = "get-pfp.php";
+                    echo "<img src='$profile_picture_path' alt='Profile Picture'>";
+                    ?>
+                </div>
+                <!-- Button for uploading profile picture -->
+                <!-- feel free to fix cathy -->
+                
                 <?php
                 echo "<h2 class='name-info'><strong>$user->first_name $user->last_name";
                 // Display the verified icon if the user is verified
@@ -128,6 +136,7 @@ else
                         echo '<div class="cert-upload">';
                         echo '<h2>Certification Approved</h2>';
                         echo '</div>';
+                        echo "<img src='images/icons/check-symbol.png' class='verified-icon'>";
                     }
                 }
                 ?>

@@ -59,7 +59,7 @@ else
 }
 
 // $listings is an array of Listing objects (look at Listing class to see more)
-//$listings = getListings($conn, $query, $data);
+$listings = getListings($conn, $query, $data);
 ?>
 
 <!DOCTYPE html>
@@ -72,6 +72,7 @@ else
     <!-- CSS links -->
     <link rel="stylesheet" href="style/listingStyle.css">
     <!-- JavaScript links -->
+    <script src="script.js" defer></script>
     <!-- Font Awesome links for the Footer Icons -->
     <script src="https://kit.fontawesome.com/c011338aa2.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>

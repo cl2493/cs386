@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="style/listing-filter.css">
 
-<script href = "script.js"></script>
+<link href = "script.js">
+
 
 <!--- Listing Search Filter --->
 <div class="container">
@@ -15,6 +16,7 @@
                         <label># of Beds</label>
                         <select name="bed" id="" class="drop">
                             <option value=""><?=$bed?></option>
+                            <option value="1">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -26,6 +28,7 @@
                         <label># of Baths</label>
                         <select name="bath" id="bath-input" class="drop">
                             <option value=""><?=$baths?></option>
+                            <option value="1">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
