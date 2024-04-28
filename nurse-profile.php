@@ -44,6 +44,12 @@ else
     <title>Nurse Profile</title>
     <!-- CSS links -->
     <link rel="stylesheet" href="style/generalStyle.css">
+    <style>
+        #profile-tab{
+            background-color: #e7b93b;
+            color: #fff;
+        }
+        </style>
     <!-- JavaScript links -->
     <!-- Font Awesome links for the Footer Icons -->
     <script src="https://kit.fontawesome.com/c011338aa2.js" crossorigin="anonymous"></script>
@@ -88,13 +94,14 @@ else
                <!--on the left will have tabs for payment to update the screen -->
                <div class = "profile-nav">
                <div class="profile-tabs">
-                   <li ><a href="nurse-profile.php" class="active">Profile</a></li>
+                   <li ><a id = "profile-tab" href="nurse-profile.php" class="active">Profile</a></li>
                    <!-- These links will be updated to the correct pages -->
-                   <li><a href="">Payment</a></li>
+                   <li><a  href="">Payment</a></li>
                    <li><a href = "" >History</a></li>
                    <li><a href="settings.php">Settings</a></li>
                </div>
             </div>
+
             <!-- Profile information -->
             <div class="profile-info">
             <?php

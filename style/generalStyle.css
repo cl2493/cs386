@@ -328,6 +328,7 @@ nav{
 .space-top {
   margin-top: 10px; /* Adjust margin-top as needed */
 }
+
 #certification {
   display: flex;
   flex-direction: column;
@@ -374,4 +375,40 @@ input[type="file"] {
 
 .upload-btn:hover {
   background-color: #a67406; /* Darker shade of yellow on hover */
+}
+
+/*-------------SETTINGS---------*/
+.form-group {
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.form-group label {
+  width: 30%;
+  font-size: 20px;
+}
+
+.form-group input {
+  width: 70%;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 1px solid #eb3d60;
+}
+
+.sub-btn{
+
+  font-size: 15px;
+  border: none;
+  background-color: #eb3d60;
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 2%;
+  transition: background-color 0.3s ease;
+}
+.sub-btn:hover{
+  background-color: #a67406;
+  color: #fff;
 }
