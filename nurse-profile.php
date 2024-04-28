@@ -70,8 +70,17 @@ else
                 <!-- Profile name -->
                 <div class="profile-picture">
                     <?php
+                    if (true)
+                    {
+                        echo '<label for="photo" class="select-btn">Select Photo</label>';
+                        echo '<input type="file" id="certFile" name="certFile" accept="image/*" class="file-input">';
+                        echo '<button type="submit" class="upload-btn">Upload</button>';
+                    }
+                    else
+                    {
                     $profile_picture_path = "get-pfp.php";
                     echo "<img src='$profile_picture_path' alt='Profile Picture'>";
+                    }
                     ?>
                 </div>
                 <!-- Button for uploading profile picture -->
