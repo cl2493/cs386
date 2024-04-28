@@ -148,7 +148,7 @@ if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']
             <div class="prop-owner-contact">
                 <h3>Want to support<br>our Travel Nurses?</h3>
                 <p>Look into how you can get your space posted on our website</p>
-                <a href ="settings.php" class="learn-btn">Learn More</a>
+                <a href ="" class="learn-btn">Learn More</a>
             </div>
 
         </div>
