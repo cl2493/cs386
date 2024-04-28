@@ -90,8 +90,11 @@ include("connection.php");
                         if ($user->pfType == "travelnursesdb")
                         {
                             // get the listing that the user is reserving
-                            $query = "SELECT * FROM listingsdb WHERE address = :address";
-                            $userListing = [':address' => $user->reservedProperty];
+                            $query = "SELECT * FROM listingsdb WHERE address = :address OR availability=:user_id";
+                            $userListing = [
+                                ':address' => $user->reservedProperty,
+                                ':user_id' => $user->user_id,
+                            ];
 
                             $userListings = getListings($conn, $query, $userListing);
 
@@ -167,6 +170,10 @@ include("connection.php");
                                     echo "<h3> Reservation Canceled </h3>";
                                     echo "<p> You canceled a reservation at ".$user->pfListings[$listing]->city." for ".$user->pfListings[$listing]->bed." beds and ".$user->pfListings[$listing]->bath." baths. The price was ".$user->pfListings[$listing]->price.". </p>";
                                     echo "<p> Please try to make a reservation at another location. </p>";
+                                }
+                                else
+                                {
+                                    echo "<h3> No Notifications </h3>";
                                 }
                             }
                         }
