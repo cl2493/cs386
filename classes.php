@@ -136,6 +136,26 @@ class TravelNurse extends User {
         }
         return false;
     }
+
+    // function to get all travel nurse's ratings
+    function getRatings($conn)
+    {
+        // query to get all ratings of user
+        $query = "SELECT address,rating FROM ratings WHERE user_id=:user_id";
+        $idArray = [
+            ':user_id' => $this->user_id,
+        ];
+
+        $query_run = $conn->prepare($query);
+        $query_run->execute($idArray);
+
+        $ratings = $query_run->fetchAll(PDO::FETCH_NUM);
+
+        for ($rating = 0; $rating < count($ratings); $rating++)
+        {
+            $this->ratings[$ratings[$rating][0]] = $ratings[$rating][1];
+        }
+    }
 }
 
 class PropertyOwner extends User {

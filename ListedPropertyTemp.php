@@ -88,7 +88,8 @@ if (array_key_exists('reserve',$_POST))
             <p><strong>Monthly Cost: $<?=$selectedListing->price?></strong></p>
             <!-- lstar rating display -->
             <?php
-            if ($user->pfType == "travelnursesdb")
+            // only show rate button if user is travelnurse and if they have reserved property
+            if ($user->pfType == "travelnursesdb" && array_key_exists($selectedListing->address, $user->ratings))
             {
                 echo '
                 <form action="rate.php?Listing=<?=$selectedListing?>" method="post" class="rating-form">Rating: 
