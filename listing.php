@@ -12,8 +12,8 @@ if (isset($_SESSION['pfType']))
 $location ='';
 $bed = "Beds";
 $baths = "Baths";
-$minPrice = 1200;
-$maxPrice = 3800;
+$minPrice = 0;
+$maxPrice = 5000;
 
 if (!isset($_SESSION['query']))
 {
@@ -23,7 +23,7 @@ if (!isset($_SESSION['query']))
     // default price range is all prices
     $data = [
         ":minPrice" => 0,
-        ":maxPrice" => 10000,
+        ":maxPrice" => 5000,
     ];
 }
 else
@@ -32,6 +32,8 @@ else
     $query = $_SESSION['query'];
     $data = $_SESSION['data'];
 
+    unset($_SESSION['query']);
+    unset($_SESSION['data']);
     // show current filterng options
     if (isset($data[':location']))
     {
@@ -73,10 +75,11 @@ $listings = getListings($conn, $query, $data);
     <script src="script.js" defer></script>
     <!-- Font Awesome links for the Footer Icons -->
     <script src="https://kit.fontawesome.com/c011338aa2.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </head>
 <body>
 <!-- Body of the page -->
-   <?php include('header.php')?>
+   <?php include('header.php'); ?>
 
    <div class = "listing-container">
     <div class = "listing-content">
@@ -103,7 +106,7 @@ $listings = getListings($conn, $query, $data);
                           if (isset($user))
                           {
                             ?>
-                            <a class="property-btn" href = "ListedPropertyTemp.php?Listing=<?=$listing?>">View Property</a>
+                            <a class="property-btn" href = "ListedPropertyTemp.php?Listing=<?=$listings[$listing]->address?>">View Property</a>
                             <?php
                           }
                           else
@@ -123,6 +126,5 @@ $listings = getListings($conn, $query, $data);
     </div>
     <link rel="stylesheet" type="text/css" href="style/footer/footer.css">
 <?php include("footer.php"); ?>
-<script src="script.js"></script>
 </body>
 </html>

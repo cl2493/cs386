@@ -253,14 +253,15 @@ nav{
     justify-content: center;
     margin: 2%;
     width: 20%;
-    height: 100%;
+    height: 500px;
     border: #e7b93b 1px dotted;
     border-radius: 10px;
 }
 .property-square img
 {
     width: 90%;
-    height: 100px;
+    height: 200px;
+    object-fit: cover;
     border-radius: 10px;
     margin: 5%;
     transition: transform 0.5s;

@@ -1,5 +1,4 @@
 <?php
-
 interface DatabaseConnection {
     public function prepare($query);
     public function execute($data);
@@ -109,7 +108,13 @@ class User {
 
 class TravelNurse extends User {
     public $ratings = array();
+    public $reservedProperty;
 
+    function __construct($user_id, $first_name, $last_name, $birthday, $pfType, $email, $stage, $messageFlag, $property)
+    {
+        $this->reservedProperty = $property;
+        parent::__construct($user_id,$first_name, $last_name, $birthday, $pfType, $email,$stage,$messageFlag);
+    }
     // function to add/ change tn rating for listing
     function rateListing($conn, $listing, $rating)
     {
@@ -136,17 +141,12 @@ class TravelNurse extends User {
 class PropertyOwner extends User {
     public $pfListings = array();
 
-    function addListing($listing) {
-        array_push($this->pfListings, $listing);
-    }
-
-    function removeListing($listing) {
-        $index = array_search($listing, $this->pfListings);
-        if ($index !== false) {
-            array_splice($this->pfListings, $index, 1);
-            return true;
-        }
-        return false;
+    // function that get's a PO's listings
+    function getPOListings($conn)
+    {
+        $query = "SELECT * FROM listingsdb WHERE user_id = :user_id";
+        $data[':user_id'] = $_SESSION['user_id'];
+        $this->pfListings = getListings($conn, $query, $data);
     }
 }
 
@@ -201,36 +201,15 @@ class Listing {
         $query_execute = $query_run->execute($data);
 
         // if listing has been reserved
-        if ($newAvailability != "available")
+        if ($newAvailability != "available" && $newAvailability != "reserved")
         {
             // notify the property owner
-            $this->notifyPropertyOwner($conn);
+            notifyUser($conn, 1, $this->user_id, 'propertyownersdb');
         }
 
         if ($query_execute) {
             return true;
         }
-        return false;
-    }
-    
-    // function that notifies the owner of the listing
-    private function notifyPropertyOwner($conn)
-    {
-        // change property owners messageFlag to true
-        $query = "UPDATE propertyownersdb SET messageFlag=:messageFlag WHERE user_id=:user_id";
-        $data = [
-            ':messageFlag' => 1,
-            ':user_id' => $this->user_id,
-        ];
-
-        $query_run = $conn->prepare($query);
-        $query_execute = $query_run->execute($data);
-
-        if ($query_execute)
-        {
-            return true;
-        }
-
         return false;
     }
 }

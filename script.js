@@ -46,7 +46,7 @@ document.addEventListener('click', e=>{
         currentDropdown.classList.toggle('active')
     }
 
-   //Loop through all the active/open dropdowns (closes all the other dropdowns)
+//Loop through all the active/open dropdowns (closes all the other dropdowns)
     document.querySelectorAll("[data-dropdown].active").forEach(dropdown => {
         //if the dropdown and the current are the same then do nothing
         if (dropdown === currentDropdown) return
@@ -57,8 +57,8 @@ document.addEventListener('click', e=>{
 
 // When the user clicks on div, open the popup
 function popupFunction() {
-	var popup = document.getElementById("myPopup");
-	popup.classList.toggle("show");
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
 }
 
 function closePopup() {
@@ -74,6 +74,8 @@ function closePopup() {
 function showMessageFunction() {
     alert("You need to be logged in to view a property.")
 }
+
+
 
     // JavaScript for the price range slider
     // Get the range input and price input

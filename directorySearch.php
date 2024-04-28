@@ -50,8 +50,8 @@
                         <div class="price"></div>
                     </div>
                     <div class = "range-input">
-                        <input type="range" class="range-min" min="0" max="5000" value="<?=$minPrice?>" id="myRange" step ="100">
-                        <input type="range" class="range-max" min="0" max="5000" value="<?=$maxPrice?>" id="myRange" step ="100">
+                        <input type="range" class="range-min" min="0" max="5000" value="<?=$minPrice?>" step ="100">
+                        <input type="range" class="range-max" min="0" max="5000" value="<?=$maxPrice?>" step ="100">
                     </div>
                 <button name="filterBtn" class="filterBtn" type="submit"><img src = "assets/search.png" alt="serach icon"></button>
             </form>
