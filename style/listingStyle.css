@@ -231,12 +231,13 @@ nav{
 #nurse-register{
   border: none;
   background-color: #eb3d60;
+  padding: 15px;
 }
 #nurse-register:hover {
   background-color: #fff;
   color: #eb3d60;
   font-weight: bold;
-  padding: 15px;
+
 }
   /*-----------LISTING DISPLAYS ---------------*/
 
