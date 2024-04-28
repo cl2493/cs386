@@ -70,7 +70,7 @@
                     <input name="signinemail" type="text"><br>
                     <label>Password</label><br>
                     <input name="signinpassword" type="password"><br>
+                    <button name="sign-in-btn" type= "submit" class="sign-in-btn">Login</button>
                 </form>
-                <button name="sign-in-btn" type= "submit" class="sign-in-btn">Login</button>
                 <a href="nurse-register.php" class="sign-in-btn" id = "nurse-register">Register</a>
             </div>
