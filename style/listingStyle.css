@@ -221,6 +221,8 @@ nav{
     width: 50%;
     margin: 1% auto;
     background-color: #e7b93b;
+    text-align: center; /* Center horizontally */
+    line-height: 50px; 
 }
 
 .sign-in-btn:hover {
