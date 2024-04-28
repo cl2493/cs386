@@ -48,7 +48,8 @@ nav{
 
 .profile-dropdown {
   position: relative;
-
+  background-color: #e7b93b;
+  color: #fff;
 }
 
 .menu-dropdown {
@@ -65,7 +66,7 @@ nav{
   top: 100%;
 }
 .profile-btn:hover {
-  background-color: #fff;
+  background-color: hsl(0, 0%, 100%);
   color: #e7b93b;
 }
 .profile-dropdown:hover .menu-dropdown {
@@ -112,7 +113,7 @@ nav{
 .profile-btn {
   font-size: 20px;
   border: 1px solid #fff;
-  background-color: hwb(0 91% 9% / 0.732);
+  background-color: #e7b93b;
   color: #fff;
   padding: 10px 20px;
   width: 150px;
