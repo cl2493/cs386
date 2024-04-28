@@ -108,7 +108,13 @@ class User {
 
 class TravelNurse extends User {
     public $ratings = array();
+    public $reservedProperty;
 
+    function __construct($user_id, $first_name, $last_name, $birthday, $pfType, $email, $stage, $messageFlag, $property)
+    {
+        $this->reservedProperty = $property;
+        parent::__construct($user_id,$first_name, $last_name, $birthday, $pfType, $email,$stage,$messageFlag);
+    }
     // function to add/ change tn rating for listing
     function rateListing($conn, $listing, $rating)
     {
