@@ -34,6 +34,13 @@ if (array_key_exists('reserve',$_POST))
         notifyUser($conn, 1, $user->user_id, 'travelnursesdb');
     }
 }
+
+// if tn clicked rate listing
+if (isset($_POST['rate-Btn']))
+{
+    // rate listing
+    $user->rateListing($conn, $selectedListing, $_POST['rating']);
+}
 ?>
 
 <!DOCTYPE html>
@@ -88,10 +95,11 @@ if (array_key_exists('reserve',$_POST))
             <p><strong>Monthly Cost: $<?=$selectedListing->price?></strong></p>
             <!-- lstar rating display -->
             <?php
-            if ($user->pfType == "travelnursesdb")
+            // only show rate button if user is travelnurse and if they have reserved property
+            if ($user->pfType == "travelnursesdb" && array_key_exists($selectedListing->address, $user->ratings))
             {
                 echo '
-                <form action="rate.php?Listing=<?=$selectedListing?>" method="post" class="rating-form">Rating: 
+                <form method="post" class="rating-form">Rating: 
                     <span class="star-rating">
                         <label for="rate-1" style="--i:1"><i class="fa-solid fa-star"></i></label>
                         <input type="radio" name="rating" id="rate-1" value="1">

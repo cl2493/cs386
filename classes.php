@@ -115,10 +115,11 @@ class TravelNurse extends User {
         $this->reservedProperty = $property;
         parent::__construct($user_id,$first_name, $last_name, $birthday, $pfType, $email,$stage,$messageFlag);
     }
-    // function to add/ change tn rating for listing
+
+    // function to change tn rating for listing
     function rateListing($conn, $listing, $rating)
     {
-        $query = "INSERT INTO ratings (address, user_id, rating) VALUES (:address, :user_id, :rating)";
+        $query = "UPDATE ratings SET rating=:rating WHERE address=:address AND user_id=:user_id";
 
         $data = [
             ':address' => $listing->address,
@@ -135,6 +136,26 @@ class TravelNurse extends User {
             return true;
         }
         return false;
+    }
+
+    // function to get all travel nurse's ratings
+    function getRatings($conn)
+    {
+        // query to get all ratings of user
+        $query = "SELECT address,rating FROM ratings WHERE user_id=:user_id";
+        $idArray = [
+            ':user_id' => $this->user_id,
+        ];
+
+        $query_run = $conn->prepare($query);
+        $query_run->execute($idArray);
+
+        $ratings = $query_run->fetchAll(PDO::FETCH_NUM);
+
+        for ($rating = 0; $rating < count($ratings); $rating++)
+        {
+            $this->ratings[$ratings[$rating][0]] = $ratings[$rating][1];
+        }
     }
 }
 
@@ -208,6 +229,27 @@ class Listing {
         }
 
         if ($query_execute) {
+            return true;
+        }
+        return false;
+    }
+
+    function addRating($conn)
+    {
+        $query = "INSERT INTO ratings (address, user_id, rating) VALUES (:address, :user_id, :rating)";
+
+        $data = [
+            ':address' => $this->address,
+            ':user_id' => $this->availability,
+            ':rating' => NULL,
+        ];
+
+        $query_run = $conn->prepare($query);
+        
+        $query_execute = $query_run->execute($data);
+        
+        if ($query_execute) 
+        {
             return true;
         }
         return false;
