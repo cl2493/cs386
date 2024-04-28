@@ -217,6 +217,7 @@ nav{
     text-decoration: none;
     display: inline-block;
     transition: all 0.3s ease;
+    padding: 15px;
     width: 50%;
     margin: 1% auto;
     background-color: #e7b93b;
