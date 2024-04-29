@@ -95,5 +95,6 @@ Our team includes error handling in our files and this is good coding practice b
 
 
 
-6. Lessons learned
+## 6. Lessons learned
+
 During our process in this project, we wish we thought ahead and planned out more comments, and made our code more modular. We often ran into problems with readability and trying to understand each other's work. If we had more time to continue developing our project, we would focus on readability and scalability to ensure our success. Another issue we ran into was developing our website. Currently, our website has white spaces and we would like to fill it up with more details and information but as we are more focused on making sure our site contains that bare minimum, there was less room for creativity with the time crunch. Overall, we believe that if we had started sooner with everything we know now, we believe we could have produced a better, well-thought-out website.
