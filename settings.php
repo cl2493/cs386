@@ -150,7 +150,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             
             <!-- Profile information -->
             <div class="profile-info">
-                <form>
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                     <div class="form-group">
                         <label for="firstName">First Name</label>
                         <input type="text" id="firstName" name="firstName" value="<?php echo $user->first_name; ?>">
@@ -169,7 +169,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                     </div>
                     <div class="form-group">
                         <label for="password">Phone Number</label>
-                        <input type="phone-number" id="phone-number" name="phone-number" value="<?php echo $user->phone_number; ?>">
+                        <input type="text" id="phone-number" name="phone-number" value="<?php echo $user->phone_number; ?>">
                     </div>
                     <button class="sub-btn" type="submit">Save Changes</button>
                     <button class="sub-btn" type="button" onclick="cancelChanges()">Cancel</button>
