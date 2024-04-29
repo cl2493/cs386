@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         $phoneNumber = $_POST["phone-number"]; 
 
         // change name, email, and birth
-        $user->changeName($conn, $first_name, $last_name);
+        $user->changeName($conn, $firstName, $lastName);
         $user->changeEmail($conn, $email);
         $user->changeBirth($conn, $birthday);
 
@@ -46,7 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             //insert the phone number in the 'user_phone_numbers' table with FK: user id
             $query = "INSERT INTO user_phone_numbers (user_id, phone_number) VALUES (:user_id, :phone_number)";
 
-            $stmt->execute(array(':phoneNumber' => $phoneNumber, ':userId' => $user->user_id));
+            $query_run = $conn->prepare($query);
+            $query_run->execute(array(':phoneNumber' => $phoneNumber, ':userId' => $user->user_id));
         }
         // else user has a phone number and wants to change it
         else
