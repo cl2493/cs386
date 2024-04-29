@@ -42,9 +42,11 @@ class User {
         if (count($phoneNumber) == 0)
         {
             $this->phone = "No Phone Number";
+            return;
         }
         // else return the phone number
         $this->phone = $phoneNumber[0][2];
+        return;
     }
 
     function changeName($conn, $firstName, $lastName) {
