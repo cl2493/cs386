@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             $query = "INSERT INTO user_phone_numbers (user_id, phone_number) VALUES (:user_id, :phone_number)";
 
             $query_run = $conn->prepare($query);
-            $query_run->execute(array(':phone_number' => $phoneNumber, ':userId' => $user->user_id));
+            $query_run->execute(array(':phone_number' => $phoneNumber, ':user_id' => $user->user_id));
         }
         // else user has a phone number and wants to change it
         else
