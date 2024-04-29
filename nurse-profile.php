@@ -79,18 +79,15 @@ else
                 <h1 id="profile-Title">User Profile</h1>
                 <!-- Profile name -->
                 <div class="profile-picture">
-                    <?php
-                    if (true)
-                    {
-                        echo '<label for="photo" class="select-btn">Select Photo</label>';
-                        echo '<input type="file" id="profilePictureFile" name="profilePictureFile" accept="image/*" class="file-input">';
-                        echo '<button type="submit" class="upload-btn">Upload</button>';
-                    }
-                    ?>
+            <!-- Profile picture form -->
+            <form id="profilePictureForm" action="upload-pfp.php" method="post" enctype="multipart/form-data">
+                <div class="profile-picture">
+                    <label for="profilePictureFile" class="select-btn">Select Photo</label>
+                    <input type="file" id="profilePictureFile" name="profilePictureFile" accept="image/*" class="file-input">
+                    <button type="submit" class="upload-btn">Upload</button>
+            </form>
                 </div>
-                <!-- Button for uploading profile picture -->
-                <!-- feel free to fix cathy -->
-                
+               
                 <?php
                 echo "<h2 class='name-info'><strong>$user->first_name $user->last_name";
                 // Display the verified icon if the user is verified
@@ -157,7 +154,7 @@ else
                         echo '<div class="cert-upload">';
                         echo '<h2>Certification Approved</h2>';
                         echo '</div>';
-                        echo "<img src='images/icons/check-symbol.png' class='verified-icon'>";
+                        
                     }
                 }
                 ?>
