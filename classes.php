@@ -45,7 +45,7 @@ class User {
             return false;
         }
         // else return the phone number
-        $this->phone = $phoneNumber[0][2];
+        $this->phone = $phoneNumber[0][0];
         return true;
     }
 
