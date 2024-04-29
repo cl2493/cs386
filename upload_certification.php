@@ -84,7 +84,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                         header("Location: propertyOwner-profile.php");
                     }
                     
-                     exit();
                 }
                    
             }
@@ -124,9 +123,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             case 8:
                 echo "Sorry, a PHP extension stopped the file upload.";
                 break;
+            
+            // debugging
             default:
-                echo "Sorry, an unknown error occurred during upload.";
-                break;
+             echo "Unexpected error code: ";
+             var_dump($_FILES["certFile"]["error"]);
+             echo "Sorry, an unknown error occurred during upload.";
+             break;
         }
 }}
     else
