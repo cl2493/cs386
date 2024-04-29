@@ -244,6 +244,7 @@ nav{
 .profile-header {
   flex: 0 0 auto;
   padding: 20px;
+  width:100%;
 }
 
 .profile-data {
