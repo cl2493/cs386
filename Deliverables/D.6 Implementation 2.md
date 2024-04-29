@@ -1,40 +1,41 @@
-1. Introduction
+## 1. Introduction
 RNT-A-ROOM is a housing web application that focuses on the needs of travel nurses. We offer comfort and safety on an easy-to-use platform that protects our users by verifying both tenants and rentals. Our system’s main features include a responsive homepage that loads within 3 seconds, a user profile that will display 5 user descriptions, user verification, and the ability to book listings.
 
 https://github.com/cl2493/cs386
 
-2. Implemented requirements
+## 2. Implemented requirements
 Requirement: As a hiring manager for a hospital, I want to provide an easy housing directory for travel nurses so that they can easily find suitable accommodations near the hospital.
-Issue: https://github.com/cl2493/cs386/issues/52
-https://github.com/cl2493/cs386/issues/77
+Issue: [Issue 52](https://github.com/cl2493/cs386/issues/52)
+[Issue 77](https://github.com/cl2493/cs386/issues/77)
 
 Pull request: 
 [Pull 164](https://github.com/cl2493/cs386/pull/164)
 [Pull 162](https://github.com/cl2493/cs386/pull/162)
-https://github.com/cl2493/cs386/pull/138
-https://github.com/cl2493/cs386/pull/124
-https://github.com/cl2493/cs386/pull/118
-https://github.com/cl2493/cs386/pull/42
+[Pull 138](https://github.com/cl2493/cs386/pull/138)
+[Pull 124](https://github.com/cl2493/cs386/pull/124)
+[Pull 118](https://github.com/cl2493/cs386/pull/118)
+[Pull 42](https://github.com/cl2493/cs386/pull/42)
 
 Implemented by: Aidan, Devin, Faith, and Cathy
 Approved by: Cathy Ly
 Print screen:
 
 Requirement: As a travel nurse, I want to use the filters to find a home for my family of 4 so that my family can stay together.
-Issue: https://github.com/cl2493/cs386/issues/48 
-Pull request: https://github.com/cl2493/cs386/pull/142 
-https://github.com/cl2493/cs386/pull/155 
-https://github.com/cl2493/cs386/pull/158
-https://github.com/cl2493/cs386/pull/162
+Issue: [Issues 48](https://github.com/cl2493/cs386/issues/48)
+
+Pull request: [Pull 142](https://github.com/cl2493/cs386/pull/142)
+[Pull 155](https://github.com/cl2493/cs386/pull/155)
+[Pull 158](https://github.com/cl2493/cs386/pull/158)
+[Pull 162](https://github.com/cl2493/cs386/pull/162)
 Implemented by: Devin Jay and Cathy
 Approved by: Cathy Ly
 Print screen: 
 
 
 Requirement: As a property owner, I want a community of verified traveling professionals so that I can have peace of mind regarding my property.
-Issue: #83 https://github.com/cl2493/cs386/issues/83
-Pull request: #137  https://github.com/cl2493/cs386/pull/137
-		 #151  https://github.com/cl2493/cs386/pull/151
+Issue: [Issue #83](https://github.com/cl2493/cs386/issues/83)
+Pull request: [Pull #137](https://github.com/cl2493/cs386/pull/137)
+[Pull #151](https://github.com/cl2493/cs386/pull/151)
 		
 Implemented by: Faith
 Approved by: Cathy Ly
@@ -42,20 +43,20 @@ Print screen:
 
 
 Requirement: As a hospital in a rural area, I want an easy way for travel nurses to book housing, so that I have more support in emergency situations.
-Issue: https://github.com/cl2493/cs386/issues/47 
+Issue: [Issue 47](https://github.com/cl2493/cs386/issues/47)
 
 Pull request: 
-https://github.com/cl2493/cs386/pull/171
-https://github.com/cl2493/cs386/pull/164 
-https://github.com/cl2493/cs386/pull/162 
+[Pull 171](https://github.com/cl2493/cs386/pull/171)
+[Pull 164](https://github.com/cl2493/cs386/pull/164)
+[Pull 162](https://github.com/cl2493/cs386/pull/162)
 Implemented by: Aidan 
 Approved by: Cathy Ly
 Print screen: 
 
 
 Requirement: As a user, I want a user profile so that I can review my personal information.
-Issue: https://github.com/cl2493/cs386/issues/82
- https://github.com/cl2493/cs386/issues/79
+Issue: [Issue 82](https://github.com/cl2493/cs386/issues/82)
+[Issue 79](https://github.com/cl2493/cs386/issues/79)
 
 Pull request: https://github.com/cl2493/cs386/commit/358caa2d1725ef2b1efdb6b79e1062bbe2d1166f
 https://github.com/cl2493/cs386/commit/f24345f8504552e3e04d6edc63b36540e6817eed
@@ -66,17 +67,15 @@ Approved by: Cathy Ly
 Print screen: 
 
 
-3. Tests (need one more 🙂)
-https://github.com/cl2493/cs386/tree/main/Deliverables/Unit%20Test 
+## 3. Tests
+[Test File Link](https://github.com/cl2493/cs386/tree/main/Deliverables/Unit%20Test)
 
 
-4. Demo
-Include a link to a video showing the system working.
-Grading criteria (10 points): This section will be graded based on the quality of the video and on the evidence that the features are running as expected. Additional criteria are the relevance of the demonstrated functionalities, the correctness of the functionalities, and quality of the developed system from the external point of view (user interface).
+## 4. Demo
 VIDEO LINK
 
 
-5. Code quality
+## 5. Code quality
 Our team implemented code smells by changing and refactoring the quality of our code. As seen in the commits on Github, we all have taken steps to make our code more modular. Creating separate files and putting code in them so that our bigger files that handle more aren’t as busy.
 An example of this practice is in our “upload certification” php file, the code follows the principle of moving statements to callers in some aspects.
 Throughout our various files, we have different user types which makes our code more centralized and helps with code duplication.
