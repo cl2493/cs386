@@ -30,7 +30,7 @@ Pull request: [Pull 142](https://github.com/cl2493/cs386/pull/142)
 Implemented by: Devin Jay and Cathy
 Approved by: Cathy Ly
 Print screen: 
-
+![url](https://github.com/cl2493/cs386/blob/main/images/filter.png)
 
 Requirement: As a property owner, I want a community of verified traveling professionals so that I can have peace of mind regarding my property.
 Issue: [Issue #83](https://github.com/cl2493/cs386/issues/83)
@@ -40,7 +40,7 @@ Pull request: [Pull #137](https://github.com/cl2493/cs386/pull/137)
 Implemented by: Faith
 Approved by: Cathy Ly
 Print screen: 
-
+![url](https://github.com/cl2493/cs386/blob/main/images/Profile_Page.png)
 
 Requirement: As a hospital in a rural area, I want an easy way for travel nurses to book housing, so that I have more support in emergency situations.
 Issue: [Issue 47](https://github.com/cl2493/cs386/issues/47)
@@ -52,28 +52,30 @@ Pull request:
 Implemented by: Aidan 
 Approved by: Cathy Ly
 Print screen: 
-
+![url](https://github.com/cl2493/cs386/blob/main/images/book_housing.png)
 
 Requirement: As a user, I want a user profile so that I can review my personal information.
 Issue: [Issue 82](https://github.com/cl2493/cs386/issues/82)
 [Issue 79](https://github.com/cl2493/cs386/issues/79)
 
-Pull request: https://github.com/cl2493/cs386/commit/358caa2d1725ef2b1efdb6b79e1062bbe2d1166f
-https://github.com/cl2493/cs386/commit/f24345f8504552e3e04d6edc63b36540e6817eed
-https://github.com/cl2493/cs386/commit/98a5030c8fbc6a1225606f2ee69363edeac3f3b8
+Pull request: [Pull 193](https://github.com/cl2493/cs386/pull/193)
+[Pull 120](https://github.com/cl2493/cs386/pull/120)
+[Pull 103](https://github.com/cl2493/cs386/pull/103)
 
 Implemented by: Devin, Aiden, Cathy
 Approved by: Cathy Ly
 Print screen: 
-
+![url](https://github.com/cl2493/cs386/blob/main/images/Profile_Page.png)
 
 ## 3. Tests
 [Test File Link](https://github.com/cl2493/cs386/tree/main/Deliverables/Unit%20Test)
-
+![url](https://github.com/cl2493/cs386/blob/main/images/cathy_Testing.png)
+![url](https://github.com/cl2493/cs386/blob/main/images/devin_testing.png)
 
 ## 4. Demo
 VIDEO LINK
-
+[Video Link](https://drive.google.com/file/d/1PwPu7z_GnGzbc6WnRZxNeijM02OV5Lhm/view)
+[https://drive.google.com/file/d/1PwPu7z_GnGzbc6WnRZxNeijM02OV5Lhm/view](https://drive.google.com/file/d/1PwPu7z_GnGzbc6WnRZxNeijM02OV5Lhm/view)
 
 ## 5. Code quality
 Our team implemented code smells by changing and refactoring the quality of our code. As seen in the commits on Github, we all have taken steps to make our code more modular. Creating separate files and putting code in them so that our bigger files that handle more aren’t as busy.
