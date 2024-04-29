@@ -31,10 +31,10 @@ else
     exit();
 }
 // check if a file has been uploaded
-if (isset($_FILES["certFile"]["name"])) 
+if (isset($_FILES["profilePictureFile"]["name"])) 
 {
     // set $inputFileName to uploaded file
-    $inputFileName = $_FILES["certFile"]["name"];
+    $inputFileName = $_FILES["profilePictureFile"]["name"];
 } 
 else 
 {
@@ -79,23 +79,15 @@ else
                 <h1 id="profile-Title">User Profile</h1>
                 <!-- Profile name -->
                 <div class="profile-picture">
-                    <?php
-                    if (true)
-                    {
-                        echo '<label for="photo" class="select-btn">Select Photo</label>';
-                        echo '<input type="file" id="certFile" name="certFile" accept="image/*" class="file-input">';
-                        echo '<button type="submit" class="upload-btn">Upload</button>';
-                    }
-                    else
-                    {
-                    $profile_picture_path = "get-pfp.php";
-                    echo "<img src='$profile_picture_path' alt='Profile Picture'>";
-                    }
-                    ?>
+            <!-- Profile picture form -->
+            <form id="profilePictureForm" action="upload-pfp.php" method="post" enctype="multipart/form-data">
+                <div class="profile-picture">
+                    <label for="profilePictureFile" class="select-btn">Select Photo</label>
+                    <input type="file" id="profilePictureFile" name="profilePictureFile" accept="image/*" class="file-input">
+                    <button type="submit" class="upload-btn">Upload</button>
+            </form>
                 </div>
-                <!-- Button for uploading profile picture -->
-                <!-- feel free to fix cathy -->
-                
+               
                 <?php
                 echo "<h2 class='name-info'><strong>$user->first_name $user->last_name";
                 // Display the verified icon if the user is verified
@@ -162,7 +154,7 @@ else
                         echo '<div class="cert-upload">';
                         echo '<h2>Certification Approved</h2>';
                         echo '</div>';
-                        echo "<img src='images/icons/check-symbol.png' class='verified-icon'>";
+                        
                     }
                 }
                 ?>

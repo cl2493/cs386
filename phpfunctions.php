@@ -20,11 +20,13 @@ function checkLogin($conn, $pfType)
         {
             $user = new TravelNurse($user_data[1],$user_data[2],$user_data[3],$user_data[4],$pfType,$user_data[5],$user_data[7],$user_data[8],$user_data[9]);
             $user->getRatings($conn);
+            $user->getPhoneNumber($conn);
         }
         else
         {
             $user = new PropertyOwner($user_data[1],$user_data[2],$user_data[3],$user_data[4],$pfType,$user_data[5], $user_data[7], $user_data[8]);
             $user->getPOListings($conn);
+            $user->getPhoneNumber($conn);
         }
         return $user;
     }

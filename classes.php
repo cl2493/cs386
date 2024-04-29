@@ -13,6 +13,7 @@ class User {
     public $email;
     public $stage;
     public $messageFlag;
+    public $phone;
 
     function __construct($user_id, $first_name, $last_name, $birthday, $pfType, $email, $stage, $messageFlag) {
         $this->user_id = $user_id;
@@ -25,16 +26,43 @@ class User {
         $this->messageFlag = $messageFlag;
     }
 
-    function changeName(DatabaseConnection $conn, $firstName, $lastName) {
+    function getPhoneNumber($conn)
+    {
+        $data = [
+            ":user_id" => $this->user_id,
+        ];
+        $query = "SELECT phone_number FROM user_phone_numbers WHERE user_id=:user_id";
+
+        $query_run = $conn->prepare($query);
+        $query_run->execute($data);
+
+        $phoneNumber = $query_run->fetchAll(PDO::FETCH_NUM);
+
+        // check if user has phone number
+        if (count($phoneNumber) == 0)
+        {
+            $this->phone = "No Phone Number";
+            return false;
+        }
+        // else return the phone number
+        $this->phone = $phoneNumber[0][1];
+        return true;
+    }
+
+    function changeName($conn, $firstName, $lastName) {
         $data = [];
         $query = "UPDATE $this->pfType SET";
 
         if ($firstName != $this->first_name) {
-            $query .= " first_name=:first_name,";
+            $query .= " first_name=:first_name";
             $data[':first_name'] = $firstName;
         }
 
         if ($lastName != $this->last_name) {
+            if ($firstName != $this->first_name)
+            {
+                $query .= ",";
+            }
             $query .= " last_name=:last_name";
             $data[':last_name'] = $lastName;
         }
@@ -53,7 +81,7 @@ class User {
         return false;
     }
 
-    function changeBirth(DatabaseConnection $conn, $newBirthday) {
+    function changeBirth($conn, $newBirthday) {
         if ($newBirthday != $this->birthday) {
             $query = "UPDATE $this->pfType SET birthday=:birthday WHERE user_id=:user_id";
             $data = [
@@ -71,11 +99,30 @@ class User {
         return false;
     }
 
-    function changeEmail(DatabaseConnection $conn, $newEmail) {
+    function changeEmail($conn, $newEmail) {
         if ($newEmail != $this->email) {
             $query = "UPDATE $this->pfType SET email=:email WHERE user_id=:user_id";
             $data = [
                 ':email' => $newEmail,
+                ':user_id' => $this->user_id,
+            ];
+
+            $query_run = $conn->prepare($query);
+            $query_execute = $query_run->execute($data);
+
+            if ($query_execute) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function changeNumber($conn, $newNumber) {
+        // if new number is different from current number
+        if ($newNumber != $this->phone) {
+            $query = "UPDATE user_phone_numbers SET phone_number=:phone_number WHERE user_id=:user_id";
+            $data = [
+                ':email' => $newNumber,
                 ':user_id' => $this->user_id,
             ];
 

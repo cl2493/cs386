@@ -6,56 +6,84 @@ ini_set('display_errors', 1);
 session_start();
 include("connection.php");
 include("phpfunctions.php");
+include("classes.php");
 
-/// check if the form is submitted
+// check if user is logged in
+if(isset($_SESSION['pfType']))
+{
+    $user = checkLogin($conn, $_SESSION['pfType']);
+    $submission_stage = $user->stage;
+
+    $verifiedFlag = false;
+
+    // check if user is verified
+    if ($submission_stage == 'Approved')
+    {
+        $verifiedFlag = true;
+    }
+}
+
+// check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
     // check if save changes button is clicked
     if (isset($_POST["saveChanges"]))
-     {
-        // get the form data
+    {
+        // Get the form data and sanitize/validate it (not implemented here)
         $firstName = $_POST["firstName"];
         $lastName = $_POST["lastName"];
         $email = $_POST["email"];
         $birthday = $_POST["birthday"];
-        $phoneNumber = $_POST["phoneNumber"];
+        $phoneNumber = $_POST["phone-number"]; 
 
-        // update users information
-        $user->first_name = $firstName;
-        $user->last_name = $lastName;
-        $user->email = $email;
-        $user->birthday = $birthday;
+        // change name, email, and birth
+        $user->changeName($conn, $firstName, $lastName);
+        $user->changeEmail($conn, $email);
+        $user->changeBirth($conn, $birthday);
 
-        // update the phone number in the 'user_phone_numbers' table with FK: user id
-        $query = "UPDATE user_phone_numbers SET phone_number = :phoneNumber WHERE user_id = :userId";
-        $stmt = $conn->prepare($query);
-        $stmt->execute(array(':phoneNumber' => $phoneNumber, ':userId' => $user->user_id));
+        // check if user has no phone number
+        if ($user->phone == "No Phone Number")
+        {
+            //insert the phone number in the 'user_phone_numbers' table with FK: user id
+            $query = "INSERT INTO user_phone_numbers (user_id, phone_number) VALUES (:user_id, :phone_number)";
 
-        //  profile picture upload
-        if (isset($_FILES["profile_picture"]) && $_FILES["profile_picture"]["error"] == 0)
-         {
-            // file path and where to put it
+            $query_run = $conn->prepare($query);
+            $query_run->execute(array(':phone_number' => $phoneNumber, ':user_id' => $user->user_id));
+        }
+        // else user has a phone number and wants to change it
+        else
+        {
+            $user->changeNumber($conn, $phoneNumber);
+        }
+       
+        // profile picture upload
+        if (isset($_FILES["profilePictureFile"]) && $_FILES["profilePictureFile"]["error"] == 0) 
+        {
+            // File path and where to put it
             $targetDir = "upload/";
-            $fileName = basename($_FILES["profile_picture"]["name"]);
+            $fileName = basename($_FILES["profilePictureFile"]["name"]);
             $targetFilePath = $targetDir . $fileName;
 
-            // move the file into path
-            if (move_uploaded_file($_FILES["profile_picture"]["tmp_name"], $targetFilePath)) 
+            // Move the file into path
+            if (move_uploaded_file($_FILES["profilePictureFile"]["tmp_name"], $targetFilePath)) 
             {
-                // insert file path into the profile_pictures table
+                // Insert file path into the profile_pictures table
                 $query = "INSERT INTO profile_pictures (user_id, file_path) VALUES (:userId, :filePath)";
                 $stmt = $conn->prepare($query);
                 $stmt->execute(array(':userId' => $user->user_id, ':filePath' => $targetFilePath));
-            } 
 
-            // error handling
+                // Redirect to the profile page with success message
+                header("Location: nurse-profile.php?success=1");
+                exit();
+            } 
             else 
             {
+                // Error handling: Profile picture upload failed
                 echo "Sorry, there was an error uploading your profile picture.";
             }
         }
 
-        // redirect to the profile page
+        // Redirect to the profile page after saving changes
         header("Location: nurse-profile.php");
         exit();
     }
@@ -132,7 +160,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             
             <!-- Profile information -->
             <div class="profile-info">
-                <form>
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                     <div class="form-group">
                         <label for="firstName">First Name</label>
                         <input type="text" id="firstName" name="firstName" value="<?php echo $user->first_name; ?>">
@@ -151,19 +179,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                     </div>
                     <div class="form-group">
                         <label for="password">Phone Number</label>
-                        <input type="phone-number" id="phone-number" name="phone-number" value="<?php echo $user->phone_number; ?>">
+                        <input type="text" id="phone-number" name="phone-number" value="<?php echo $user->phone; ?>">
                     </div>
-                    <button class="sub-btn" type="submit">Save Changes</button>
+                    <button class="sub-btn" type="submit" name="saveChanges">Save Changes</button>
                     <button class="sub-btn" type="button" onclick="cancelChanges()">Cancel</button>
                 </form>
             </div>
             <div id = "certification"> 
-                        <form id="certForm" action="upload-pfp.php" method="post" enctype="multipart/form-data">
-                            <div class="cert-upload">
+                        <form id="pfpForm" action="upload-pfp.php" method="post" enctype="multipart/form-data">
+                            <div class="pfp-upload">
                                 <h2>Upload Profile Photo</h2>
                             </div>
-                            <label for="certFile" class="select-btn">Select Photo</label>
-                            <input type="file" id="certFile" name="certFile" accept="image/*" class="file-input">
+                            <label for="profilePictureFile" class="select-btn">Select Photo</label>
+                            <input type="file" id="profilePictureFile" name="profilePictureFile" accept="image/*" class="file-input">
                             <button type="submit" class="upload-btn">Upload</button>
                             <span id='fileNameDisplay' class='file-name-display'>$inputFileName</span>
                         </form>
