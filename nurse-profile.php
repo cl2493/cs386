@@ -31,10 +31,10 @@ else
     exit();
 }
 // check if a file has been uploaded
-if (isset($_FILES["certFile"]["name"])) 
+if (isset($_FILES["profilePictureFile"]["name"])) 
 {
     // set $inputFileName to uploaded file
-    $inputFileName = $_FILES["certFile"]["name"];
+    $inputFileName = $_FILES["profilePictureFile"]["name"];
 } 
 else 
 {
@@ -83,7 +83,7 @@ else
                     if (true)
                     {
                         echo '<label for="photo" class="select-btn">Select Photo</label>';
-                        echo '<input type="file" id="certFile" name="certFile" accept="image/*" class="file-input">';
+                        echo '<input type="file" id="profilePictureFile" name="profilePictureFile" accept="image/*" class="file-input">';
                         echo '<button type="submit" class="upload-btn">Upload</button>';
                     }
                     ?>

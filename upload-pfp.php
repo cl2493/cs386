@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
     
     // checks for file upload w/out errors
-    if (isset($_FILES["profile_picture"]) && $_FILES["profile_picture"]["error"] == 0) 
+    if (isset($_FILES["profilePictureFile"]) && $_FILES["profilePictureFile"]["error"] == 0) 
     {
         // where we want the image to go
         $targetDir = "upload/";
@@ -20,10 +20,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         $user_id = $_SESSION['user_id']; 
 
         // get file name
-        $fileName = basename($_FILES["profile_picture"]["name"]);
+        $fileName = basename($_FILES["profilePictureFile"]["name"]);
         $targetFilePath = $targetDir . $fileName;
 
-        if (move_uploaded_file($_FILES["profile_picture"]["tmp_name"], $targetFilePath)) 
+        if (move_uploaded_file($_FILES["profilePictureFile"]["tmp_name"], $targetFilePath)) 
         {
             // insert the file path into the profile_pictures table
             $query = "INSERT INTO profile_pictures (user_id, file_path) VALUES (:user_id, :file_path)";
