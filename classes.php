@@ -41,10 +41,10 @@ class User {
         // check if user has phone number
         if (count($phoneNumber) == 0)
         {
-            $this->phoneNumber = "No Phone Number";
+            $this->phone = "No Phone Number";
         }
         // else return the phone number
-        $this->$phoneNumber[0][2];
+        $this->phone[0][2];
     }
 
     function changeName($conn, $firstName, $lastName) {
