@@ -93,3 +93,22 @@ window.addEventListener('DOMContentLoaded', function ()
         }
     }
 });
+
+// to click on select photo button
+function selectPhoto() 
+{
+    document.getElementById("certFile").click();
+}
+
+// to trigger file input for select photo
+function uploadPhoto() 
+{
+    document.getElementById("certForm").submit();
+}
+
+// when you click cancel in settings
+// redirected to profile 
+function cancelChanges() 
+{
+    window.location.href = "nurse-profile.php"; 
+}
