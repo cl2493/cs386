@@ -24,12 +24,22 @@ if(isset($_SESSION['pfType']))
         $verifiedFlag = true;
     }
 }
-
 // user is not logged in, redirect to homepage
 else
 {
     header("Location: index.php");
     exit();
+}
+// check if a file has been uploaded
+if (isset($_FILES["certFile"]["name"])) 
+{
+    // set $inputFileName to uploaded file
+    $inputFileName = $_FILES["certFile"]["name"];
+} 
+else 
+{
+    // if no file has been uploaded, keep empty
+    $inputFileName = '';
 }
 
 ?>
