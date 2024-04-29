@@ -44,7 +44,7 @@ class User {
             $this->phone = "No Phone Number";
         }
         // else return the phone number
-        $this->phone[0][2];
+        $this->phone = $phoneNumber[0][2];
     }
 
     function changeName($conn, $firstName, $lastName) {
