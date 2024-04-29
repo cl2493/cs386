@@ -145,7 +145,7 @@ input[type = range]::-moz-range-thumb{
   background-color: transparent;
   border-radius: 10px;
   align-items: center;
-  top: 43%;
+  top: 350px;
   width: 6%;
   height: 5%;
   cursor: pointer;
