@@ -19,7 +19,7 @@ Pull request:
 Implemented by: Aidan, Devin, Faith, and Cathy
 Approved by: Cathy Ly
 Print screen:
-![url]([images/Housing_Directory_D6.png](https://github.com/cl2493/cs386/blob/main/images/Housing_Directory_D6.png)
+![url](https://github.com/cl2493/cs386/blob/main/images/Housing_Directory_D6.png)
 Requirement: As a travel nurse, I want to use the filters to find a home for my family of 4 so that my family can stay together.
 Issue: [Issues 48](https://github.com/cl2493/cs386/issues/48)
 
