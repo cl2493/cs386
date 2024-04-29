@@ -35,18 +35,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         $birthday = $_POST["birthday"];
         $phoneNumber = $_POST["phone-number"]; 
 
-        // update user's information
-        $user->first_name = $firstName;
-        $user->last_name = $lastName;
-        $user->email = $email;
-        $user->birthday = $birthday;
+        // change name, email, and birth
+        $user->changeName($conn, $first_name, $last_name);
+        $user->changeEmail($conn, $email);
+        $user->changeBirth($conn, $birthday);
 
-        // select the phone number in the 'user_phone_numbers' table with FK: user id
-        $query = "UPDATE user_phone_numbers SET phone_number = :phoneNumber WHERE user_id = :userId";
-        $stmt = $conn->prepare($query);
-        $stmt->execute(array(':phoneNumber' => $phoneNumber, ':userId' => $user->user_id));
+        // check if user has no phone number
+        if ($user->phone == "No Phone Number")
+        {
+            //insert the phone number in the 'user_phone_numbers' table with FK: user id
+            $query = "INSERT INTO user_phone_numbers (user_id, phone_number) VALUES (:user_id, :phone_number)";
 
-
+            $stmt->execute(array(':phoneNumber' => $phoneNumber, ':userId' => $user->user_id));
+        }
+        // else user has a phone number and wants to change it
+        else
+        {
+            $user->changeNumber($conn, $phoneNumber);
+        }
+       
         // profile picture upload
         if (isset($_FILES["profilePictureFile"]) && $_FILES["profilePictureFile"]["error"] == 0) 
         {
@@ -170,7 +177,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                     </div>
                     <div class="form-group">
                         <label for="password">Phone Number</label>
-                        <input type="text" id="phone-number" name="phone-number" value="<?php echo $phone_number; ?>">
+                        <input type="text" id="phone-number" name="phone-number" value="<?php echo $user->phone; ?>">
                     </div>
                     <button class="sub-btn" type="submit" name="saveChanges">Save Changes</button>
                     <button class="sub-btn" type="button" onclick="cancelChanges()">Cancel</button>
