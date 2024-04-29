@@ -42,11 +42,11 @@ class User {
         if (count($phoneNumber) == 0)
         {
             $this->phone = "No Phone Number";
-            return;
+            return false;
         }
         // else return the phone number
         $this->phone = $phoneNumber[0][2];
-        return;
+        return true;
     }
 
     function changeName($conn, $firstName, $lastName) {
@@ -54,11 +54,15 @@ class User {
         $query = "UPDATE $this->pfType SET";
 
         if ($firstName != $this->first_name) {
-            $query .= " first_name=:first_name,";
+            $query .= " first_name=:first_name";
             $data[':first_name'] = $firstName;
         }
 
         if ($lastName != $this->last_name) {
+            if ($firstName != $this->first_name)
+            {
+                $query .= ",";
+            }
             $query .= " last_name=:last_name";
             $data[':last_name'] = $lastName;
         }
