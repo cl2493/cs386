@@ -41,10 +41,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         $user->email = $email;
         $user->birthday = $birthday;
 
-        // update the phone number in the 'user_phone_numbers' table with FK: user id
+        // select the phone number in the 'user_phone_numbers' table with FK: user id
         $query = "UPDATE user_phone_numbers SET phone_number = :phoneNumber WHERE user_id = :userId";
         $stmt = $conn->prepare($query);
         $stmt->execute(array(':phoneNumber' => $phoneNumber, ':userId' => $user->user_id));
+
 
         // profile picture upload
         if (isset($_FILES["profilePictureFile"]) && $_FILES["profilePictureFile"]["error"] == 0) 
@@ -169,9 +170,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                     </div>
                     <div class="form-group">
                         <label for="password">Phone Number</label>
-                        <input type="text" id="phone-number" name="phone-number" value="<?php echo $user->phone_number; ?>">
+                        <input type="text" id="phone-number" name="phone-number" value="<?php echo $phone_number; ?>">
                     </div>
-                    <button class="sub-btn" type="submit">Save Changes</button>
+                    <button class="sub-btn" type="submit" name="saveChanges">Save Changes</button>
                     <button class="sub-btn" type="button" onclick="cancelChanges()">Cancel</button>
                 </form>
             </div>
