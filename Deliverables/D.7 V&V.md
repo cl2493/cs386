@@ -2,6 +2,18 @@
 RNT-A-ROOM is a housing web application that focuses on the needs of travel nurses. We offer comfort and safety on an easy-to-use platform that protects our users by verifying both tenants and rentals. Our system’s main features include a responsive homepage that loads within 3 seconds, a user profile that will display 5 user descriptions, user verification, and the ability to book listings.
 
 ## 2. Verification (tests)
+Unit Testing
+
+[PHP Unit Testing Link](https://github.com/cl2493/cs386/tree/main/Deliverables/Unit%20Test)
+![url](https://github.com/cl2493/cs386/blob/main/images/phpunittesting1.png)
+
+[Jest Testing Link](https://github.com/cl2493/cs386/blob/main/Deliverables/UnitTest/message.test.js)
+![url](https://github.com/cl2493/cs386/blob/main/images/jesttestingmessage.png)
+
+
+Acceptance Test
+
+
 
 ## 3. Validation (user evaluation)
 Script:
@@ -19,14 +31,17 @@ On a scale of 1-10, how would you rate the user's experience?
 What suggestions do you have for us? 
 
 Result:
-https://docs.google.com/spreadsheets/d/12yDwJAQa46uxrGi-AFMZem95v0nkz3b4_va0JLrcS2c/edit?usp=sharing
+
+![url](https://github.com/cl2493/cs386/blob/main/images/circlegraph.png)
+![url](https://github.com/cl2493/cs386/blob/main/images/creativityresults.png)
+![url](https://github.com/cl2493/cs386/blob/main/images/experienceresults.png)
+![url](https://github.com/cl2493/cs386/blob/main/images/resultsnav.png)
+![url](https://github.com/cl2493/cs386/blob/main/images/layoutresults.png)
 
 
 
 
-
-
-For the other open ended results please click this link : https://docs.google.com/spreadsheets/d/12yDwJAQa46uxrGi-AFMZem95v0nkz3b4_va0JLrcS2c/edit?resourcekey#gid=2057836844
+For the other open ended results please click this link : [https://docs.google.com/spreadsheets/d/12yDwJAQa46uxrGi-AFMZem95v0nkz3b4_va0JLrcS2c/edit?resourcekey#gid=2057836844](https://docs.google.com/spreadsheets/d/12yDwJAQa46uxrGi-AFMZem95v0nkz3b4_va0JLrcS2c/edit?resourcekey#gid=2057836844)
 
 
 Reflection:
