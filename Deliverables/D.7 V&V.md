@@ -16,7 +16,7 @@ Acceptance Test
 
 
 ## 3. Validation (user evaluation)
-Script:
+## Script:
 Could you please share your initial impression when visiting the website?
 Did the layout of the website feel intuitive to you?
 What features did you find most useful?
@@ -30,7 +30,7 @@ How easy was it to go through the different sections of the website?
 On a scale of 1-10, how would you rate the user's experience?
 What suggestions do you have for us? 
 
-Result:
+## Result:
 
 ![url](https://github.com/cl2493/cs386/blob/main/images/circlegraph.png)
 ![url](https://github.com/cl2493/cs386/blob/main/images/creativityresults.png)
@@ -44,7 +44,7 @@ Result:
 For the other open ended results please click this link : [https://docs.google.com/spreadsheets/d/12yDwJAQa46uxrGi-AFMZem95v0nkz3b4_va0JLrcS2c/edit?resourcekey#gid=2057836844](https://docs.google.com/spreadsheets/d/12yDwJAQa46uxrGi-AFMZem95v0nkz3b4_va0JLrcS2c/edit?resourcekey#gid=2057836844)
 
 
-Reflection:
+## Reflection:
 During our user evaluation, there were a few features that worked properly. The registration and the user login worked for all of our users. Our directory with all of our listings all displayed properly but our filter system broke the website for some of our users. The certification did not cause any issues for any of our users according to what we saw in the database but there were no comments about it in the survey. Those testing our website had the opportunity to communicate with us about any issues they were having with the site and the main issue was the filters. After we worked on it further after the testing, the filters work no matter the location you input.
 When conducting our user evaluations, we observed that certain aspects of the website were less intuitive than we had liked. This included certain buttons and UI elements behaving in buggy manners. Additionally, more access to the profile and additional statistics/information would have been nice. Finally, some reported encountering a temporary 404 page when utilizing the website. 
 Overall, some users felt that it was pretty easy to navigate through while others felt like they needed a guide to navigate through the system. Cathy created a doc with instructions so that the user can experience the completed functionalities of the project. They were asked for example, how easy the website is. According to the collected data, the feedback they provided was that it could be “easier”. We noticed that everyone who participated in the survey signed up as a travel nurse. This shows that the people were lazy and did not fully test the functionalities of the website, that being the property owner portal.
