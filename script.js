@@ -11,9 +11,7 @@ document.addEventListener('DOMContentLoaded', function()
             wPopUp.style.display = 'none';
 
         }, 3000);
-
     }
-
     // call the function when DOM fully loads
     showPopup();
 });
