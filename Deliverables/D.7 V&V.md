@@ -14,7 +14,17 @@ Unit Testing
 Acceptance Test
 
 [Selenium Testing Link](https://github.com/cl2493/cs386/tree/main/Deliverables/AcceptenceTest)
+
+This acceptance test navigates to a web application hosted at the provided URL.
+It clicks on the login button and then on the nurse register button.
+After clicking on the nurse register button, it waits for the sign-up title to appear on the page.
+Once the sign-up title is visible, it retrieves the text of the title and logs it.
+This test verifies the correct implementation of the nurse registration feature from the user interface perspective.
 ![url](https://github.com/cl2493/cs386/blob/main/images/sign-upaccept.png)
+
+
+Tested Feature: The acceptance test checks the button will lead you to the correct page by reading on of the filter inputs on our listing page.
+Explanation: The test navigates to a webpage, finds an element with the class "sub-btn" (presumably a submit button), clicks on it, waits for an element with the ID "bath-input" to be visible, and then retrieves the text of that element. This process simulates user interaction with the web page to ensure that the "bath-input" functionality works as expected.
 ![url](https://github.com/cl2493/cs386/blob/main/images/readbath.png)
 
 
