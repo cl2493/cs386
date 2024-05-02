@@ -13,6 +13,10 @@ Unit Testing
 
 Acceptance Test
 
+[Selenium Testing Link](https://github.com/cl2493/cs386/tree/main/Deliverables/AcceptenceTest)
+![url](https://github.com/cl2493/cs386/blob/main/images/sign-upaccept.png)
+![url](https://github.com/cl2493/cs386/blob/main/images/readbath.png)
+
 
 
 ## 3. Validation (user evaluation)
